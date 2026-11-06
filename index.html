@@ -294,6 +294,9 @@ body.focus .content{max-width:none;padding-top:60px}
 .tpl-chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:7px 13px;font-size:12px;font-weight:700;color:#40534a}
 .tpl-chip.active{background:var(--excel);color:#fff;border-color:var(--excel)}
 @media(prefers-color-scheme:dark){.tpl-chip{background:#2a3a2f;color:#dcefe1}}
+.pdf-fchip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:7px 13px;font-size:12px;font-weight:700;color:#40534a;cursor:pointer}
+.pdf-fchip.active{background:var(--excel);color:#fff;border-color:var(--excel)}
+@media(prefers-color-scheme:dark){.pdf-fchip{background:#2a3a2f;color:#dcefe1}.pdf-fchip.active{background:var(--excel);color:#fff}}
 .cmt-item{background:#eef4ef;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}
 @media(prefers-color-scheme:dark){.cmt-item{background:#2e2426}}
 .cmt-item blockquote{margin:0 0 6px;padding:6px 10px;border-left:3px solid var(--excel-bright);background:rgba(255,255,255,.55);font-style:italic;font-size:12.5px}
@@ -528,61 +531,6 @@ body.focus .content{max-width:none;padding-top:60px}
 
       </div>
 
-      <div id="blkPdf">
-      <div class="section-title" id="pdfSection" style="margin-top:30px">📕 Công cụ PDF — 28 công cụ chạy ngay trên trình duyệt (+ 2 mục cần máy chủ)</div>
-      <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin:0 0 4px">Tệp PDF được xử lý ngay trên máy của sếp bằng thư viện pdf-lib &amp; PDF.js — không tải lên máy chủ nào cả. Bấm vào một công cụ để mở bàn làm việc PDF. Riêng 2 mục <b>Đặt mật khẩu</b> và <b>Chuyển PDF/A</b> cần máy chủ chuyên dụng nên được gắn nhãn “CẦN MÁY CHỦ” và <b>không tính vào con số 28</b> công cụ chạy được ở trên.</p>
-
-      <div class="pdf-group">Tổ chức &amp; tối ưu PDF</div>
-      <div class="pdf-grid">
-        <button class="pdf-card" onclick="openPdfTool('merge')"><span class="p-ico">🗂</span><b>Gộp PDF (Merge)</b><small>Nối nhiều file PDF thành một, giữ nguyên thứ tự chọn.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('split')"><span class="p-ico">✂️</span><b>Tách PDF (Split)</b><small>Tách theo khoảng trang, hoặc mỗi trang thành 1 file (ZIP).</small></button>
-        <button class="pdf-card" onclick="openPdfTool('organize')"><span class="p-ico">🔀</span><b>Sắp xếp &amp; trích trang</b><small>Đổi thứ tự trang, xoá trang, trích xuất trang cần lấy.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('compress')"><span class="p-ico">🗜</span><b>Nén PDF (Compress)</b><small>Nén nhẹ giữ vector, hoặc nén mạnh bằng cách dựng lại trang dạng ảnh JPEG.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('rotate')"><span class="p-ico">🔄</span><b>Xoay trang PDF</b><small>Xoay 90° / 180° / 270° cho tất cả trang hoặc khoảng trang chọn.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('crop')"><span class="p-ico">🔲</span><b>Cắt lề PDF (Crop)</b><small>Cắt bớt lề trắng / lề thừa ở 4 cạnh theo % trang — trang gọn và chữ to hơn khi đọc, in.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('repair')"><span class="p-ico">🩹</span><b>Sửa PDF lỗi (Repair)</b><small>Thử đọc lại và ghi file PDF mới sạch cấu trúc khi file gốc bị lỗi nhẹ.</small></button>
-      </div>
-
-      <div class="pdf-group">Chuyển đổi sang PDF</div>
-      <div class="pdf-grid">
-        <button class="pdf-card" onclick="openPdfTool('jpg2pdf')"><span class="p-ico">🖼</span><b>Ảnh JPG/PNG → PDF</b><small>Ghép nhiều ảnh thành 1 PDF, vừa trang A4 hoặc giữ kích thước gốc.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('word2pdf')"><span class="p-ico">📘</span><b>Word → PDF</b><small>Chuyển .docx sang PDF ngay trên trình duyệt (Mammoth + dựng trang).</small></button>
-        <button class="pdf-card" onclick="openPdfTool('excel2pdf')"><span class="p-ico">📗</span><b>Excel → PDF</b><small>Chuyển bảng .xlsx / .csv sang PDF khổ ngang, đủ mọi sheet.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('ppt2pdf')"><span class="p-ico">📙</span><b>PowerPoint → PDF</b><small>Chuyển .pptx sang PDF — mỗi slide một trang, giữ nội dung chữ.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('html2pdf')"><span class="p-ico">🌐</span><b>HTML → PDF</b><small>Tải file .html lên hoặc dán mã HTML để xuất thành PDF.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('txt2pdf')"><span class="p-ico">📝</span><b>Văn bản → PDF</b><small>Dán văn bản thuần và xuất thành file PDF A4 đọc đẹp.</small></button>
-      </div>
-
-      <div class="pdf-group">Chuyển đổi từ PDF</div>
-      <div class="pdf-grid">
-        <button class="pdf-card" onclick="openPdfTool('pdf2jpg')"><span class="p-ico">🏞</span><b>PDF → JPG</b><small>Xuất từng trang PDF thành ảnh JPG sắc nét (ZIP nếu nhiều trang).</small></button>
-        <button class="pdf-card" onclick="openPdfTool('pdf2word')"><span class="p-ico">📄</span><b>PDF → Word</b><small>Trích chữ từ PDF và tạo file .docx sửa được.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('pdf2excel')"><span class="p-ico">📊</span><b>PDF → Excel</b><small>Trích chữ theo dòng / vị trí trong PDF thành bảng .xlsx.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('pdf2ppt')"><span class="p-ico">📽</span><b>PDF → PowerPoint</b><small>Mỗi trang PDF thành 1 slide .pptx chứa nội dung chữ.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('pdf2txt')"><span class="p-ico">🔤</span><b>Trích xuất văn bản</b><small>Lấy toàn bộ chữ trong PDF ra file .txt, xem trước trên màn hình.</small></button>
-      </div>
-
-      <div class="pdf-group">Chỉnh sửa, bảo mật &amp; so sánh</div>
-      <div class="pdf-grid">
-        <button class="pdf-card" onclick="openPdfTool('editpdf')"><span class="p-ico">✏️</span><b>Thêm chữ vào PDF (Edit)</b><small>Ghi thêm dòng chữ lên một trang bất kỳ (font chuẩn, gõ không dấu).</small></button>
-        <button class="pdf-card" onclick="openPdfTool('pagenum')"><span class="p-ico">🔢</span><b>Đánh số trang</b><small>Thêm số trang kiểu “Trang 1”, “1 / N”… ở chân trang.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('watermark')"><span class="p-ico">💧</span><b>Đóng dấu mờ (Watermark)</b><small>Chữ mờ xiên giữa trang — “BAN HANH NOI BO”, tên công ty… (gõ không dấu).</small></button>
-        <button class="pdf-card" onclick="openPdfTool('sign')"><span class="p-ico">✍️</span><b>Ký tên lên PDF (Sign)</b><small>Vẽ chữ ký bằng chuột / ngón tay rồi đóng lên trang cuối.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('redact')"><span class="p-ico">⬛</span><b>Che thông tin nhạy cảm (Redact)</b><small>Che đen số CCCD, tài khoản, địa chỉ… — trang được dựng lại thành ảnh nên chữ dưới ô đen không copy / khôi phục được.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('unlock')"><span class="p-ico">🔓</span><b>Mở khoá PDF (Unlock)</b><small>Gỡ mật khẩu chủ sở hữu và lưu lại bản PDF không khoá.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('protect')"><span class="p-ico">🔐</span><b>Đặt mật khẩu PDF</b> <span class="pdf-badge">CẦN MÁY CHỦ</span><small>Mã hoá PDF bằng mật khẩu cần phần mềm/máy chủ chuyên dụng — xem giải thích trong công cụ.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('pdfa')"><span class="p-ico">🗄</span><b>Chuyển PDF/A lưu trữ</b> <span class="pdf-badge">CẦN MÁY CHỦ</span><small>Chuẩn lưu trữ PDF/A cần bộ kiểm định chuyên dụng — xem giải thích trong công cụ.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('compare')"><span class="p-ico">🔍</span><b>So sánh 2 PDF</b><small>Đối chiếu nội dung chữ giữa 2 file: giống bao nhiêu %, dòng nào khác.</small></button>
-      </div>
-
-      <div class="pdf-group">AI cho PDF</div>
-      <div class="pdf-grid">
-        <button class="pdf-card" onclick="openPdfTool('ocr')"><span class="p-ico">👁</span><b>OCR tiếng Việt</b><small>Nhận dạng chữ trong PDF scan bằng Tesseract (tải thêm dữ liệu tiếng Việt khi chạy lần đầu).</small></button>
-        <button class="pdf-card" onclick="openPdfTool('pdfsummary')"><span class="p-ico">✦</span><b>Tóm tắt PDF bằng AI</b><small>AI chạy trên trình duyệt trích ý chính từ nội dung PDF.</small></button>
-        <button class="pdf-card" onclick="openPdfTool('pdftranslate')"><span class="p-ico">🌍</span><b>Dịch PDF sang tiếng Anh</b><small>Dịch nhanh bằng từ điển tích hợp, xuất bản dịch .txt.</small></button>
-      </div>
-
-      </div>
 
       <div id="blkDesign">
       <div class="section-title" style="margin-top:30px">🎨 Thiết kế — kiểu Canva Visual Suite</div>
@@ -735,6 +683,92 @@ body.focus .content{max-width:none;padding-top:60px}
           <div class="pdf-status" id="pdfStatus"></div>
           <div class="pdf-result" id="pdfResult"></div>
           <p style="font-size:11.5px;color:var(--muted);line-height:1.6;margin-top:18px">Mọi xử lý chạy ngay trên trình duyệt của sếp (pdf-lib, PDF.js, SheetJS, Mammoth, Tesseract) — tệp không được gửi lên máy chủ. File PDF quá lớn (trên ~50 MB) hoặc nhiều trăm trang có thể chạy chậm trên điện thoại.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PDF SHEET: Công cụ PDF tách riêng một sheet như Thư viện hàm ===== -->
+    <div class="content" id="viewPdfLib" hidden>
+      <div class="editor-shell">
+        <div class="ed-top">
+          <button class="back-btn" onclick="closePdfLib()">← Trang chủ</button>
+          <b style="font-size:16px">📕 Công cụ PDF</b>
+          <span style="font-size:11.5px;color:var(--muted);font-weight:600">28 công cụ chạy ngay trên trình duyệt · 2 mục cần máy chủ</span>
+        </div>
+        <div style="padding:18px clamp(16px,4vw,30px) 28px">
+      <p class="lib-note">Tệp PDF được xử lý ngay trên máy của sếp bằng thư viện pdf-lib &amp; PDF.js — không tải lên máy chủ nào cả. Bấm vào một công cụ để mở bàn làm việc PDF. Riêng 2 mục <b>Đặt mật khẩu</b> và <b>Chuyển PDF/A</b> cần máy chủ chuyên dụng nên được gắn nhãn “CẦN MÁY CHỦ” và <b>không tính vào con số 28</b> công cụ chạy được ở trên.</p>
+          <label class="searchbox">🔍 <input id="pdfSearch" placeholder="Tìm công cụ: gộp, tách, nén, xoay, ký tên, OCR..." oninput="filterPdfLib()"></label>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 2px">
+            <button class="pdf-fchip active" data-pdfcat="all" onclick="setPdfCat('all',this)">Tất cả</button>
+            <button class="pdf-fchip" data-pdfcat="org" onclick="setPdfCat('org',this)">Tổ chức</button>
+            <button class="pdf-fchip" data-pdfcat="conv" onclick="setPdfCat('conv',this)">Chuyển đổi</button>
+            <button class="pdf-fchip" data-pdfcat="edit" onclick="setPdfCat('edit',this)">Chỉnh sửa &amp; bảo mật</button>
+            <button class="pdf-fchip" data-pdfcat="ai" onclick="setPdfCat('ai',this)">AI</button>
+          </div>
+          <div id="pdfLibGroups">
+
+      <div data-pdfgroup="org">
+      <div class="pdf-group">Tổ chức &amp; tối ưu PDF</div>
+      <div class="pdf-grid">
+        <button class="pdf-card" onclick="openPdfTool('merge')"><span class="p-ico">🗂</span><b>Gộp PDF (Merge)</b><small>Nối nhiều file PDF thành một, giữ nguyên thứ tự chọn.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('split')"><span class="p-ico">✂️</span><b>Tách PDF (Split)</b><small>Tách theo khoảng trang, hoặc mỗi trang thành 1 file (ZIP).</small></button>
+        <button class="pdf-card" onclick="openPdfTool('organize')"><span class="p-ico">🔀</span><b>Sắp xếp &amp; trích trang</b><small>Đổi thứ tự trang, xoá trang, trích xuất trang cần lấy.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('compress')"><span class="p-ico">🗜</span><b>Nén PDF (Compress)</b><small>Nén nhẹ giữ vector, hoặc nén mạnh bằng cách dựng lại trang dạng ảnh JPEG.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('rotate')"><span class="p-ico">🔄</span><b>Xoay trang PDF</b><small>Xoay 90° / 180° / 270° cho tất cả trang hoặc khoảng trang chọn.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('crop')"><span class="p-ico">🔲</span><b>Cắt lề PDF (Crop)</b><small>Cắt bớt lề trắng / lề thừa ở 4 cạnh theo % trang — trang gọn và chữ to hơn khi đọc, in.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('repair')"><span class="p-ico">🩹</span><b>Sửa PDF lỗi (Repair)</b><small>Thử đọc lại và ghi file PDF mới sạch cấu trúc khi file gốc bị lỗi nhẹ.</small></button>
+      </div>
+      </div>
+
+      <div data-pdfgroup="conv">
+      <div class="pdf-group">Chuyển đổi sang PDF</div>
+      <div class="pdf-grid">
+        <button class="pdf-card" onclick="openPdfTool('jpg2pdf')"><span class="p-ico">🖼</span><b>Ảnh JPG/PNG → PDF</b><small>Ghép nhiều ảnh thành 1 PDF, vừa trang A4 hoặc giữ kích thước gốc.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('word2pdf')"><span class="p-ico">📘</span><b>Word → PDF</b><small>Chuyển .docx sang PDF ngay trên trình duyệt (Mammoth + dựng trang).</small></button>
+        <button class="pdf-card" onclick="openPdfTool('excel2pdf')"><span class="p-ico">📗</span><b>Excel → PDF</b><small>Chuyển bảng .xlsx / .csv sang PDF khổ ngang, đủ mọi sheet.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('ppt2pdf')"><span class="p-ico">📙</span><b>PowerPoint → PDF</b><small>Chuyển .pptx sang PDF — mỗi slide một trang, giữ nội dung chữ.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('html2pdf')"><span class="p-ico">🌐</span><b>HTML → PDF</b><small>Tải file .html lên hoặc dán mã HTML để xuất thành PDF.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('txt2pdf')"><span class="p-ico">📝</span><b>Văn bản → PDF</b><small>Dán văn bản thuần và xuất thành file PDF A4 đọc đẹp.</small></button>
+      </div>
+      </div>
+
+      <div data-pdfgroup="conv">
+      <div class="pdf-group">Chuyển đổi từ PDF</div>
+      <div class="pdf-grid">
+        <button class="pdf-card" onclick="openPdfTool('pdf2jpg')"><span class="p-ico">🏞</span><b>PDF → JPG</b><small>Xuất từng trang PDF thành ảnh JPG sắc nét (ZIP nếu nhiều trang).</small></button>
+        <button class="pdf-card" onclick="openPdfTool('pdf2word')"><span class="p-ico">📄</span><b>PDF → Word</b><small>Trích chữ từ PDF và tạo file .docx sửa được.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('pdf2excel')"><span class="p-ico">📊</span><b>PDF → Excel</b><small>Trích chữ theo dòng / vị trí trong PDF thành bảng .xlsx.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('pdf2ppt')"><span class="p-ico">📽</span><b>PDF → PowerPoint</b><small>Mỗi trang PDF thành 1 slide .pptx chứa nội dung chữ.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('pdf2txt')"><span class="p-ico">🔤</span><b>Trích xuất văn bản</b><small>Lấy toàn bộ chữ trong PDF ra file .txt, xem trước trên màn hình.</small></button>
+      </div>
+      </div>
+
+      <div data-pdfgroup="edit">
+      <div class="pdf-group">Chỉnh sửa, bảo mật &amp; so sánh</div>
+      <div class="pdf-grid">
+        <button class="pdf-card" onclick="openPdfTool('editpdf')"><span class="p-ico">✏️</span><b>Thêm chữ vào PDF (Edit)</b><small>Ghi thêm dòng chữ lên một trang bất kỳ (font chuẩn, gõ không dấu).</small></button>
+        <button class="pdf-card" onclick="openPdfTool('pagenum')"><span class="p-ico">🔢</span><b>Đánh số trang</b><small>Thêm số trang kiểu “Trang 1”, “1 / N”… ở chân trang.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('watermark')"><span class="p-ico">💧</span><b>Đóng dấu mờ (Watermark)</b><small>Chữ mờ xiên giữa trang — “BAN HANH NOI BO”, tên công ty… (gõ không dấu).</small></button>
+        <button class="pdf-card" onclick="openPdfTool('sign')"><span class="p-ico">✍️</span><b>Ký tên lên PDF (Sign)</b><small>Vẽ chữ ký bằng chuột / ngón tay rồi đóng lên trang cuối.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('redact')"><span class="p-ico">⬛</span><b>Che thông tin nhạy cảm (Redact)</b><small>Che đen số CCCD, tài khoản, địa chỉ… — trang được dựng lại thành ảnh nên chữ dưới ô đen không copy / khôi phục được.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('unlock')"><span class="p-ico">🔓</span><b>Mở khoá PDF (Unlock)</b><small>Gỡ mật khẩu chủ sở hữu và lưu lại bản PDF không khoá.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('protect')"><span class="p-ico">🔐</span><b>Đặt mật khẩu PDF</b> <span class="pdf-badge">CẦN MÁY CHỦ</span><small>Mã hoá PDF bằng mật khẩu cần phần mềm/máy chủ chuyên dụng — xem giải thích trong công cụ.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('pdfa')"><span class="p-ico">🗄</span><b>Chuyển PDF/A lưu trữ</b> <span class="pdf-badge">CẦN MÁY CHỦ</span><small>Chuẩn lưu trữ PDF/A cần bộ kiểm định chuyên dụng — xem giải thích trong công cụ.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('compare')"><span class="p-ico">🔍</span><b>So sánh 2 PDF</b><small>Đối chiếu nội dung chữ giữa 2 file: giống bao nhiêu %, dòng nào khác.</small></button>
+      </div>
+      </div>
+
+      <div data-pdfgroup="ai">
+      <div class="pdf-group">AI cho PDF</div>
+      <div class="pdf-grid">
+        <button class="pdf-card" onclick="openPdfTool('ocr')"><span class="p-ico">👁</span><b>OCR tiếng Việt</b><small>Nhận dạng chữ trong PDF scan bằng Tesseract (tải thêm dữ liệu tiếng Việt khi chạy lần đầu).</small></button>
+        <button class="pdf-card" onclick="openPdfTool('pdfsummary')"><span class="p-ico">✦</span><b>Tóm tắt PDF bằng AI</b><small>AI chạy trên trình duyệt trích ý chính từ nội dung PDF.</small></button>
+        <button class="pdf-card" onclick="openPdfTool('pdftranslate')"><span class="p-ico">🌍</span><b>Dịch PDF sang tiếng Anh</b><small>Dịch nhanh bằng từ điển tích hợp, xuất bản dịch .txt.</small></button>
+      </div>
+      </div>
+
+          </div>
+          <div class="empty-box" id="pdfLibEmpty" hidden>Không thấy công cụ nào khớp — sếp thử từ khoá hoặc nhóm khác nhé.</div>
         </div>
       </div>
     </div>
@@ -1045,7 +1079,7 @@ function filterFolder(name){typeFilter="all";document.getElementById("searchInpu
 
 /* ================= CREATE / OPEN ================= */
 function showEditor(){document.getElementById("viewHome").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewEditor").hidden=false;window.scrollTo(0,0);}
-function goHome(){if(current)saveCurrent();document.getElementById("viewEditor").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;renderFiles();window.scrollTo(0,0);}
+function goHome(){if(current)saveCurrent();document.getElementById("viewEditor").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;renderFiles();window.scrollTo(0,0);}
 function saveCurrent(){if(!current)return;current.name=document.getElementById("edTitle").value;if(current.type!=="xlsx"&&current.type!=="pptx")current.html=document.getElementById("docArea").innerHTML;}
 function createDoc(type){
   var names={docx:"Tài liệu không tên.docx",xlsx:"Bảng tính không tên.xlsx",pptx:"Bản trình bày không tên.pptx",md:"Ghi chú Markdown.md",html:"Trang HTML mới.html",pdf:"Tài liệu PDF.pdf"};
@@ -1223,7 +1257,7 @@ function readMoney(n){
   out=out.trim().replace(/\s+/g," ");return out.charAt(0).toUpperCase()+out.slice(1)+" đồng";
 }
 var TOOL_PAGE={money:1,count:1,case:1,vat:1,days:1,code:1,dedup:1,cv:1};
-function hideAllViews(){["viewHome","viewEditor","viewPdf","viewDesign","viewLib","viewLibItem","viewTool"].forEach(function(id){var el=document.getElementById(id);if(el)el.hidden=true;});}
+function hideAllViews(){["viewHome","viewEditor","viewPdf","viewPdfLib","viewDesign","viewLib","viewLibItem","viewTool"].forEach(function(id){var el=document.getElementById(id);if(el)el.hidden=true;});}
 /* ===== FULL TRANG: đang mở view con (công cụ/soạn thảo/PDF/thiết kế/thư viện) thì tự ẩn thanh công cụ ===== */
 function syncFocusMode(){
   var home=document.getElementById("viewHome");
@@ -1241,7 +1275,7 @@ function toggleNavShown(){
   updateFocusBtn();
 }
 (function(){
-  var ids=["viewHome","viewEditor","viewPdf","viewDesign","viewLib","viewLibItem","viewTool"];
+  var ids=["viewHome","viewEditor","viewPdf","viewPdfLib","viewDesign","viewLib","viewLibItem","viewTool"];
   var obs=new MutationObserver(function(){syncFocusMode();});
   ids.forEach(function(id){var el=document.getElementById(id);if(el)obs.observe(el,{attributes:true,attributeFilter:["hidden"]});});
   syncFocusMode();
@@ -1521,7 +1555,31 @@ pdfsummary:{t:"Tóm tắt PDF bằng AI",d:"AI chạy trên trình duyệt đọ
 pdftranslate:{t:"Dịch PDF sang tiếng Anh",d:"Dịch nhanh nội dung PDF bằng từ điển tích hợp sẵn trong app (giống tính năng dịch của trình soạn thảo) và xuất bản dịch .txt. Thuật ngữ chuyên ngành sếp kiểm tra lại trước khi gửi đối tác nhé.",accept:".pdf",multi:false,min:1,run:runPdfTranslate}
 };
 
-function goPdfSection(){document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewHome").hidden=false;setModule("pdf");setTimeout(function(){document.getElementById("pdfSection").scrollIntoView({behavior:"smooth"})},60);}
+/* ===== SHEET CÔNG CỤ PDF RIÊNG — tách hẳn khỏi trang chủ, giống sheet Thư viện hàm ===== */
+var pdfCat="all";
+function viFold(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\u0111/g,"d");}
+function openPdfLib(){
+  hideAllViews();document.getElementById("viewPdfLib").hidden=false;markModBtns("pdf");window.scrollTo(0,0);filterPdfLib();
+}
+function closePdfLib(){document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewHome").hidden=false;markModBtns(moduleCur);window.scrollTo(0,0);}
+function goPdfSection(){openPdfLib();}
+function setPdfCat(cat,btn){pdfCat=cat;var bs=document.querySelectorAll("[data-pdfcat]");for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i]===btn);filterPdfLib();}
+function filterPdfLib(){
+  var inp=document.getElementById("pdfSearch");if(!inp)return;
+  var q=viFold(inp.value).trim();
+  var groups=document.querySelectorAll("#pdfLibGroups [data-pdfgroup]");var any=false;
+  for(var i=0;i<groups.length;i++){
+    var g=groups[i];var inCat=(pdfCat==="all"||g.getAttribute("data-pdfgroup")===pdfCat);
+    var cards=g.querySelectorAll(".pdf-card");var vis=0;
+    for(var j=0;j<cards.length;j++){
+      var ok=inCat&&(!q||viFold(cards[j].textContent).indexOf(q)>-1);
+      cards[j].style.display=ok?"":"none";if(ok)vis++;
+    }
+    g.style.display=(inCat&&vis>0)?"":"none";
+    if(inCat&&vis>0)any=true;
+  }
+  document.getElementById("pdfLibEmpty").hidden=any;
+}
 function openPdfTool(key){
   if(!window.PDFLib){toast("Chưa tải được thư viện PDF (cần mạng) — sếp thử tải lại trang nhé");return;}
   PDFT.tool=key;PDFT.files=[];
@@ -1535,12 +1593,12 @@ function openPdfTool(key){
   document.getElementById("pdfStatus").textContent="";
   document.getElementById("pdfResult").innerHTML="";
   renderPdfFileList();
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;var vl2=document.getElementById("viewLib");if(vl2)vl2.hidden=true;document.getElementById("viewPdf").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewPdfLib").hidden=true;var vl2=document.getElementById("viewLib");if(vl2)vl2.hidden=true;document.getElementById("viewPdf").hidden=false;
   window.scrollTo(0,0);
   if(key==="sign")initSigPad();
   if(key==="protect"||key==="pdfa")runPdfTool();
 }
-function closePdfTool(){document.getElementById("viewPdf").hidden=true;document.getElementById("viewHome").hidden=false;setModule("pdf");setTimeout(function(){document.getElementById("pdfSection").scrollIntoView({behavior:"smooth"})},60);}
+function closePdfTool(){document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=false;window.scrollTo(0,0);}
 function pdfOptionsHtml(key){
   var L=function(id,label,inner){return '<div><label class="fl" for="'+id+'">'+label+'</label>'+inner+'</div>';};
   var T=function(id,val,ph){return '<input type="text" id="'+id+'" value="'+(val||"")+'" placeholder="'+(ph||"")+'">';};
@@ -2081,7 +2139,7 @@ var palettes=[
 var D={sizeKey:"post",dw:1080,dh:1080,els:[],selId:null,nextId:1,scale:0.6,drawOn:false,brand:{c1:"#217346",c2:"#ffc000",font:"'Be Vietnam Pro',sans-serif"}};
 function dStage(){return document.getElementById("stage");}
 function openDesign(preset){
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;var vl3=document.getElementById("viewLib");if(vl3)vl3.hidden=true;document.getElementById("viewDesign").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;var vl3=document.getElementById("viewLib");if(vl3)vl3.hidden=true;document.getElementById("viewDesign").hidden=false;
   var sel=document.getElementById("dSizeSel");
   if(!sel.options.length){sel.innerHTML=Object.keys(designSizes).map(function(k){return '<option value="'+k+'">'+designSizes[k].label+'</option>';}).join("");}
   if(!document.getElementById("dBgSwatches").children.length){
@@ -2338,11 +2396,12 @@ var moduleCur="doc";
 var MOD_LABEL={all:"Tất cả",doc:"Tài liệu",sheet:"Bảng tính",slides:"Bản trình bày",pdf:"PDF",design:"Thiết kế",excel:"Hàm Excel",word:"Hàm Word"};
 var UTIL_MOD=["sheet","doc","doc","ai","sheet","all","all","doc","doc"];
 function modShowHome(){
-  document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewLib").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewHome").hidden=false;
+  document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewLib").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewHome").hidden=false;
 }
 function setModule(m){
   if(m==="ai"){openAI();return;}
   if(m==="excel"||m==="word"){openLib(m);markModBtns(m);return;}
+  if(m==="pdf"){openPdfLib();return;}
   moduleCur=m;modShowHome();markModBtns(m);
   document.getElementById("modHint").innerHTML=(m==="all")?"Đang xem <b>Tất cả</b> — toàn bộ mẫu, công cụ và tệp của mọi mục.":"Đang xem mục <b>"+MOD_LABEL[m]+"</b> — trang chỉ hiện mẫu, công cụ và tệp của mục này. Bấm <b>Tất cả</b> khi muốn xem toàn bộ.";
   var tplCards=document.querySelectorAll("#tplGrid .tpl-card");
@@ -2351,7 +2410,6 @@ function setModule(m){
   var uCards=document.querySelectorAll("#blkUtils .util-card");
   for(var j=0;j<uCards.length;j++){var um=UTIL_MOD[j]||"all";uCards[j].style.display=(m==="all"||um==="all"||um===m)?"":"none";}
   document.getElementById("blkUtils").style.display=(m==="all"||m==="doc"||m==="sheet"||m==="slides")?"":"none";
-  document.getElementById("blkPdf").style.display=(m==="all"||m==="pdf")?"":"none";
   document.getElementById("blkDesign").style.display=(m==="all"||m==="design")?"":"none";
   document.getElementById("blkFiles").style.display=(m==="design")?"none":"";
   var tmap={all:"all",doc:"docx",sheet:"xlsx",slides:"pptx",pdf:"pdf"};
@@ -2445,7 +2503,7 @@ function setLibTab(t){
   if(t==="excel")renderLib();else renderWord();
 }
 function openLib(tab){
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewLib").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewLib").hidden=false;
   window.scrollTo(0,0);setLibTab(tab||"excel");
 }
 function closeLib(){closeLibHome();}
