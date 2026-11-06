@@ -169,18 +169,6 @@ table.sheet td[contenteditable]{outline:none}table.sheet td:focus{background:#e9
 @media(prefers-color-scheme:dark){.sl-row input[type=text]{background:#1d2a22;color:#eef7f0}}
 .sl-row select{border:1.5px solid var(--line);border-radius:10px;padding:9px 10px;font-size:12.5px;font-weight:600;background:#fff;color:#243528}
 .sl-note{font-size:11.5px;color:var(--muted);line-height:1.6;margin-top:10px}
-.sl-tpl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:10px}
-.sl-tpl{border:1.5px solid var(--line);border-radius:12px;padding:10px;text-align:left;background:#fff;min-height:104px;display:flex;flex-direction:column;gap:6px}
-@media(prefers-color-scheme:dark){.sl-tpl{background:#223028}}
-.sl-tpl .prev{height:44px;border-radius:8px;position:relative;overflow:hidden;flex-shrink:0}
-.sl-tpl .prev i{position:absolute;left:8px;top:8px;width:55%;height:7px;border-radius:4px;display:block}
-.sl-tpl .prev u{position:absolute;left:8px;top:21px;width:38%;height:5px;border-radius:4px;display:block;text-decoration:none}
-.sl-tpl b{font-size:12.5px;line-height:1.3}
-.sl-tpl small{color:var(--muted);font-size:11px}
-.sl-tpl .mk{margin-top:auto;align-self:flex-start;border:0;background:var(--excel);color:#fff;border-radius:8px;padding:6px 11px;font-size:11.5px;font-weight:700}
-.sl-chip{border:1px solid #b9d6c2;background:#fff;color:#243528;border-radius:99px;padding:6px 12px;font-size:12px;font-weight:700}
-.sl-chip.active{background:var(--excel);color:#fff;border-color:var(--excel)}
-@media(prefers-color-scheme:dark){.sl-chip{background:#223028;color:#eef7f0}}
 .slide-card{position:relative;overflow:hidden;cursor:pointer}
 .slide-card.sel{outline:3px solid var(--excel);outline-offset:1px}
 .slide-card .bar{position:absolute;left:0;top:0;bottom:0;width:7px}
@@ -222,7 +210,7 @@ table.sheet td[contenteditable]{outline:none}table.sheet td:focus{background:#e9
 .anim-fade{animation:pFade .45s ease}.anim-slide{animation:pSlide .45s ease}.anim-zoom{animation:pZoom .45s ease}
 .sl-ver-item{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-radius:11px;padding:9px 12px;margin-bottom:8px;font-size:12.5px}
 .sl-ver-item small{display:block;color:var(--muted)}
-/* ===== SLIDESAI STUDIO: 3 bước + dàn ý + kho 81 mẫu + Brand Kit ===== */
+/* ===== STUDIO SLIDE: 2 bước + dàn ý + Brand Kit ===== */
 .sl-steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
 .sl-step{font-size:11.5px;font-weight:800;color:var(--excel-dark);background:#fff;border:1px solid #bfe3cc;border-radius:99px;padding:5px 11px}
 @media(prefers-color-scheme:dark){.sl-step{background:#223028;color:#8fe3ae}}
@@ -244,6 +232,10 @@ table.sheet td[contenteditable]{outline:none}table.sheet td:focus{background:#e9
 .ol-fields textarea{min-height:34px;resize:vertical;line-height:1.45}
 .ol-btns{display:flex;flex-direction:column;gap:4px}
 .ol-btns button{border:1px solid rgba(0,0,0,.14);background:rgba(255,255,255,.75);color:#243528;border-radius:7px;padding:3px 8px;font-size:11px;font-weight:700}
+
+.sl-chip{border:1px solid #b9d6c2;background:#fff;color:#243528;border-radius:99px;padding:6px 12px;font-size:12px;font-weight:700}
+.sl-chip.active{background:var(--excel);color:#fff;border-color:var(--excel)}
+@media(prefers-color-scheme:dark){.sl-chip{background:#223028;color:#eef7f0}}
 .sl-search{flex:1;min-width:180px;border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;font-size:13px;background:#fff;color:#1c1c1c;outline:0}
 @media(prefers-color-scheme:dark){.sl-search{background:#1d2a22;color:#eef7f0}}
 .viz .venn{position:relative;height:64px}
@@ -590,8 +582,8 @@ button:active{transform:scale(.975)}
 .ai-bar button:hover{transform:translateY(-1px);box-shadow:var(--sh-sm)}
 
 /* --- Thẻ: bo tròn lớn, bóng mềm, nhấc nhẹ khi hover --- */
-.create-card,.tpl-card,.util-card,.stat-card,.pdf-card,.sl-tpl{border-radius:20px;border-color:var(--line);box-shadow:var(--sh-sm);transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s var(--ease)}
-.create-card:hover,.tpl-card:hover,.util-card:hover,.pdf-card:hover,.sl-tpl:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:#bcd6c3}
+.create-card,.tpl-card,.util-card,.stat-card,.pdf-card{border-radius:20px;border-color:var(--line);box-shadow:var(--sh-sm);transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s var(--ease)}
+.create-card:hover,.tpl-card:hover,.util-card:hover,.pdf-card:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:#bcd6c3}
 .file-row{border-radius:16px;box-shadow:var(--sh-sm);transition:transform .22s var(--ease),box-shadow .22s var(--ease)}
 .file-row:hover{transform:translateX(3px);box-shadow:var(--sh-md)}
 .ficon{border-radius:13px;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 4px 10px rgba(16,74,44,.14)}
@@ -644,8 +636,6 @@ button:active{transform:scale(.975)}
 .slide-card.sel{outline:3px solid var(--excel);box-shadow:0 0 0 5px rgba(30,158,98,.14),var(--sh-md)}
 .slide-tools button{border-radius:9px;transition:all .15s var(--ease)}
 .slide-tools button:hover{transform:translateY(-1px);box-shadow:var(--sh-sm)}
-.sl-tpl .prev{border-radius:12px;box-shadow:inset 0 0 0 1px rgba(16,74,44,.08)}
-.sl-tpl .mk{background:linear-gradient(135deg,#27b06c,#15803d);border-radius:10px;box-shadow:0 4px 10px rgba(21,128,61,.25)}
 .present .stage{border-radius:22px}
 .present .pnav button,.present .px{border-radius:12px;backdrop-filter:blur(8px)}
 
@@ -930,9 +920,9 @@ input[type=range]{accent-color:var(--excel)}
         <div id="slidesArea" hidden>
           <div class="sl-sec">
             <div class="sl-box">
-              <h4>✦ Tạo bài trình bày kiểu SlidesAI — quy trình 3 bước</h4>
-              <div class="sl-steps"><span class="sl-step">Bước 1 · Nhập nội dung</span><span class="sl-step">Bước 2 · Sửa dàn ý</span><span class="sl-step">Bước 3 · Chọn mẫu &amp; xuất file</span></div>
-              <p>Giống cách SlidesAI hoạt động: sếp nhập chủ đề, dán ghi chú / văn bản / kịch bản, tải tệp hoặc dán link — AI (chạy ngay trên trình duyệt) sẽ dựng dàn ý trước. Sếp sửa từng dòng dàn ý, kéo thả đổi thứ tự, rồi mới sinh slide theo mẫu đã chọn ở Bước 3.</p>
+              <h4>✦ Tạo bài trình bày bằng AI — quy trình 2 bước</h4>
+              <div class="sl-steps"><span class="sl-step">Bước 1 · Nhập nội dung &amp; dựng dàn ý</span><span class="sl-step">Bước 2 · Thiết kế &amp; xuất file</span></div>
+              <p>Sếp nhập chủ đề, dán ghi chú / văn bản / kịch bản, tải tệp hoặc dán link — AI (chạy ngay trên trình duyệt) sẽ dựng dàn ý trước. Sếp sửa từng dòng dàn ý, kéo thả đổi thứ tự, rồi thiết kế và xuất file .pptx / PDF / PNG ngay ở Bước 2.</p>
               <div class="sl-tabs" id="slSrcTabs">
                 <button class="sl-tab active" data-src="topic" onclick="setSlSrc('topic',this)">💡 Chủ đề</button>
                 <button class="sl-tab" data-src="notes" onclick="setSlSrc('notes',this)">📝 Ghi chú / văn bản</button>
@@ -974,8 +964,8 @@ input[type=range]{accent-color:var(--excel)}
           </div>
           <div class="sl-sec" id="slOutlineBox" hidden>
             <div class="sl-box">
-              <h4>📋 Bước 2 · Dàn ý — sửa từng dòng, kéo ⠿ hoặc bấm ↑ ↓ để đổi thứ tự slide</h4>
-              <p>Mỗi mục dàn ý sẽ thành đúng một slide: dòng trên là tiêu đề slide, dòng dưới là ý chính / nội dung. Sửa xong bấm “Tạo slide từ dàn ý này” — slide sẽ dùng mẫu đang chọn ở Bước 3 bên dưới và tự chèn biểu đồ / sơ đồ khi mục có số liệu, quy trình, mốc thời gian…</p>
+              <h4>📋 Bước 1 (tiếp) · Dàn ý — sửa từng dòng, kéo ⠿ hoặc bấm ↑ ↓ để đổi thứ tự slide</h4>
+              <p>Mỗi mục dàn ý sẽ thành đúng một slide: dòng trên là tiêu đề slide, dòng dưới là ý chính / nội dung. Sửa xong bấm “Tạo slide từ dàn ý này” — slide dùng phong cách thiết kế hiện tại (đổi bằng AI Design hoặc Brand Kit ở Bước 2 bên dưới) và tự chèn biểu đồ / sơ đồ khi mục có số liệu, quy trình, mốc thời gian…</p>
               <div class="ol-list" id="olList"></div>
               <div class="sl-row" style="margin-top:10px">
                 <button class="btn btn-ghost" onclick="olAdd(-1)">＋ Thêm mục dàn ý</button>
@@ -984,40 +974,9 @@ input[type=range]{accent-color:var(--excel)}
               </div>
             </div>
           </div>
+          
           <div class="sl-sec">
-            <h4 style="margin:0 0 2px;font-size:13.5px;color:var(--excel-dark)">🎞 Bước 3 · Kho mẫu kiểu SlidesAI — 81 mẫu có tên thật, bấm “Dùng mẫu này” là tạo ngay bộ slide</h4>
-            <div class="sl-row" style="margin-top:8px">
-              <input type="text" class="sl-search" id="slTplSearch" placeholder="🔍 Tìm mẫu: pitch deck, quiz, timeline, portfolio..." oninput="slTplQuery=this.value;renderTplGrid()">
-              <span style="font-size:11.5px;color:var(--muted)" id="slTplCount"></span>
-            </div>
-            <div class="sl-row" id="slStyleChips" style="margin-top:8px">
-              <span style="font-size:11.5px;font-weight:800;color:var(--muted)">PHONG CÁCH:</span>
-              <button class="sl-chip active" onclick="setSlStyle('all',this)">Tất cả</button>
-              <button class="sl-chip" onclick="setSlStyle('professional',this)">Professional</button>
-              <button class="sl-chip" onclick="setSlStyle('fun',this)">Fun</button>
-              <button class="sl-chip" onclick="setSlStyle('modern',this)">Modern</button>
-              <button class="sl-chip" onclick="setSlStyle('luxury',this)">Luxury</button>
-              <button class="sl-chip" onclick="setSlStyle('diverse',this)">Diverse</button>
-              <button class="sl-chip" onclick="setSlStyle('creative',this)">Creative</button>
-              <button class="sl-chip" onclick="setSlStyle('dark',this)">Dark</button>
-              <button class="sl-chip" onclick="setSlStyle('classic',this)">Classic</button>
-              <button class="sl-chip" onclick="setSlStyle('simple',this)">Simple</button>
-            </div>
-            <div class="sl-row" id="slTplChips" style="margin-top:8px">
-              <span style="font-size:11.5px;font-weight:800;color:var(--muted)">NHÓM:</span>
-              <button class="sl-chip active" onclick="setSlTplGroup('all',this)">Tất cả</button>
-              <button class="sl-chip" onclick="setSlTplGroup('business',this)">Kinh doanh</button>
-              <button class="sl-chip" onclick="setSlTplGroup('education',this)">Giáo dục</button>
-              <button class="sl-chip" onclick="setSlTplGroup('health',this)">Y tế</button>
-              <button class="sl-chip" onclick="setSlTplGroup('infographic',this)">Infographic</button>
-              <button class="sl-chip" onclick="setSlTplGroup('marketing',this)">Marketing</button>
-              <button class="sl-chip" onclick="setSlTplGroup('pitch',this)">Pitch Deck</button>
-              <button class="sl-chip" onclick="setSlTplGroup('portfolio',this)">Portfolio</button>
-              <button class="sl-chip" onclick="setSlTplGroup('workshop',this)">Workshop</button>
-            </div>
-            <div class="sl-tpl-grid" id="slTplGrid"></div>
-          </div>
-          <div class="sl-sec">
+            <h4 style="margin:0 0 8px;font-size:13.5px;color:var(--excel-dark)">🎨 Bước 2 · Thiết kế &amp; xuất file</h4>
             <div class="sl-row">
               <button class="btn btn-ghost" onclick="addSlide()">＋ Thêm slide</button>
               <button class="btn btn-ghost" onclick="delSlide()">− Xoá slide cuối</button>
@@ -1048,12 +1007,12 @@ input[type=range]{accent-color:var(--excel)}
               <button class="btn btn-ghost" onclick="exportSlidesPdf()">⬇ Xuất PDF</button>
               <button class="btn btn-ghost" onclick="exportSlidesPng()">⬇ Xuất PNG</button>
             </div>
-            <p class="sl-note">Bấm vào một slide để chọn slide đó (viền xanh) — các nút Chèn biểu đồ / bảng / sơ đồ / ảnh sẽ áp vào slide đang chọn. Mỗi slide có nút ↑ ↓ đổi thứ tự, ⧉ nhân bản, ✕ xoá. Sửa chữ trực tiếp trên slide như trước. <b>Chưa có trên bản chạy trình duyệt</b> (các mục này của SlidesAI cần máy chủ / tài khoản trả phí, app không giả lập): gói Pro &amp; Premium, mô hình AI Advanced / Ultra, tải font riêng lên, cộng tác thời gian thực nhiều người cùng sửa, tìm kiếm tài liệu &amp; trích dẫn nguồn trên mạng.</p>
+            <p class="sl-note">Bấm vào một slide để chọn slide đó (viền xanh) — các nút Chèn biểu đồ / bảng / sơ đồ / ảnh sẽ áp vào slide đang chọn. Mỗi slide có nút ↑ ↓ đổi thứ tự, ⧉ nhân bản, ✕ xoá. Sửa chữ trực tiếp trên slide như trước. <b>Chưa có trên bản chạy trình duyệt</b> (các mục này cần máy chủ / tài khoản trả phí, app không giả lập): mô hình AI nâng cao, tải font riêng lên, cộng tác thời gian thực nhiều người cùng sửa, tìm kiếm tài liệu &amp; trích dẫn nguồn trên mạng.</p>
           </div>
           <div class="sl-sec">
             <div class="sl-box">
-              <h4>🎨 Brand Kit — bộ nhận diện riêng của sếp (miễn phí 1 bộ như gói free của SlidesAI)</h4>
-              <p>Chọn màu nền, màu chữ, màu nhấn và font chữ của riêng mình — áp vào toàn bộ bộ slide ngay, hoặc lưu thành mẫu riêng trong kho mẫu để dùng lại. Font dùng các font có sẵn trên máy / trong app; tính năng <b>tải font riêng lên</b> là mục trả phí của SlidesAI nên chưa có ở bản chạy trình duyệt.</p>
+              <h4>🎨 Brand Kit — bộ nhận diện riêng của sếp</h4>
+              <p>Chọn màu nền, màu chữ, màu nhấn và font chữ của riêng mình — áp vào toàn bộ bộ slide ngay. Font dùng các font có sẵn trên máy / trong app; tính năng <b>tải font riêng lên</b> cần tài khoản trả phí nên chưa có ở bản chạy trình duyệt.</p>
               <div class="bk-row">
                 <label>Tên bộ / thương hiệu<input type="text" id="bkName" placeholder="Ví dụ: Công ty ABC" style="min-width:170px"></label>
                 <label>Màu nền<input type="color" id="bkBg" value="#eef7f1"></label>
@@ -1061,7 +1020,6 @@ input[type=range]{accent-color:var(--excel)}
                 <label>Màu nhấn<input type="color" id="bkAccent" value="#217346"></label>
                 <label>Font chữ<select id="bkFont"><option value="'Be Vietnam Pro',Arial,sans-serif">Be Vietnam Pro (mặc định)</option><option value="Arial,sans-serif">Arial</option><option value="Georgia,serif">Georgia</option><option value="'Times New Roman',serif">Times New Roman</option><option value="Verdana,sans-serif">Verdana</option><option value="'Trebuchet MS',sans-serif">Trebuchet MS</option></select></label>
                 <button class="btn btn-red" onclick="applyBrandKit()">Áp dụng Brand Kit</button>
-                <button class="btn btn-ghost" onclick="saveBrandKitAsTemplate()">Lưu thành mẫu riêng</button>
               </div>
             </div>
           </div>
@@ -1069,9 +1027,9 @@ input[type=range]{accent-color:var(--excel)}
           <div class="sl-sec">
             <div class="sl-chat">
               <h4 style="margin:0 0 8px;font-size:13.5px;color:var(--excel-dark)">✦ Ask AI — chat với AI để viết lại / tạo slide</h4>
-              <div class="sl-chatlog" id="slChatLog"><div class="m bot">Sếp gõ yêu cầu, ví dụ: “viết lại slide 2 trang trọng hơn”, “rút ngắn slide đang chọn”, “đổi phong cách sang mẫu Business Pitch Deck”, “thêm slide kết luận”. Với lệnh viết lại / rút ngắn, AI sẽ đưa gợi ý kèm nút <b>Chấp nhận</b> / <b>Từ chối</b> — sếp duyệt rồi mới áp vào slide, không sửa thẳng.</div></div>
+              <div class="sl-chatlog" id="slChatLog"><div class="m bot">Sếp gõ yêu cầu, ví dụ: “viết lại slide 2 trang trọng hơn”, “rút ngắn slide đang chọn”, “đổi phong cách”, “thêm slide kết luận”. Với lệnh viết lại / rút ngắn, AI sẽ đưa gợi ý kèm nút <b>Chấp nhận</b> / <b>Từ chối</b> — sếp duyệt rồi mới áp vào slide, không sửa thẳng.</div></div>
               <div class="sl-row">
-                <input type="text" id="slChatInput" placeholder="Ví dụ: viết lại slide 2 hay hơn · đổi phong cách Luxury · rút ngắn tất cả" onkeydown="if(event.key==='Enter')slideChatSend()">
+                <input type="text" id="slChatInput" placeholder="Ví dụ: viết lại slide 2 hay hơn · đổi phong cách · rút ngắn tất cả" onkeydown="if(event.key==='Enter')slideChatSend()">
                 <button class="btn btn-red" onclick="slideChatSend()">Gửi ✦</button>
               </div>
             </div>
@@ -1785,8 +1743,6 @@ function aiSheet(){sheetData=[["STT","Hạng mục","Đơn vị","Số lượng"
 
 /* ---- Slides ---- */
 /* ---- SLIDES STUDIO (kiểu SlidesAI) ---- */
-var SL_STYLE={professional:"Professional",fun:"Fun",modern:"Modern",luxury:"Luxury",diverse:"Diverse",creative:"Creative",dark:"Dark",classic:"Classic",simple:"Simple"};
-var SL_GROUP={business:"Kinh doanh",education:"Giáo dục",health:"Y tế",infographic:"Infographic",marketing:"Marketing",pitch:"Pitch Deck",portfolio:"Portfolio",workshop:"Workshop"};
 var SL_PAL=[
  {bg:"#eef4fb",ink:"#16283f",sub:"#51637c",accent:"#2563eb"},
  {bg:"#e7f6ef",ink:"#0f3d2c",sub:"#4c7263",accent:"#0e9f6e"},
@@ -1807,155 +1763,13 @@ var SL_PAL=[
  {bg:"#f7f7f5",ink:"#2b2b28",sub:"#6d6d66",accent:"#217346"},
  {bg:"#ffffff",ink:"#1c2b21",sub:"#5f7265",accent:"#217346"}
 ];
-var SLIDE_TEMPLATES=[
-["Medical Presentation","professional","health",1],["Educator Portfolio","classic","portfolio",14],["Portfolio Presentation","modern","portfolio",5],["Thesis Defense","classic","education",14],["Post Event Recap","fun","business",2],
-["Social Media Strategy","creative","marketing",10],["Research Proposal","professional","education",0],["Monthly Lesson Plan","simple","education",17],["Quiz","fun","education",3],["Mind Maps","creative","infographic",11],
-["Icons Pack","modern","infographic",4],["Organizational Chart","professional","infographic",0],["Venn Diagram","modern","infographic",5],["Table of Contents","simple","business",16],["Flow Chart","professional","infographic",1],
-["Harvey Balls","professional","infographic",0],["Border","simple","education",16],["Calendar","simple","business",17],["Jeopardy","fun","education",2],["Pie Chart","modern","infographic",4],
-["Video","dark","marketing",12],["Timeline","classic","infographic",15],["Table","simple","infographic",16],["Agenda","professional","business",1],["Tech Startup","modern","pitch",5],
-["Stem Activity","fun","education",3],["Coding and Computational Thinking","dark","education",12],["AI App Pitch Deck","modern","pitch",5],["Real Estate Proposal","luxury","business",6],["Health Tech Startup Pitch Deck","modern","pitch",4],
-["Project Grant Proposal","professional","business",0],["Case Study","classic","business",14],["Investment Proposal","luxury","pitch",6],["Business Proposal Pitch Deck","professional","pitch",1],["Startup Launch Strategy","creative","pitch",10],
-["Scaling Startup","modern","pitch",5],["Startup Funding Pitch Deck","dark","pitch",13],["Construction Project Proposal","professional","business",0],["Service Proposal","classic","business",14],["Event Sponsorship Pitch Deck","fun","pitch",2],
-["Educational Lesson","simple","education",17],["Advancing Healthcare","professional","health",1],["Film Studies – Film Pitch Deck","dark","pitch",12],["Creative Brief","creative","marketing",10],["Workshop","diverse","workshop",8],
-["Research Presentation","classic","education",14],["Portfolio Showcase","diverse","portfolio",9],["Free Design Proposal","creative","business",11],["Product Launch","modern","marketing",4],["Company Report","professional","business",0],
-["Business Pitch Deck","professional","pitch",1],["Travel And Tourism Pitch Deck","fun","pitch",3],["Saas Investor Pitch Deck","modern","pitch",5],["Influencer Marketing","diverse","marketing",9],["Fintech Pitch Deck","dark","pitch",13],
-["Next-Gen Cloud Service","modern","business",5],["Back To School","fun","education",2],["Fundraising Event Pitch Deck","luxury","pitch",7],["Writing Workshop","classic","workshop",15],["Figurative Language","creative","education",11],
-["Grammar","simple","education",16],["E-Learning","modern","education",4],["Math Lesson Plan","professional","education",0],["Yearbook","fun","education",3],["Literature","classic","education",15],
-["Resume","simple","portfolio",17],["Newton's Laws of Motion","professional","education",1],["Webinar Recap","modern","business",5],["Internship Report","classic","business",14],["Parents – Teachers Conference","diverse","education",8],
-["Classroom Planner","simple","education",17],["Tech Startup Pitch Deck","dark","pitch",12],["Homeschooling","diverse","education",9],["Class Orientation","fun","education",2],["Healthcare Education","professional","health",1],
-["Classroom Quiz","fun","education",3],["Sports","diverse","marketing",8],["Vocabulary Flashcards","fun","education",2],["English Grammar","simple","education",16],["Comparison Chart","modern","infographic",5],
-["Countdown Timer","dark","infographic",13]
-].map(function(r){return {name:r[0],st:r[1],g:r[2],th:JSON.parse(JSON.stringify(SL_PAL[r[3]]))};});
-var slideTheme=JSON.parse(JSON.stringify((SLIDE_TEMPLATES.filter(function(t){return t.name==="Business Pitch Deck";})[0]||SLIDE_TEMPLATES[0]).th)), slideThemeName="Business Pitch Deck";
-var selSlide=0, slideTrans="fade", slideSnaps=[], slTplGroup="all", slTplStyle="all", slTplQuery="", presentIdx=0;
+var slideTheme={bg:"#eef7f1",ink:"#173b2a",sub:"#56755f",accent:"#217346"}, slideThemeName="Thiết kế mặc định";
+var SL_CYCLE=[{name:"Thiết kế mặc định",th:{bg:"#eef7f1",ink:"#173b2a",sub:"#56755f",accent:"#217346"}},{name:"Xanh biển",th:{bg:"#eef4fb",ink:"#16283f",sub:"#51637c",accent:"#2563eb"}},{name:"Tối sang trọng",th:{bg:"#17181c",ink:"#f3e9cf",sub:"#b9ac8d",accent:"#d4af37"}},{name:"Ấm áp",th:{bg:"#fff3ee",ink:"#4a2417",sub:"#8a6053",accent:"#e85d3d"}},{name:"Hồng phấn",th:{bg:"#fdf0f3",ink:"#4d2230",sub:"#8a5f6d",accent:"#db2777"}}];
+var selSlide=0, slideTrans="fade", slideSnaps=[], presentIdx=0;
 var slOutline=[], slSrcTab="topic", slPending=null, slQAnim=false, slDragIdx=-1;
 var brandFont="'Be Vietnam Pro',Arial,sans-serif", brandFontPptx="Arial";
 function slNd(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d");}
-function renderTplGrid(){
-  var box=document.getElementById("slTplGrid");if(!box)return;
-  var q=slNd(slTplQuery||"").trim(),shown=0;
-  box.innerHTML=SLIDE_TEMPLATES.map(function(t,i){
-    if(slTplGroup!=="all"&&t.g!==slTplGroup)return "";
-    if(slTplStyle!=="all"&&t.st!==slTplStyle)return "";
-    if(q&&slNd(t.name+" "+SL_STYLE[t.st]+" "+SL_GROUP[t.g]).indexOf(q)===-1)return "";
-    shown++;
-    return '<div class="sl-tpl"><span class="prev" style="background:'+t.th.bg+'"><i style="background:'+t.th.accent+'"></i><u style="background:'+t.th.sub+'"></u></span><b>'+esc(t.name)+'</b><small>'+SL_STYLE[t.st]+' · '+SL_GROUP[t.g]+' — bấm để tạo ngay bộ slide theo mẫu này.</small><button class="mk" onclick="applyTemplate('+i+')">✦ Dùng mẫu này</button></div>';
-  }).join("");
-  var cnt=document.getElementById("slTplCount");if(cnt)cnt.textContent="Đang hiện "+shown+" / "+SLIDE_TEMPLATES.length+" mẫu";
-  if(!shown)box.innerHTML='<div class="empty-box">Không thấy mẫu nào khớp bộ lọc — sếp thử từ khoá hoặc phong cách / nhóm khác nhé.</div>';
-}
-function setSlTplGroup(g,btn){slTplGroup=g;var bs=document.querySelectorAll("#slTplChips .sl-chip");for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i]===btn);renderTplGrid();}
-function setSlStyle(g,btn){slTplStyle=g;var bs=document.querySelectorAll("#slStyleChips .sl-chip");for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i]===btn);renderTplGrid();}
-function tplKind(name){
-  var n=slNd(name);
-  if(/quiz|jeopardy|flashcards/.test(n))return "quiz";
-  if(/venn/.test(n))return "venn";
-  if(/flow chart/.test(n))return "flow";
-  if(/organizational chart/.test(n))return "org";
-  if(/pie chart/.test(n))return "pie";
-  if(/comparison chart/.test(n))return "compare";
-  if(/mind maps/.test(n))return "mindmap";
-  if(/timeline/.test(n))return "timeline";
-  if(/table of contents/.test(n))return "toc";
-  if(n==="agenda")return "agenda";
-  if(/calendar|planner/.test(n))return "calendar";
-  if(/harvey/.test(n))return "harvey";
-  if(n==="table")return "table";
-  if(/countdown/.test(n))return "countdown";
-  if(n==="video")return "video";
-  if(/pitch/.test(n))return "pitch";
-  if(/proposal/.test(n))return "proposal";
-  if(/workshop/.test(n))return "workshop";
-  if(/portfolio|resume/.test(n))return "portfolio";
-  if(/medical|healthcare|health/.test(n))return "health";
-  if(/lesson|grammar|language|literature|newton|stem|educational|e-learning|homeschooling|orientation|back to school|yearbook|coding/.test(n))return "lesson";
-  if(/report|recap/.test(n))return "report";
-  return "general";
-}
-function tplSlides(t,topic){
-  var T=(topic||"").trim()||t.name, kind=tplKind(t.name);
-  var title={t:T,d:"Bài trình bày theo mẫu "+t.name+" · Phong cách "+SL_STYLE[t.st]+" · Nhóm "+SL_GROUP[t.g]+" · Người trình bày · 2026"};
-  var end={t:"Kết luận & bước tiếp theo",d:"Thông điệp chốt của bài trình bày và việc cần thống nhất ngay sau buổi này."};
-  if(kind==="quiz")return [title,
-    {t:"Câu hỏi 1",d:"Đọc câu hỏi, chọn một đáp án đúng trong 4 lựa chọn A · B · C · D. Sếp sửa câu hỏi và đáp án trực tiếp trên slide này."},
-    {t:"Câu hỏi 2",d:"Câu hỏi tiếp theo — tăng dần độ khó. Có thể chèn thêm ảnh minh hoạ bằng nút Chèn ảnh / GIF."},
-    {t:"Câu hỏi 3",d:"Câu hỏi cuối của vòng này. Dùng hiệu ứng Quick Animate để phần hỏi đáp sinh động hơn."},
-    {t:"Đáp án & giải thích",d:"Công bố đáp án đúng kèm giải thích ngắn cho từng câu — phần này giúp người học nhớ lâu nhất."},
-    {t:"Tổng kết điểm",d:"Bảng điểm / xếp hạng sau buổi quiz.",viz:{type:"kpi",items:[["Đội A","120 điểm"],["Đội B","105 điểm"],["Đội C","98 điểm"]]}},end];
-  if(kind==="venn")return [title,{t:"Sơ đồ Venn — điểm giống & khác",d:"Hai vòng tròn giao nhau: phần riêng của mỗi khái niệm và phần giao nhau ở giữa.",viz:{type:"venn",items:["Khái niệm A","Khái niệm B"],center:"Điểm chung"}},{t:"Phân tích phần giao nhau",d:"Những điểm chung quan trọng nhất và ý nghĩa của chúng."},{t:"Phân tích điểm khác biệt",d:"Khác biệt cốt lõi giữa hai khái niệm — dùng bảng so sánh nếu cần chi tiết."},end];
-  if(kind==="flow")return [title,{t:"Lưu đồ quy trình (Flow Chart)",d:"Các bước của quy trình theo thứ tự — sửa tên từng bước trực tiếp trên sơ đồ.",viz:{type:"flow",items:["Bắt đầu","Xử lý","Kiểm tra","Hoàn tất"]}},{t:"Giải thích từng bước",d:"Mô tả chi tiết, người phụ trách và thời gian cho mỗi bước trong lưu đồ."},{t:"Điểm cần lưu ý",d:"Ngoại lệ, điểm nghẽn thường gặp và cách xử lý."},end];
-  if(kind==="org")return [title,{t:"Sơ đồ tổ chức",d:"Cơ cấu tổ chức / đội ngũ — sửa tên đơn vị và vị trí trực tiếp trên sơ đồ.",viz:{type:"org",center:"Ban lãnh đạo",items:["Phòng A","Phòng B","Phòng C","Phòng D"]}},{t:"Chức năng từng đơn vị",d:"Nhiệm vụ chính và đầu mối liên hệ của từng phòng ban / nhóm."},end];
-  if(kind==="pie")return [title,{t:"Biểu đồ tròn — cơ cấu tỉ lệ",d:"Tỉ lệ phần trăm của từng phần trong tổng thể.",viz:{type:"pie",labels:["Phần A","Phần B","Phần C","Phần D"],values:[40,27,20,13]}},{t:"Nhận xét cơ cấu",d:"Phần nào chiếm tỉ trọng lớn nhất, thay đổi ra sao so với kỳ trước và nguyên nhân."},end];
-  if(kind==="compare")return [title,{t:"Bảng so sánh",d:"Đặt hai phương án cạnh nhau để thấy rõ điểm mạnh — điểm yếu của từng bên.",viz:{type:"compare",heads:["Phương án A","Phương án B"],items:["Ưu điểm nổi bật của A · chi phí · thời gian","Ưu điểm nổi bật của B · chi phí · thời gian"]}},{t:"Kết luận so sánh",d:"Phương án được chọn và lý do — chốt tiêu chí quyết định."},end];
-  if(kind==="mindmap")return [title,{t:"Sơ đồ tư duy (Mind Map)",d:"Ý trung tâm và các nhánh ý chính xung quanh.",viz:{type:"mindmap",center:T,items:["Nhánh 1","Nhánh 2","Nhánh 3","Nhánh 4"]}},{t:"Triển khai từng nhánh",d:"Đi sâu vào nhánh quan trọng nhất — ví dụ và bằng chứng cụ thể."},end];
-  if(kind==="timeline")return [title,{t:"Dòng thời gian (Timeline)",d:"Các mốc quan trọng theo trình tự thời gian.",viz:{type:"timeline",items:["Mốc 1 · Khởi đầu","Mốc 2 · Phát triển","Mốc 3 · Mở rộng","Mốc 4 · Hiện tại"]}},{t:"Mốc quan trọng nhất",d:"Vì sao mốc này là bước ngoặt — số liệu và câu chuyện đằng sau."},end];
-  if(kind==="toc"||kind==="agenda")return [title,{t:kind==="toc"?"Mục lục":"Chương trình (Agenda)",d:"Các phần chính của bài trình bày / buổi làm việc.",viz:{type:"roadmap",items:["Phần 1 · Mở đầu","Phần 2 · Nội dung chính","Phần 3 · Thảo luận","Phần 4 · Tổng kết"]}},{t:"Phần 1 · Mở đầu",d:"Bối cảnh, mục tiêu và cách buổi làm việc sẽ diễn ra."},{t:"Phần 2 · Nội dung chính",d:"Nội dung trọng tâm — chèn biểu đồ / bảng / sơ đồ ở slide này."},{t:"Phần 3 · Thảo luận",d:"Câu hỏi, ý kiến và các điểm cần chốt."},{t:"Phần 4 · Tổng kết",d:"Kết luận, phân công và mốc thời gian tiếp theo."}];
-  if(kind==="calendar")return [title,{t:"Lịch / Kế hoạch theo tuần",d:"Bảng lịch trình — sửa nội dung từng ô trực tiếp trên bảng.",viz:{type:"table",rows:[["Tuần","Việc chính","Phụ trách","Hạn"],["Tuần 1","…","…",""],["Tuần 2","…","…",""],["Tuần 3","…","…",""],["Tuần 4","…","…",""]]}},{t:"Ghi chú & điều chỉnh",d:"Các thay đổi so với kế hoạch gốc và lý do điều chỉnh."},end];
-  if(kind==="harvey")return [title,{t:"Harvey Balls — mức độ hoàn thành",d:"Ký hiệu ● thể hiện mức độ: ●●●● đầy đủ nhất, ○ chưa có. Sửa ký hiệu trực tiếp trong ô số liệu.",viz:{type:"kpi",items:[["Tiêu chí A","●●●○"],["Tiêu chí B","●●○○"],["Tiêu chí C","●●●●"]]}},{t:"Giải thích đánh giá",d:"Căn cứ chấm từng tiêu chí và kế hoạch nâng mức ở kỳ sau."},end];
-  if(kind==="table")return [title,{t:"Bảng dữ liệu",d:"Bảng số liệu chính — sửa từng ô trực tiếp trên bảng.",viz:{type:"table",rows:[["Hạng mục","Giá trị","Thay đổi","Ghi chú"],["Mục 1","…","…",""],["Mục 2","…","…",""],["Tổng","…","…",""]]}},{t:"Nhận xét bảng số liệu",d:"Điểm đáng chú ý nhất rút ra từ bảng và hệ quả của nó."},end];
-  if(kind==="countdown")return [title,{t:"Đếm ngược bắt đầu",d:"Bộ đếm ngược dùng khi trình chiếu / chờ bắt đầu sự kiện — chỉnh con số ngay trên slide.",viz:{type:"kpi",items:[["Thời gian còn lại","10:00"]]}},{t:"Trong lúc chờ",d:"Thông tin cần biết trước khi bắt đầu: chương trình, lưu ý, mã QR / liên hệ hỗ trợ."}];
-  if(kind==="video")return [title,{t:"Slide video",d:"Nhúng video minh hoạ bằng nút “🎬 Chèn video” (dán link YouTube hoặc link file video).",viz:{type:"video",url:""}},{t:"Điểm chính của video",d:"Ba ý người xem cần nhớ sau khi xem xong đoạn video."},end];
-  if(kind==="pitch")return [title,
-    {t:"Vấn đề",d:"Khách hàng đang gặp vấn đề gì — nỗi đau đủ lớn để họ sẵn sàng trả tiền giải quyết."},
-    {t:"Giải pháp",d:"Sản phẩm / dịch vụ giải quyết vấn đề đó như thế nào, khác gì đối thủ."},
-    {t:"Thị trường & cơ hội",d:"Quy mô thị trường và tốc độ tăng trưởng.",viz:{type:"kpi",items:[["Thị trường","…"],["Tăng trưởng","+…%/năm"],["Khách hàng mục tiêu","…"]]}},
-    {t:"Sản phẩm",d:"Tính năng chính, ảnh / video demo và phản hồi của khách hàng đầu tiên."},
-    {t:"Mô hình kinh doanh",d:"Cách tạo doanh thu, giá bán và biên lợi nhuận.",viz:{type:"chart",labels:["Quý 1","Quý 2","Quý 3","Quý 4"],values:[20,35,52,80]}},
-    {t:"Đội ngũ",d:"Người sáng lập và thành viên chủ chốt — kinh nghiệm liên quan trực tiếp tới bài toán."},
-    {t:"Kêu gọi đầu tư / hành động",d:"Số vốn cần gọi (hoặc hành động mong muốn), dùng vào việc gì và mốc kết quả cam kết."}];
-  if(kind==="proposal")return [title,
-    {t:"Tổng quan đề xuất",d:"Bối cảnh, nhu cầu của đối tác và tóm tắt giải pháp đề xuất trong một đoạn."},
-    {t:"Phạm vi công việc",d:"Các hạng mục sẽ thực hiện — và những hạng mục không bao gồm, ghi rõ để tránh hiểu nhầm."},
-    {t:"Kế hoạch & tiến độ",d:"Lộ trình triển khai theo giai đoạn.",viz:{type:"gantt",items:[["Khảo sát",0,25],["Thiết kế",20,35],["Triển khai",50,40],["Bàn giao",88,12]]}},
-    {t:"Ngân sách dự kiến",d:"Bảng chi phí theo hạng mục.",viz:{type:"table",rows:[["Hạng mục","Chi phí","Ghi chú"],["Hạng mục 1","…",""],["Hạng mục 2","…",""],["Tổng cộng","…",""]]}},
-    {t:"Điều khoản & cam kết",d:"Bảo hành, hỗ trợ sau bàn giao và điều kiện thanh toán."},end];
-  if(kind==="lesson")return [title,
-    {t:"Mục tiêu bài học",d:"Sau bài này, người học sẽ biết / làm được những gì — viết dạng gạch đầu dòng đo được."},
-    {t:"Kiến thức mới",d:"Khái niệm cốt lõi, định nghĩa và công thức / quy tắc quan trọng nhất.",viz:(/newton|math/.test(slNd(t.name))?{type:"latex",tex:"F = m · a"}:undefined)},
-    {t:"Ví dụ minh hoạ",d:"Một ví dụ gần gũi, giải từng bước để người học tự làm được bài tương tự."},
-    {t:"Luyện tập",d:"Bài tập tại lớp — từ dễ tới khó, kèm gợi ý cách làm."},
-    {t:"Kiểm tra nhanh",d:"2–3 câu hỏi ngắn kiểm tra mức độ hiểu bài trước khi kết thúc."},
-    {t:"Tổng kết & bài về nhà",d:"Chốt lại ý chính của bài và nhiệm vụ về nhà cụ thể."}];
-  if(kind==="portfolio")return [title,
-    {t:"Giới thiệu bản thân",d:"Họ tên, vai trò / chuyên môn, số năm kinh nghiệm và điểm mạnh khác biệt."},
-    {t:"Kỹ năng nổi bật",d:"Các kỹ năng chính kèm mức độ thành thạo.",viz:{type:"kpi",items:[["Kỹ năng 1","Thành thạo"],["Kỹ năng 2","Tốt"],["Kỹ năng 3","Tốt"]]}},
-    {t:"Dự án / tác phẩm tiêu biểu 1",d:"Bối cảnh dự án, vai trò của mình, kết quả đo được — chèn ảnh bằng nút Chèn ảnh."},
-    {t:"Dự án / tác phẩm tiêu biểu 2",d:"Dự án thứ hai thể hiện một thế mạnh khác."},
-    {t:"Kinh nghiệm & học vấn",d:"Quá trình làm việc / học tập theo dòng thời gian.",viz:{type:"timeline",items:["Bắt đầu","Phát triển","Hiện tại"]}},
-    {t:"Liên hệ",d:"Email, số điện thoại, mạng xã hội / trang cá nhân và lời mời hợp tác."}];
-  if(kind==="health")return [title,
-    {t:"Tổng quan chủ đề sức khoẻ",d:"Chủ đề y tế / sức khoẻ sẽ trình bày, vì sao quan trọng và ai cần quan tâm."},
-    {t:"Nội dung chính",d:"Kiến thức cốt lõi: nguyên nhân, dấu hiệu nhận biết và diễn tiến thường gặp."},
-    {t:"Hướng dẫn thực hành",d:"Các bước chăm sóc / phòng ngừa cụ thể, làm được ngay tại nhà hoặc nơi làm việc."},
-    {t:"Lưu ý an toàn",d:"Khi nào cần đi khám / gặp bác sĩ; nội dung chỉ mang tính giáo dục, không thay thế chẩn đoán y khoa."},
-    {t:"Hỏi & đáp",d:"Giải đáp thắc mắc thường gặp về chủ đề này."}];
-  if(kind==="workshop")return [title,
-    {t:"Mục tiêu buổi workshop",d:"Người tham dự sẽ học / làm được gì sau buổi này — và sản phẩm đầu ra cụ thể."},
-    {t:"Chương trình buổi",d:"Các chặng của buổi workshop theo thời gian.",viz:{type:"roadmap",items:["Khởi động","Chia sẻ kiến thức","Thực hành nhóm","Trình bày & phản hồi"]}},
-    {t:"Hoạt động nhóm",d:"Đề bài thực hành, cách chia nhóm và tiêu chí đánh giá sản phẩm nhóm."},
-    {t:"Trình bày & phản hồi",d:"Từng nhóm trình bày — cả lớp góp ý theo tiêu chí đã thống nhất."},
-    {t:"Tổng kết",d:"Bài học rút ra, tài liệu gửi lại sau buổi và bước tiếp theo."}];
-  if(kind==="report")return [title,
-    {t:"Tổng quan kỳ báo cáo",d:"Kỳ này làm gì, kết quả headline trong một câu và bối cảnh cần biết."},
-    {t:"Số liệu chính",d:"Các chỉ số quan trọng nhất của kỳ.",viz:{type:"chart",labels:["Kỳ 1","Kỳ 2","Kỳ 3","Kỳ 4"],values:[42,58,51,73]}},
-    {t:"Điểm nổi bật",d:"Việc làm tốt nhất kỳ này và bằng chứng cụ thể."},
-    {t:"Vấn đề & nguyên nhân",d:"Điểm chưa đạt, nguyên nhân gốc và mức độ ảnh hưởng."},
-    {t:"Kế hoạch kỳ tới",d:"Ưu tiên kỳ sau, người phụ trách và mốc thời gian.",viz:{type:"roadmap",items:["Việc 1","Việc 2","Việc 3","Việc 4"]}},end];
-  return [title,
-    {t:"Tổng quan",d:"Bối cảnh, mục tiêu và những nội dung chính sẽ trình bày về: "+T+"."},
-    {t:"Nội dung trọng tâm",d:"Ba ý chính kèm số liệu / ví dụ minh hoạ. Sếp bấm vào từng dòng chữ để sửa thành nội dung thật."},
-    {t:"Phân tích & bằng chứng",d:"Số liệu, so sánh và nhận định rút ra — chèn biểu đồ hoặc bảng ở slide này để thuyết phục hơn.",viz:{type:"chart",labels:["Mục A","Mục B","Mục C","Mục D"],values:[45,62,38,74]}},
-    {t:"Kế hoạch / Đề xuất",d:"Các bước thực hiện, người phụ trách và mốc thời gian cụ thể.",viz:{type:"roadmap",items:["Bước 1","Bước 2","Bước 3","Bước 4"]}},end];
-}
-function applyTemplate(i){
-  var t=SLIDE_TEMPLATES[i];if(!t)return;pushSlideSnap("trước khi áp mẫu "+t.name);
-  slideTheme=JSON.parse(JSON.stringify(t.th));slideThemeName=t.name;
-  var topic=(document.getElementById("slTopic").value||"").trim();
-  slidesData=tplSlides(t,topic);selSlide=0;renderSlides();
-  toast("Đã tạo bộ slide theo mẫu "+t.name+" ✓ — sửa chữ trực tiếp trên slide nhé sếp");
-}
-
-/* ---- Bước 1 → 2: nguồn nội dung → dàn ý (kiểu SlidesAI) ---- */
+/* ---- Bước 1 → 2: nguồn nội dung → dàn ý ---- */
 function escA(s){return esc(s||"").replace(/"/g,"&quot;");}
 function setSlSrc(tab,btn){
   slSrcTab=tab;
@@ -2114,31 +1928,31 @@ function buildSlidesFromOutline(){
     return s;
   });
   selSlide=0;renderSlides();pushSlideSnap("tạo slide từ dàn ý");
-  toast("Đã tạo "+slidesData.length+" slide từ dàn ý theo mẫu "+slideThemeName+" ✓");
+  toast("Đã tạo "+slidesData.length+" slide từ dàn ý ✓");
   document.getElementById("slidesWrap").scrollIntoView({behavior:"smooth",block:"start"});
 }
-/* ---- AI Design + Quick Animate (kiểu SlidesAI) ---- */
+/* ---- AI Design + Quick Animate ---- */
 function aiDesign(){
   if(!slidesData.length){toast("Chưa có slide nào để AI thiết kế");return;}
   pushSlideSnap("trước khi AI Design");
   var topic=((document.getElementById("slTopic").value||"")+" "+(slidesData[0]?slidesData[0].t:"")).trim();
-  var nd=slNd(topic), pick=null;
-  if(/tai chinh|doanh thu|dau tu|fintech|ngan hang/.test(nd))pick="Fintech Pitch Deck";
-  else if(/giao duc|bai giang|hoc sinh|lop hoc|truong/.test(nd))pick="E-Learning";
-  else if(/y te|suc khoe|y hoc|benh vien/.test(nd))pick="Medical Presentation";
-  else if(/ban hang|marketing|quang cao|san pham|thuong hieu/.test(nd))pick="Product Launch";
-  else if(/khoi nghiep|startup|goi von|pitch/.test(nd))pick="Startup Funding Pitch Deck";
-  else if(/portfolio|ca nhan|xin viec|nang luc/.test(nd))pick="Portfolio Showcase";
-  else if(/sang tao|thiet ke|creative/.test(nd))pick="Creative Brief";
-  else if(/bao cao|tong ket|ke hoach/.test(nd))pick="Company Report";
-  if(pick){var t=SLIDE_TEMPLATES.filter(function(x){return x.name===pick;})[0];if(t){slideTheme=JSON.parse(JSON.stringify(t.th));slideThemeName=t.name;}}
+  var nd=slNd(topic), th=null;
+  if(/tai chinh|doanh thu|dau tu|fintech|ngan hang/.test(nd))th={bg:"#eef4fb",ink:"#16283f",sub:"#51637c",accent:"#2563eb"};
+  else if(/giao duc|bai giang|hoc sinh|lop hoc|truong/.test(nd))th={bg:"#e9fbf3",ink:"#0e3d2b",sub:"#4d7a68",accent:"#12b76a"};
+  else if(/y te|suc khoe|y hoc|benh vien/.test(nd))th={bg:"#e6f7f4",ink:"#083f38",sub:"#487a72",accent:"#0d9488"};
+  else if(/ban hang|marketing|quang cao|san pham|thuong hieu/.test(nd))th={bg:"#fff3ee",ink:"#4a2417",sub:"#8a6053",accent:"#e85d3d"};
+  else if(/khoi nghiep|startup|goi von|pitch/.test(nd))th={bg:"#12211a",ink:"#e6f4ea",sub:"#9db8a8",accent:"#34d399"};
+  else if(/portfolio|ca nhan|xin viec|nang luc/.test(nd))th={bg:"#fdf0f3",ink:"#4d2230",sub:"#8a5f6d",accent:"#db2777"};
+  else if(/sang tao|thiet ke|creative/.test(nd))th={bg:"#fdf6e0",ink:"#4a3a12",sub:"#857448",accent:"#d9930d"};
+  else if(/bao cao|tong ket|ke hoach/.test(nd))th={bg:"#f2f4f8",ink:"#1d2a44",sub:"#5c6a84",accent:"#1e40af"};
+  if(th){slideTheme=th;slideThemeName="AI Design";}
   var added=0;
   slidesData.forEach(function(s,i){
     if(i===0||s.viz)return;
     var v=outlineViz({t:s.t,d:s.d});if(v){s.viz=v;added++;}
   });
   renderSlides();pushSlideSnap("AI Design");
-  toast("✦ AI Design xong — mẫu "+slideThemeName+(added?(", tự chèn "+added+" biểu đồ / sơ đồ vào các slide còn trống"):", các slide đã có sẵn biểu đồ / sơ đồ nên giữ nguyên")+" ✓");
+  toast("✦ AI Design xong — phong cách "+slideThemeName+(added?(", tự chèn "+added+" biểu đồ / sơ đồ vào các slide còn trống"):", các slide đã có sẵn biểu đồ / sơ đồ nên giữ nguyên")+" ✓");
 }
 function quickAnimate(){
   var order=["fade","slide","zoom"];var cur=order.indexOf(slideTrans);
@@ -2232,16 +2046,6 @@ function applyBrandKit(){
   renderSlides();
   toast("Đã áp Brand Kit"+(nm?" “"+nm+"”":"")+" vào toàn bộ slide ✓ — màu riêng + font "+brandFontPptx);
 }
-function saveBrandKitAsTemplate(){
-  var nm=(document.getElementById("bkName").value||"").trim()||"Thương hiệu của tôi";
-  SLIDE_TEMPLATES.unshift({name:"Brand Kit — "+nm,st:"professional",g:"business",th:brandThemeFromKit()});
-  slTplGroup="all";slTplStyle="all";slTplQuery="";
-  var q=document.getElementById("slTplSearch");if(q)q.value="";
-  document.querySelectorAll("#slTplChips .sl-chip").forEach(function(b,i){b.classList.toggle("active",i===0);});
-  document.querySelectorAll("#slStyleChips .sl-chip").forEach(function(b,i){b.classList.toggle("active",i===0);});
-  renderTplGrid();
-  toast("Đã lưu mẫu “Brand Kit — "+nm+"” vào đầu kho mẫu ✓");
-}
 /* ---- Lối tắt 4 công cụ tạo PPT (trong lưới công cụ miễn phí) ---- */
 function pptGenShortcut(kind){
   var ed=document.getElementById("viewEditor");
@@ -2272,10 +2076,10 @@ function pushSlideSnap(label){
 function openSlideVersions(){renderSlideVersions();document.getElementById("slVerModal").classList.add("open");}
 function renderSlideVersions(){
   var box=document.getElementById("slVerList");
-  if(!slideSnaps.length){box.innerHTML='<div class="empty-box">Chưa có phiên bản nào — app sẽ tự lưu khi sếp tạo mới, áp mẫu hoặc sửa slide bằng AI.</div>';return;}
+  if(!slideSnaps.length){box.innerHTML='<div class="empty-box">Chưa có phiên bản nào — app sẽ tự lưu khi sếp tạo mới hoặc sửa slide bằng AI.</div>';return;}
   box.innerHTML=slideSnaps.slice().reverse().map(function(v,i){
     var realIdx=slideSnaps.length-1-i;var n=0;try{n=JSON.parse(v.data).length}catch(e){}
-    return '<div class="sl-ver-item"><div><b>'+fmtTime(v.time)+'</b><small>'+n+' slide · mẫu '+esc(v.themeName||"")+' · '+esc(v.label)+'</small></div><button class="btn btn-ghost" onclick="restoreSlideSnap('+realIdx+')">Khôi phục</button></div>';
+    return '<div class="sl-ver-item"><div><b>'+fmtTime(v.time)+'</b><small>'+n+' slide · phong cách '+esc(v.themeName||"")+' · '+esc(v.label)+'</small></div><button class="btn btn-ghost" onclick="restoreSlideSnap('+realIdx+')">Khôi phục</button></div>';
   }).join("");
 }
 function restoreSlideSnap(i){
@@ -2351,7 +2155,6 @@ function insertViz(kind){
 }
 /* ---- render + sửa trực tiếp + đổi thứ tự ---- */
 function renderSlides(){
-  renderTplGrid();
   var th=slideTheme;
   document.getElementById("slidesWrap").innerHTML=slidesData.map(function(s,i){
     return '<div class="slide-card'+(i===selSlide?" sel":"")+'" style="background:'+th.bg+';color:'+th.ink+';font-family:'+brandFont+'" onclick="selectSlide('+i+')">'+
@@ -2403,7 +2206,7 @@ function aiSlidesFromTopic(){
   else slidesData=[all[0],all[1],all[2],all[3],all[4],all[5],all[6],all[9]];
   slidesData.forEach(function(s){if(!s.viz)delete s.viz;});
   selSlide=0;renderSlides();pushSlideSnap("AI tạo từ mô tả");
-  toast("AI đã dựng "+slidesData.length+" slide cho chủ đề “"+T+"” theo mẫu "+slideThemeName+" ✓");
+  toast("AI đã dựng "+slidesData.length+" slide cho chủ đề “"+T+"” theo phong cách "+slideThemeName+" ✓");
 }
 /* ---- (2) AI tạo slide từ tài liệu ---- */
 async function slidesFromDoc(ev){
@@ -2471,11 +2274,6 @@ function slideChatSend(){
   var inp=document.getElementById("slChatInput");var q=(inp.value||"").trim();if(!q)return;inp.value="";
   slChatLog("user",q);var nd=slNd(q);
   var m=q.match(/slide\s*(\d+)/i);var idx=m?Math.min(slidesData.length-1,parseInt(m[1],10)-1):selSlide;
-  var tplHit=SLIDE_TEMPLATES.find(function(t){return nd.indexOf(slNd(t.name))>-1});
-  if(/phong cach|mau |theme|giao dien/.test(nd)&&tplHit){
-    pushSlideSnap("trước khi đổi phong cách");slideTheme=JSON.parse(JSON.stringify(tplHit.th));slideThemeName=tplHit.name;renderSlides();
-    slChatLog("bot","Đã đổi toàn bộ bộ slide sang phong cách mẫu "+tplHit.name+" — màu nền, màu nhấn và màu chữ đã đồng bộ mọi slide ✓");return;
-  }
   if(/viet lai|hay hon|trang trong/.test(nd)){
     var s=slidesData[idx];if(!s){slChatLog("bot","Chưa có slide nào để viết lại sếp ơi.");return;}
     var swaps={"toi":"chúng tôi","minh":"chúng tôi","rat ":"đặc biệt ","tot":"hiệu quả","lam":"thực hiện","dung":"sử dụng"};
@@ -2501,12 +2299,13 @@ function slideChatSend(){
     selSlide=slidesData.length-1;renderSlides();slChatLog("bot","Đã thêm slide mới ở cuối bộ (slide "+slidesData.length+") ✓ Sếp bấm vào chữ trên slide để sửa tiếp.");return;
   }
   if(/doi phong cach|phong cach/.test(nd)){
-    var nxt=SLIDE_TEMPLATES[(SLIDE_TEMPLATES.findIndex(function(t){return t.name===slideThemeName})+1)%SLIDE_TEMPLATES.length];
+    var ci=0;for(var k=0;k<SL_CYCLE.length;k++)if(SL_CYCLE[k].name===slideThemeName)ci=k;
+    var nxt=SL_CYCLE[(ci+1)%SL_CYCLE.length];
     pushSlideSnap("trước khi đổi phong cách");slideTheme=JSON.parse(JSON.stringify(nxt.th));slideThemeName=nxt.name;renderSlides();
-    slChatLog("bot","Đã chuyển phong cách sang mẫu "+nxt.name+" ✓ Muốn mẫu cụ thể, sếp gõ tên mẫu, ví dụ: “đổi phong cách Business Pitch Deck”.");return;
+    slChatLog("bot","Đã chuyển phong cách sang “"+nxt.name+"” ✓ Sếp gõ lại “đổi phong cách” để xem phong cách kế tiếp, hoặc dùng AI Design / Brand Kit ở Bước 2.");return;
   }
   document.getElementById("slTopic").value=q;aiSlidesFromTopic();
-  slChatLog("bot","Em hiểu đây là chủ đề mới — đã dựng bộ slide từ mô tả này theo mẫu "+slideThemeName+" ✓");
+  slChatLog("bot","Em hiểu đây là chủ đề mới — đã dựng bộ slide từ mô tả này theo phong cách "+slideThemeName+" ✓");
 }
 /* ---- (7) trình chiếu ---- */
 function renderPresent(){
@@ -3673,7 +3472,7 @@ async function runWord2Ppt(){
   var base=PPTF.files[0].name.replace(/\.docx$/i,"");
   var slides=[{t:base,d:"Bài trình bày chuyển từ tài liệu Word · "+items.length+" mục nội dung"}].concat(items.map(function(it){return {t:it.t,d:it.d};}));
   var blob=await makePptxBlob(slides);
-  pptResultDownload(blob,baseName(PPTF.files[0],".pptx"),"Đã chuyển Word → PPT ("+slides.length+" slide). Sếp mở file rồi vào kho mẫu của app nếu muốn đổi phong cách.");
+  pptResultDownload(blob,baseName(PPTF.files[0],".pptx"),"Đã chuyển Word → PPT ("+slides.length+" slide). Sếp mở bài trình bày trong app rồi dùng AI Design / Brand Kit nếu muốn đổi phong cách.");
 }
 async function runHtml2Ppt(){
   var ta=document.getElementById("pptOpt1");
