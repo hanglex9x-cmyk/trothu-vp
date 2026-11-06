@@ -198,6 +198,21 @@ table.sheet td[contenteditable]{outline:none}table.sheet td:focus{background:#e9
 .mobile-top{display:none}
 input[type=file]{display:none}
 
+/* ===== CHẾ ĐỘ FULL TRANG: ẩn thanh công cụ khi mở công cụ / soạn thảo / thư viện ===== */
+.focus-btn{position:fixed;top:12px;left:12px;z-index:65;display:none;align-items:center;gap:8px;background:var(--excel);color:#fff;border:0;border-radius:99px;padding:10px 16px;font-size:13px;font-weight:700;box-shadow:0 8px 24px rgba(15,50,30,.35)}
+.focus-btn:active{transform:scale(.97)}
+body.focus .focus-btn{display:inline-flex}
+body.focus .content{max-width:none;padding-top:60px}
+@media(min-width:721px){
+  body.focus:not(.nav-shown) .sidebar{display:none}
+}
+@media(max-width:720px){
+  body.focus:not(.nav-shown) .bottom-nav{display:none}
+  body.focus:not(.nav-shown) .mobile-top{display:none}
+  body.focus .content{padding-bottom:28px}
+  body.focus.nav-shown .content{padding-bottom:90px}
+}
+
 @media(max-width:1020px){.create-grid{grid-template-columns:repeat(4,1fr)}.tpl-grid{grid-template-columns:repeat(3,1fr)}.utils{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){
   .sidebar{display:none}
@@ -387,6 +402,8 @@ input[type=file]{display:none}
   <div><b>Trợ Thủ Văn Phòng</b><span>Bộ ứng dụng văn phòng + AI</span></div>
   <button onclick="openAI()">✦ Hỏi AI</button>
 </div>
+
+<button class="focus-btn" id="focusBtn" onclick="toggleNavShown()" aria-label="Hiện hoặc ẩn thanh công cụ">☰ Hiện thanh công cụ</button>
 
 <div class="app">
   <!-- SIDEBAR -->
@@ -1207,6 +1224,28 @@ function readMoney(n){
 }
 var TOOL_PAGE={money:1,count:1,case:1,vat:1,days:1,code:1,dedup:1,cv:1};
 function hideAllViews(){["viewHome","viewEditor","viewPdf","viewDesign","viewLib","viewLibItem","viewTool"].forEach(function(id){var el=document.getElementById(id);if(el)el.hidden=true;});}
+/* ===== FULL TRANG: đang mở view con (công cụ/soạn thảo/PDF/thiết kế/thư viện) thì tự ẩn thanh công cụ ===== */
+function syncFocusMode(){
+  var home=document.getElementById("viewHome");
+  var on=!!(home&&home.hidden);
+  document.body.classList.toggle("focus",on);
+  if(!on)document.body.classList.remove("nav-shown");
+  updateFocusBtn();
+}
+function updateFocusBtn(){
+  var b=document.getElementById("focusBtn");if(!b)return;
+  b.textContent=document.body.classList.contains("nav-shown")?"✕ Ẩn thanh công cụ":"☰ Hiện thanh công cụ";
+}
+function toggleNavShown(){
+  document.body.classList.toggle("nav-shown");
+  updateFocusBtn();
+}
+(function(){
+  var ids=["viewHome","viewEditor","viewPdf","viewDesign","viewLib","viewLibItem","viewTool"];
+  var obs=new MutationObserver(function(){syncFocusMode();});
+  ids.forEach(function(id){var el=document.getElementById(id);if(el)obs.observe(el,{attributes:true,attributeFilter:["hidden"]});});
+  syncFocusMode();
+})();
 function openTool(tool){
   currentTool=tool;var onPage=!!TOOL_PAGE[tool];
   document.getElementById("toolBody").innerHTML="";document.getElementById("toolPageBody").innerHTML="";
