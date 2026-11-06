@@ -699,7 +699,7 @@ input[type=range]{accent-color:var(--excel)}
 .mod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media(max-width:1020px){.mod-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){.mod-grid{grid-template-columns:1fr}.mod-card{padding:14px}}
-.mod-card{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 14px;text-align:left;box-shadow:var(--sh-sm);transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s var(--ease)}
+.mod-card{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 14px;text-align:left;box-shadow:var(--sh-sm);transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s var(--ease)}
 .mod-card:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:#bcd6c3}
 .mod-card .ficon{margin:0;flex-shrink:0;width:40px;height:40px;font-size:14px;border-radius:12px}
 .mod-card .mod-txt{flex:1;min-width:0}
@@ -787,14 +787,14 @@ input[type=range]{accent-color:var(--excel)}
 
       <div class="section-title" style="margin-top:26px">Chọn mục làm việc — mỗi mục mở một trang riêng, theo đúng luồng công việc</div>
       <div class="mod-grid">
-        <button class="mod-card" onclick="setModule('doc')"><span class="ficon w">W</span><span class="mod-txt"><b>Tài liệu</b><small>Soạn văn bản kiểu Word online — mẫu văn bản Việt, AI viết &amp; sửa câu chữ.</small></span><span class="mod-arrow">→</span></button>
-        <button class="mod-card" onclick="setModule('sheet')"><span class="ficon x">X</span><span class="mod-txt"><b>Bảng tính</b><small>Bảng tính &amp; báo giá — cộng tổng tự động, mẫu chấm công, xuất CSV.</small></span><span class="mod-arrow">→</span></button>
-        <button class="mod-card" onclick="setModule('slides')"><span class="ficon p">P</span><span class="mod-txt"><b>Bản trình bày</b><small>Studio slide AI 2 bước — dàn ý, SmartArt, xuất .pptx thật / PDF / PNG.</small></span><span class="mod-arrow">→</span></button>
-        <button class="mod-card" onclick="setModule('pdf')"><span class="ficon pdf">PDF</span><span class="mod-txt"><b>PDF</b><small>28 công cụ PDF: gộp, tách, nén, chuyển đổi, ký tên, che thông tin, OCR.</small></span><span class="mod-arrow">→</span></button>
-        <button class="mod-card" onclick="setModule('design')"><span class="ficon pk">✦</span><span class="mod-txt"><b>Thiết kế</b><small>Studio kéo–thả kiểu Canva: poster, bài đăng, chứng nhận, bảng trắng.</small></span><span class="mod-arrow">→</span></button>
-        <button class="mod-card" onclick="setModule('excel')"><span class="ficon x">∑</span><span class="mod-txt"><b>Hàm Excel</b><small>Thư viện hàm Excel 2019 — cú pháp, ví dụ số liệu, mẹo &amp; bài tập có đáp án.</small></span><span class="mod-arrow">→</span></button>
-        <button class="mod-card" onclick="setModule('word')"><span class="ficon w">Aa</span><span class="mod-txt"><b>Cẩm nang Word</b><small>Styles, mục lục tự động, Mail Merge, theo dõi thay đổi &amp; phím tắt.</small></span><span class="mod-arrow">→</span></button>
-        <button class="mod-card" onclick="openAI()"><span class="ficon md">AI</span><span class="mod-txt"><b>Hỏi AI</b><small>Nhờ AI soạn văn bản, tóm tắt, dịch Anh ↔ Việt — miễn phí, ngay trên trình duyệt.</small></span><span class="mod-arrow">→</span></button>
+        <button class="mod-card" onclick="setModule('doc')"><span class="ficon w">W</span><span class="mod-txt"><b>Tài liệu</b></span><span class="mod-arrow">→</span></button>
+        <button class="mod-card" onclick="setModule('sheet')"><span class="ficon x">X</span><span class="mod-txt"><b>Bảng tính</b></span><span class="mod-arrow">→</span></button>
+        <button class="mod-card" onclick="setModule('slides')"><span class="ficon p">P</span><span class="mod-txt"><b>Bản trình bày</b></span><span class="mod-arrow">→</span></button>
+        <button class="mod-card" onclick="setModule('pdf')"><span class="ficon pdf">PDF</span><span class="mod-txt"><b>PDF</b></span><span class="mod-arrow">→</span></button>
+        <button class="mod-card" onclick="setModule('design')"><span class="ficon pk">✦</span><span class="mod-txt"><b>Thiết kế</b></span><span class="mod-arrow">→</span></button>
+        <button class="mod-card" onclick="setModule('excel')"><span class="ficon x">∑</span><span class="mod-txt"><b>Hàm Excel</b></span><span class="mod-arrow">→</span></button>
+        <button class="mod-card" onclick="setModule('word')"><span class="ficon w">Aa</span><span class="mod-txt"><b>Cẩm nang Word</b></span><span class="mod-arrow">→</span></button>
+        <button class="mod-card" onclick="openAI()"><span class="ficon md">AI</span><span class="mod-txt"><b>Hỏi AI</b></span><span class="mod-arrow">→</span></button>
       </div>
 
       <div class="section-title" style="margin-top:26px">Tìm kiếm &amp; tệp gần đây</div>

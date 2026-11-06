@@ -23,6 +23,7 @@ Web app văn phòng đa chức năng — phong cách màu Excel (xanh lá Excel 
 - Layout một bộ khung duy nhất: nền trang sáng, sidebar tự cuộn trong khung, vùng nội dung phủ đủ chiều cao — không còn layout cũ đè chồng gây mảng trống
 - Sidebar cuộn liền mạch: toàn bộ sidebar là một cột cuộn, ẩn hẳn thanh cuộn (dọc lẫn ngang), không còn ngăn cuộn riêng của danh sách mục hay vạch ngăn ở chân sidebar
 - Xây dựng lại toàn bộ template và bố cục tất cả các mục theo logic chuyên gia thiết kế (6/11/2026): một hệ bố cục duy nhất toàn app — sidebar theo luồng làm việc (Tất cả → Tài liệu → Bảng tính → Bản trình bày → PDF → Thiết kế → Hàm Excel → Cẩm nang Word → Hỏi AI → Thư mục); trang chủ chỉ là cửa ngõ; mỗi mục có trang riêng dùng chung một khuôn (quay lại → tiêu đề → mô tả → tab → Tạo mới → kho mẫu → công cụ → danh sách tệp); mọi thẻ công cụ dùng chung khuôn (tiêu đề → mô tả → "Mở công cụ →"); 12 mẫu văn bản có xem trước + nút dùng ngay; slide trống hiện hướng dẫn thay vì mảng trống
+- Trang chủ: 8 thẻ chọn mục (Tài liệu, Bảng tính, Bản trình bày, PDF, Thiết kế, Hàm Excel, Cẩm nang Word, Hỏi AI) chỉ còn icon + tên mục + mũi tên — đã bỏ hẳn đoạn ghi chú mô tả dưới tên mỗi thẻ theo yêu cầu của sếp (6/11/2026)
 - Trợ lý AI miễn phí (chạy trên trình duyệt, không cần tài khoản hay API key): soạn Công văn, Quyết định, Thông báo nội bộ, Kế hoạch công việc tuần, viết lại, tóm tắt
 
 ## Chạy
