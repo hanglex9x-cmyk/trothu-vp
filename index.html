@@ -290,6 +290,35 @@ input[type=file]{display:none}
 .ver-item small{color:var(--muted);font-size:11.5px;line-height:1.5;display:block}
 .ver-item button{margin-left:auto;flex-shrink:0}
 
+/* ===== LIBRARY (Excel & Word) ===== */
+.lib-tab{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:9px 16px;font-size:13px;font-weight:800;color:#40534a}
+.lib-tab.active{background:var(--excel);color:#fff;border-color:var(--excel)}
+@media(prefers-color-scheme:dark){.lib-tab{background:#2a3a2f;color:#dcefe1}.lib-tab.active{background:var(--excel);color:#fff}}
+.fx-card{background:#f7fbf8;border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:12px}
+@media(prefers-color-scheme:dark){.fx-card{background:#243128}}
+.fx-card h4{margin:0 0 4px;font-size:15px;color:var(--strong)}
+.fx-lvl{font-size:10px;font-weight:800;letter-spacing:.05em;background:#d9f2e1;color:var(--excel-dark);padding:2px 7px;border-radius:5px;vertical-align:2px;margin-left:6px}
+.fx-lvl.adv{background:#fdeeda;color:#8a5a00}.fx-lvl.tip{background:#e3ecfa;color:#2b579a}.fx-lvl.ex{background:#fbe3ee;color:#a11c5b}
+.fx-card p{font-size:13px;line-height:1.6;margin:5px 0;color:inherit}
+.fx-formula{font-family:"JetBrains Mono",monospace;font-size:13px;background:#0f3d24;color:#b8f4cd;border-radius:10px;padding:10px 12px;margin:8px 0;word-break:break-all;line-height:1.55}
+.fx-result{font-size:13px;font-weight:700;color:var(--excel-dark)}
+@media(prefers-color-scheme:dark){.fx-result{color:#8fe3ae}}
+.fx-tip{font-size:12.5px;line-height:1.6;background:#fff8e6;border:1px solid #f0dfa8;border-radius:10px;padding:9px 12px;margin-top:9px;color:#5b4a00}
+@media(prefers-color-scheme:dark){.fx-tip{background:#33301c;color:#e8dc9a;border-color:#5c552e}}
+.fx-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.fx-actions button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 12px;font-size:12px;font-weight:700;color:var(--excel-dark)}
+@media(prefers-color-scheme:dark){.fx-actions button{background:#2a3a2f;color:#cfe8d6}}
+.fx-actions button.primary{background:var(--excel);color:#fff;border-color:var(--excel)}
+.ans-box{display:none;background:#eef7f1;border:1px dashed #8fc7a8;border-radius:10px;padding:10px 12px;margin-top:9px;font-size:13px;line-height:1.65}
+.ans-box.open{display:block}
+@media(prefers-color-scheme:dark){.ans-box{background:#1d2f24}}
+.fx-card ol,.fx-card ul{font-size:13px;line-height:1.7;margin:6px 0;padding-left:20px}
+.lib-note{font-size:12.5px;line-height:1.65;color:var(--muted);margin:0 0 12px}
+.mod-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.mod-tab{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:9px 15px;font-size:13px;font-weight:800;color:#40534a}
+.mod-tab.active{background:var(--excel);color:#fff;border-color:var(--excel)}
+@media(prefers-color-scheme:dark){.mod-tab{background:#2a3a2f;color:#dcefe1}.mod-tab.active{background:var(--excel);color:#fff}}
+
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -314,6 +343,15 @@ input[type=file]{display:none}
       <button onclick="openAI()">💬 Hỏi AI</button>
       <button onclick="goPdfSection()">📕 Công cụ PDF <span class="count">28 chạy được</span></button>
       <button onclick="openDesign()">🎨 Thiết kế <span class="count">13 cỡ</span></button>
+      <button onclick="openLib('excel')">📗 Hàm Excel <span class="count">2019</span></button>
+      <button onclick="openLib('word')">📘 Cẩm nang Word</button>
+      <div class="nav-label"><span>MỤC OFFICE</span></div>
+      <button data-modbtn="all" onclick="setModule('all')">🧩 Tất cả</button>
+      <button data-modbtn="doc" onclick="setModule('doc')">📘 Tài liệu</button>
+      <button data-modbtn="sheet" onclick="setModule('sheet')">📗 Bảng tính</button>
+      <button data-modbtn="slides" onclick="setModule('slides')">📙 Bản trình bày</button>
+      <button data-modbtn="pdf" onclick="setModule('pdf')">📕 PDF</button>
+      <button data-modbtn="design" onclick="setModule('design')">🎨 Thiết kế</button>
       <div class="nav-label"><span>THƯ MỤC</span><span>＋</span></div>
       <button class="active">📁 OfficeVietAI</button>
       <button class="folder-item" onclick="filterFolder('Hợp đồng')">Hợp đồng</button>
@@ -358,6 +396,20 @@ input[type=file]{display:none}
       </div>
       <input type="file" id="fileInput" accept=".txt,.md,.html,.csv,.json" onchange="openLocalFile(event)">
 
+      <div class="mod-tabs" id="modTabs" role="tablist" aria-label="Mục Office">
+        <button class="mod-tab" data-modbtn="all" onclick="setModule('all')">🧩 Tất cả</button>
+        <button class="mod-tab active" data-modbtn="doc" onclick="setModule('doc')">📘 Tài liệu</button>
+        <button class="mod-tab" data-modbtn="sheet" onclick="setModule('sheet')">📗 Bảng tính</button>
+        <button class="mod-tab" data-modbtn="slides" onclick="setModule('slides')">📙 Bản trình bày</button>
+        <button class="mod-tab" data-modbtn="pdf" onclick="setModule('pdf')">📕 PDF</button>
+        <button class="mod-tab" data-modbtn="design" onclick="setModule('design')">🎨 Thiết kế</button>
+        <button class="mod-tab" data-modbtn="excel" onclick="setModule('excel')">ƒx Hàm Excel</button>
+        <button class="mod-tab" data-modbtn="word" onclick="setModule('word')">📖 Hàm Word</button>
+        <button class="mod-tab" data-modbtn="ai" onclick="setModule('ai')">✦ Hỏi AI</button>
+      </div>
+      <p class="lib-note" id="modHint" style="margin-top:10px">Đang xem mục <b>Tài liệu</b> — trang chỉ hiện mẫu, công cụ và tệp của mục này. Bấm <b>Tất cả</b> khi muốn xem toàn bộ.</p>
+
+      <div id="blkTpl">
       <div class="section-title">Kho mẫu văn bản — tìm kiếm &amp; lọc như thư viện mẫu Word</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center">
         <label class="searchbox" style="flex:1;min-width:190px">🔍 <input id="tplSearch" placeholder="Tìm mẫu: hợp đồng, CV, báo cáo, thư cảm ơn..." oninput="filterTemplates()"></label>
@@ -383,7 +435,9 @@ input[type=file]{display:none}
         <button class="tpl-card" onclick="openTemplate('thucamon')"><span class="ficon w">W</span><b>Thư cảm ơn khách hàng</b><small>.docx — tri ân sau giao dịch / sự kiện</small></button>
       </div>
       <div class="empty-box" id="tplEmpty" hidden>Không thấy mẫu nào khớp — sếp thử từ khoá khác, hoặc nhờ AI soạn mẫu riêng trong panel Hỏi AI nhé.</div>
+      </div>
 
+      <div id="blkUtils">
       <div class="section-title" style="margin-top:26px">Công cụ văn phòng nhanh</div>
       <div class="utils">
         <button class="util-card" onclick="openTool('money')"><span class="u-ico">🔢</span><b>Đọc số tiền thành chữ</b><small>Nhập 6.570.000 → “Sáu triệu năm trăm bảy mươi nghìn đồng” — chuẩn hoá đơn Việt.</small></button>
@@ -397,6 +451,9 @@ input[type=file]{display:none}
         <button class="util-card" onclick="openTool('cv')"><span class="u-ico">🪪</span><b>Trình tạo CV</b><small>Điền form ngắn — họ tên, vị trí, kinh nghiệm, kỹ năng — app tự dàn trang CV chuẩn và mở trong trình soạn thảo để sửa &amp; tải xuống.</small></button>
       </div>
 
+      </div>
+
+      <div id="blkPdf">
       <div class="section-title" id="pdfSection" style="margin-top:30px">📕 Công cụ PDF — 28 công cụ chạy ngay trên trình duyệt (+ 2 mục cần máy chủ)</div>
       <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin:0 0 4px">Tệp PDF được xử lý ngay trên máy của sếp bằng thư viện pdf-lib &amp; PDF.js — không tải lên máy chủ nào cả. Bấm vào một công cụ để mở bàn làm việc PDF. Riêng 2 mục <b>Đặt mật khẩu</b> và <b>Chuyển PDF/A</b> cần máy chủ chuyên dụng nên được gắn nhãn “CẦN MÁY CHỦ” và <b>không tính vào con số 28</b> công cụ chạy được ở trên.</p>
 
@@ -450,6 +507,9 @@ input[type=file]{display:none}
         <button class="pdf-card" onclick="openPdfTool('pdftranslate')"><span class="p-ico">🌍</span><b>Dịch PDF sang tiếng Anh</b><small>Dịch nhanh bằng từ điển tích hợp, xuất bản dịch .txt.</small></button>
       </div>
 
+      </div>
+
+      <div id="blkDesign">
       <div class="section-title" style="margin-top:30px">🎨 Thiết kế — kiểu Canva Visual Suite</div>
       <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin:0 0 12px">Trình thiết kế kéo–thả ngay trong app: chọn cỡ chuẩn, dùng mẫu có sẵn hoặc nhờ Magic Design dựng mẫu từ câu mô tả, thêm chữ / hình khối / icon / ảnh, chỉnh ảnh, áp Brand Kit 1 chạm, rồi xuất PNG / JPG / PDF.</p>
       <div class="pdf-grid">
@@ -468,6 +528,9 @@ input[type=file]{display:none}
         <button class="pdf-card" onclick="openDesign('board')"><span class="p-ico">🧠</span><b>Bảng trắng brainstorm</b><small>Giấy note dính + vẽ tay để lên ý tưởng cùng nhau.</small></button>
       </div>
 
+      </div>
+
+      <div id="blkFiles">
       <div class="filterbar">
         <div class="tabs" id="typeTabs">
           <button class="active" data-t="all" onclick="setType('all',this)">Tất cả</button>
@@ -490,6 +553,7 @@ input[type=file]{display:none}
 
       <div class="file-list" id="fileList"></div>
       <p style="color:var(--muted);font-size:11.5px;margin-top:18px;line-height:1.6">Tệp đang mở trong phiên làm việc này. Bấm vào tệp để sửa tiếp, bấm ☆ để gắn sao, tải xuống để lưu về máy.</p>
+      </div>
     </div>
 
     <!-- ===== EDITOR ===== -->
@@ -693,6 +757,39 @@ input[type=file]{display:none}
         </div>
       </div>
     </div>
+
+    <!-- ===== LIBRARY: EXCEL & WORD ===== -->
+    <div class="content" id="viewLib" hidden>
+      <div class="editor-shell">
+        <div class="ed-top">
+          <button class="back-btn" onclick="closeLib()">← Trang chủ</button>
+          <b style="font-size:16px" id="libTitle">📚 Thư viện Excel &amp; Word</b>
+          <span style="font-size:11.5px;color:var(--muted);font-weight:600">Chuẩn Excel 2019 · Ví dụ có số liệu &amp; bài tập có đáp án</span>
+        </div>
+        <div style="padding:18px clamp(16px,4vw,30px) 28px">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+            <button class="lib-tab active" id="libTabExcel" onclick="setLibTab('excel')">📗 Excel — hàm, mẹo &amp; bài tập</button>
+            <button class="lib-tab" id="libTabWord" onclick="setLibTab('word')">📘 Word — kỹ năng &amp; bài tập</button>
+          </div>
+          <div id="libExcelPane">
+            <p class="lib-note">Toàn bộ hàm theo chuẩn <b>Excel 2019</b> — không dùng hàm chỉ có trên Microsoft 365 (XLOOKUP, FILTER, SORT, UNIQUE, TEXTSPLIT…); các nhu cầu đó được thay bằng <b>INDEX+MATCH, SUMPRODUCT, AGGREGATE, OFFSET+COUNTA, INDIRECT và công thức mảng CSE</b>. Mỗi hàm có cú pháp, giải thích, ví dụ số liệu với kết quả đúng, mẹo hay sai, nút chép công thức và nút mở ví dụ thẳng vào bảng tính của app. Lưu ý: nếu Excel trên máy sếp báo lỗi công thức, thử đổi dấu phẩy <b>,</b> thành chấm phẩy <b>;</b> — tuỳ cài đặt vùng của máy.</p>
+            <label class="searchbox">🔍 <input id="libSearch" placeholder="Tìm hàm: VLOOKUP, SUMIF, làm tròn, tra cứu..." oninput="renderLib()"></label>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">
+              <button class="tpl-chip active" data-fxcat="all" onclick="setLibCat('all',this)">Tất cả</button>
+              <button class="tpl-chip" data-fxcat="coban" onclick="setLibCat('coban',this)">Hàm cơ bản</button>
+              <button class="tpl-chip" data-fxcat="nangcao" onclick="setLibCat('nangcao',this)">Hàm nâng cao</button>
+              <button class="tpl-chip" data-fxcat="meo" onclick="setLibCat('meo',this)">Mẹo hay</button>
+              <button class="tpl-chip" data-fxcat="baitap" onclick="setLibCat('baitap',this)">Bài tập ví dụ</button>
+            </div>
+            <div id="libList"></div>
+          </div>
+          <div id="libWordPane" hidden>
+            <p class="lib-note">Cẩm nang Word theo đúng quy trình làm việc thật: Styles &amp; Heading, mục lục tự động, Mail Merge trộn thư, chèn bảng / biểu đồ, chú thích cuối trang, theo dõi thay đổi và phím tắt. Mỗi mục có các bước làm, ví dụ mẫu mở được trong trình soạn thảo của app, và bài tập thực hành kèm đáp án.</p>
+            <div id="wordList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </div>
 
@@ -845,8 +942,8 @@ function setType(t,btn){typeFilter=t;var bs=document.querySelectorAll("#typeTabs
 function filterFolder(name){typeFilter="all";document.getElementById("searchInput").value=name==="Họp"?"họp":name.toLowerCase();renderFiles();toast("Đang lọc theo: "+name);document.getElementById("searchInput").value="";var q=name==="Họp"?"Biên bản":name;var list=files.filter(function(f){return f.folder===q||f.name.toLowerCase().indexOf(q.toLowerCase())>-1});var box=document.getElementById("fileList");if(list.length){box.innerHTML=list.map(function(f){var ti=typeInfo[f.type];return '<div class="file-row" onclick="openFile('+f.id+')"><span class="ficon '+ti.cls+'">'+ti.mark+'</span><span class="file-meta"><b>'+esc(f.name)+'</b><small>'+ti.label+' · '+esc(f.folder)+'</small></span><span class="file-time">'+f.time+'</span></div>'}).join("");document.getElementById("fileCountLabel").textContent=list.length+" tệp";}}
 
 /* ================= CREATE / OPEN ================= */
-function showEditor(){document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=false;window.scrollTo(0,0);}
-function goHome(){if(current)saveCurrent();document.getElementById("viewEditor").hidden=true;document.getElementById("viewHome").hidden=false;renderFiles();window.scrollTo(0,0);}
+function showEditor(){document.getElementById("viewHome").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewEditor").hidden=false;window.scrollTo(0,0);}
+function goHome(){if(current)saveCurrent();document.getElementById("viewEditor").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewHome").hidden=false;renderFiles();window.scrollTo(0,0);}
 function saveCurrent(){if(!current)return;current.name=document.getElementById("edTitle").value;if(current.type!=="xlsx"&&current.type!=="pptx")current.html=document.getElementById("docArea").innerHTML;}
 function createDoc(type){
   var names={docx:"Tài liệu không tên.docx",xlsx:"Bảng tính không tên.xlsx",pptx:"Bản trình bày không tên.pptx",md:"Ghi chú Markdown.md",html:"Trang HTML mới.html",pdf:"Tài liệu PDF.pdf"};
@@ -1108,7 +1205,7 @@ function setTplCat(cat,btn){tplCat=cat;var bs=document.querySelectorAll(".tpl-ch
 function filterTemplates(){
   var q=(document.getElementById("tplSearch").value||"").toLowerCase();var shown=0;
   var cards=document.querySelectorAll("#tplGrid .tpl-card");
-  for(var i=0;i<cards.length;i++){var ok=(tplCat==="all"||cards[i].dataset.cat===tplCat)&&(!q||cards[i].textContent.toLowerCase().indexOf(q)>-1);cards[i].style.display=ok?"":"none";if(ok)shown++;}
+  for(var i=0;i<cards.length;i++){var ok=(tplCat==="all"||cards[i].dataset.cat===tplCat)&&(!q||cards[i].textContent.toLowerCase().indexOf(q)>-1);if(typeof moduleCur!=="undefined"&&moduleCur!=="all"&&cards[i].dataset.mod&&cards[i].dataset.mod!==moduleCur)ok=false;cards[i].style.display=ok?"":"none";if(ok)shown++;}
   document.getElementById("tplEmpty").hidden=shown>0;
 }
 function fmtTime(d){return d.toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit",second:"2-digit"})+" · "+d.toLocaleDateString("vi-VN");}
@@ -1292,7 +1389,7 @@ pdfsummary:{t:"Tóm tắt PDF bằng AI",d:"AI chạy trên trình duyệt đọ
 pdftranslate:{t:"Dịch PDF sang tiếng Anh",d:"Dịch nhanh nội dung PDF bằng từ điển tích hợp sẵn trong app (giống tính năng dịch của trình soạn thảo) và xuất bản dịch .txt. Thuật ngữ chuyên ngành sếp kiểm tra lại trước khi gửi đối tác nhé.",accept:".pdf",multi:false,min:1,run:runPdfTranslate}
 };
 
-function goPdfSection(){document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;setTimeout(function(){document.getElementById("pdfSection").scrollIntoView({behavior:"smooth"})},60);}
+function goPdfSection(){document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewHome").hidden=false;setModule("pdf");setTimeout(function(){document.getElementById("pdfSection").scrollIntoView({behavior:"smooth"})},60);}
 function openPdfTool(key){
   if(!window.PDFLib){toast("Chưa tải được thư viện PDF (cần mạng) — sếp thử tải lại trang nhé");return;}
   PDFT.tool=key;PDFT.files=[];
@@ -1306,7 +1403,7 @@ function openPdfTool(key){
   document.getElementById("pdfStatus").textContent="";
   document.getElementById("pdfResult").innerHTML="";
   renderPdfFileList();
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewPdf").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewDesign").hidden=true;var vl2=document.getElementById("viewLib");if(vl2)vl2.hidden=true;document.getElementById("viewPdf").hidden=false;
   window.scrollTo(0,0);
   if(key==="sign")initSigPad();
   if(key==="protect"||key==="pdfa")runPdfTool();
@@ -1851,7 +1948,7 @@ var palettes=[
 var D={sizeKey:"post",dw:1080,dh:1080,els:[],selId:null,nextId:1,scale:0.6,drawOn:false,brand:{c1:"#217346",c2:"#ffc000",font:"'Be Vietnam Pro',sans-serif"}};
 function dStage(){return document.getElementById("stage");}
 function openDesign(preset){
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;var vl3=document.getElementById("viewLib");if(vl3)vl3.hidden=true;document.getElementById("viewDesign").hidden=false;
   var sel=document.getElementById("dSizeSel");
   if(!sel.options.length){sel.innerHTML=Object.keys(designSizes).map(function(k){return '<option value="'+k+'">'+designSizes[k].label+'</option>';}).join("");}
   if(!document.getElementById("dBgSwatches").children.length){
@@ -2101,6 +2198,181 @@ function designSaveToFiles(){
     files.unshift(f);renderFiles();toast("Đã lưu thiết kế vào danh sách tệp ✓ (mở ra để xem ảnh thiết kế)");
   }).catch(function(e){toast("Lưu lỗi: "+(e.message||e));});
 }
+
+/* ================= MODULE TABS: chỉ hiện nội dung của mục đang chọn ================= */
+var moduleCur="doc";
+var MOD_LABEL={all:"Tất cả",doc:"Tài liệu",sheet:"Bảng tính",slides:"Bản trình bày",pdf:"PDF",design:"Thiết kế",excel:"Hàm Excel",word:"Hàm Word"};
+var UTIL_MOD=["sheet","doc","doc","ai","sheet","all","all","doc","doc"];
+function modShowHome(){
+  document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewLib").hidden=true;document.getElementById("viewHome").hidden=false;
+}
+function setModule(m){
+  if(m==="ai"){openAI();return;}
+  if(m==="excel"||m==="word"){openLib(m);markModBtns(m);return;}
+  moduleCur=m;modShowHome();markModBtns(m);
+  document.getElementById("modHint").innerHTML=(m==="all")?"Đang xem <b>Tất cả</b> — toàn bộ mẫu, công cụ và tệp của mọi mục.":"Đang xem mục <b>"+MOD_LABEL[m]+"</b> — trang chỉ hiện mẫu, công cụ và tệp của mục này. Bấm <b>Tất cả</b> khi muốn xem toàn bộ.";
+  var tplCards=document.querySelectorAll("#tplGrid .tpl-card");
+  for(var i=0;i<tplCards.length;i++){var f=tplCards[i].querySelector(".ficon");var cm=f&&(f.classList.contains("x")?"sheet":"doc");tplCards[i].dataset.mod=cm;tplCards[i].style.display=(m==="all"||cm===m)?"":"none";}
+  document.getElementById("blkTpl").style.display=(m==="all"||m==="doc"||m==="sheet")?"":"none";
+  var uCards=document.querySelectorAll("#blkUtils .util-card");
+  for(var j=0;j<uCards.length;j++){var um=UTIL_MOD[j]||"all";uCards[j].style.display=(m==="all"||um==="all"||um===m)?"":"none";}
+  document.getElementById("blkUtils").style.display=(m==="all"||m==="doc"||m==="sheet"||m==="slides")?"":"none";
+  document.getElementById("blkPdf").style.display=(m==="all"||m==="pdf")?"":"none";
+  document.getElementById("blkDesign").style.display=(m==="all"||m==="design")?"":"none";
+  document.getElementById("blkFiles").style.display=(m==="design")?"none":"";
+  var tmap={all:"all",doc:"docx",sheet:"xlsx",slides:"pptx",pdf:"pdf"};
+  if(tmap[m]){typeFilter=tmap[m];var bs=document.querySelectorAll("#typeTabs button");for(var k=0;k<bs.length;k++)bs[k].classList.toggle("active",bs[k].dataset.t===typeFilter);renderFiles();}
+  window.scrollTo(0,0);
+}
+function markModBtns(m){
+  var bs=document.querySelectorAll("[data-modbtn]");
+  for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i].dataset.modbtn===m);
+}
+function closeLibHome(){document.getElementById("viewLib").hidden=true;document.getElementById("viewHome").hidden=false;markModBtns(moduleCur);window.scrollTo(0,0);}
+
+/* ================= THƯ VIỆN HÀM EXCEL (chuẩn 2019) & CẨM NANG WORD ================= */
+var DS_SALES=[["STT","Sản phẩm","Số lượng","Đơn giá (đ)","Thành tiền (đ)"],["1","Áo thun","10","150000","1500000"],["2","Quần jean","5","320000","1600000"],["3","Áo khoác","3","450000","1350000"],["4","Áo thun","7","150000","1050000"]];
+var DS_CODE=[["Mã SP","Tên sản phẩm","Đơn giá (đ)"],["SP01","Áo thun","150000"],["SP02","Quần jean","320000"],["SP03","Áo khoác","450000"]];
+var DS_PRICE=[["Mã SP","Giá vốn","Giá bán"],["SP01","100000","150000"],["SP02","200000","320000"],["SP03","300000","450000"]];
+var DS_SCORE=[["Học viên","Điểm"],["An","8.5"],["Bình","7"],["Chi","9"],["Dũng","6.5"]];
+var DS_ERR=[["Hạng mục","Giá trị"],["A","100"],["B","#DIV/0!"],["C","300"],["D","200"]];
+var DS_TEXT=[["Mã hoá đơn"],["HD-2026-001"]];
+var DS_NAME=[["Họ tên"],["  Nguyễn   Văn   A  "]];
+var EXCEL_LIB=[
+{n:"SUM — Cộng tổng",c:"coban",s:"SUM(số1, [số2], ...)",d:"Cộng tất cả các số trong vùng chọn. Hàm cơ bản và dùng nhiều nhất trong mọi bảng tính.",e:"Bảng bán hàng bên dưới có cột E là thành tiền của 4 dòng. Tổng doanh thu cả bảng:",f:"=SUM(E2:E5)",r:"5.500.000",t:"SUM tự bỏ qua ô chứa chữ và ô trống. Muốn cộng nhanh, đứng ở ô dưới cột số rồi bấm Alt + = (AutoSum).",sh:DS_SALES},
+{n:"AVERAGE — Trung bình cộng",c:"coban",s:"AVERAGE(số1, [số2], ...)",d:"Tính giá trị trung bình của vùng số.",e:"Trung bình số lượng bán mỗi dòng trong bảng bán hàng (10, 5, 3, 7):",f:"=AVERAGE(C2:C5)",r:"6,25",t:"AVERAGE bỏ qua ô trống nhưng tính cả ô có số 0. Khi tính điểm trung bình mà có học viên chưa thi (ô trống) thì đúng ý; còn nhập 0 vào sẽ kéo điểm xuống — hay bị nhầm ở đây.",sh:DS_SALES},
+{n:"COUNT & COUNTA — Đếm ô",c:"coban",s:"COUNT(vùng) đếm ô chứa số · COUNTA(vùng) đếm ô không trống",d:"COUNT chỉ đếm các ô có số; COUNTA đếm mọi ô có dữ liệu, kể cả chữ.",e:"Đếm số dòng sản phẩm trong bảng bán hàng:",f:"=COUNTA(B2:B5)",r:"4",t:"Muốn đếm số dòng dữ liệu thật (có cả tên chữ) phải dùng COUNTA. Dùng COUNT cho cột tên sẽ ra 0 mà không báo lỗi.",sh:DS_SALES},
+{n:"MAX & MIN — Lớn nhất, nhỏ nhất",c:"coban",s:"MAX(vùng) · MIN(vùng)",d:"Tìm giá trị lớn nhất / nhỏ nhất trong vùng số.",e:"Dòng có thành tiền cao nhất trong bảng bán hàng:",f:"=MAX(E2:E5)",r:"1.600.000",t:"MAX/MIN bỏ qua ô chữ. Muốn biết dòng nào chứa giá trị lớn nhất thì dùng INDEX + MATCH ở phần nâng cao.",sh:DS_SALES},
+{n:"ROUND — Làm tròn số",c:"coban",s:"ROUND(số, số_chữ_số_thập_phân)",d:"Làm tròn số theo quy tắc 5 làm tròn lên.",e:"Số lượng bán trung bình là 6,25 — làm tròn còn 1 chữ số thập phân:",f:"=ROUND(AVERAGE(C2:C5),1)",r:"6,3",t:"Ba hàm hay lẫn: ROUND làm tròn lên/xuống theo số 5; INT cắt bỏ phần lẻ; ROUNDUP luôn làm tròn lên. Tính tiền thường dùng ROUND(...,0) để mất phần lẻ đồng.",sh:DS_SALES},
+{n:"IF — Xét điều kiện",c:"coban",s:"IF(điều_kiện, giá_trị_nếu_đúng, giá_trị_nếu_sai)",d:"Trả về một trong hai kết quả tuỳ điều kiện đúng hay sai.",e:"Dòng 1 bán được 10 cái; quy ước từ 10 cái trở lên là đạt chỉ tiêu:",f:"=IF(C2>=10,\"Đạt chỉ tiêu\",\"Chưa đạt\")",r:"Đạt chỉ tiêu",t:"Chữ trong công thức phải để trong dấu nháy kép. Nếu Excel báo lỗi công thức, thử đổi dấu phẩy thành chấm phẩy ; — tuỳ cài đặt vùng trên máy.",sh:DS_SALES},
+{n:"SUMIF — Cộng có 1 điều kiện",c:"coban",s:"SUMIF(vùng_điều_kiện, điều_kiện, vùng_tính_tổng)",d:"Chỉ cộng các dòng thoả mãn một điều kiện.",e:"Tổng doanh thu riêng của sản phẩm Áo thun (1.500.000 + 1.050.000):",f:"=SUMIF(B2:B5,\"Áo thun\",E2:E5)",r:"2.550.000",t:"Điều kiện có thể trỏ tới một ô, ví dụ thay \"Áo thun\" bằng ô F1 chứa tên sản phẩm — đổi tên ở F1 là kết quả tự đổi, khỏi sửa công thức.",sh:DS_SALES},
+{n:"COUNTIF — Đếm có 1 điều kiện",c:"coban",s:"COUNTIF(vùng, điều_kiện)",d:"Đếm số ô thoả mãn một điều kiện.",e:"Sản phẩm Áo thun xuất hiện mấy dòng trong bảng bán hàng:",f:"=COUNTIF(B2:B5,\"Áo thun\")",r:"2",t:"Dùng ký tự đại diện: \"Áo*\" đếm mọi sản phẩm bắt đầu bằng chữ Áo; \"*thun*\" đếm sản phẩm có chữ thun ở bất cứ vị trí nào.",sh:DS_SALES},
+{n:"VLOOKUP — Tra cứu theo mã",c:"coban",s:"VLOOKUP(giá_trị_tra, bảng_tra, số_thứ_tự_cột, FALSE)",d:"Tìm một mã ở cột đầu tiên của bảng tra rồi lấy giá trị ở cột chỉ định trên cùng dòng.",e:"Tra đơn giá của mã SP02 trong bảng mã sản phẩm:",f:"=VLOOKUP(\"SP02\",A2:C4,3,FALSE)",r:"320.000",t:"Tham số cuối FALSE nghĩa là khớp chính xác — tra theo mã gần như luôn phải dùng FALSE. VLOOKUP chỉ tra ở cột đầu tiên và nhìn sang phải; cần tra linh hoạt hơn thì dùng INDEX + MATCH.",sh:DS_CODE},
+{n:"LEFT / RIGHT / MID — Cắt chuỗi chữ",c:"coban",s:"LEFT(chuỗi, số_ký_tự) · RIGHT(chuỗi, số_ký_tự) · MID(chuỗi, vị_trí_bắt_đầu, số_ký_tự)",d:"Cắt lấy một phần của chuỗi ký tự — hay dùng để tách mã, năm, số thứ tự trong mã chứng từ.",e:"Mã hoá đơn HD-2026-001: lấy phần năm ở giữa (LEFT lấy \"HD\", RIGHT lấy \"001\"):",f:"=MID(A2,4,4)",r:"2026",t:"Kết quả cắt chuỗi là CHỮ, không phải số. Muốn cộng trừ tiếp thì bọc thêm VALUE(...), ví dụ VALUE(MID(A2,4,4)) cho số 2026.",sh:DS_TEXT},
+{n:"LEN & TRIM — Đếm ký tự, xoá khoảng trắng thừa",c:"coban",s:"LEN(chuỗi) · TRIM(chuỗi)",d:"LEN đếm số ký tự; TRIM xoá khoảng trắng ở hai đầu và gộp nhiều khoảng trắng giữa chuỗi thành một.",e:"Ô A2 chứa \"  Nguyễn   Văn   A  \" thừa nhiều khoảng trắng. Sau khi TRIM rồi đếm:",f:"=LEN(TRIM(A2))",r:"12",t:"Dữ liệu copy từ web hay thừa khoảng trắng, khiến VLOOKUP báo không tìm thấy dù nhìn giống hệt nhau. Chạy TRIM cho cột tra cứu trước khi tra.",sh:DS_NAME},
+{n:"Nối chuỗi bằng dấu &",c:"coban",s:"chuỗi1 & chuỗi2 & ...",d:"Ghép nhiều ô và đoạn chữ thành một chuỗi — làm nhãn, câu thông báo, mã ghép.",e:"Ghép tên sản phẩm với số lượng ở dòng 1 thành câu dễ đọc:",f:"=B2&\" (\"&C2&\" cái)\"",r:"Áo thun (10 cái)",t:"Số khi nối chuỗi sẽ mất định dạng dấu nghìn. Muốn giữ dạng 1.500.000 thì dùng hàm TEXT ở phần nâng cao.",sh:DS_SALES},
+{n:"DATE & TODAY — Ngày tháng cơ bản",c:"coban",s:"DATE(năm, tháng, ngày) · TODAY() cho ngày hôm nay",d:"DATE tạo một ngày từ 3 con số riêng lẻ; TODAY tự lấy ngày hiện tại và tự cập nhật mỗi ngày.",e:"Tạo ngày 06/11/2026 từ ba con số 2026, 11, 6:",f:"=DATE(2026,11,6)",r:"06/11/2026",t:"Muốn ghi cứng ngày hôm nay không cho tự đổi, bấm Ctrl + ; (chấm phẩy). Ô ngày hiện ra số lạ như 46363 là do chưa định dạng Date.",sh:DS_SALES},
+{n:"NETWORKDAYS — Đếm ngày làm việc",c:"coban",s:"NETWORKDAYS(ngày_bắt_đầu, ngày_kết_thúc, [ngày_lễ])",d:"Đếm số ngày làm việc giữa hai mốc, tự trừ thứ Bảy và Chủ nhật.",e:"Từ thứ Hai 02/11/2026 đến thứ Sáu 06/11/2026:",f:"=NETWORKDAYS(DATE(2026,11,2),DATE(2026,11,6))",r:"5",t:"Tham số thứ 3 là danh sách ngày lễ cần trừ thêm. Muốn đếm tổng số ngày kể cả cuối tuần thì chỉ cần lấy ngày sau trừ ngày trước.",sh:DS_SALES},
+{n:"IFERROR — Bắt lỗi công thức",c:"coban",s:"IFERROR(công_thức, giá_trị_khi_bị_lỗi)",d:"Khi công thức bên trong bị lỗi (#N/A, #DIV/0!...) thì trả về giá trị thay thế gọn gàng thay vì mã lỗi.",e:"Tra mã SP09 không có trong bảng mã — thay vì báo #N/A:",f:"=IFERROR(VLOOKUP(\"SP09\",A2:C4,3,FALSE),\"Không tìm thấy\")",r:"Không tìm thấy",t:"Đừng bọc IFERROR cho mọi công thức ngay từ đầu — nó che luôn lỗi sai địa chỉ thật. Chỉ bọc khi công thức đã kiểm tra chạy đúng.",sh:DS_CODE},
+{n:"INDEX + MATCH — Tra cứu linh hoạt (thay XLOOKUP)",c:"nangcao",s:"INDEX(vùng_lấy_kết_quả, MATCH(giá_trị_tra, vùng_tra, 0))",d:"MATCH tìm vị trí của giá trị cần tra, INDEX lấy giá trị tại vị trí đó. Đây là cách tra cứu chuẩn của Excel 2019 thay cho XLOOKUP của Microsoft 365 — tra được cả sang trái và không vỡ khi chèn thêm cột.",e:"Tra đơn giá của mã SP03:",f:"=INDEX(C2:C4,MATCH(\"SP03\",A2:A4,0))",r:"450.000",t:"MATCH với tham số cuối 0 nghĩa là khớp chính xác. Quên số 0 này là lỗi hay gặp nhất: kết quả có thể sai mà Excel không hề báo lỗi.",sh:DS_CODE},
+{n:"INDEX + MATCH + MATCH — Tra cứu 2 chiều",c:"nangcao",s:"INDEX(bảng_số_liệu, MATCH(mã, cột_mã, 0), MATCH(tên_cột, hàng_tiêu_đề, 0))",d:"Tra theo cả hàng (mã sản phẩm) lẫn cột (Giá vốn / Giá bán) — chọn được cột kết quả bằng tên.",e:"Lấy Giá bán của mã SP02 trong bảng giá hai cột:",f:"=INDEX(B2:C4,MATCH(\"SP02\",A2:A4,0),MATCH(\"Giá bán\",B1:C1,0))",r:"320.000",t:"Đổi chữ \"Giá bán\" thành tham chiếu tới một ô chọn sẵn, người dùng chỉ việc chọn Giá vốn hay Giá bán ở ô đó, không cần sửa công thức.",sh:DS_PRICE},
+{n:"SUMIFS — Cộng nhiều điều kiện",c:"nangcao",s:"SUMIFS(vùng_tính_tổng, vùng_đk1, đk1, vùng_đk2, đk2, ...)",d:"Cộng chỉ các dòng thoả mãn đồng thời nhiều điều kiện.",e:"Tổng doanh thu của Áo thun với số lượng bán lớn hơn 5 (cả 2 dòng 10 cái và 7 cái đều đạt):",f:"=SUMIFS(E2:E5,B2:B5,\"Áo thun\",C2:C5,\">5\")",r:"2.550.000",t:"SUMIFS để vùng tính tổng LÊN TRƯỚC, khác hẳn SUMIF để vùng tổng ở cuối — đây là chỗ hay nhầm nhất khi chuyển qua lại hai hàm.",sh:DS_SALES},
+{n:"COUNTIFS — Đếm nhiều điều kiện",c:"nangcao",s:"COUNTIFS(vùng_đk1, đk1, vùng_đk2, đk2, ...)",d:"Đếm số dòng thoả mãn đồng thời nhiều điều kiện.",e:"Có mấy dòng bán Áo thun với số lượng lớn hơn 5:",f:"=COUNTIFS(B2:B5,\"Áo thun\",C2:C5,\">5\")",r:"2",t:"Điều kiện so sánh phải để trong nháy kép như \">5\". Muốn lấy ngưỡng từ một ô khác thì viết \">\"&F1.",sh:DS_SALES},
+{n:"SUMPRODUCT — Tổng có điều kiện không cần cột phụ",c:"nangcao",s:"SUMPRODUCT((điều_kiện1)*(điều_kiện2)*vùng_số)",d:"Xử lý cả vùng như mảng: mỗi điều kiện đúng thành 1, sai thành 0, nhân với số rồi cộng lại. Thay thế rất nhiều công thức mảng và hàm 365.",e:"Tổng số lượng Áo thun đã bán (10 + 7) mà không cần lọc hay cột phụ:",f:"=SUMPRODUCT((B2:B5=\"Áo thun\")*C2:C5)",r:"17",t:"Các vùng trong SUMPRODUCT phải bằng nhau về số dòng — lệch một dòng là báo #VALUE!. SUMPRODUCT không cần bấm Ctrl+Shift+Enter.",sh:DS_SALES},
+{n:"AGGREGATE — Tính tổng bỏ qua lỗi (thay hàm 365)",c:"nangcao",s:"AGGREGATE(mã_hàm, tuỳ_chọn, vùng) — mã 9 = SUM, 1 = AVERAGE; tuỳ chọn 6 = bỏ qua lỗi",d:"Tính tổng / trung bình ngay cả khi vùng có ô lỗi #DIV/0!, #N/A — việc SUM thường không làm được.",e:"Cột giá trị có một ô bị lỗi #DIV/0! (100, lỗi, 300, 200). Tổng đúng bỏ qua ô lỗi:",f:"=AGGREGATE(9,6,B2:B5)",r:"600",t:"AGGREGATE còn bỏ qua được dòng ẩn và các dòng SUBTOTAL lồng nhau (tuỳ chọn 4, 5, 7) — rất hợp cho báo cáo có nhiều dòng tổng trung gian.",sh:DS_ERR},
+{n:"SUBTOTAL — Tổng tự cập nhật khi lọc",c:"nangcao",s:"SUBTOTAL(mã_hàm, vùng) — 109 = SUM bỏ qua mọi dòng ẩn, 9 = SUM chỉ bỏ qua dòng ẩn do bộ lọc",d:"Hàm tổng dành cho bảng có dùng Filter: kết quả chỉ tính các dòng đang hiển thị.",e:"Tổng thành tiền của bảng bán hàng khi chưa ẩn dòng nào:",f:"=SUBTOTAL(109,E2:E5)",r:"5.500.000",t:"Hãy đặt SUBTOTAL ở dòng TỔNG của mọi bảng có lọc dữ liệu. Lọc còn sản phẩm nào, tổng tự tính lại theo sản phẩm đó — SUM thường thì không.",sh:DS_SALES},
+{n:"OFFSET + COUNTA — Vùng tính tự mở rộng",c:"nangcao",s:"SUM(OFFSET(ô_đầu, 0, 0, COUNTA(vùng_cột)))",d:"COUNTA đếm có bao nhiêu ô dữ liệu, OFFSET dựng vùng đúng bấy nhiêu dòng — thêm dòng mới, vùng tổng tự dài ra, không phải sửa công thức.",e:"Tổng thành tiền cột E, vùng tự mở rộng theo số dòng có dữ liệu (hiện có 4 dòng):",f:"=SUM(OFFSET($E$2,0,0,COUNTA($E$2:$E$50)))",r:"5.500.000",t:"OFFSET là hàm tự tính lại liên tục (volatile): file hàng chục nghìn dòng sẽ chậm. File lớn nên chuyển vùng dữ liệu thành Table bằng Ctrl + T thay thế.",sh:DS_SALES},
+{n:"INDIRECT — Biến chữ thành tham chiếu ô",c:"nangcao",s:"INDIRECT(chuỗi_địa_chỉ)",d:"Đọc một đoạn chữ như \"E5\" và hiểu đó là địa chỉ ô thật để lấy giá trị.",e:"Ghép chữ E với số dòng 5 thành địa chỉ ô E5 rồi lấy doanh thu dòng cuối của bảng bán hàng:",f:"=INDIRECT(\"E\"&5)",r:"1.050.000",t:"INDIRECT rất mạnh khi tên sheet nằm trong một ô (ghép báo cáo 12 tháng vào 1 bảng). Nhược điểm: đổi tên sheet là công thức gãy, và khó lần ra lỗi.",sh:DS_SALES},
+{n:"Công thức mảng CSE — Nhân rồi cộng không cần cột phụ",c:"nangcao",s:"{=SUM(vùng1*vùng2)} — nhập xong bấm Ctrl + Shift + Enter",d:"Excel 2019 chưa có mảng động như Microsoft 365 (FILTER, SORT...), nên dùng công thức mảng kiểu CSE: tính trên cả vùng trong một ô duy nhất.",e:"Tính tổng doanh thu trực tiếp từ Số lượng nhân Đơn giá, bỏ qua hẳn cột Thành tiền:",f:"=SUM(C2:C5*D2:D5)",r:"5.500.000",t:"Dấu { } do Excel tự thêm khi bấm Ctrl+Shift+Enter — tự gõ tay hai dấu này sẽ không chạy. Sửa công thức mảng xong cũng phải bấm lại tổ hợp phím đó.",sh:DS_SALES},
+{n:"IFS — Xếp loại nhiều mức (Excel 2019)",c:"nangcao",s:"IFS(đk1, kết_quả1, đk2, kết_quả2, ..., TRUE, kết_quả_cuối)",d:"Xét lần lượt nhiều điều kiện, thay cho việc lồng nhiều IF vào nhau rất khó đọc.",e:"Xếp loại học viên An với điểm 8,5 (từ 8 Giỏi, từ 6,5 Khá, từ 5 Trung bình, còn lại Yếu):",f:"=IFS(B2>=8,\"Giỏi\",B2>=6.5,\"Khá\",B2>=5,\"Trung bình\",TRUE,\"Yếu\")",r:"Giỏi",t:"IFS xét từ trái sang phải, gặp điều kiện đúng đầu tiên là dừng — phải xếp ngưỡng từ cao xuống thấp. Số thập phân trong công thức gõ 6.5 hay 6,5 tuỳ cài đặt vùng của máy.",sh:DS_SCORE},
+{n:"RANK — Xếp hạng",c:"nangcao",s:"RANK(số_cần_xếp, vùng, [0 = giảm dần])",d:"Cho biết một giá trị đứng thứ mấy trong vùng.",e:"An được 8,5 điểm, trong lớp có các điểm 8,5 · 7 · 9 · 6,5. Hạng của An:",f:"=RANK(B2,$B$2:$B$5)",r:"2",t:"Bằng điểm thì cùng hạng và hạng kế tiếp bị nhảy số (1, 2, 2, 4). Nhớ bấm F4 cố định vùng thành $B$2:$B$5 trước khi kéo công thức xuống cho cả lớp.",sh:DS_SCORE},
+{n:"TEXT — Định dạng số / ngày thành chữ",c:"nangcao",s:"TEXT(giá_trị, \"mã định dạng\")",d:"Biến số hoặc ngày thành chuỗi chữ đã định dạng sẵn, để ghép vào câu văn hoàn chỉnh.",e:"Định dạng ngày 06/11/2026 theo kiểu ngày/tháng/năm:",f:"=TEXT(DATE(2026,11,6),\"dd/mm/yyyy\")",r:"06/11/2026",t:"Kết quả của TEXT là chữ — đẹp để ghép câu thông báo như \"Tổng: \"&TEXT(E6,\"#.##0\")&\" đ\", nhưng đem cộng trừ ngày tháng tiếp sẽ không được nữa.",sh:DS_SALES},
+{n:"EOMONTH & EDATE — Cộng tháng, cuối tháng",c:"nangcao",s:"EOMONTH(ngày, số_tháng) · EDATE(ngày, số_tháng)",d:"EOMONTH cho ngày cuối tháng (cộng thêm số tháng chỉ định); EDATE cộng tháng giữ nguyên ngày.",e:"Ngày cuối của tháng 11/2026. Và EDATE(DATE(2026,11,6), 3) sẽ cho 06/02/2027:",f:"=EOMONTH(DATE(2026,11,6),0)",r:"30/11/2026",t:"Cặp hàm này rất hợp để tính hạn hợp đồng, hạn thanh toán rơi vào cuối tháng. EOMONTH với số tháng âm cho ngày cuối tháng trước.",sh:DS_SALES},
+{n:"DATEDIF — Tính thâm niên, tuổi (hàm ẩn)",c:"nangcao",s:"DATEDIF(ngày_bắt_đầu, ngày_kết_thúc, \"y\" / \"m\" / \"d\")",d:"Tính số năm / tháng / ngày tròn giữa hai mốc — hàm có sẵn từ rất lâu nhưng không hiện trong danh sách gợi ý của Excel.",e:"Từ ngày vào làm 15/03/2024 đến 06/11/2026, số năm thâm niên tròn (đổi \"y\" thành \"m\" được 31 tháng, thành \"d\" được 966 ngày):",f:"=DATEDIF(DATE(2024,3,15),DATE(2026,11,6),\"y\")",r:"2",t:"Ngày bắt đầu phải nhỏ hơn ngày kết thúc, ngược lại báo #NUM!. Vì là hàm ẩn nên gõ tay đầy đủ, Excel không gợi ý cú pháp giữa chừng.",sh:DS_SALES}
+];
+var EXCEL_TIPS=[
+{n:"Cố định ô bằng phím F4 (dấu $)",d:"Khi kéo copy công thức, địa chỉ ô thường tự chạy theo. Bấm F4 để cố định: $C$5 cố định cả cột lẫn dòng, C$5 chỉ cố định dòng, $C5 chỉ cố định cột.",e:"Ví dụ: bảng nhân đơn giá chung ở ô F1 thì viết =C2*$F$1 rồi kéo xuống — đơn giá không bị chạy theo.",t:"Đây là kỹ năng tiết kiệm thời gian nhất khi làm bảng lương, báo giá: cố định ô chứa hệ số, thuế suất, đơn giá chung trước khi kéo công thức."},
+{n:"Flash Fill — Tự điền theo mẫu (Ctrl + E)",d:"Gõ mẫu đúng 1–2 dòng, Excel tự đoán quy luật và điền hết cột: tách họ tên, ghép họ tên, tách số điện thoại, viết hoa chữ cái đầu...",e:"Cột A là \"Nguyễn Văn A\", gõ ở B2 chữ \"A\" (tên), bấm Ctrl + E — Excel tự tách tên cho cả cột.",t:"Flash Fill có từ Excel 2013. Nếu kết quả sai, sửa lại 1–2 dòng mẫu rồi bấm Ctrl + E lại để Excel học lại."},
+{n:"Xoá trùng: Remove Duplicates & Advanced Filter",d:"Excel 2019 không có hàm UNIQUE của 365 — để lấy danh sách không trùng, dùng Data → Remove Duplicates (xoá hẳn dòng trùng), hoặc Data → Advanced Filter → Unique records only (lọc ra danh sách riêng, giữ nguyên bảng gốc).",e:"Danh sách khách hàng bị nhập trùng số điện thoại: copy cột SĐT ra cột mới, chọn cột đó rồi bấm Remove Duplicates để có danh sách khách duy nhất.",t:"Luôn thao tác trên bản copy của cột/bảng khi dùng Remove Duplicates vì nó xoá dữ liệu thật và khó khôi phục."},
+{n:"Data Validation — Tạo ô chọn danh sách",d:"Chọn ô → Data → Data Validation → Allow: List → nhập nguồn danh sách. Người nhập chỉ được chọn, không gõ tự do, tránh sai chính tả làm hỏng SUMIF/COUNTIF.",e:"Cột Trạng thái đơn hàng chỉ cho chọn: Chưa giao, Đang giao, Đã giao, Đã huỷ.",t:"SUMIF không chạy đúng phần lớn là do dữ liệu gõ không đồng nhất (\"Đã giao\" và \"Da giao\"). Validation chặn lỗi này từ đầu."},
+{n:"Conditional Formatting — Tô màu theo điều kiện",d:"Home → Conditional Formatting: tô đỏ ô doanh thu dưới chỉ tiêu, thang màu cho điểm số, thanh dữ liệu (Data Bars) cho cột số lượng.",e:"Chọn cột Thành tiền → Greater Than → 1.500.000 → tô xanh: nhìn phát biết ngay dòng doanh thu cao.",t:"Chỉ nên dùng tối đa 2–3 quy tắc tô màu mỗi bảng, nhiều hơn sẽ rối mắt và mất tác dụng cảnh báo."},
+{n:"Freeze Panes & lặp tiêu đề khi in",d:"View → Freeze Panes → Freeze Top Row để cố định dòng tiêu đề khi cuộn. Khi in bảng dài: Page Layout → Print Titles → Rows to repeat at top để tiêu đề lặp lại ở mọi trang.",e:"Bảng chấm công 200 dòng: cố định dòng 1 chứa tên cột, cuộn xuống dòng 150 vẫn thấy tên cột.",t:"In bảng tính mà trang 2 mất tiêu đề là lỗi trình bày rất hay gặp khi gửi báo cáo — nhớ đặt Print Titles trước khi xuất PDF."},
+{n:"Kiểm tra & sửa lỗi công thức",d:"Bấm Ctrl + ` (dấu huyền, cạnh số 1) để hiện toàn bộ công thức thay vì kết quả. Các lỗi hay gặp: #N/A không tìm thấy khi tra cứu, #VALUE! sai kiểu dữ liệu, #DIV/0! chia cho 0, #REF! vùng bị xoá.",e:"Thấy #N/A ở cột tra giá: kiểm tra mã có thừa khoảng trắng không (dùng TRIM), rồi kiểm tra tham số FALSE của VLOOKUP.",t:"Dùng Formulas → Trace Precedents để vẽ mũi tên truy vết ô đang lấy số từ đâu — cứu nguy khi file nhiều lớp công thức."},
+{n:"Đặt tên vùng bằng Name Manager",d:"Chọn vùng → gõ tên vào ô Name Box (góc trái thanh công thức), ví dụ đặt tên DoanhThu cho E2:E5. Sau đó viết =SUM(DoanhThu) — công thức tự giải thích, ai đọc cũng hiểu.",e:"Đặt tên DonGia cho bảng giá, LuongCB cho cột lương cơ bản — sửa vùng một chỗ trong Name Manager, mọi công thức tự cập nhật.",t:"Tên vùng không chứa khoảng trắng, dùng dấu gạch dưới: Luong_Co_Ban. Tránh đặt tên trùng địa chỉ ô như A1, B2."}
+];
+var EXCEL_BT=[
+{n:"Bài tập 1 — Tổng hợp doanh thu",q:"Dùng bảng bán hàng (4 dòng: Áo thun 10 cái, Quần jean 5 cái, Áo khoác 3 cái, Áo thun 7 cái). Tính: (1) Tổng doanh thu cả bảng; (2) Tổng doanh thu riêng của Áo thun; (3) Số dòng bán Áo thun.",a:"(1) =SUM(E2:E5) → 5.500.000 · (2) =SUMIF(B2:B5,\"Áo thun\",E2:E5) → 2.550.000 · (3) =COUNTIF(B2:B5,\"Áo thun\") → 2",sh:DS_SALES},
+{n:"Bài tập 2 — Tra cứu đơn giá",q:"Dùng bảng mã sản phẩm (SP01 Áo thun 150.000, SP02 Quần jean 320.000, SP03 Áo khoác 450.000). Tra đơn giá của SP03 bằng 2 cách: VLOOKUP và INDEX + MATCH.",a:"VLOOKUP: =VLOOKUP(\"SP03\",A2:C4,3,FALSE) → 450.000 · INDEX+MATCH: =INDEX(C2:C4,MATCH(\"SP03\",A2:A4,0)) → 450.000",sh:DS_CODE},
+{n:"Bài tập 3 — Xếp loại học viên",q:"Dùng bảng điểm (An 8,5 · Bình 7 · Chi 9 · Dũng 6,5) và hàm IFS với ngưỡng: từ 8 Giỏi, từ 6,5 Khá, từ 5 Trung bình, còn lại Yếu. Xếp loại cho cả 4 học viên.",a:"Công thức cho An: =IFS(B2>=8,\"Giỏi\",B2>=6.5,\"Khá\",B2>=5,\"Trung bình\",TRUE,\"Yếu\") → Kết quả: An Giỏi · Bình Khá · Chi Giỏi · Dũng Khá",sh:DS_SCORE},
+{n:"Bài tập 4 — Cộng bảng có ô lỗi",q:"Cột giá trị gồm 100, #DIV/0!, 300, 200. Hàm SUM thường sẽ báo lỗi theo ô #DIV/0!. Hãy tính tổng đúng 3 ô không lỗi bằng AGGREGATE.",a:"=AGGREGATE(9,6,B2:B5) → 600 (mã 9 = SUM, tuỳ chọn 6 = bỏ qua mọi ô lỗi trong vùng)",sh:DS_ERR}
+];
+var WORD_LIB=[
+{n:"Styles & Heading — Xương sống của mọi tài liệu",d:"Style là bộ định dạng đặt sẵn (font, cỡ chữ, khoảng cách) gán cho đoạn văn. Đoạn nào là tiêu đề chương thì gán Heading 1, tiêu đề mục con gán Heading 2 — đây là điều kiện bắt buộc để làm mục lục tự động và dàn trang đều đẹp.",steps:["Bôi đen hoặc đặt con trỏ vào dòng tiêu đề chương → thẻ Home → nhóm Styles → chọn Heading 1 (phím tắt Ctrl + Alt + 1).","Tiêu đề mục con dùng Heading 2 (Ctrl + Alt + 2), mục nhỏ hơn nữa dùng Heading 3.","Muốn đổi font/cỡ cho toàn bộ tiêu đề: chuột phải vào Heading 1 → Modify → chỉnh một lần, mọi tiêu đề trong tài liệu đổi theo.","Mở Navigation Pane bằng Ctrl + F để thấy cây tiêu đề và nhảy nhanh tới từng chương."],ex:{t:"Ví dụ mẫu — Báo cáo đã gán Heading",h:"<h1>BÁO CÁO TỔNG KẾT QUÝ III/2026</h1><h2>1. Kết quả kinh doanh</h2><p>Doanh thu quý III đạt …… so với kế hoạch …… Trong bản mẫu thật trên Word, dòng tiêu đề báo cáo này được gán Heading 1, các mục 1, 2, 3 gán Heading 2.</p><h2>2. Công việc tồn đọng</h2><p>– ……………………………………</p><h2>3. Kế hoạch quý IV</h2><p>– ……………………………………</p><p><i>Mẹo: trong app này, dùng nút Tiêu đề lớn / Tiêu đề nhỏ trên thanh công cụ để tạo cấu trúc tương tự.</i></p>"},q:"Tài liệu có 3 chương, mỗi chương 2 mục con. Cho biết style cần gán cho từng cấp và phím tắt của chúng.",a:"Chương → Heading 1 (Ctrl + Alt + 1) · Mục con → Heading 2 (Ctrl + Alt + 2). Gán đúng 2 cấp này là đủ điều kiện để tạo mục lục tự động 2 cấp."},
+{n:"Mục lục tự động",d:"Khi tài liệu đã gán Heading đúng cách, Word tự dựng mục lục kèm số trang và tự cập nhật khi nội dung thay đổi — không bao giờ phải gõ tay số trang.",steps:["Đặt con trỏ ở trang muốn chèn mục lục (thường là trang riêng sau trang bìa).","Thẻ References → Table of Contents → chọn kiểu Automatic Table.","Sau khi sửa nội dung: bấm chuột phải vào mục lục → Update Field → Update entire table (hoặc bấm F9) để cập nhật lại số trang và tiêu đề.","Mục lục bị lệch trang thường do quên bước cập nhật — luôn cập nhật trước khi in hoặc gửi."],ex:{t:"Ví dụ mẫu — Trang mục lục",h:"<h1>MỤC LỤC</h1><p>1. Kết quả kinh doanh ……………… 2<br>2. Công việc tồn đọng ……………… 4<br>3. Kế hoạch quý IV ……………… 5</p><p><i>Trên Word thật, các dòng này do máy tự sinh từ Heading 1/2 và bấm vào được để nhảy tới đúng trang. Số trang trong mẫu này chỉ mang tính minh hoạ cấu trúc.</i></p>"},q:"Đã sửa thêm nội dung làm tài liệu dài thêm 2 trang nhưng mục lục vẫn ghi số trang cũ. Xử lý thế nào?",a:"Bấm vào mục lục → chuột phải → Update Field → chọn Update entire table (cập nhật cả tiêu đề lẫn số trang), hoặc bấm F9. Không sửa tay số trang trong mục lục vì lần cập nhật sau sẽ bị ghi đè."},
+{n:"Mail Merge — Trộn thư hàng loạt",d:"Trộn một mẫu thư với một danh sách (thường là file Excel) để sinh hàng chục, hàng trăm thư / giấy mời / phiếu lương — mỗi bản một người nhận, đúng tên, đúng đơn vị.",steps:["Chuẩn bị file Excel danh sách: hàng 1 là tên cột (HoTen, DonVi, DiaChi...), từ hàng 2 là dữ liệu, không để dòng trống.","Trong Word, mở mẫu thư → thẻ Mailings → Start Mail Merge → Letters.","Select Recipients → Use an Existing List → chọn file Excel vừa chuẩn bị.","Đặt con trỏ vào chỗ cần chèn tên → Insert Merge Field → chọn HoTen, DonVi... Trường trộn hiện dạng «HoTen».","Preview Results để xem thử từng người, sau đó Finish & Merge → Edit Individual Documents để sinh file chứa mọi thư, kiểm tra rồi mới in."],ex:{t:"Ví dụ mẫu — Thư mời có trường trộn",h:"<h1 style='text-align:center'>THƯ MỜI HỌP</h1><p><b>Kính gửi:</b> «HoTen» — «DonVi»</p><p>Công ty trân trọng kính mời Anh/Chị tham dự cuộc họp giao ban tháng 11/2026 vào lúc 08 giờ 30, ngày 12/11/2026 tại phòng họp tầng 2.</p><p>Đề nghị Anh/Chị xác nhận tham dự trước ngày 10/11/2026. Trân trọng.</p><p><i>Hai trường «HoTen» và «DonVi» sẽ được Word thay bằng dữ liệu từng dòng trong file Excel khi trộn.</i></p>"},q:"Danh sách Excel có 30 khách mời. Sau khi trộn nên chọn in thẳng hay sinh file riêng trước? Vì sao?",a:"Chọn Finish & Merge → Edit Individual Documents để sinh file 30 thư riêng trước, lướt kiểm tra tên/đơn vị có khớp dòng không, rồi mới in. In thẳng từ Print Documents dễ sai cả loạt mà không phát hiện."},
+{n:"Chèn bảng & biểu đồ vào tài liệu",d:"Bảng giúp trình bày số liệu ngay trong văn bản; biểu đồ dán từ Excel có thể giữ liên kết để số liệu Excel đổi thì biểu đồ trong Word tự đổi theo.",steps:["Insert → Table → kéo chọn số hàng cột, hoặc Insert Table để nhập số cụ thể.","Dùng thẻ Table Design để chọn kiểu bảng có sẵn (tô hàng tiêu đề, kẻ viền xen kẽ) thay vì kẻ tay từng đường.","Chèn biểu đồ: Insert → Chart chọn loại cột/tròn, rồi sửa số trong bảng dữ liệu nhỏ hiện ra; hoặc copy biểu đồ từ Excel và dán với tuỳ chọn Keep Source Formatting & Link Data để giữ liên kết.","Đặt tiêu đề cho bảng/biểu đồ bằng Insert Caption (xem mục chú thích) để tham chiếu chéo trong văn bản."],ex:{t:"Ví dụ mẫu — Bảng số liệu trong báo cáo",h:"<h1>BẢNG DOANH THU THEO QUÝ</h1><table><tr><th>Quý</th><th>Doanh thu (đ)</th><th>Tăng trưởng</th></tr><tr><td>Quý I</td><td>1.200.000.000</td><td>—</td></tr><tr><td>Quý II</td><td>1.450.000.000</td><td>+20,8%</td></tr><tr><td>Quý III</td><td>1.610.000.000</td><td>+11,0%</td></tr></table><p><i>Số liệu minh hoạ cấu trúc bảng. Trên Word, bấm vào bảng để dùng thẻ Table Design đổi kiểu trình bày.</i></p>"},q:"Báo cáo gửi đi hằng tháng, số liệu lấy từ một file Excel cố định. Khi dán biểu đồ từ Excel vào Word nên chọn cách dán nào để tháng sau khỏi làm lại?",a:"Dán với tuỳ chọn Keep Source Formatting & Link Data (giữ liên kết). Tháng sau chỉ cần sửa file Excel, mở Word bấm cập nhật liên kết là biểu đồ tự đổi số."},
+{n:"Chú thích cuối trang (Footnote / Endnote) & Caption",d:"Footnote là chú thích ở chân trang hiện tại (giải thích thuật ngữ, nguồn số liệu); Endnote gom chú thích về cuối tài liệu; Caption là nhãn đánh số tự động cho bảng, hình (Bảng 1, Hình 2...).",steps:["Đặt con trỏ ngay sau chữ cần chú thích → References → Insert Footnote (phím tắt Ctrl + Alt + F) → gõ nội dung chú thích.","Chú thích cuối tài liệu: Insert Endnote (Ctrl + Alt + D).","Nhãn cho bảng/hình: chuột phải vào bảng/hình → Insert Caption → chọn nhãn Bảng hoặc Hình — số thứ tự tự tăng và tự cập nhật bằng F9.","Xoá một chú thích: xoá số chú thích nhỏ trong nội dung chính, phần chữ chú thích tự mất theo."],ex:{t:"Ví dụ mẫu — Đoạn văn có chú thích",h:"<p>Doanh thu thuần¹ quý III tăng 11% so với quý trước, chủ yếu nhờ kênh bán hàng trực tuyến.</p><p>___________<br><small>¹ Doanh thu thuần: doanh thu sau khi trừ chiết khấu thương mại và hàng bán bị trả lại, theo số liệu phòng kế toán.</small></p><p><i>Trên Word thật, số ¹ và đoạn chú thích do Footnote tự quản lý và tự đánh số lại khi thêm/bớt.</i></p>"},q:"Cần giải thích một thuật ngữ ngay tại trang đang đọc, và một danh sách tài liệu tham khảo ở cuối văn bản. Dùng loại chú thích nào cho mỗi nhu cầu?",a:"Thuật ngữ → Footnote (hiện ở chân trang đó, Ctrl + Alt + F). Tài liệu tham khảo cuối văn bản → Endnote (gom về cuối tài liệu, Ctrl + Alt + D)."},
+{n:"Theo dõi thay đổi (Track Changes) & bình luận",d:"Bật Track Changes thì mọi thao tác thêm/xoá/sửa đều được ghi lại với tên người sửa và màu riêng; người duyệt đọc và Accept (chấp nhận) hoặc Reject (từ chối) từng thay đổi trước khi chốt bản cuối.",steps:["Thẻ Review → Track Changes (phím tắt Ctrl + Shift + E) để bật/tắt ghi thay đổi.","Đọc soát: dùng Previous / Next trong thẻ Review để nhảy qua từng thay đổi, bấm Accept hoặc Reject cho từng chỗ.","Thêm góp ý không sửa trực tiếp: bôi đen đoạn văn → New Comment (Ctrl + Alt + M).","Trước khi gửi bản chính thức: Accept All Changes và xoá hết comment để tài liệu sạch dấu vết soạn thảo."],ex:null,q:"Sếp gửi file đã bật Track Changes với 12 chỗ sửa. Cần chốt bản cuối để ký. Nêu thứ tự thao tác.",a:"1) Lướt từng thay đổi bằng Next, Accept/Reject từng chỗ. 2) Xử lý hết comment còn mở. 3) Bấm Accept All Changes cho phần còn lại đã đồng ý, tắt Track Changes (Ctrl + Shift + E). 4) Lưu bản mới trước khi ký."},
+{n:"Phím tắt Word hay dùng nhất",d:"Thuộc lòng khoảng 12 phím tắt dưới đây là tốc độ soạn thảo tăng rõ rệt, tay không phải rời bàn phím.",steps:["Ctrl + B / I / U — đậm, nghiêng, gạch chân; Ctrl + Shift + > tăng cỡ chữ.","Ctrl + Alt + 1 / 2 / 3 — gán Heading 1 / 2 / 3.","Shift + F3 — đổi kiểu chữ: thường → viết hoa đầu từ → VIẾT HOA toàn bộ.","Ctrl + H — Tìm & thay thế hàng loạt; Ctrl + F — tìm nhanh và mở Navigation Pane.","Ctrl + Alt + F — chú thích cuối trang; Ctrl + Alt + M — thêm bình luận.","F7 — kiểm tra chính tả; F9 — cập nhật trường tự động (mục lục, số trang, caption).","Ctrl + Enter — ngắt sang trang mới; Ctrl + S — lưu nhanh; Ctrl + Z / Ctrl + Y — hoàn tác / làm lại."],ex:null,q:"Đang gõ một tiêu đề chữ thường, muốn chuyển nhanh thành VIẾT HOA toàn bộ mà không gõ lại. Bấm gì?",a:"Bôi đen đoạn chữ rồi bấm Shift + F3 (bấm lặp để xoay qua các kiểu: viết hoa đầu câu → VIẾT HOA toàn bộ → chữ thường)."}
+];
+var libCat="all", libTab="excel";
+function copyTextLib(txt,msg){
+  function done(){toast(msg||"Đã chép ✓ Sếp dán vào Excel bằng Ctrl + V");}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(function(){fallback();});}else fallback();
+  function fallback(){var ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(ta);done();}
+}
+function setLibTab(t){
+  libTab=t;
+  document.getElementById("libTabExcel").classList.toggle("active",t==="excel");
+  document.getElementById("libTabWord").classList.toggle("active",t==="word");
+  document.getElementById("libExcelPane").hidden=t!=="excel";
+  document.getElementById("libWordPane").hidden=t!=="word";
+  document.getElementById("libTitle").textContent=t==="excel"?"📗 Thư viện hàm Excel — chuẩn 2019":"📘 Cẩm nang Word — kỹ năng & bài tập";
+  if(t==="excel")renderLib();else renderWord();
+}
+function openLib(tab){
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewLib").hidden=false;
+  window.scrollTo(0,0);setLibTab(tab||"excel");
+}
+function closeLib(){closeLibHome();}
+function setLibCat(cat,btn){libCat=cat;var bs=document.querySelectorAll("[data-fxcat]");for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i]===btn);renderLib();}
+function fxLvlBadge(c){return c==="coban"?'<span class="fx-lvl">CƠ BẢN</span>':c==="nangcao"?'<span class="fx-lvl adv">NÂNG CAO</span>':c==="meo"?'<span class="fx-lvl tip">MẸO HAY</span>':'<span class="fx-lvl ex">BÀI TẬP</span>';}
+function renderLib(){
+  var q=(document.getElementById("libSearch").value||"").toLowerCase();
+  var html="";
+  function match(o){return !q||(o.n+" "+(o.s||"")+" "+(o.d||"")+" "+(o.f||"")).toLowerCase().indexOf(q)>-1;}
+  if(libCat==="all"||libCat==="coban"||libCat==="nangcao"){
+    EXCEL_LIB.forEach(function(o,i){
+      if(libCat!=="all"&&o.c!==libCat)return; if(!match(o))return;
+      html+='<div class="fx-card"><h4>'+esc(o.n)+fxLvlBadge(o.c)+'</h4><p>'+esc(o.d)+'</p><div class="fx-formula">'+esc(o.s)+'</div><p><b>Ví dụ:</b> '+esc(o.e)+'</p><div class="fx-formula">'+esc(o.f)+'</div><p class="fx-result">➜ Kết quả: '+esc(o.r)+'</p><div class="fx-tip">⚠ <b>Mẹo / hay sai:</b> '+esc(o.t)+'</div><div class="fx-actions"><button class="primary" onclick="copyFx('+i+')">⧉ Chép công thức</button><button onclick="openFxExample('+i+')">📗 Mở ví dụ trong bảng tính</button></div></div>';
+    });
+  }
+  if(libCat==="all"||libCat==="meo"){
+    EXCEL_TIPS.forEach(function(o,i){
+      if(!match(o))return;
+      html+='<div class="fx-card"><h4>'+esc(o.n)+fxLvlBadge("meo")+'</h4><p>'+esc(o.d)+'</p>'+(o.e?'<p><b>Ví dụ:</b> '+esc(o.e)+'</p>':"")+'<div class="fx-tip">💡 '+esc(o.t)+'</div></div>';
+    });
+  }
+  if(libCat==="all"||libCat==="baitap"){
+    EXCEL_BT.forEach(function(o,i){
+      if(!match(o))return;
+      html+='<div class="fx-card"><h4>'+esc(o.n)+fxLvlBadge("baitap")+'</h4><p>'+esc(o.q)+'</p><div class="fx-actions"><button class="primary" onclick="openBtExample('+i+')">📗 Mở dữ liệu bài tập</button><button onclick="toggleAns(\'bt'+i+'\')">👁 Xem đáp án</button></div><div class="ans-box" id="ans-bt'+i+'"><b>Đáp án:</b> '+esc(o.a)+'</div></div>';
+    });
+  }
+  document.getElementById("libList").innerHTML=html||'<div class="empty-box">Không thấy hàm nào khớp — sếp thử từ khoá khác nhé.</div>';
+}
+function copyFx(i){copyTextLib(EXCEL_LIB[i].f,"Đã chép công thức "+EXCEL_LIB[i].n.split(" — ")[0]+" ✓");}
+function openSheetWith(data,title,extraRows){
+  sheetData=data.map(function(r){return r.slice();});
+  if(extraRows)extraRows.forEach(function(r){sheetData.push(r);});
+  var f={id:nextId++,name:title,type:"xlsx",folder:"OfficeVietAI",time:"Vừa xong",star:false,html:""};
+  files.unshift(f);openFile(f.id);
+}
+function openFxExample(i){
+  var o=EXCEL_LIB[i];
+  openSheetWith(o.sh,"Ví dụ – "+o.n.split(" — ")[0]+".xlsx",[[],["Công thức mẫu:",o.f],["Kết quả đúng:",o.r]]);
+  toast("Đã mở ví dụ của "+o.n.split(" — ")[0]+" — công thức và kết quả đúng ở cuối bảng ✓");
+}
+function openBtExample(i){
+  var o=EXCEL_BT[i];
+  openSheetWith(o.sh,"Bài tập – "+o.n+".xlsx",[[],["Đề bài:",o.q]]);
+  toast("Đã mở dữ liệu bài tập — sếp tự làm trước, rồi quay lại xem đáp án nhé ✓");
+}
+function toggleAns(id){var el=document.getElementById("ans-"+id);if(el)el.classList.toggle("open");}
+function renderWord(){
+  var html="";
+  WORD_LIB.forEach(function(o,i){
+    html+='<div class="fx-card"><h4>'+esc(o.n)+'</h4><p>'+esc(o.d)+'</p><ol>'+o.steps.map(function(s){return "<li>"+esc(s)+"</li>";}).join("")+'</ol><div class="fx-actions">'+(o.ex?'<button class="primary" onclick="openWordExample('+i+')">📘 Mở ví dụ mẫu</button>':"")+'<button onclick="toggleAns(\'w'+i+'\')">👁 Xem đáp án bài tập</button></div><p style="margin-top:10px"><b>Bài tập:</b> '+esc(o.q)+'</p><div class="ans-box" id="ans-w'+i+'"><b>Đáp án:</b> '+esc(o.a)+'</div></div>';
+  });
+  document.getElementById("wordList").innerHTML=html;
+}
+function openWordExample(i){
+  var o=WORD_LIB[i];if(!o.ex)return;
+  var f={id:nextId++,name:o.ex.t+".docx",type:"docx",folder:"OfficeVietAI",time:"Vừa xong",star:false,html:o.ex.h};
+  files.unshift(f);openFile(f.id);
+  toast("Đã mở ví dụ mẫu: "+o.n+" ✓");
+}
+setModule("doc");
 </script>
 </body>
 </html>

@@ -10,6 +10,9 @@ Web app văn phòng đa chức năng — phong cách màu Excel (xanh lá Excel 
 - Quản lý tệp: tìm kiếm, lọc, sắp xếp, gắn sao, đổi tên, nhân bản
 - Trình soạn thảo kiểu Word: Tự lưu, Lịch sử phiên bản, Bình luận, Chế độ đề xuất, Đọc chính tả tiếng Việt, Đọc to, Chế độ đọc tập trung, Kiểm tra văn bản, Hoàn tác / Làm lại, Chèn bảng, Tìm & thay thế
 - Bộ công cụ PDF kiểu iLovePDF (28 công cụ chạy được): Gộp (Merge), Tách (Split), Nén, Sắp xếp trang, Xoay, Đánh số trang, Cắt lề (Crop), Che thông tin (Redact), Watermark, Ký, Sửa PDF, PDF ↔ Word / PowerPoint / Excel / JPG / Markdown, Word / PowerPoint / Excel / JPG / HTML → PDF, OCR, Tóm tắt AI, Dịch PDF. Riêng Đặt mật khẩu và PDF/A ghi rõ cần máy chủ nên chưa làm trong bản tĩnh.
+- Thư viện hàm Excel chuẩn 2019 (15 hàm cơ bản + 15 hàm nâng cao, 8 mẹo, 4 bài tập có đáp án — không dùng hàm chỉ có trên Microsoft 365 như XLOOKUP/FILTER/UNIQUE)
+- Cẩm nang Word (7 mục: Styles, mục lục tự động, Mail Merge, bảng/biểu đồ, chú thích cuối trang, theo dõi thay đổi, phím tắt) với ví dụ mẫu và bài tập thực hành
+- Giao diện lọc theo mục: chọn mục nào chỉ hiện nội dung mục đó, trang chủ mặc định mở mục Tài liệu — gọn, không cuộn tràn lan
 - Studio Thiết kế kiểu Canva: thiết kế poster, thiệp, banner từ mẫu sẵn
 - Trợ lý AI miễn phí (chạy trên trình duyệt, không cần tài khoản hay API key): soạn Công văn, Quyết định, Thông báo nội bộ, Kế hoạch công việc tuần, viết lại, tóm tắt
 
