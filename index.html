@@ -26,19 +26,20 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--red);color:var(--ink);-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--bg2);color:var(--ink);-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 a{color:inherit}
 
 /* ===== LAYOUT ===== */
 .app{display:flex;min-height:100vh}
-.sidebar{width:var(--sidebar-w);flex-shrink:0;background:linear-gradient(180deg,#217346 0%,var(--excel-dark) 55%,var(--excel-deep) 100%);color:#eafff3;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;z-index:20}
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:linear-gradient(180deg,#217346 0%,var(--excel-dark) 55%,var(--excel-deep) 100%);color:#eafff3;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;z-index:20;overflow:hidden}
 .brand{padding:18px 16px 14px;display:flex;gap:10px;align-items:center}
 .brand-icon{width:38px;height:38px;border-radius:10px;background:#0f3d24;display:grid;place-items:center;font-size:20px;flex-shrink:0;border:1px solid rgba(255,255,255,.18)}
 .brand b{font-size:15px;line-height:1;display:block;letter-spacing:-.02em}
 .brand span{font-size:10.5px;opacity:.75;display:block;margin-top:4px;line-height:1.3}
-.nav{padding:6px 10px;display:flex;flex-direction:column;gap:2px}
+.nav{padding:6px 10px;display:flex;flex-direction:column;gap:2px;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .nav button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:transparent;border:0;color:#eafff3;padding:9px 10px;border-radius:10px;font-size:13.5px;font-weight:500}
 .nav button:hover{background:rgba(255,255,255,.1)}
 .nav button.active{background:rgba(255,255,255,.14);outline:1px solid rgba(51,196,129,.65)}
@@ -49,8 +50,7 @@ a{color:inherit}
 .sidebar-foot{margin-top:auto;padding:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
 .avatar{width:30px;height:30px;border-radius:50%;background:var(--excel-bright);color:#07331b;display:grid;place-items:center;font-weight:800;font-size:13px}
 
-.main{flex:1;min-width:0;position:relative;overflow:hidden;background:radial-gradient(900px 500px at 85% -10%,rgba(51,196,129,.20) 0%,transparent 55%),linear-gradient(180deg,var(--bg1),var(--bg2) 38%,var(--bg3))}
-.star-bg{display:none;position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:min(680px,90vw);opacity:.95;pointer-events:none;z-index:0}
+.main{flex:1;min-width:0;min-height:100vh;position:relative;overflow:hidden;background:radial-gradient(900px 500px at 85% -10%,rgba(51,196,129,.20) 0%,transparent 55%),linear-gradient(180deg,var(--bg1),var(--bg2) 38%,var(--bg3))}
 .content{position:relative;z-index:1;padding:26px 28px 40px;max-width:1180px;margin:0 auto}
 
 /* ===== GREETING ===== */
@@ -157,6 +157,71 @@ table.sheet td[contenteditable]{outline:none}table.sheet td:focus{background:#e9
 @media(prefers-color-scheme:dark){.slide-card{background:#2a2022}}
 .slide-card b{font-size:15px}.slide-card p{font-size:12.5px;color:var(--muted);line-height:1.5}
 .slide-num{font-size:11px;font-weight:800;color:var(--red);margin-bottom:8px}
+/* ===== SLIDES STUDIO (kiểu Kimi Slides) ===== */
+.sl-sec{padding:14px 16px 0}
+.sl-box{border:1.5px solid #bfe3cc;background:linear-gradient(135deg,#eef8f1,#f7fbf8);border-radius:14px;padding:14px}
+@media(prefers-color-scheme:dark){.sl-box{background:#20362a;border-color:#39503f}}
+.sl-box h4{margin:0 0 4px;font-size:13.5px;color:var(--excel-dark)}
+@media(prefers-color-scheme:dark){.sl-box h4{color:#8fe3ae}}
+.sl-box p{margin:0 0 10px;font-size:12px;color:var(--muted);line-height:1.55}
+.sl-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.sl-row input[type=text]{flex:1;min-width:200px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;background:#fff;color:#1c1c1c;outline:0}
+@media(prefers-color-scheme:dark){.sl-row input[type=text]{background:#1d2a22;color:#eef7f0}}
+.sl-row select{border:1.5px solid var(--line);border-radius:10px;padding:9px 10px;font-size:12.5px;font-weight:600;background:#fff;color:#243528}
+.sl-note{font-size:11.5px;color:var(--muted);line-height:1.6;margin-top:10px}
+.sl-tpl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:10px}
+.sl-tpl{border:1.5px solid var(--line);border-radius:12px;padding:10px;text-align:left;background:#fff;min-height:104px;display:flex;flex-direction:column;gap:6px}
+@media(prefers-color-scheme:dark){.sl-tpl{background:#223028}}
+.sl-tpl .prev{height:44px;border-radius:8px;position:relative;overflow:hidden;flex-shrink:0}
+.sl-tpl .prev i{position:absolute;left:8px;top:8px;width:55%;height:7px;border-radius:4px;display:block}
+.sl-tpl .prev u{position:absolute;left:8px;top:21px;width:38%;height:5px;border-radius:4px;display:block;text-decoration:none}
+.sl-tpl b{font-size:12.5px;line-height:1.3}
+.sl-tpl small{color:var(--muted);font-size:11px}
+.sl-tpl .mk{margin-top:auto;align-self:flex-start;border:0;background:var(--excel);color:#fff;border-radius:8px;padding:6px 11px;font-size:11.5px;font-weight:700}
+.sl-chip{border:1px solid #b9d6c2;background:#fff;color:#243528;border-radius:99px;padding:6px 12px;font-size:12px;font-weight:700}
+.sl-chip.active{background:var(--excel);color:#fff;border-color:var(--excel)}
+@media(prefers-color-scheme:dark){.sl-chip{background:#223028;color:#eef7f0}}
+.slide-card{position:relative;overflow:hidden;cursor:pointer}
+.slide-card.sel{outline:3px solid var(--excel);outline-offset:1px}
+.slide-card .bar{position:absolute;left:0;top:0;bottom:0;width:7px}
+.slide-tools{display:flex;gap:4px;margin-top:auto;padding-top:8px;flex-wrap:wrap}
+.slide-tools button{border:1px solid rgba(0,0,0,.14);background:rgba(255,255,255,.75);color:#243528;border-radius:7px;padding:3px 8px;font-size:11px;font-weight:700}
+.viz{margin-top:8px;font-size:11px}
+.viz table{border-collapse:collapse;width:100%}
+.viz td,.viz th{border:1px solid rgba(0,0,0,.18);padding:3px 6px;font-size:11px;background:rgba(255,255,255,.55);color:#243528}
+.viz .swot{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.viz .swot div{border-radius:7px;padding:5px 7px;font-weight:700;color:#fff;font-size:10.5px;line-height:1.35}
+.viz .kpis{display:flex;gap:6px}
+.viz .kpis div{flex:1;background:rgba(255,255,255,.65);border-radius:8px;padding:6px;text-align:center;color:#243528}
+.viz .kpis b{display:block;font-size:14px}
+.viz .steps{display:flex;gap:4px;align-items:stretch}
+.viz .steps div{flex:1;border-radius:7px;padding:5px 6px;color:#fff;font-weight:700;font-size:10.5px;text-align:center;line-height:1.3}
+.viz .funnel div{margin:0 auto 3px;color:#fff;font-weight:700;text-align:center;border-radius:5px;padding:4px;font-size:10.5px}
+.viz .gantt div{display:flex;align-items:center;gap:5px;margin-bottom:3px;color:#243528;font-weight:600}
+.viz .gantt i{display:block;height:9px;border-radius:5px}
+.viz .latex{background:rgba(255,255,255,.7);border:1px dashed rgba(0,0,0,.25);border-radius:8px;padding:7px 9px;font-family:Georgia,serif;font-style:italic;font-size:13px;color:#243528;text-align:center}
+.viz .shapebox{display:grid;place-items:center;height:52px;color:#fff;font-weight:800;font-size:11px}
+.sl-chat{border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--card)}
+.sl-chatlog{display:flex;flex-direction:column;gap:8px;max-height:190px;overflow:auto;margin-bottom:10px}
+.sl-chatlog .m{max-width:88%;padding:8px 11px;border-radius:12px;font-size:12.5px;line-height:1.55;white-space:pre-wrap}
+.sl-chatlog .m.bot{background:#eef4ef;align-self:flex-start}
+.sl-chatlog .m.user{background:var(--excel);color:#fff;align-self:flex-end}
+@media(prefers-color-scheme:dark){.sl-chatlog .m.bot{background:#2c3a30}}
+.present{position:fixed;inset:0;z-index:95;background:#0b1510;display:none;place-items:center;padding:18px}
+.present.on{display:grid}
+.present .stage{width:min(1100px,96vw);aspect-ratio:16/9;border-radius:14px;padding:clamp(20px,4.5vw,54px);display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,.55);position:relative;overflow:hidden}
+.present .stage h1{font-size:clamp(22px,3.6vw,40px);margin:0 0 14px;line-height:1.2}
+.present .stage .bd{font-size:clamp(14px,1.9vw,20px);line-height:1.65;white-space:pre-wrap}
+.present .stage .viz{font-size:14px;max-width:640px}
+.present .pnav{position:absolute;bottom:16px;right:18px;display:flex;gap:8px;align-items:center;color:#fff;font-size:12.5px;font-weight:700}
+.present .pnav button,.present .px{border:0;background:rgba(255,255,255,.16);color:#fff;border-radius:9px;padding:8px 13px;font-weight:700}
+.present .px{position:absolute;top:14px;right:14px}
+@keyframes pFade{from{opacity:0}to{opacity:1}}
+@keyframes pSlide{from{opacity:0;transform:translateX(46px)}to{opacity:1;transform:none}}
+@keyframes pZoom{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.anim-fade{animation:pFade .45s ease}.anim-slide{animation:pSlide .45s ease}.anim-zoom{animation:pZoom .45s ease}
+.sl-ver-item{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-radius:11px;padding:9px 12px;margin-bottom:8px;font-size:12.5px}
+.sl-ver-item small{display:block;color:var(--muted)}
 
 /* ===== AI PANEL ===== */
 .ai-panel{position:fixed;top:0;right:0;width:min(400px,100vw);height:100dvh;background:#fff;color:#1c1c1c;z-index:60;box-shadow:-16px 0 40px rgba(0,0,0,.3);display:none;flex-direction:column}
@@ -446,8 +511,6 @@ body.focus .content{max-width:none;padding-top:60px}
 
   <!-- MAIN -->
   <main class="main">
-    <svg class="star-bg" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,2 61.8,35.5 97.5,35.5 68.8,57 79.4,90.5 50,70 20.6,90.5 31.2,57 2.5,35.5 38.2,35.5" fill="#ffde59"/></svg>
-
     <!-- ===== HOME ===== -->
     <div class="content" id="viewHome">
       <div class="greet">
@@ -531,27 +594,6 @@ body.focus .content{max-width:none;padding-top:60px}
 
       </div>
 
-
-      <div id="blkDesign">
-      <div class="section-title" style="margin-top:30px">🎨 Thiết kế — kiểu Canva Visual Suite</div>
-      <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin:0 0 12px">Trình thiết kế kéo–thả ngay trong app: chọn cỡ chuẩn, dùng mẫu có sẵn hoặc nhờ Magic Design dựng mẫu từ câu mô tả, thêm chữ / hình khối / icon / ảnh, chỉnh ảnh, áp Brand Kit 1 chạm, rồi xuất PNG / JPG / PDF.</p>
-      <div class="pdf-grid">
-        <button class="pdf-card" onclick="openDesign('post')"><span class="p-ico">📱</span><b>Bài đăng mạng xã hội</b><small>Vuông 1080 × 1080 — Facebook, Instagram, Zalo.</small></button>
-        <button class="pdf-card" onclick="openDesign('poster')"><span class="p-ico">🪧</span><b>Poster A4</b><small>2480 × 3508 — in poster, thông báo, khai trương.</small></button>
-        <button class="pdf-card" onclick="openDesign('flyer')"><span class="p-ico">📃</span><b>Tờ rơi A5</b><small>1748 × 2480 — phát tay, kẹp hoá đơn.</small></button>
-        <button class="pdf-card" onclick="openDesign('logo')"><span class="p-ico">⬢</span><b>Logo</b><small>1080 × 1080 nền trong suốt khi xuất PNG.</small></button>
-        <button class="pdf-card" onclick="openDesign('banner')"><span class="p-ico">🖥</span><b>Banner web</b><small>1920 × 640 — bìa trang, banner khuyến mãi.</small></button>
-        <button class="pdf-card" onclick="openDesign('card')"><span class="p-ico">💌</span><b>Thiệp &amp; thiệp mời</b><small>1748 × 1240 — thiệp chúc mừng, mời họp, mời tiệc.</small></button>
-        <button class="pdf-card" onclick="openDesign('cert')"><span class="p-ico">🏅</span><b>Chứng chỉ / bằng khen</b><small>3508 × 2480 ngang — khen thưởng, hoàn thành khoá học.</small></button>
-        <button class="pdf-card" onclick="openDesign('thumb')"><span class="p-ico">▶️</span><b>Thumbnail YouTube</b><small>1280 × 720 — ảnh bìa video nổi bật.</small></button>
-        <button class="pdf-card" onclick="openDesign('namecard')"><span class="p-ico">🪪</span><b>Danh thiếp</b><small>1050 × 600 — name card 9 × 5,5 cm.</small></button>
-        <button class="pdf-card" onclick="openDesign('brochure')"><span class="p-ico">📖</span><b>Brochure A4 ngang</b><small>3508 × 2480 — giới thiệu sản phẩm, dịch vụ.</small></button>
-        <button class="pdf-card" onclick="openDesign('collage')"><span class="p-ico">🧩</span><b>Collage ảnh</b><small>Khung ghép nhiều ảnh kỷ niệm, sản phẩm.</small></button>
-        <button class="pdf-card" onclick="openDesign('meme')"><span class="p-ico">😄</span><b>Meme</b><small>1080 × 1080 — chữ to trên / dưới ảnh, đăng vui.</small></button>
-        <button class="pdf-card" onclick="openDesign('board')"><span class="p-ico">🧠</span><b>Bảng trắng brainstorm</b><small>Giấy note dính + vẽ tay để lên ý tưởng cùng nhau.</small></button>
-      </div>
-
-      </div>
 
       <div id="blkFiles">
       <div class="filterbar">
@@ -648,12 +690,71 @@ body.focus .content{max-width:none;padding-top:60px}
         </div>
         <!-- slides -->
         <div id="slidesArea" hidden>
-          <div style="padding:12px 16px 0;display:flex;gap:8px;flex-wrap:wrap">
-            <button class="btn btn-ghost" onclick="addSlide()">＋ Thêm slide</button>
-            <button class="btn btn-ghost" onclick="delSlide()">− Xoá slide cuối</button>
-            <button class="btn btn-ghost" onclick="aiSlides()">✦ AI tạo dàn slide</button>
+          <div class="sl-sec">
+            <div class="sl-box">
+              <h4>✦ Tạo slide bằng AI — gõ ý tưởng, AI dựng cả bộ slide</h4>
+              <p>Giống cách Kimi Slides hoạt động: sếp chỉ cần gõ chủ đề hoặc câu mô tả, AI (chạy ngay trên trình duyệt) sẽ lên dàn ý, sinh bộ slide có định dạng thống nhất theo mẫu đang chọn và chèn sẵn biểu đồ / sơ đồ phù hợp chủ đề.</p>
+              <div class="sl-row">
+                <input type="text" id="slTopic" placeholder="Ví dụ: Báo cáo kinh doanh quý 3 · Giới thiệu sản phẩm mới · Bài giảng lịch sử lớp 10..." onkeydown="if(event.key==='Enter')aiSlidesFromTopic()">
+                <select id="slCount" aria-label="Số slide"><option value="6">6 slide</option><option value="8" selected>8 slide</option><option value="10">10 slide</option></select>
+                <button class="btn btn-red" onclick="aiSlidesFromTopic()">✦ Tạo bộ slide</button>
+                <button class="btn btn-ghost" onclick="aiSlides()">Dàn ý chuẩn 6 slide</button>
+              </div>
+              <div class="sl-row" style="margin-top:10px">
+                <span style="font-size:12.5px;font-weight:700">📄 Tạo slide từ tài liệu có sẵn:</span>
+                <button class="btn btn-ghost" onclick="document.getElementById('slDocInput').click()">⬆ Tải lên Word / Excel / Markdown / văn bản / HTML</button>
+                <input type="file" id="slDocInput" accept=".txt,.md,.csv,.html,.htm,.docx,.xlsx,.xls" onchange="slidesFromDoc(event)">
+                <span style="font-size:11.5px;color:var(--muted)">Nội dung tài liệu được trích thành từng slide ngay trên trình duyệt.</span>
+              </div>
+            </div>
+          </div>
+          <div class="sl-sec">
+            <h4 style="margin:0 0 2px;font-size:13.5px;color:var(--excel-dark)">🎞 Kho mẫu slide — bấm “Tạo tương tự” để dùng mẫu</h4>
+            <div class="sl-row" id="slTplChips" style="margin-top:8px">
+              <button class="sl-chip active" data-g="all" onclick="setSlTplGroup('all',this)">Tất cả</button>
+              <button class="sl-chip" data-g="work" onclick="setSlTplGroup('work',this)">Công việc</button>
+              <button class="sl-chip" data-g="finance" onclick="setSlTplGroup('finance',this)">Tài chính</button>
+              <button class="sl-chip" data-g="ads" onclick="setSlTplGroup('ads',this)">Quảng cáo</button>
+              <button class="sl-chip" data-g="academic" onclick="setSlTplGroup('academic',this)">Học thuật</button>
+              <button class="sl-chip" data-g="consult" onclick="setSlTplGroup('consult',this)">Tư vấn</button>
+            </div>
+            <div class="sl-tpl-grid" id="slTplGrid"></div>
+          </div>
+          <div class="sl-sec">
+            <div class="sl-row">
+              <button class="btn btn-ghost" onclick="addSlide()">＋ Thêm slide</button>
+              <button class="btn btn-ghost" onclick="delSlide()">− Xoá slide cuối</button>
+              <span style="width:6px"></span>
+              <button class="btn btn-ghost" onclick="insertViz('chart')">📊 Chèn biểu đồ</button>
+              <button class="btn btn-ghost" onclick="insertViz('table')">▦ Chèn bảng</button>
+              <button class="btn btn-ghost" onclick="insertViz('shape')">◆ Chèn hình khối</button>
+              <select id="slSmartSel" aria-label="SmartArt"><option value="swot">SmartArt: SWOT</option><option value="roadmap">SmartArt: Lộ trình</option><option value="gantt">SmartArt: Gantt</option><option value="kpi">SmartArt: KPI</option><option value="funnel">SmartArt: Phễu bán hàng</option><option value="timeline">SmartArt: Timeline</option><option value="mindmap">SmartArt: Mind map</option><option value="latex">Công thức LaTeX</option></select>
+              <button class="btn btn-ghost" onclick="insertViz('smart')">🧩 Chèn SmartArt / LaTeX</button>
+            </div>
+            <div class="sl-row" style="margin-top:8px">
+              <label style="font-size:12.5px;font-weight:700">Hiệu ứng chuyển slide:
+                <select id="slTrans" onchange="slideTrans=this.value"><option value="fade">Mờ dần (Fade)</option><option value="slide">Trượt (Slide)</option><option value="zoom">Phóng (Zoom)</option><option value="none">Không hiệu ứng</option></select>
+              </label>
+              <button class="btn btn-green" onclick="startPresent()">▶ Trình chiếu</button>
+              <button class="btn btn-ghost" onclick="openSlideVersions()">🕘 Phiên bản slide</button>
+              <span style="width:6px"></span>
+              <button class="btn btn-red" onclick="exportPptx()">⬇ Xuất .pptx thật</button>
+              <button class="btn btn-ghost" onclick="exportSlidesPdf()">⬇ Xuất PDF</button>
+              <button class="btn btn-ghost" onclick="exportSlidesPng()">⬇ Xuất PNG</button>
+            </div>
+            <p class="sl-note">Bấm vào một slide để chọn slide đó (viền xanh) — các nút Chèn biểu đồ / bảng / SmartArt sẽ áp vào slide đang chọn. Mỗi slide có nút ↑ ↓ đổi thứ tự, ⧉ nhân bản, ✕ xoá. Sửa chữ trực tiếp trên slide như trước. <b>Chưa có trên bản chạy trình duyệt:</b> tìm kiếm tài liệu &amp; trích dẫn nguồn trên mạng và cộng tác thời gian thực nhiều người cùng sửa — hai tính năng này của Kimi cần máy chủ, app không giả lập.</p>
           </div>
           <div class="slides-wrap" id="slidesWrap"></div>
+          <div class="sl-sec" style="padding-bottom:18px">
+            <div class="sl-chat">
+              <h4 style="margin:0 0 8px;font-size:13.5px;color:var(--excel-dark)">✦ Sửa slide bằng AI — khung chat</h4>
+              <div class="sl-chatlog" id="slChatLog"><div class="m bot">Sếp gõ yêu cầu, ví dụ: “viết lại slide 2 trang trọng hơn”, “rút ngắn slide đang chọn”, “đổi phong cách sang mẫu Black Gold Ledger”, “thêm slide kết luận”. AI sửa ngay trên bộ slide, có lưu phiên bản trước khi sửa để khôi phục được.</div></div>
+              <div class="sl-row">
+                <input type="text" id="slChatInput" placeholder="Ví dụ: viết lại slide 2 hay hơn · đổi phong cách tối sang trọng · rút ngắn tất cả" onkeydown="if(event.key==='Enter')slideChatSend()">
+                <button class="btn btn-red" onclick="slideChatSend()">Gửi ✦</button>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="ed-foot"><span id="wordCount">0 từ</span><span id="edTypeLabel">Tài liệu .docx</span></div>
       </div>
@@ -999,6 +1100,25 @@ body.focus .content{max-width:none;padding-top:60px}
   </div>
 </div>
 
+<!-- SLIDE VERSIONS MODAL -->
+<div class="modal" id="slVerModal">
+  <div class="modal-box">
+    <h3>Lịch sử phiên bản slide</h3>
+    <p>Mỗi lần AI tạo mới, áp mẫu hoặc sửa bằng chat, app lưu một bản chụp của bộ slide. Bấm <b>Khôi phục</b> để quay lại — bản hiện tại cũng được lưu trước khi khôi phục. Phiên bản chỉ giữ trong phiên mở trang này.</p>
+    <div id="slVerList"></div>
+    <div class="row"><button class="btn btn-ghost" onclick="document.getElementById('slVerModal').classList.remove('open')">Đóng</button><button class="btn btn-red" onclick="pushSlideSnap('lưu thủ công');renderSlideVersions()">＋ Lưu phiên bản ngay</button></div>
+  </div>
+</div>
+
+<!-- PRESENTATION OVERLAY -->
+<div class="present" id="presentOverlay">
+  <div class="stage" id="presentStage"></div>
+  <button class="px" onclick="stopPresent()" style="position:fixed">✕ Thoát (Esc)</button>
+  <div class="pnav" style="position:fixed;bottom:16px;right:18px">
+    <button onclick="presentMove(-1)">← Trước</button><span id="presentIdx"></span><button onclick="presentMove(1)">Sau →</button>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -1102,7 +1222,7 @@ function openFile(id){
   document.getElementById("fmtToolbar").style.display=(isSheet||isSlides)?"none":"flex";
   document.getElementById("sheetArea").hidden=!isSheet;
   document.getElementById("slidesArea").hidden=!isSlides;
-  if(isSheet)renderSheet();else if(isSlides)renderSlides();else{document.getElementById("docArea").innerHTML=f.html||"<p></p>";updateWordCount();if(!versions[f.id]||!versions[f.id].length)pushVersion("bản mở đầu");else document.getElementById("autosaveLabel").textContent="☁ Tự lưu: đang bật";}
+  if(isSheet)renderSheet();else if(isSlides){renderSlides();pushSlideSnap("bản mở đầu");}else{document.getElementById("docArea").innerHTML=f.html||"<p></p>";updateWordCount();if(!versions[f.id]||!versions[f.id].length)pushVersion("bản mở đầu");else document.getElementById("autosaveLabel").textContent="☁ Tự lưu: đang bật";}
   showEditor();
 }
 function openLocalFile(ev){
@@ -1204,14 +1324,341 @@ function addCol(){sheetData.forEach(function(r,i){r.push(i===0?"Cột mới":"")
 function aiSheet(){sheetData=[["STT","Hạng mục","Đơn vị","Số lượng","Đơn giá (đ)","Thành tiền (đ)"],["1","Thiết kế bộ nhận diện","Gói","1","8000000",""],["2","Xây dựng website giới thiệu","Trang","1","15000000",""],["3","Bảo trì & hỗ trợ 6 tháng","Tháng","6","1000000",""],["4","Đào tạo sử dụng","Buổi","2","1500000",""]];renderSheet();toast("AI đã điền mẫu báo giá — sếp sửa số liệu trực tiếp trên bảng ✓");}
 
 /* ---- Slides ---- */
+/* ---- SLIDES STUDIO (kiểu Kimi Slides) ---- */
+var SL_GROUP={work:"Công việc",finance:"Tài chính",ads:"Quảng cáo",academic:"Học thuật",consult:"Tư vấn"};
+var SLIDE_TEMPLATES=[
+ {name:"Moss Green",g:"work",desc:"Xanh rêu dịu — họp nội bộ, báo cáo tuần/tháng.",th:{bg:"#eef5ec",ink:"#22402c",sub:"#56755f",accent:"#5b8c5a"}},
+ {name:"Emerald Briefing",g:"work",desc:"Ngọc lục bảo — báo cáo tiến độ, kế hoạch hành động.",th:{bg:"#e7f6ef",ink:"#0f3d2c",sub:"#4c7263",accent:"#0e9f6e"}},
+ {name:"Sage Boardroom",g:"work",desc:"Xanh xám thanh lịch — họp hội đồng, tổng kết năm.",th:{bg:"#f0f3ee",ink:"#2c3a2e",sub:"#64766a",accent:"#7d9b76"}},
+ {name:"Warm Jade Annual Report",g:"finance",desc:"Ngọc ấm — báo cáo thường niên, kết quả kinh doanh.",th:{bg:"#f7f3e8",ink:"#3d3423",sub:"#7a6c4e",accent:"#b98a2f"}},
+ {name:"Black Gold Ledger",g:"finance",desc:"Đen – vàng sang trọng — tài chính, đầu tư, ngân hàng.",th:{bg:"#17181c",ink:"#f3e9cf",sub:"#b9ac8d",accent:"#d4af37"}},
+ {name:"Forest KPI",g:"finance",desc:"Xanh rừng — dashboard KPI, chỉ số hiệu quả.",th:{bg:"#eaf4ee",ink:"#123524",sub:"#4e6d5b",accent:"#217346"}},
+ {name:"Mint Marketing",g:"ads",desc:"Bạc hà tươi — giới thiệu sản phẩm, chiến dịch mới.",th:{bg:"#e9fbf3",ink:"#0e3d2b",sub:"#4d7a68",accent:"#12b76a"}},
+ {name:"Jade Launch",g:"ads",desc:"Ngọc bích nổi bật — ra mắt sản phẩm, sự kiện.",th:{bg:"#e6f7f4",ink:"#083f38",sub:"#487a72",accent:"#0d9488"}},
+ {name:"Coral Sale Day",g:"ads",desc:"San hô rực rỡ — khuyến mãi, bán hàng, livestream.",th:{bg:"#fff3ee",ink:"#4a2417",sub:"#8a6053",accent:"#e85d3d"}},
+ {name:"Teal Green Academic",g:"academic",desc:"Xanh teal học thuật — bài giảng, báo cáo nghiên cứu.",th:{bg:"#eaf6f5",ink:"#0d3b3a",sub:"#4f7371",accent:"#0f766e"}},
+ {name:"Scholar Jade",g:"academic",desc:"Ngọc học giả — luận văn, seminar, hội thảo khoa học.",th:{bg:"#f2f6ec",ink:"#2f4020",sub:"#65755a",accent:"#6a994e"}},
+ {name:"Ivory Lecture",g:"academic",desc:"Ngà sáng — bài giảng nhiều chữ, dễ đọc trên máy chiếu.",th:{bg:"#fbf9f3",ink:"#33302a",sub:"#6f6a5c",accent:"#217346"}},
+ {name:"Deep Blue Atlas",g:"consult",desc:"Xanh atlas sâu — tư vấn chiến lược, phân tích thị trường.",th:{bg:"#e9eff9",ink:"#12294d",sub:"#54698a",accent:"#2563eb"}},
+ {name:"Strategy Evergreen",g:"consult",desc:"Xanh thường xanh — đề xuất giải pháp, roadmap tư vấn.",th:{bg:"#ecf5f0",ink:"#173b2a",sub:"#55705f",accent:"#1d7a4f"}},
+ {name:"Slate Proposal",g:"consult",desc:"Xám đá chuyên nghiệp — hồ sơ đề xuất, đấu thầu.",th:{bg:"#f1f3f5",ink:"#26313a",sub:"#5f7180",accent:"#217346"}}
+];
+var slideTheme=JSON.parse(JSON.stringify(SLIDE_TEMPLATES[5].th)), slideThemeName="Forest KPI";
+var selSlide=0, slideTrans="fade", slideSnaps=[], slTplGroup="all", presentIdx=0;
+function slNd(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d");}
+function renderTplGrid(){
+  var box=document.getElementById("slTplGrid");if(!box)return;
+  box.innerHTML=SLIDE_TEMPLATES.map(function(t,i){
+    if(slTplGroup!=="all"&&t.g!==slTplGroup)return "";
+    return '<div class="sl-tpl"><span class="prev" style="background:'+t.th.bg+'"><i style="background:'+t.th.accent+'"></i><u style="background:'+t.th.sub+'"></u></span><b>'+esc(t.name)+'</b><small>'+SL_GROUP[t.g]+' · '+esc(t.desc)+'</small><button class="mk" onclick="applyTemplate('+i+')">✦ Tạo tương tự</button></div>';
+  }).join("");
+}
+function setSlTplGroup(g,btn){slTplGroup=g;var bs=document.querySelectorAll("#slTplChips .sl-chip");for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i]===btn);renderTplGrid();}
+function tplSlides(t,topic){
+  var T=topic||"Chủ đề thuyết trình";
+  var base=[{t:T,d:"Bài trình bày theo mẫu "+t.name+" · Người trình bày · Đơn vị · 2026"},{t:"Tổng quan",d:"Bối cảnh, mục tiêu và những nội dung chính sẽ trình bày về: "+T+"."},{t:"Nội dung trọng tâm",d:"Ba ý chính kèm số liệu / ví dụ minh hoạ. Sếp bấm vào từng dòng chữ để sửa thành nội dung thật."},{t:"Phân tích & bằng chứng",d:"Số liệu, so sánh và nhận định rút ra — chèn biểu đồ hoặc bảng ở slide này để thuyết phục hơn."},{t:"Kế hoạch / Đề xuất",d:"Các bước thực hiện, người phụ trách và mốc thời gian cụ thể."},{t:"Kết luận",d:"Thông điệp chốt về "+T+" và bước tiếp theo cần thống nhất."}];
+  if(t.g==="finance")base[3].viz={type:"kpi",items:[["Doanh thu","1,25 tỷ"],["Tăng trưởng","+18%"],["Chi phí","−6%"]]};
+  if(t.g==="ads")base[3].viz={type:"funnel",items:["Tiếp cận · 12.400","Quan tâm · 4.860","Mua hàng · 1.120"]};
+  if(t.g==="academic")base[3].viz={type:"latex",tex:"\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i"};
+  if(t.g==="consult")base[4].viz={type:"swot",items:["S — Điểm mạnh nội tại","W — Điểm yếu cần khắc phục","O — Cơ hội thị trường","T — Thách thức bên ngoài"]};
+  if(t.g==="work")base[4].viz={type:"roadmap",items:["Tuần 1 · Khảo sát","Tuần 2 · Thiết kế","Tuần 3 · Triển khai","Tuần 4 · Nghiệm thu"]};
+  return base;
+}
+function applyTemplate(i){
+  var t=SLIDE_TEMPLATES[i];if(!t)return;pushSlideSnap("trước khi áp mẫu "+t.name);
+  slideTheme=JSON.parse(JSON.stringify(t.th));slideThemeName=t.name;
+  var topic=(document.getElementById("slTopic").value||"").trim();
+  slidesData=tplSlides(t,topic);selSlide=0;renderSlides();
+  toast("Đã tạo bộ slide tương tự mẫu "+t.name+" ✓ — sửa chữ trực tiếp trên slide nhé sếp");
+}
+/* ---- phiên bản slide ---- */
+function pushSlideSnap(label){
+  try{
+    var snap={time:new Date(),label:label||"tự lưu",data:JSON.stringify(slidesData),theme:JSON.stringify(slideTheme),themeName:slideThemeName};
+    if(slideSnaps.length&&slideSnaps[slideSnaps.length-1].data===snap.data&&slideSnaps[slideSnaps.length-1].theme===snap.theme)return;
+    slideSnaps.push(snap);if(slideSnaps.length>12)slideSnaps.shift();
+  }catch(e){}
+}
+function openSlideVersions(){renderSlideVersions();document.getElementById("slVerModal").classList.add("open");}
+function renderSlideVersions(){
+  var box=document.getElementById("slVerList");
+  if(!slideSnaps.length){box.innerHTML='<div class="empty-box">Chưa có phiên bản nào — app sẽ tự lưu khi sếp tạo mới, áp mẫu hoặc sửa slide bằng AI.</div>';return;}
+  box.innerHTML=slideSnaps.slice().reverse().map(function(v,i){
+    var realIdx=slideSnaps.length-1-i;var n=0;try{n=JSON.parse(v.data).length}catch(e){}
+    return '<div class="sl-ver-item"><div><b>'+fmtTime(v.time)+'</b><small>'+n+' slide · mẫu '+esc(v.themeName||"")+' · '+esc(v.label)+'</small></div><button class="btn btn-ghost" onclick="restoreSlideSnap('+realIdx+')">Khôi phục</button></div>';
+  }).join("");
+}
+function restoreSlideSnap(i){
+  var v=slideSnaps[i];if(!v)return;pushSlideSnap("trước khi khôi phục");
+  try{slidesData=JSON.parse(v.data);slideTheme=JSON.parse(v.theme);slideThemeName=v.themeName;}catch(e){toast("Phiên bản này bị lỗi, chưa khôi phục được");return;}
+  selSlide=0;renderSlides();document.getElementById("slVerModal").classList.remove("open");toast("Đã khôi phục phiên bản slide "+fmtTime(v.time)+" ✓");
+}
+/* ---- phần tử trực quan: biểu đồ / bảng / SmartArt / LaTeX ---- */
+function latexRender(tex){
+  var s=esc(tex||"");
+  s=s.replace(/\\frac\{([^{}]*)\}\{([^{}]*)\}/g,"($1)/($2)");
+  s=s.replace(/\\sqrt\{([^{}]*)\}/g,"√($1)");
+  s=s.replace(/\^\{([^{}]*)\}/g,"<sup>$1</sup>").replace(/_\{([^{}]*)\}/g,"<sub>$1</sub>");
+  s=s.replace(/\\bar\{([^{}]*)\}/g,"$1̄").replace(/\\sum/g,"Σ").replace(/\\geq/g,"≥").replace(/\\leq/g,"≤").replace(/\\alpha/g,"α").replace(/\\beta/g,"β").replace(/\\pi/g,"π").replace(/\\/g,"");
+  return s;
+}
+function vizHTML(s,i){
+  var v=s.viz;if(!v)return "";var A=slideTheme.accent;
+  if(v.type==="chart"){
+    var max=Math.max.apply(null,v.values.concat([1]));
+    var bars=v.values.map(function(val,j){var h=Math.round(val/max*46)+4;return '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px"><b style="font-size:10px;color:#243528">'+val+'</b><div style="width:70%;height:'+h+'px;background:'+A+';border-radius:4px 4px 0 0"></div><span style="font-size:9.5px;color:#5f6f63">'+esc(v.labels[j]||"")+'</span></div>';}).join("");
+    return '<div class="viz"><div style="display:flex;gap:6px;align-items:flex-end;background:rgba(255,255,255,.6);border-radius:8px;padding:7px 8px 4px">'+bars+'</div></div>';
+  }
+  if(v.type==="table"){
+    var rows=v.rows.map(function(r,ri){return "<tr>"+r.map(function(c,ci){return '<td contenteditable="true" oninput="slidesData['+i+'].viz.rows['+ri+']['+ci+']=this.innerText">'+esc(c)+"</td>";}).join("")+"</tr>";}).join("");
+    return '<div class="viz"><table>'+rows+"</table></div>";
+  }
+  if(v.type==="swot"){var cols=["#217346","#b98a2f","#2563eb","#c2410c"];return '<div class="viz"><div class="swot">'+v.items.map(function(x,j){return '<div style="background:'+cols[j%4]+'">'+esc(x)+"</div>";}).join("")+"</div></div>";}
+  if(v.type==="roadmap"||v.type==="timeline"){return '<div class="viz"><div class="steps">'+v.items.map(function(x,j){return '<div style="background:'+A+';opacity:'+(1-j*0.16)+'">'+esc(x)+"</div>";}).join("")+"</div></div>";}
+  if(v.type==="gantt"){return '<div class="viz"><div class="gantt">'+v.items.map(function(x){return '<div><span style="width:74px;flex-shrink:0">'+esc(x[0])+'</span><span style="flex:1;background:rgba(0,0,0,.07);border-radius:5px"><i style="margin-left:'+x[1]+'%;width:'+x[2]+'%;background:'+A+'"></i></span></div>';}).join("")+"</div></div>";}
+  if(v.type==="kpi"){return '<div class="viz"><div class="kpis">'+v.items.map(function(x){return "<div><small>"+esc(x[0])+"</small><b style='color:"+A+"'>"+esc(x[1])+"</b></div>";}).join("")+"</div></div>";}
+  if(v.type==="funnel"){return '<div class="viz"><div class="funnel">'+v.items.map(function(x,j){var w=100-j*22;return '<div style="width:'+w+'%;background:'+A+';opacity:'+(1-j*0.2)+'">'+esc(x)+"</div>";}).join("")+"</div></div>";}
+  if(v.type==="mindmap"){return '<div class="viz"><div style="text-align:center"><span style="display:inline-block;background:'+A+';color:#fff;font-weight:800;border-radius:99px;padding:5px 14px;font-size:11px">'+esc(v.center)+'</span></div><div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:5px">'+v.items.map(function(x){return '<span style="background:rgba(255,255,255,.7);border:1px solid '+A+';color:#243528;border-radius:99px;padding:3px 9px;font-weight:700">'+esc(x)+"</span>";}).join("")+"</div></div>";}
+  if(v.type==="latex"){return '<div class="viz"><div class="latex">'+latexRender(v.tex)+'</div><div style="text-align:center;color:#5f6f63;font-size:10px;margin-top:3px">LaTeX: '+esc(v.tex)+"</div></div>";}
+  if(v.type==="shape"){var st=v.shape==="circle"?"border-radius:50%;width:52px;margin:0 auto":v.shape==="diamond"?"transform:rotate(45deg);width:40px;height:40px;margin:6px auto":"border-radius:9px";return '<div class="viz"><div class="shapebox" style="background:'+A+';'+st+'"><span '+(v.shape==="diamond"?'style="transform:rotate(-45deg)"':"")+">"+esc(v.label||"Ý chính")+"</span></div></div>";}
+  return "";
+}
+function insertViz(kind){
+  var s=slidesData[selSlide];if(!s){toast("Chưa có slide nào để chèn");return;}
+  pushSlideSnap("trước khi chèn phần tử");
+  if(kind==="chart")s.viz={type:"chart",labels:["Quý 1","Quý 2","Quý 3","Quý 4"],values:[42,58,51,73]};
+  else if(kind==="table")s.viz={type:"table",rows:[["Hạng mục","Số liệu","Ghi chú"],["Doanh thu","1,25 tỷ","+18%"],["Chi phí","820 triệu","−6%"]]};
+  else if(kind==="shape")s.viz={type:"shape",shape:"rect",label:"Ý chính"};
+  else if(kind==="smart"){
+    var k=document.getElementById("slSmartSel").value;
+    if(k==="swot")s.viz={type:"swot",items:["S — Điểm mạnh","W — Điểm yếu","O — Cơ hội","T — Thách thức"]};
+    else if(k==="roadmap")s.viz={type:"roadmap",items:["Giai đoạn 1","Giai đoạn 2","Giai đoạn 3","Giai đoạn 4"]};
+    else if(k==="gantt")s.viz={type:"gantt",items:[["Khảo sát",0,30],["Thiết kế",25,35],["Triển khai",55,40],["Bàn giao",85,15]]};
+    else if(k==="kpi")s.viz={type:"kpi",items:[["Chỉ số A","120%"],["Chỉ số B","86"],["Chỉ số C","+24%"]]};
+    else if(k==="funnel")s.viz={type:"funnel",items:["Tiếp cận","Quan tâm","Chốt đơn"]};
+    else if(k==="timeline")s.viz={type:"timeline",items:["2023 · Khởi đầu","2024 · Tăng trưởng","2025 · Mở rộng","2026 · Dẫn đầu"]};
+    else if(k==="mindmap")s.viz={type:"mindmap",center:s.t||"Chủ đề",items:["Ý 1","Ý 2","Ý 3","Ý 4"]};
+    else if(k==="latex")s.viz={type:"latex",tex:"E = mc^{2}"};
+  }
+  renderSlides();toast("Đã chèn vào slide "+(selSlide+1)+" ✓ — bấm vào số liệu/chữ trong phần tử để sửa");
+}
+/* ---- render + sửa trực tiếp + đổi thứ tự ---- */
 function renderSlides(){
+  renderTplGrid();
+  var th=slideTheme;
   document.getElementById("slidesWrap").innerHTML=slidesData.map(function(s,i){
-    return '<div class="slide-card"><span class="slide-num">SLIDE '+(i+1)+'</span><b contenteditable="true" oninput="slidesData['+i+'].t=this.innerText">'+esc(s.t)+'</b><p contenteditable="true" oninput="slidesData['+i+'].d=this.innerText">'+esc(s.d)+"</p></div>";
+    return '<div class="slide-card'+(i===selSlide?" sel":"")+'" style="background:'+th.bg+';color:'+th.ink+'" onclick="selectSlide('+i+')">'+
+    '<span class="bar" style="background:'+th.accent+'"></span>'+
+    '<span class="slide-num" style="color:'+th.accent+'">SLIDE '+(i+1)+(i===selSlide?" · ĐANG CHỌN":"")+' · '+esc(slideThemeName)+'</span>'+
+    '<b contenteditable="true" style="color:'+th.ink+'" oninput="slidesData['+i+'].t=this.innerText">'+esc(s.t)+'</b>'+
+    '<p contenteditable="true" style="color:'+th.sub+'" oninput="slidesData['+i+'].d=this.innerText">'+esc(s.d)+"</p>"+
+    vizHTML(s,i)+
+    '<div class="slide-tools"><button title="Lên" onclick="event.stopPropagation();moveSlide('+i+',-1)">↑</button><button title="Xuống" onclick="event.stopPropagation();moveSlide('+i+',1)">↓</button><button title="Nhân bản" onclick="event.stopPropagation();dupSlide('+i+')">⧉</button><button title="Xoá slide" onclick="event.stopPropagation();delSlideAt('+i+')">✕</button></div></div>';
   }).join("");
   document.getElementById("wordCount").textContent=slidesData.length+" slide";
 }
-function addSlide(){slidesData.push({t:"Slide mới",d:"Nhập nội dung thuyết trình tại đây."});renderSlides();}
-function aiSlides(){slidesData=[{t:"Tiêu đề bài thuyết trình",d:"Tên người trình bày · Ngày tháng · Đơn vị"},{t:"Bối cảnh & mục tiêu",d:"Vì sao cần thực hiện? Mục tiêu đo được là gì?"},{t:"Hiện trạng",d:"Số liệu, quy trình hiện tại và điểm nghẽn chính."},{t:"Giải pháp đề xuất",d:"3 ý chính kèm lợi ích cụ thể cho từng nhóm người dùng."},{t:"Kế hoạch triển khai",d:"Mốc thời gian, người phụ trách và nguồn lực cần thiết."},{t:"Kết luận & kêu gọi hành động",d:"Thông điệp chốt và bước tiếp theo cần thống nhất hôm nay."}];renderSlides();toast("AI đã tạo dàn 6 slide chuẩn thuyết trình ✓");}
+function selectSlide(i){
+  if(selSlide===i)return;selSlide=i;
+  var cards=document.querySelectorAll("#slidesWrap .slide-card");
+  cards.forEach(function(c,j){
+    c.classList.toggle("sel",j===i);
+    var num=c.querySelector(".slide-num");
+    if(num)num.textContent="SLIDE "+(j+1)+(j===i?" · ĐANG CHỌN":"")+" · "+slideThemeName;
+  });
+}
+function moveSlide(i,dir){var j=i+dir;if(j<0||j>=slidesData.length)return;pushSlideSnap("đổi thứ tự");var t=slidesData[i];slidesData[i]=slidesData[j];slidesData[j]=t;selSlide=j;renderSlides();}
+function dupSlide(i){pushSlideSnap("nhân bản slide");slidesData.splice(i+1,0,JSON.parse(JSON.stringify(slidesData[i])));selSlide=i+1;renderSlides();toast("Đã nhân bản slide "+(i+1));}
+function delSlideAt(i){if(slidesData.length<=1){toast("Bài trình bày cần giữ ít nhất 1 slide");return;}pushSlideSnap("xoá slide");slidesData.splice(i,1);selSlide=Math.max(0,i-1);renderSlides();}
+function addSlide(){slidesData.push({t:"Slide mới",d:"Nhập nội dung thuyết trình tại đây."});selSlide=slidesData.length-1;renderSlides();}
+function aiSlides(){pushSlideSnap("trước khi tạo dàn ý chuẩn");slidesData=[{t:"Tiêu đề bài thuyết trình",d:"Tên người trình bày · Ngày tháng · Đơn vị"},{t:"Bối cảnh & mục tiêu",d:"Vì sao cần thực hiện? Mục tiêu đo được là gì?"},{t:"Hiện trạng",d:"Số liệu, quy trình hiện tại và điểm nghẽn chính."},{t:"Giải pháp đề xuất",d:"3 ý chính kèm lợi ích cụ thể cho từng nhóm người dùng."},{t:"Kế hoạch triển khai",d:"Mốc thời gian, người phụ trách và nguồn lực cần thiết."},{t:"Kết luận & kêu gọi hành động",d:"Thông điệp chốt và bước tiếp theo cần thống nhất hôm nay."}];selSlide=0;renderSlides();toast("AI đã tạo dàn 6 slide chuẩn thuyết trình ✓");}
+/* ---- (1) AI tạo slide từ câu mô tả ---- */
+function aiSlidesFromTopic(){
+  var topic=(document.getElementById("slTopic").value||"").trim();
+  if(!topic){toast("Sếp gõ chủ đề / câu mô tả trước nhé — ví dụ: Báo cáo kinh doanh quý 3");return;}
+  pushSlideSnap("trước khi AI tạo bộ slide mới");
+  var n=parseInt(document.getElementById("slCount").value,10)||8;
+  var nd=slNd(topic), T=topic.charAt(0).toUpperCase()+topic.slice(1);
+  var isFin=/tai chinh|doanh thu|ngan sach|dau tu|ke toan|loi nhuan/.test(nd), isAds=/quang cao|marketing|ban hang|san pham|khuyen mai|thuong hieu/.test(nd), isAca=/bai giang|hoc|nghien cuu|toan|khoa hoc|giao duc|luan van/.test(nd), isCon=/tu van|chien luoc|de xuat|phan tich thi truong/.test(nd);
+  var all=[
+    {t:T,d:"Bài trình bày được AI dựng từ mô tả của sếp · Người trình bày · 2026"},
+    {t:"Nội dung trình bày",d:"1. Bối cảnh & mục tiêu · 2. Hiện trạng · 3. Phân tích · 4. Giải pháp · 5. Kế hoạch · 6. Kết luận"},
+    {t:"Bối cảnh & mục tiêu",d:"Vì sao “"+T+"” quan trọng ở thời điểm này? Mục tiêu cần đạt, đo được bằng con số cụ thể và mốc thời gian rõ ràng."},
+    {t:"Hiện trạng",d:"Bức tranh hiện tại: những gì đang vận hành tốt, điểm nghẽn chính và chi phí cơ hội nếu không thay đổi."},
+    {t:"Phân tích trọng tâm",d:"Ba phát hiện quan trọng nhất rút ra từ số liệu và quan sát thực tế — đây là phần thuyết phục người nghe.",viz:isAca?{type:"latex",tex:"\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i"}:isAds?{type:"funnel",items:["Tiếp cận","Quan tâm","Mua hàng / Hành động"]}:isFin?{type:"kpi",items:[["Chỉ số chính","Đạt 92%"],["Tăng trưởng","+15%"],["Hiệu quả","+9%"]]}:{type:"chart",labels:["Kỳ 1","Kỳ 2","Kỳ 3","Kỳ 4"],values:[38,52,49,68]}},
+    {t:"Giải pháp đề xuất",d:"Ba hành động ưu tiên, sắp xếp theo tác động lớn — chi phí thấp trước. Mỗi hành động gắn người phụ trách cụ thể.",viz:isCon?{type:"swot",items:["S — Điểm mạnh","W — Điểm yếu","O — Cơ hội","T — Thách thức"]}:undefined},
+    {t:"Kế hoạch triển khai",d:"Lộ trình theo giai đoạn, mốc kiểm tra và tiêu chí nghiệm thu từng bước.",viz:{type:"roadmap",items:["GĐ 1 · Chuẩn bị","GĐ 2 · Thử nghiệm","GĐ 3 · Triển khai","GĐ 4 · Đánh giá"]}},
+    {t:"Rủi ro & cách xử lý",d:"Liệt kê rủi ro lớn nhất, khả năng xảy ra và phương án dự phòng cho từng rủi ro."},
+    {t:"Nguồn lực & ngân sách",d:"Con người, công cụ và ngân sách cần thiết — trình bày dạng bảng để dễ đối chiếu.",viz:{type:"table",rows:[["Hạng mục","Dự toán","Ghi chú"],["Nhân sự","…",""],["Công cụ","…",""],["Dự phòng 10%","…",""]]}},
+    {t:"Kết luận & kêu gọi hành động",d:"Chốt lại thông điệp chính của “"+T+"” và việc cần thống nhất ngay hôm nay."}
+  ];
+  if(n<=6)slidesData=[all[0],all[2],all[3],all[4],all[6],all[9]];
+  else if(n>=10)slidesData=all;
+  else slidesData=[all[0],all[1],all[2],all[3],all[4],all[5],all[6],all[9]];
+  slidesData.forEach(function(s){if(!s.viz)delete s.viz;});
+  selSlide=0;renderSlides();pushSlideSnap("AI tạo từ mô tả");
+  toast("AI đã dựng "+slidesData.length+" slide cho chủ đề “"+T+"” theo mẫu "+slideThemeName+" ✓");
+}
+/* ---- (2) AI tạo slide từ tài liệu ---- */
+async function slidesFromDoc(ev){
+  var file=ev.target.files[0];ev.target.value="";if(!file)return;
+  try{
+    toast("Đang đọc tài liệu và trích thành slide...");
+    var ext=(file.name.split(".").pop()||"").toLowerCase(), text="", tableRows=null;
+    if(ext==="docx"){
+      if(!window.mammoth)throw new Error("Chưa tải được thư viện đọc Word (Mammoth) — cần kết nối mạng.");
+      var r=await mammoth.extractRawText({arrayBuffer:await file.arrayBuffer()});text=r.value||"";
+    }else if(ext==="xlsx"||ext==="xls"){
+      if(!window.XLSX)throw new Error("Chưa tải được thư viện đọc Excel (SheetJS) — cần kết nối mạng.");
+      var wb=XLSX.read(new Uint8Array(await file.arrayBuffer()),{type:"array"});
+      var ws=wb.Sheets[wb.SheetNames[0]];
+      var aoa=XLSX.utils.sheet_to_json(ws,{header:1});tableRows=aoa.slice(0,7).map(function(r){return r.slice(0,4).map(function(c){return String(c==null?"":c)})});
+      text=aoa.map(function(r){return r.join(" · ")}).join("\n");
+    }else{
+      text=await file.text();
+      if(ext==="html"||ext==="htm"){var div=document.createElement("div");div.innerHTML=text;text=div.innerText;}
+    }
+    text=(text||"").trim();if(!text)throw new Error("Không trích được nội dung chữ từ tệp này.");
+    pushSlideSnap("trước khi tạo slide từ tài liệu");
+    var base=file.name.replace(/\.[^.]+$/,"");
+    var lines=text.split(/\n+/).map(function(x){return x.replace(/^#+\s*/,"").trim()}).filter(function(x){return x.length>2});
+    var slides=[{t:base,d:"Bộ slide trích từ tài liệu “"+file.name+"” · "+lines.length+" dòng nội dung"}];
+    var buf="",title="";
+    function flush(){if(buf){slides.push({t:title||("Nội dung "+(slides.length)),d:buf.slice(0,420)});buf="";title="";}}
+    lines.forEach(function(ln){
+      var isHead=ln.length<=70&&!/[.!?]$/.test(ln)&&buf.length>60;
+      if(isHead){flush();title=ln;}
+      else buf+=(buf?" ":"")+ln;
+      if(buf.length>=380)flush();
+    });
+    flush();
+    if(tableRows&&tableRows.length>1)slides.splice(2,0,{t:"Bảng số liệu từ tài liệu",d:"Trích trực tiếp từ sheet đầu tiên của tệp "+file.name,viz:{type:"table",rows:tableRows}});
+    slidesData=slides.slice(0,16);selSlide=0;renderSlides();pushSlideSnap("tạo từ tài liệu");
+    toast("Đã trích "+slidesData.length+" slide từ tài liệu ✓ — sếp sửa lại chữ cho gọn nhé");
+  }catch(e){toast("Chưa tạo được slide từ tài liệu: "+(e.message||e));}
+}
+/* ---- (5) sửa slide bằng AI qua chat ---- */
+function slChatLog(role,text){
+  var log=document.getElementById("slChatLog");var d=document.createElement("div");d.className="m "+role;d.textContent=text;log.appendChild(d);log.scrollTop=log.scrollHeight;
+}
+function slideChatSend(){
+  var inp=document.getElementById("slChatInput");var q=(inp.value||"").trim();if(!q)return;inp.value="";
+  slChatLog("user",q);var nd=slNd(q);
+  var m=q.match(/slide\s*(\d+)/i);var idx=m?Math.min(slidesData.length-1,parseInt(m[1],10)-1):selSlide;
+  var tplHit=SLIDE_TEMPLATES.find(function(t){return nd.indexOf(slNd(t.name))>-1});
+  if(/phong cach|mau |theme|giao dien/.test(nd)&&tplHit){
+    pushSlideSnap("trước khi đổi phong cách");slideTheme=JSON.parse(JSON.stringify(tplHit.th));slideThemeName=tplHit.name;renderSlides();
+    slChatLog("bot","Đã đổi toàn bộ bộ slide sang phong cách mẫu "+tplHit.name+" — màu nền, màu nhấn và màu chữ đã đồng bộ mọi slide ✓");return;
+  }
+  if(/viet lai|hay hon|trang trong/.test(nd)){
+    pushSlideSnap("trước khi AI viết lại");var s=slidesData[idx];if(!s){slChatLog("bot","Chưa có slide nào để viết lại sếp ơi.");return;}
+    var swaps={"toi":"chúng tôi","minh":"chúng tôi","rat ":"đặc biệt ","tot":"hiệu quả","lam":"thực hiện","dung":"sử dụng"};
+    var out=s.d;Object.keys(swaps).forEach(function(k){out=out.replace(new RegExp(k,"gi"),swaps[k])});
+    out=out.replace(/\s+([,.!?;:])/g,"$1");if(out.charAt(0)===out.charAt(0).toLowerCase())out=out.charAt(0).toUpperCase()+out.slice(1);
+    if(!/[.!?]$/.test(out))out+=" Nội dung đã được rà soát câu chữ, giữ nguyên số liệu và ý chính.";
+    s.d=out;renderSlides();slChatLog("bot","Đã viết lại nội dung slide "+(idx+1)+" (“"+s.t+"”) trang trọng và mạch lạc hơn ✓ Bản cũ đã lưu trong Phiên bản slide.");return;
+  }
+  if(/rut ngan|ngan gon|gon lai/.test(nd)){
+    pushSlideSnap("trước khi rút ngắn");
+    var targets=/tat ca|toan bo/.test(nd)?slidesData:[slidesData[idx]];
+    targets.forEach(function(s){if(!s)return;var first=s.d.split(/(?<=[.!?])\s+/)[0];s.d=first.length>=30?first:s.d.slice(0,130);});
+    renderSlides();slChatLog("bot","Đã rút ngắn "+(targets.length>1?"toàn bộ bộ slide":"slide "+(idx+1))+" — giữ lại ý đầu quan trọng nhất mỗi slide ✓");return;
+  }
+  if(/them slide/.test(nd)){
+    pushSlideSnap("trước khi thêm slide");
+    if(/ket luan|tong ket/.test(nd))slidesData.push({t:"Kết luận & bước tiếp theo",d:"Tóm tắt thông điệp chính và việc cần thống nhất ngay sau buổi trình bày này."});
+    else slidesData.push({t:"Slide mới theo yêu cầu",d:q});
+    selSlide=slidesData.length-1;renderSlides();slChatLog("bot","Đã thêm slide mới ở cuối bộ (slide "+slidesData.length+") ✓ Sếp bấm vào chữ trên slide để sửa tiếp.");return;
+  }
+  if(/doi phong cach|phong cach/.test(nd)){
+    var nxt=SLIDE_TEMPLATES[(SLIDE_TEMPLATES.findIndex(function(t){return t.name===slideThemeName})+1)%SLIDE_TEMPLATES.length];
+    pushSlideSnap("trước khi đổi phong cách");slideTheme=JSON.parse(JSON.stringify(nxt.th));slideThemeName=nxt.name;renderSlides();
+    slChatLog("bot","Đã chuyển phong cách sang mẫu "+nxt.name+" ✓ Muốn mẫu cụ thể, sếp gõ tên mẫu, ví dụ: “đổi phong cách Black Gold Ledger”.");return;
+  }
+  document.getElementById("slTopic").value=q;aiSlidesFromTopic();
+  slChatLog("bot","Em hiểu đây là chủ đề mới — đã dựng bộ slide từ mô tả này theo mẫu "+slideThemeName+" ✓");
+}
+/* ---- (7) trình chiếu ---- */
+function renderPresent(){
+  var s=slidesData[presentIdx];var st=document.getElementById("presentStage");var th=slideTheme;
+  st.style.background=th.bg;st.style.color=th.ink;
+  st.innerHTML='<span style="position:absolute;left:0;top:0;bottom:0;width:10px;background:'+th.accent+'"></span><h1>'+esc(s.t)+'</h1><div class="bd" style="color:'+th.sub+'">'+esc(s.d)+"</div>"+vizHTML(s,presentIdx);
+  st.classList.remove("anim-fade","anim-slide","anim-zoom");void st.offsetWidth;
+  if(slideTrans!=="none")st.classList.add("anim-"+slideTrans);
+  document.getElementById("presentIdx").textContent=(presentIdx+1)+" / "+slidesData.length;
+}
+function startPresent(){if(!slidesData.length){toast("Chưa có slide nào để trình chiếu");return;}presentIdx=0;document.getElementById("presentOverlay").classList.add("on");renderPresent();}
+function stopPresent(){document.getElementById("presentOverlay").classList.remove("on");}
+function presentMove(d){presentIdx=Math.min(slidesData.length-1,Math.max(0,presentIdx+d));renderPresent();}
+document.addEventListener("keydown",function(e){
+  if(!document.getElementById("presentOverlay").classList.contains("on"))return;
+  if(e.key==="Escape")stopPresent();else if(e.key==="ArrowRight"||e.key===" ")presentMove(1);else if(e.key==="ArrowLeft")presentMove(-1);
+});
+/* ---- (9) xuất file ---- */
+function slFileBase(){return ((current&&current.name)||"Ban-trinh-bay.pptx").replace(/\.pptx$/i,"");}
+function slExportEl(s){
+  var th=slideTheme;var div=document.createElement("div");
+  div.style.cssText="position:fixed;left:-9999px;top:0;width:960px;height:540px;padding:44px 52px;background:"+th.bg+";color:"+th.ink+";font-family:'Be Vietnam Pro',Arial,sans-serif;display:flex;flex-direction:column";
+  div.innerHTML='<span style="position:absolute;left:0;top:0;bottom:0;width:10px;background:'+th.accent+'"></span><div style="font-size:15px;font-weight:800;color:'+th.accent+';letter-spacing:.08em">SLIDE</div><h1 style="font-size:34px;margin:10px 0 14px;line-height:1.25">'+esc(s.t)+'</h1><p style="font-size:19px;line-height:1.65;color:'+th.sub+';margin:0">'+esc(s.d)+"</p>"+vizHTML(s,0);
+  document.body.appendChild(div);return div;
+}
+async function exportPptx(){
+  if(typeof PptxGenJS==="undefined"){toast("Chưa tải được thư viện tạo PowerPoint (PptxGenJS) — sếp kiểm tra kết nối mạng rồi thử lại nhé");return;}
+  try{
+    var pptx=new PptxGenJS();pptx.layout="LAYOUT_WIDE";
+    var th=slideTheme,bg=th.bg.replace("#",""),acc=th.accent.replace("#",""),ink=th.ink.replace("#",""),sub=th.sub.replace("#","");
+    slidesData.forEach(function(s){
+      var sl=pptx.addSlide();sl.background={color:bg};
+      sl.addShape("rect",{x:0,y:0,w:0.14,h:7.5,fill:{color:acc},line:{color:acc,width:0}});
+      sl.addText(s.t,{x:0.55,y:0.4,w:12.2,h:1.1,fontSize:30,bold:true,color:ink});
+      sl.addText(s.d,{x:0.55,y:1.6,w:12.2,h:1.9,fontSize:16,color:sub,valign:"top"});
+      var v=s.viz;
+      if(v&&v.type==="chart")sl.addChart(pptx.ChartType.bar,[{name:"Số liệu",labels:v.labels,values:v.values}],{x:0.55,y:3.6,w:8.5,h:3.3,barDir:"col",chartColors:[acc],showValue:true});
+      else if(v&&v.type==="table")sl.addTable(v.rows,{x:0.55,y:3.6,w:9.5,fontSize:13,border:{pt:0.75,color:"B9CDBD"},fill:{color:"FFFFFF"}});
+      else if(v&&v.type==="kpi")sl.addText(v.items.map(function(x){return x[0]+": "+x[1]}).join("    ·    "),{x:0.55,y:3.7,w:12,h:0.8,fontSize:18,bold:true,color:acc});
+      else if(v&&(v.type==="swot"||v.type==="roadmap"||v.type==="funnel"||v.type==="timeline"))sl.addText(v.items.join("   →   "),{x:0.55,y:3.7,w:12,h:1.2,fontSize:15,color:ink});
+      else if(v&&v.type==="gantt")sl.addText(v.items.map(function(x){return x[0]}).join("  ·  "),{x:0.55,y:3.7,w:12,h:0.8,fontSize:15,color:ink});
+      else if(v&&v.type==="mindmap")sl.addText(v.center+" — "+v.items.join(" · "),{x:0.55,y:3.7,w:12,h:0.8,fontSize:15,color:ink});
+      else if(v&&v.type==="latex")sl.addText(v.tex,{x:0.55,y:3.7,w:12,h:0.8,fontSize:18,italic:true,color:ink});
+      else if(v&&v.type==="shape")sl.addText("◆ "+(v.label||""),{x:0.55,y:3.7,w:6,h:0.8,fontSize:16,bold:true,color:acc});
+    });
+    await pptx.writeFile({fileName:slFileBase()+".pptx"});
+    toast("Đã xuất file PowerPoint .pptx thật ("+slidesData.length+" slide) ✓");
+  }catch(e){toast("Xuất .pptx chưa được: "+(e.message||e));}
+}
+async function exportSlidesPdf(){
+  if(!window.html2canvas||!window.jspdf){toast("Chưa tải được thư viện xuất PDF — cần kết nối mạng");return;}
+  try{
+    toast("Đang dựng PDF từ các slide...");
+    var pdf=new jspdf.jsPDF({unit:"mm",format:[338,190],orientation:"landscape"});
+    for(var i=0;i<slidesData.length;i++){
+      var el=slExportEl(slidesData[i]);
+      var canvas=await html2canvas(el,{scale:1.5,backgroundColor:slideTheme.bg});el.remove();
+      if(i>0)pdf.addPage([338,190],"landscape");
+      pdf.addImage(canvas.toDataURL("image/jpeg",0.92),"JPEG",0,0,338,190);
+    }
+    pdf.save(slFileBase()+".pdf");toast("Đã xuất PDF "+slidesData.length+" trang slide ✓");
+  }catch(e){toast("Xuất PDF chưa được: "+(e.message||e));}
+}
+async function exportSlidesPng(){
+  if(!window.html2canvas){toast("Chưa tải được thư viện xuất ảnh — cần kết nối mạng");return;}
+  try{
+    toast("Đang chụp các slide thành ảnh PNG...");
+    if(slidesData.length===1){
+      var el1=slExportEl(slidesData[0]);var c1=await html2canvas(el1,{scale:2,backgroundColor:slideTheme.bg});el1.remove();
+      var a=document.createElement("a");a.href=c1.toDataURL("image/png");a.download=slFileBase()+"-slide-1.png";a.click();
+    }else{
+      if(!window.JSZip)throw new Error("Chưa tải được thư viện ZIP.");
+      var zip=new JSZip();
+      for(var i=0;i<slidesData.length;i++){
+        var el=slExportEl(slidesData[i]);var c=await html2canvas(el,{scale:1.5,backgroundColor:slideTheme.bg});el.remove();
+        zip.file("slide-"+(i+1)+".png",c.toDataURL("image/png").split(",")[1],{base64:true});
+      }
+      var blob=await zip.generateAsync({type:"blob"});
+      var a2=document.createElement("a");a2.href=URL.createObjectURL(blob);a2.download=slFileBase()+"-PNG.zip";a2.click();setTimeout(function(){URL.revokeObjectURL(a2.href)},3000);
+    }
+    toast("Đã xuất ảnh PNG cho "+slidesData.length+" slide ✓");
+  }catch(e){toast("Xuất PNG chưa được: "+(e.message||e));}
+}
 
 /* ================= DOWNLOAD ================= */
 function downloadCurrent(){
@@ -1222,8 +1669,7 @@ function downloadCurrent(){
     var csv=sheetData.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"'}).join(",")}).join("\n");
     blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"});filename=name.replace(/\.xlsx$/i,"")+".csv";
   }else if(current.type==="pptx"){
-    var txt=slidesData.map(function(s,i){return "--- Slide "+(i+1)+": "+s.t+" ---\n"+s.d}).join("\n\n");
-    blob=new Blob([txt],{type:"text/plain;charset=utf-8"});filename=name.replace(/\.pptx$/i,"")+".txt";
+    exportPptx();return;
   }else if(current.type==="md"){
     blob=new Blob([plainText()],{type:"text/markdown;charset=utf-8"});if(!/\.md$/i.test(filename))filename+=".md";
   }else if(current.type==="html"||current.type==="pdf"){
@@ -2153,7 +2599,7 @@ function openDesign(preset){
   if(preset==="board"){designSetBg("#f7f4e8");toast("Bảng trắng: thêm giấy note và bật chế độ vẽ ở panel trái nhé sếp");}
   renderDesign();
 }
-function closeDesign(){document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;setModule("design");setTimeout(function(){var b=document.getElementById("blkDesign");if(b)b.scrollIntoView({behavior:"smooth"})},60);}
+function closeDesign(){document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;markModBtns(moduleCur);window.scrollTo(0,0);}
 function setDesignSize(key,skipScale){
   var s=designSizes[key];if(!s)return;
   if(!skipScale&&D.dw){var sx=s.w/D.dw,sy=s.h/D.dh;D.els.forEach(function(el){el.x*=sx;el.y*=sy;if(el.w)el.w*=sx;if(el.h)el.h*=sy;if(el.size)el.size*=sx;});}
@@ -2401,6 +2847,7 @@ function modShowHome(){
 function setModule(m){
   if(m==="ai"){openAI();return;}
   if(m==="excel"||m==="word"){openLib(m);markModBtns(m);return;}
+  if(m==="design"){openDesign();markModBtns("design");return;}
   if(m==="pdf"){openPdfLib();return;}
   moduleCur=m;modShowHome();markModBtns(m);
   document.getElementById("modHint").innerHTML=(m==="all")?"Đang xem <b>Tất cả</b> — toàn bộ mẫu, công cụ và tệp của mọi mục.":"Đang xem mục <b>"+MOD_LABEL[m]+"</b> — trang chỉ hiện mẫu, công cụ và tệp của mục này. Bấm <b>Tất cả</b> khi muốn xem toàn bộ.";
@@ -2410,8 +2857,7 @@ function setModule(m){
   var uCards=document.querySelectorAll("#blkUtils .util-card");
   for(var j=0;j<uCards.length;j++){var um=UTIL_MOD[j]||"all";uCards[j].style.display=(m==="all"||um==="all"||um===m)?"":"none";}
   document.getElementById("blkUtils").style.display=(m==="all"||m==="doc"||m==="sheet"||m==="slides")?"":"none";
-  document.getElementById("blkDesign").style.display=(m==="all"||m==="design")?"":"none";
-  document.getElementById("blkFiles").style.display=(m==="design")?"none":"";
+  document.getElementById("blkFiles").style.display="";
   var tmap={all:"all",doc:"docx",sheet:"xlsx",slides:"pptx",pdf:"pdf"};
   if(tmap[m]){typeFilter=tmap[m];var bs=document.querySelectorAll("#typeTabs button");for(var k=0;k<bs.length;k++)bs[k].classList.toggle("active",bs[k].dataset.t===typeFilter);renderFiles();}
   window.scrollTo(0,0);
@@ -2711,7 +3157,7 @@ function processIconEl(el,mode){
 }
 function applyIcons(){
   var i,els;
-  els=document.querySelectorAll(".pdf-card .p-ico");for(i=0;i<els.length;i++)tileify(els[i],els[i].closest&&els[i].closest("#blkDesign")?"pink":"red");
+  els=document.querySelectorAll(".pdf-card .p-ico");for(i=0;i<els.length;i++)tileify(els[i],"red");
   els=document.querySelectorAll(".util-card .u-ico, .stat-card .s-ico, .brand-icon, .mt-ico, .ai-ico");for(i=0;i<els.length;i++)tileify(els[i]);
   els=document.querySelectorAll(".bottom-nav button > span");for(i=0;i<els.length;i++){tileify(els[i]);els[i].classList.add("b-ico");}
   els=document.querySelectorAll(".nav button");for(i=0;i<els.length;i++)processIconEl(els[i],"ntile");

@@ -14,7 +14,9 @@ Web app văn phòng đa chức năng — phong cách màu Excel (xanh lá Excel 
 - Cẩm nang Word (7 mục: Styles, mục lục tự động, Mail Merge, bảng/biểu đồ, chú thích cuối trang, theo dõi thay đổi, phím tắt) với ví dụ mẫu và bài tập thực hành
 - Giao diện lọc theo mục: chọn mục nào chỉ hiện nội dung mục đó, trang chủ mặc định mở mục Tài liệu — gọn, không cuộn tràn lan
 - Mỗi công cụ mở một sheet riêng (có nút quay lại danh sách); icon style 2026 (SVG bo tròn mềm, nền gradient theo nhóm)
+- Bản trình bày kiểu Kimi Slides: AI tạo slide từ chủ đề hoặc từ tài liệu (Word/Excel/Markdown), kho 15 mẫu theo 5 nhóm, sửa trực tiếp trên slide + sửa bằng AI qua chat, SmartArt/biểu đồ/LaTeX, hiệu ứng chuyển slide, trình chiếu, lịch sử phiên bản, xuất file .pptx thật / PDF / PNG
 - Studio Thiết kế kiểu Canva: thiết kế poster, thiệp, banner từ mẫu sẵn
+- Layout một bộ khung duy nhất: nền trang sáng, sidebar tự cuộn trong khung, vùng nội dung phủ đủ chiều cao — không còn layout cũ đè chồng gây mảng trống
 - Trợ lý AI miễn phí (chạy trên trình duyệt, không cần tài khoản hay API key): soạn Công văn, Quyết định, Thông báo nội bộ, Kế hoạch công việc tuần, viết lại, tóm tắt
 
 ## Chạy
