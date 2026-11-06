@@ -21,6 +21,7 @@ Web app văn phòng đa chức năng — phong cách màu Excel (xanh lá Excel 
 - Phong cách hiện đại 2026 toàn app: sạch, bo tròn mềm, khoảng trắng thoáng, màu Excel chủ đạo tươi và hiện đại, chuyển động mượt — không dùng lối xưa cũ (khung viền thô, màu xỉn, nút vuông cứng, bố cục chật)
 - Studio Thiết kế kiểu Canva: thiết kế poster, thiệp, banner từ mẫu sẵn
 - Layout một bộ khung duy nhất: nền trang sáng, sidebar tự cuộn trong khung, vùng nội dung phủ đủ chiều cao — không còn layout cũ đè chồng gây mảng trống
+- Sidebar cuộn liền mạch: toàn bộ sidebar là một cột cuộn, ẩn hẳn thanh cuộn (dọc lẫn ngang), không còn ngăn cuộn riêng của danh sách mục hay vạch ngăn ở chân sidebar
 - Trợ lý AI miễn phí (chạy trên trình duyệt, không cần tài khoản hay API key): soạn Công văn, Quyết định, Thông báo nội bộ, Kế hoạch công việc tuần, viết lại, tóm tắt
 
 ## Chạy
