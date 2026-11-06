@@ -222,6 +222,59 @@ table.sheet td[contenteditable]{outline:none}table.sheet td:focus{background:#e9
 .anim-fade{animation:pFade .45s ease}.anim-slide{animation:pSlide .45s ease}.anim-zoom{animation:pZoom .45s ease}
 .sl-ver-item{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-radius:11px;padding:9px 12px;margin-bottom:8px;font-size:12.5px}
 .sl-ver-item small{display:block;color:var(--muted)}
+/* ===== SLIDESAI STUDIO: 3 bước + dàn ý + kho 81 mẫu + Brand Kit ===== */
+.sl-steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.sl-step{font-size:11.5px;font-weight:800;color:var(--excel-dark);background:#fff;border:1px solid #bfe3cc;border-radius:99px;padding:5px 11px}
+@media(prefers-color-scheme:dark){.sl-step{background:#223028;color:#8fe3ae}}
+.sl-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.sl-tab{border:1.5px solid var(--line);background:#fff;color:#243528;border-radius:10px;padding:8px 13px;font-size:12.5px;font-weight:700}
+.sl-tab.active{background:var(--excel);color:#fff;border-color:var(--excel)}
+@media(prefers-color-scheme:dark){.sl-tab{background:#223028;color:#eef7f0}}
+.sl-src textarea{width:100%;min-height:96px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;background:#fff;color:#1c1c1c;outline:0;font-family:inherit;line-height:1.55}
+@media(prefers-color-scheme:dark){.sl-src textarea{background:#1d2a22;color:#eef7f0}}
+.ol-list{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.ol-item{display:flex;gap:7px;align-items:flex-start;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:8px 9px}
+@media(prefers-color-scheme:dark){.ol-item{background:#223028}}
+.ol-item.over{border-color:var(--excel);box-shadow:0 0 0 2px rgba(33,115,70,.25)}
+.ol-handle{cursor:grab;font-size:15px;color:var(--muted);padding:6px 2px;user-select:none;touch-action:none}
+.ol-num{font-size:11px;font-weight:800;color:#fff;background:var(--excel);border-radius:7px;padding:4px 7px;margin-top:4px;flex-shrink:0}
+.ol-fields{flex:1;display:flex;flex-direction:column;gap:5px;min-width:0}
+.ol-fields input,.ol-fields textarea{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:12.5px;background:transparent;color:inherit;outline:0;font-family:inherit;width:100%}
+.ol-fields input{font-weight:700}
+.ol-fields textarea{min-height:34px;resize:vertical;line-height:1.45}
+.ol-btns{display:flex;flex-direction:column;gap:4px}
+.ol-btns button{border:1px solid rgba(0,0,0,.14);background:rgba(255,255,255,.75);color:#243528;border-radius:7px;padding:3px 8px;font-size:11px;font-weight:700}
+.sl-search{flex:1;min-width:180px;border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;font-size:13px;background:#fff;color:#1c1c1c;outline:0}
+@media(prefers-color-scheme:dark){.sl-search{background:#1d2a22;color:#eef7f0}}
+.viz .venn{position:relative;height:64px}
+.viz .venn i{position:absolute;top:4px;width:56px;height:56px;border-radius:50%;opacity:.55;display:block}
+.viz .venn span{position:absolute;top:22px;font-size:10px;font-weight:800;color:#243528;width:56px;text-align:center}
+.viz .org{text-align:center}
+.viz .org .top{display:inline-block;color:#fff;font-weight:800;border-radius:8px;padding:5px 12px;font-size:11px}
+.viz .org .kids{display:flex;gap:4px;justify-content:center;margin-top:6px;flex-wrap:wrap}
+.viz .org .kids span{background:rgba(255,255,255,.7);border:1.5px solid;border-radius:8px;padding:4px 8px;font-weight:700;color:#243528}
+.viz .pie{display:flex;gap:10px;align-items:center}
+.viz .pie .disc{width:58px;height:58px;border-radius:50%;flex-shrink:0}
+.viz .pie .leg{font-size:10.5px;color:#243528;line-height:1.5}
+.viz .pie .leg i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px}
+.viz .cmp{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.viz .cmp div{background:rgba(255,255,255,.65);border-radius:8px;padding:6px 8px;color:#243528;line-height:1.45}
+.viz .cmp b{display:block;font-size:11px;margin-bottom:2px}
+.viz .flow{display:flex;gap:0;align-items:center}
+.viz .flow div{flex:1;border-radius:7px;padding:5px 6px;color:#fff;font-weight:700;font-size:10.5px;text-align:center;line-height:1.3}
+.viz .flow em{font-style:normal;font-weight:900;padding:0 3px}
+.viz img.media{width:100%;max-height:120px;object-fit:cover;border-radius:8px;display:block}
+.viz video.media,.viz iframe.media{width:100%;height:120px;border:0;border-radius:8px;display:block;background:#000}
+.sl-sug-btns{display:flex;gap:6px;margin-top:8px}
+.sl-sug-btns button{border:0;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:800}
+.sl-sug-btns .ok{background:var(--excel);color:#fff}
+.sl-sug-btns .no{background:#fff;border:1px solid var(--line);color:#243528}
+.bk-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.bk-row label{font-size:11.5px;font-weight:700;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.bk-row input[type=color]{width:52px;height:36px;border:1.5px solid var(--line);border-radius:9px;background:#fff;padding:2px;cursor:pointer}
+.bk-row input[type=text]{border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;font-size:12.5px;background:#fff;color:#1c1c1c}
+.bk-row select{border:1.5px solid var(--line);border-radius:9px;padding:8px;font-size:12.5px;font-weight:600;background:#fff;color:#243528}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
 
 /* ===== AI PANEL ===== */
 .ai-panel{position:fixed;top:0;right:0;width:min(400px,100vw);height:100dvh;background:#fff;color:#1c1c1c;z-index:60;box-shadow:-16px 0 40px rgba(0,0,0,.3);display:none;flex-direction:column}
@@ -267,15 +320,32 @@ input[type=file]{display:none}
 .focus-btn{position:fixed;top:12px;left:12px;z-index:65;display:none;align-items:center;gap:8px;background:var(--excel);color:#fff;border:0;border-radius:99px;padding:10px 16px;font-size:13px;font-weight:700;box-shadow:0 8px 24px rgba(15,50,30,.35)}
 .focus-btn:active{transform:scale(.97)}
 body.focus .focus-btn{display:inline-flex}
-body.focus .content{max-width:none;padding-top:60px}
+/* Full màn hình thật: khung app khoá đúng chiều cao viewport, vùng làm việc chiếm trọn khung, thẻ tiện ích kéo dài hết chiều cao, cuộn bên trong thẻ — không còn khoảng trống bên dưới */
+body.focus .app{height:100vh;height:100dvh}
+body.focus .main{height:100%;min-height:0}
+body.focus .content{max-width:none;margin:0;height:100%;padding:54px 12px 12px;display:flex;flex-direction:column}
+body.focus .editor-shell,body.focus .design-shell{flex:1;min-height:0;display:flex;flex-direction:column}
+body.focus .doc-area{flex:1;min-height:0;overflow-y:auto}
+body.focus #sheetArea{flex:1;min-height:0;display:flex;flex-direction:column}
+body.focus #sheetArea .sheet-wrap{flex:1;min-height:0;overflow:auto}
+body.focus #slidesArea{flex:1;min-height:0;overflow-y:auto}
+body.focus #viewPdf .editor-shell>div:last-child,
+body.focus #viewPdfLib .editor-shell>div:last-child,
+body.focus #viewLib .editor-shell>div:last-child,
+body.focus #viewTool .editor-shell>div:last-child,
+body.focus #viewLibItem .editor-shell>div:last-child{flex:1;min-height:0;overflow-y:auto}
+body.focus.nav-shown .brand{padding-top:46px}
+body.focus .design-body{flex:1;min-height:0}
+body.focus .design-panel{max-height:none}
+@media(max-width:860px){body.focus .design-body{overflow-y:auto}}
 @media(min-width:721px){
   body.focus:not(.nav-shown) .sidebar{display:none}
 }
 @media(max-width:720px){
   body.focus:not(.nav-shown) .bottom-nav{display:none}
   body.focus:not(.nav-shown) .mobile-top{display:none}
-  body.focus .content{padding-bottom:28px}
-  body.focus.nav-shown .content{padding-bottom:90px}
+  body.focus .content{padding-bottom:12px}
+  body.focus.nav-shown .content{padding-bottom:12px}
 }
 
 @media(max-width:1020px){.create-grid{grid-template-columns:repeat(4,1fr)}.tpl-grid{grid-template-columns:repeat(3,1fr)}.utils{grid-template-columns:repeat(2,1fr)}}
@@ -461,6 +531,174 @@ body.focus .content{max-width:none;padding-top:60px}
 .file-row .ficon{box-shadow:0 3px 8px rgba(15,50,30,.22),inset 0 1px 0 rgba(255,255,255,.35);border-radius:10px}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ============================================================
+   ===== THIẾT KẾ 2026 — lớp phủ thống nhất toàn app =====
+   Sạch · bo tròn mềm · thoáng · màu Excel tươi hiện đại ·
+   bóng đổ nhẹ nhiều lớp · chuyển động mượt.
+   ============================================================ */
+:root{
+  --excel:#1e9e62; --excel-dark:#136c41; --excel-deep:#0c4f2e; --excel-bright:#3ecf8e;
+  --red:#1e9e62; --red-dark:#136c41; --red-soft:#2cb673;
+  --green:#1e9e62; --green-2:#2cb673; --green-dark:#136c41;
+  --strong:#136c41;
+  --line:#dce9de;
+  --sh-sm:0 1px 2px rgba(16,74,44,.05),0 4px 14px rgba(16,74,44,.07);
+  --sh-md:0 2px 4px rgba(16,74,44,.06),0 12px 28px rgba(16,74,44,.12);
+  --sh-lg:0 4px 8px rgba(16,74,44,.07),0 24px 48px rgba(16,74,44,.16);
+  --ring:0 0 0 4px rgba(30,158,98,.16);
+  --ease:cubic-bezier(.22,.8,.32,1);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --strong:#7fe3ab; --sh-sm:0 1px 2px rgba(0,0,0,.25),0 4px 14px rgba(0,0,0,.3); --sh-md:0 2px 4px rgba(0,0,0,.3),0 12px 28px rgba(0,0,0,.4); --sh-lg:0 4px 8px rgba(0,0,0,.35),0 24px 48px rgba(0,0,0,.5); --ring:0 0 0 4px rgba(62,207,142,.22); }
+}
+::selection{background:rgba(30,158,98,.28)}
+*::-webkit-scrollbar{width:10px;height:10px}
+*::-webkit-scrollbar-thumb{background:#bcd6c3;border-radius:99px;border:2px solid transparent;background-clip:content-box}
+*::-webkit-scrollbar-thumb:hover{background:#93bda3;border:2px solid transparent;background-clip:content-box}
+*::-webkit-scrollbar-track{background:transparent}
+@media (prefers-color-scheme: dark){*::-webkit-scrollbar-thumb{background:#39503f;border:2px solid transparent;background-clip:content-box}}
+button{transition:transform .18s var(--ease),box-shadow .18s var(--ease),background .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease)}
+button:active{transform:scale(.975)}
+:focus-visible{outline:2px solid var(--excel);outline-offset:2px;border-radius:8px}
+
+/* --- Sidebar & điều hướng --- */
+.sidebar{background:linear-gradient(168deg,#22a869 0%,#177a4b 52%,#0c4f2e 100%)}
+.brand-icon{border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.35);box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.nav button{border-radius:12px;padding:10px 11px;transition:background .18s var(--ease),transform .18s var(--ease)}
+.nav button:hover{background:rgba(255,255,255,.13);transform:translateX(2px)}
+.nav button.active{background:rgba(255,255,255,.18);outline:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 4px 12px rgba(0,0,0,.15)}
+.avatar{background:linear-gradient(145deg,#5eeaa0,#2cb673);box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.mobile-top{background:linear-gradient(120deg,#22a869,#136c41)!important;box-shadow:0 8px 20px rgba(12,79,46,.25)}
+.bottom-nav{backdrop-filter:blur(14px);background:rgba(255,255,255,.88)!important;box-shadow:0 -8px 24px rgba(16,74,44,.10);border-top:1px solid rgba(30,158,98,.14)!important}
+.bottom-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center;line-height:1.15}
+.bottom-nav button .b-ico{margin:0 auto;flex-shrink:0}
+@media (prefers-color-scheme: dark){.bottom-nav{background:rgba(28,38,31,.88)!important}}
+
+/* --- Nút bấm: gradient tươi, chiều sâu nhẹ --- */
+.btn{border-radius:12px;padding:9px 16px;box-shadow:var(--sh-sm)}
+.btn-red,.btn-green{background:linear-gradient(135deg,#27b06c,#15803d);color:#fff;box-shadow:0 6px 16px rgba(21,128,61,.28)}
+.btn-red:hover,.btn-green:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(21,128,61,.34)}
+.btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{transform:translateY(-1px);box-shadow:var(--sh-md);border-color:#bcd6c3}
+.back-btn{border-radius:99px;padding:8px 14px;background:var(--card);box-shadow:var(--sh-sm)}
+.back-btn:hover{transform:translateY(-1px);box-shadow:var(--sh-md)}
+.focus-btn{background:linear-gradient(135deg,#27b06c,#15803d);box-shadow:0 10px 26px rgba(21,128,61,.35);padding:11px 18px}
+.toolbar button{border-radius:10px;transition:all .18s var(--ease)}
+.toolbar button:hover{border-color:var(--excel);color:var(--excel-dark);transform:translateY(-1px)}
+.ai-bar button{border-radius:99px;transition:all .18s var(--ease)}
+.ai-bar button:hover{transform:translateY(-1px);box-shadow:var(--sh-sm)}
+
+/* --- Thẻ: bo tròn lớn, bóng mềm, nhấc nhẹ khi hover --- */
+.create-card,.tpl-card,.util-card,.stat-card,.pdf-card,.sl-tpl{border-radius:20px;border-color:var(--line);box-shadow:var(--sh-sm);transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s var(--ease)}
+.create-card:hover,.tpl-card:hover,.util-card:hover,.pdf-card:hover,.sl-tpl:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:#bcd6c3}
+.file-row{border-radius:16px;box-shadow:var(--sh-sm);transition:transform .22s var(--ease),box-shadow .22s var(--ease)}
+.file-row:hover{transform:translateX(3px);box-shadow:var(--sh-md)}
+.ficon{border-radius:13px;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 4px 10px rgba(16,74,44,.14)}
+.empty-box{border-radius:18px;box-shadow:var(--sh-sm)}
+.ai-badge{background:linear-gradient(120deg,#d7f5e3,#bdeccc);border-radius:99px;padding:2px 7px}
+.pdf-badge{border-radius:99px;padding:2px 7px}
+.util-card .u-ico,.pdf-card .p-ico{filter:drop-shadow(0 3px 5px rgba(16,74,44,.18))}
+
+/* --- Ô nhập / chọn: mềm, focus có vòng sáng Excel --- */
+.searchbox,.sort-select{border-radius:14px;border-color:var(--line);box-shadow:var(--sh-sm)}
+.searchbox:focus-within{border-color:var(--excel);box-shadow:var(--ring)}
+.sl-row input[type=text],.sl-row select,.sl-search,.sl-src textarea,.ol-fields input,.ol-fields textarea,.bk-row input[type=text],.bk-row select,.pdf-opts input[type=text],.pdf-opts input[type=number],.pdf-opts select,.pdf-opts textarea,.modal-box input[type=text],.modal-box input[type=number],.modal-box input[type=date],.modal-box select,.modal-box textarea,.design-panel input[type=text],.design-panel textarea,.design-panel select,.ai-input input{border-radius:12px;border-color:var(--line);transition:border-color .18s var(--ease),box-shadow .18s var(--ease)}
+.sl-row input[type=text]:focus,.sl-search:focus,.sl-src textarea:focus,.ol-fields input:focus,.ol-fields textarea:focus,.pdf-opts input[type=text]:focus,.pdf-opts select:focus,.pdf-opts textarea:focus,.modal-box textarea:focus,.ai-input input:focus{border-color:var(--excel);box-shadow:var(--ring);outline:0}
+.bk-row input[type=color]{border-radius:12px;border-color:var(--line)}
+
+/* --- Chips & tabs --- */
+.sl-chip,.pdf-fchip{border-radius:99px;box-shadow:var(--sh-sm);transition:all .18s var(--ease)}
+.sl-chip:hover,.pdf-fchip:hover{transform:translateY(-1px)}
+.sl-chip.active,.pdf-fchip.active{background:linear-gradient(135deg,#27b06c,#15803d);border-color:transparent;color:#fff;box-shadow:0 6px 14px rgba(21,128,61,.3)}
+.sl-tab{border-radius:12px;transition:all .18s var(--ease)}
+.sl-tab.active{background:linear-gradient(135deg,#27b06c,#15803d);border-color:transparent;box-shadow:0 6px 14px rgba(21,128,61,.3)}
+.sl-step{background:linear-gradient(120deg,#e4f6ec,#d2efe0);border-color:#bfe3cc;border-radius:99px}
+.tabs{border-radius:14px;box-shadow:var(--sh-sm)}
+.tabs button{border-radius:10px}
+.tabs button.active{box-shadow:0 2px 8px rgba(16,74,44,.16)}
+
+/* --- Khung soạn thảo / studio / modal --- */
+.editor-shell,.design-shell{border-radius:22px;box-shadow:var(--sh-lg)}
+.modal-box{border-radius:22px;box-shadow:var(--sh-lg)}
+.toast{border-radius:99px;box-shadow:var(--sh-lg);background:#123524}
+.sl-box{border-radius:20px;border-color:#c4e6d0;background:linear-gradient(150deg,#f0faf4,#f8fcfa);box-shadow:var(--sh-sm)}
+@media (prefers-color-scheme: dark){.sl-box{background:#20362a}}
+.sl-chat{border-radius:18px;box-shadow:var(--sh-sm)}
+.sl-chatlog .m{border-radius:16px}
+.sl-chatlog .m.user{background:linear-gradient(135deg,#27b06c,#15803d)}
+.msg.user{background:linear-gradient(135deg,#27b06c,#15803d)}
+.ol-item{border-radius:16px;box-shadow:var(--sh-sm);transition:border-color .18s var(--ease),box-shadow .18s var(--ease)}
+.ol-item.over{box-shadow:var(--ring)}
+.sl-ver-item{border-radius:14px}
+.dropzone{border-radius:20px;border-color:#9fd4b4;background:linear-gradient(160deg,#f2faf5,#e9f7ee);transition:all .2s var(--ease)}
+.dropzone:hover,.dropzone.over{transform:translateY(-1px);box-shadow:var(--sh-md)}
+.pdf-chip{border-radius:99px;box-shadow:var(--sh-sm)}
+.pdf-result pre{border-radius:16px}
+.sig-pad{border-radius:16px}
+
+/* --- Slide --- */
+.slides-wrap{gap:16px}
+.slide-card{border-radius:18px;box-shadow:var(--sh-sm);transition:transform .22s var(--ease),box-shadow .22s var(--ease)}
+.slide-card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+.slide-card.sel{outline:3px solid var(--excel);box-shadow:0 0 0 5px rgba(30,158,98,.14),var(--sh-md)}
+.slide-tools button{border-radius:9px;transition:all .15s var(--ease)}
+.slide-tools button:hover{transform:translateY(-1px);box-shadow:var(--sh-sm)}
+.sl-tpl .prev{border-radius:12px;box-shadow:inset 0 0 0 1px rgba(16,74,44,.08)}
+.sl-tpl .mk{background:linear-gradient(135deg,#27b06c,#15803d);border-radius:10px;box-shadow:0 4px 10px rgba(21,128,61,.25)}
+.present .stage{border-radius:22px}
+.present .pnav button,.present .px{border-radius:12px;backdrop-filter:blur(8px)}
+
+/* --- Bảng tính & tài liệu --- */
+table.sheet th{background:linear-gradient(180deg,#27b06c,#1e9e62)}
+table.sheet td,table.sheet th{border-color:#d3e4d8}
+table.sheet tr:hover td{background:rgba(30,158,98,.05)}
+.doc-area{line-height:1.8}
+.section-title{font-size:15px;letter-spacing:-.01em}
+.greet h1{letter-spacing:-.035em}
+
+/* --- Thư viện hàm / danh sách phụ --- */
+.lib-note{line-height:1.65}
+input[type=range]{accent-color:var(--excel)}
+.pdf-group{letter-spacing:.08em;color:var(--excel-dark)}
+
+/* --- Chuyển động: tôn trọng người dùng tắt hiệu ứng --- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important;scroll-behavior:auto!important}
+}
+
+
+/* ===== TRÌNH TẠO CV — kho mẫu CV Hay kiểu CareerViet ===== */
+.cv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:12px}
+.cv-tpl{border:1.5px solid var(--line);border-radius:18px;padding:10px;text-align:left;background:var(--card);display:flex;flex-direction:column;gap:7px;box-shadow:var(--sh-sm);transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s var(--ease)}
+.cv-tpl:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+.cv-tpl.sel{border-color:var(--excel);box-shadow:0 0 0 4px rgba(30,158,98,.15),var(--sh-md)}
+.cv-tpl .pv{height:86px;border-radius:12px;overflow:hidden;position:relative;flex-shrink:0;border:1px solid rgba(16,74,44,.08)}
+.cv-tpl .pv .hd{height:26px}
+.cv-tpl .pv .ln{height:6px;border-radius:4px;background:rgba(20,40,28,.16);margin:7px 10px 0}
+.cv-tpl .pv .ln.s{width:55%}
+.cv-tpl .pv .sd{position:absolute;left:0;top:0;bottom:0;width:30%}
+.cv-tpl b{font-size:12.5px;line-height:1.35}
+.cv-tpl small{color:var(--muted);font-size:11px;line-height:1.45}
+.cv-badge{font-size:9.5px;font-weight:800;letter-spacing:.04em;padding:3px 8px;border-radius:99px;vertical-align:2px;white-space:nowrap}
+.cv-badge.hot{background:linear-gradient(120deg,#ffe9b8,#ffd873);color:#7a5200}
+.cv-badge.new{background:linear-gradient(120deg,#d7f5e3,#bdeccc);color:#136c41}
+.cv-tpl .mk{margin-top:auto;align-self:flex-start;border:0;background:linear-gradient(135deg,#27b06c,#15803d);color:#fff;border-radius:10px;padding:6px 12px;font-size:11.5px;font-weight:700;box-shadow:0 4px 10px rgba(21,128,61,.25)}
+.cv-cols{display:grid;grid-template-columns:minmax(300px,430px) 1fr;gap:18px;align-items:start}
+@media(max-width:960px){.cv-cols{grid-template-columns:1fr}}
+.cv-form label.fl{font-size:12px;font-weight:700;color:var(--muted);display:block;margin:12px 0 4px}
+.cv-form label.fl:first-child{margin-top:0}
+.cv-form input[type=text],.cv-form input[type=email],.cv-form input[type=tel],.cv-form textarea,.cv-form select{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13.5px;background:var(--card);color:var(--ink);outline:0;transition:border-color .18s var(--ease),box-shadow .18s var(--ease)}
+.cv-form textarea{min-height:74px;line-height:1.55;font-family:inherit;resize:vertical}
+.cv-form input:focus,.cv-form textarea:focus,.cv-form select:focus{border-color:var(--excel);box-shadow:var(--ring)}
+.cv-form input[type=color]{width:52px;height:36px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);padding:2px;cursor:pointer}
+.cv-paper{background:#fff;color:#223;border-radius:18px;box-shadow:var(--sh-lg);overflow:hidden;max-width:840px;margin:0 auto}
+.cv-paper .ph{color:#8a9a8f;font-style:italic}
+.cv-sec-t{font-weight:800;letter-spacing:.05em;text-transform:uppercase;font-size:.92em;margin:0 0 6px}
+.cv-paper ul{margin:0;padding-left:17px;line-height:1.65}
+.cv-paper p{margin:0 0 6px;line-height:1.65}
+.cv-chip-s{display:inline-block;border-radius:99px;padding:3px 10px;margin:0 5px 5px 0;font-size:.92em;font-weight:600}
+
 </style>
 </head>
 <body>
@@ -589,7 +827,7 @@ body.focus .content{max-width:none;padding-top:60px}
         <button class="util-card" onclick="openTool('days')"><span class="u-ico">📅</span><b>Tính ngày &amp; hạn xử lý</b><small>Số ngày giữa 2 mốc, số ngày làm việc (trừ T7–CN) và ngày đến hạn khi cộng thêm N ngày.</small></button>
         <button class="util-card" onclick="openTool('code')"><span class="u-ico">🏷</span><b>Tạo mã chứng từ</b><small>Sinh mã hoá đơn, phiếu thu, phiếu chi, báo cáo theo ngày — dạng HĐ-20261106-XXXX.</small></button>
         <button class="util-card" onclick="openTool('dedup')"><span class="u-ico">🧹</span><b>Xoá dòng trùng lặp</b><small>Dán danh sách (tên, SĐT, email…) để loại bỏ dòng trùng và dòng trống, giữ nguyên thứ tự.</small></button>
-        <button class="util-card" onclick="openTool('cv')"><span class="u-ico">🪪</span><b>Trình tạo CV</b><small>Điền form ngắn — họ tên, vị trí, kinh nghiệm, kỹ năng — app tự dàn trang CV chuẩn và mở trong trình soạn thảo để sửa &amp; tải xuống.</small></button>
+        <button class="util-card" onclick="openTool('cv')"><span class="u-ico">🪪</span><b>Trình tạo CV</b><small>Kho 28 mẫu CV Hay miễn phí kiểu CareerViet — AI gợi ý nội dung theo vị trí, đổi mẫu 1 cú nhấp, xuất PDF &amp; Word.</small></button>
       </div>
 
       </div>
@@ -692,31 +930,90 @@ body.focus .content{max-width:none;padding-top:60px}
         <div id="slidesArea" hidden>
           <div class="sl-sec">
             <div class="sl-box">
-              <h4>✦ Tạo slide bằng AI — gõ ý tưởng, AI dựng cả bộ slide</h4>
-              <p>Giống cách Kimi Slides hoạt động: sếp chỉ cần gõ chủ đề hoặc câu mô tả, AI (chạy ngay trên trình duyệt) sẽ lên dàn ý, sinh bộ slide có định dạng thống nhất theo mẫu đang chọn và chèn sẵn biểu đồ / sơ đồ phù hợp chủ đề.</p>
-              <div class="sl-row">
-                <input type="text" id="slTopic" placeholder="Ví dụ: Báo cáo kinh doanh quý 3 · Giới thiệu sản phẩm mới · Bài giảng lịch sử lớp 10..." onkeydown="if(event.key==='Enter')aiSlidesFromTopic()">
-                <select id="slCount" aria-label="Số slide"><option value="6">6 slide</option><option value="8" selected>8 slide</option><option value="10">10 slide</option></select>
-                <button class="btn btn-red" onclick="aiSlidesFromTopic()">✦ Tạo bộ slide</button>
-                <button class="btn btn-ghost" onclick="aiSlides()">Dàn ý chuẩn 6 slide</button>
+              <h4>✦ Tạo bài trình bày kiểu SlidesAI — quy trình 3 bước</h4>
+              <div class="sl-steps"><span class="sl-step">Bước 1 · Nhập nội dung</span><span class="sl-step">Bước 2 · Sửa dàn ý</span><span class="sl-step">Bước 3 · Chọn mẫu &amp; xuất file</span></div>
+              <p>Giống cách SlidesAI hoạt động: sếp nhập chủ đề, dán ghi chú / văn bản / kịch bản, tải tệp hoặc dán link — AI (chạy ngay trên trình duyệt) sẽ dựng dàn ý trước. Sếp sửa từng dòng dàn ý, kéo thả đổi thứ tự, rồi mới sinh slide theo mẫu đã chọn ở Bước 3.</p>
+              <div class="sl-tabs" id="slSrcTabs">
+                <button class="sl-tab active" data-src="topic" onclick="setSlSrc('topic',this)">💡 Chủ đề</button>
+                <button class="sl-tab" data-src="notes" onclick="setSlSrc('notes',this)">📝 Ghi chú / văn bản</button>
+                <button class="sl-tab" data-src="script" onclick="setSlSrc('script',this)">🎬 Kịch bản</button>
+                <button class="sl-tab" data-src="file" onclick="setSlSrc('file',this)">📄 Tải tệp lên</button>
+                <button class="sl-tab" data-src="link" onclick="setSlSrc('link',this)">🔗 Dán link</button>
               </div>
+              <div class="sl-src" id="slSrcTopic">
+                <div class="sl-row">
+                  <input type="text" id="slTopic" placeholder="Ví dụ: Báo cáo kinh doanh quý 3 · Giới thiệu sản phẩm mới · Bài giảng lịch sử lớp 10..." onkeydown="if(event.key==='Enter')outlineFromTopic()">
+                  <select id="slCount" aria-label="Số slide"><option value="6">6 slide</option><option value="8" selected>8 slide</option><option value="10">10 slide</option></select>
+                  <button class="btn btn-red" onclick="outlineFromTopic()">✦ Dựng dàn ý</button>
+                  <button class="btn btn-ghost" onclick="outlineStd()">Dàn ý chuẩn 6 mục</button>
+                </div>
+              </div>
+              <div class="sl-src" id="slSrcNotes" hidden>
+                <textarea id="slNotes" placeholder="Dán ghi chú, văn bản hoặc dàn ý thô vào đây — mỗi dòng / mỗi đoạn sẽ thành một mục dàn ý. Ví dụ:&#10;Giới thiệu công ty và đội ngũ&#10;Sản phẩm chính và lợi ích cho khách hàng&#10;Số liệu doanh thu 3 quý gần nhất&#10;Kế hoạch mở rộng năm tới"></textarea>
+                <div class="sl-row" style="margin-top:8px"><button class="btn btn-red" onclick="outlineFromText('notes')">✦ Dựng dàn ý từ ghi chú</button><span style="font-size:11.5px;color:var(--muted)">AI tách đoạn, đặt tiêu đề từng mục — sếp sửa lại ở Bước 2.</span></div>
+              </div>
+              <div class="sl-src" id="slSrcScript" hidden>
+                <textarea id="slScript" placeholder="Dán kịch bản thuyết trình / lời thoại video vào đây — AI sẽ chia kịch bản thành từng phân đoạn, mỗi phân đoạn là một slide kèm ý chính."></textarea>
+                <div class="sl-row" style="margin-top:8px"><button class="btn btn-red" onclick="outlineFromText('script')">✦ Dựng dàn ý từ kịch bản</button><span style="font-size:11.5px;color:var(--muted)">Hợp với kịch bản video, kịch bản đào tạo, lời dẫn sự kiện.</span></div>
+              </div>
+              <div class="sl-src" id="slSrcFile" hidden>
+                <div class="sl-row">
+                  <button class="btn btn-ghost" onclick="document.getElementById('slDocInput').click()">⬆ Tải lên PDF / Word / PowerPoint / Excel / Markdown / văn bản / HTML</button>
+                  <input type="file" id="slDocInput" accept=".txt,.md,.csv,.html,.htm,.docx,.xlsx,.xls,.pdf,.pptx,.ppt" onchange="slidesFromDoc(event)">
+                  <span style="font-size:11.5px;color:var(--muted)">Nội dung tệp được trích thành dàn ý ngay trên trình duyệt (PowerPoint: mỗi slide gốc thành một mục dàn ý).</span>
+                </div>
+              </div>
+              <div class="sl-src" id="slSrcLink" hidden>
+                <div class="sl-row">
+                  <input type="text" id="slLink" placeholder="Dán link bài viết / trang web cần làm slide...">
+                  <button class="btn btn-red" onclick="outlineFromLink()">✦ Đọc link &amp; dựng dàn ý</button>
+                </div>
+                <p class="sl-note" style="margin-top:8px">Trình duyệt chặn đọc trực tiếp nhiều trang web (chính sách CORS của trang đích) — nếu đọc link không được, app sẽ báo rõ và sếp chỉ cần copy nội dung trang dán vào tab “Ghi chú / văn bản” là dựng dàn ý được ngay.</p>
+              </div>
+            </div>
+          </div>
+          <div class="sl-sec" id="slOutlineBox" hidden>
+            <div class="sl-box">
+              <h4>📋 Bước 2 · Dàn ý — sửa từng dòng, kéo ⠿ hoặc bấm ↑ ↓ để đổi thứ tự slide</h4>
+              <p>Mỗi mục dàn ý sẽ thành đúng một slide: dòng trên là tiêu đề slide, dòng dưới là ý chính / nội dung. Sửa xong bấm “Tạo slide từ dàn ý này” — slide sẽ dùng mẫu đang chọn ở Bước 3 bên dưới và tự chèn biểu đồ / sơ đồ khi mục có số liệu, quy trình, mốc thời gian…</p>
+              <div class="ol-list" id="olList"></div>
               <div class="sl-row" style="margin-top:10px">
-                <span style="font-size:12.5px;font-weight:700">📄 Tạo slide từ tài liệu có sẵn:</span>
-                <button class="btn btn-ghost" onclick="document.getElementById('slDocInput').click()">⬆ Tải lên Word / Excel / Markdown / văn bản / HTML</button>
-                <input type="file" id="slDocInput" accept=".txt,.md,.csv,.html,.htm,.docx,.xlsx,.xls" onchange="slidesFromDoc(event)">
-                <span style="font-size:11.5px;color:var(--muted)">Nội dung tài liệu được trích thành từng slide ngay trên trình duyệt.</span>
+                <button class="btn btn-ghost" onclick="olAdd(-1)">＋ Thêm mục dàn ý</button>
+                <button class="btn btn-red" onclick="buildSlidesFromOutline()">✦ Tạo slide từ dàn ý này →</button>
+                <span style="font-size:11.5px;color:var(--muted)" id="olCount"></span>
               </div>
             </div>
           </div>
           <div class="sl-sec">
-            <h4 style="margin:0 0 2px;font-size:13.5px;color:var(--excel-dark)">🎞 Kho mẫu slide — bấm “Tạo tương tự” để dùng mẫu</h4>
+            <h4 style="margin:0 0 2px;font-size:13.5px;color:var(--excel-dark)">🎞 Bước 3 · Kho mẫu kiểu SlidesAI — 81 mẫu có tên thật, bấm “Dùng mẫu này” là tạo ngay bộ slide</h4>
+            <div class="sl-row" style="margin-top:8px">
+              <input type="text" class="sl-search" id="slTplSearch" placeholder="🔍 Tìm mẫu: pitch deck, quiz, timeline, portfolio..." oninput="slTplQuery=this.value;renderTplGrid()">
+              <span style="font-size:11.5px;color:var(--muted)" id="slTplCount"></span>
+            </div>
+            <div class="sl-row" id="slStyleChips" style="margin-top:8px">
+              <span style="font-size:11.5px;font-weight:800;color:var(--muted)">PHONG CÁCH:</span>
+              <button class="sl-chip active" onclick="setSlStyle('all',this)">Tất cả</button>
+              <button class="sl-chip" onclick="setSlStyle('professional',this)">Professional</button>
+              <button class="sl-chip" onclick="setSlStyle('fun',this)">Fun</button>
+              <button class="sl-chip" onclick="setSlStyle('modern',this)">Modern</button>
+              <button class="sl-chip" onclick="setSlStyle('luxury',this)">Luxury</button>
+              <button class="sl-chip" onclick="setSlStyle('diverse',this)">Diverse</button>
+              <button class="sl-chip" onclick="setSlStyle('creative',this)">Creative</button>
+              <button class="sl-chip" onclick="setSlStyle('dark',this)">Dark</button>
+              <button class="sl-chip" onclick="setSlStyle('classic',this)">Classic</button>
+              <button class="sl-chip" onclick="setSlStyle('simple',this)">Simple</button>
+            </div>
             <div class="sl-row" id="slTplChips" style="margin-top:8px">
-              <button class="sl-chip active" data-g="all" onclick="setSlTplGroup('all',this)">Tất cả</button>
-              <button class="sl-chip" data-g="work" onclick="setSlTplGroup('work',this)">Công việc</button>
-              <button class="sl-chip" data-g="finance" onclick="setSlTplGroup('finance',this)">Tài chính</button>
-              <button class="sl-chip" data-g="ads" onclick="setSlTplGroup('ads',this)">Quảng cáo</button>
-              <button class="sl-chip" data-g="academic" onclick="setSlTplGroup('academic',this)">Học thuật</button>
-              <button class="sl-chip" data-g="consult" onclick="setSlTplGroup('consult',this)">Tư vấn</button>
+              <span style="font-size:11.5px;font-weight:800;color:var(--muted)">NHÓM:</span>
+              <button class="sl-chip active" onclick="setSlTplGroup('all',this)">Tất cả</button>
+              <button class="sl-chip" onclick="setSlTplGroup('business',this)">Kinh doanh</button>
+              <button class="sl-chip" onclick="setSlTplGroup('education',this)">Giáo dục</button>
+              <button class="sl-chip" onclick="setSlTplGroup('health',this)">Y tế</button>
+              <button class="sl-chip" onclick="setSlTplGroup('infographic',this)">Infographic</button>
+              <button class="sl-chip" onclick="setSlTplGroup('marketing',this)">Marketing</button>
+              <button class="sl-chip" onclick="setSlTplGroup('pitch',this)">Pitch Deck</button>
+              <button class="sl-chip" onclick="setSlTplGroup('portfolio',this)">Portfolio</button>
+              <button class="sl-chip" onclick="setSlTplGroup('workshop',this)">Workshop</button>
             </div>
             <div class="sl-tpl-grid" id="slTplGrid"></div>
           </div>
@@ -725,11 +1022,19 @@ body.focus .content{max-width:none;padding-top:60px}
               <button class="btn btn-ghost" onclick="addSlide()">＋ Thêm slide</button>
               <button class="btn btn-ghost" onclick="delSlide()">− Xoá slide cuối</button>
               <span style="width:6px"></span>
+              <button class="btn btn-ghost" onclick="aiDesign()">✦ AI Design — tự thiết kế bộ slide</button>
+              <button class="btn btn-ghost" onclick="quickAnimate()">⚡ Quick Animate</button>
+            </div>
+            <div class="sl-row" style="margin-top:8px">
               <button class="btn btn-ghost" onclick="insertViz('chart')">📊 Chèn biểu đồ</button>
+              <button class="btn btn-ghost" onclick="openChartText()">📈 Biểu đồ từ văn bản</button>
               <button class="btn btn-ghost" onclick="insertViz('table')">▦ Chèn bảng</button>
               <button class="btn btn-ghost" onclick="insertViz('shape')">◆ Chèn hình khối</button>
-              <select id="slSmartSel" aria-label="SmartArt"><option value="swot">SmartArt: SWOT</option><option value="roadmap">SmartArt: Lộ trình</option><option value="gantt">SmartArt: Gantt</option><option value="kpi">SmartArt: KPI</option><option value="funnel">SmartArt: Phễu bán hàng</option><option value="timeline">SmartArt: Timeline</option><option value="mindmap">SmartArt: Mind map</option><option value="latex">Công thức LaTeX</option></select>
-              <button class="btn btn-ghost" onclick="insertViz('smart')">🧩 Chèn SmartArt / LaTeX</button>
+              <button class="btn btn-ghost" onclick="document.getElementById('slMediaInput').click()">🖼 Chèn ảnh / GIF</button>
+              <input type="file" id="slMediaInput" accept="image/*" onchange="insertMediaFile(event)">
+              <button class="btn btn-ghost" onclick="openVideoBox()">🎬 Chèn video</button>
+              <select id="slSmartSel" aria-label="Sơ đồ & SmartArt"><option value="swot">Sơ đồ: SWOT</option><option value="roadmap">Sơ đồ: Lộ trình</option><option value="gantt">Sơ đồ: Gantt</option><option value="kpi">Sơ đồ: KPI</option><option value="funnel">Sơ đồ: Phễu bán hàng</option><option value="timeline">Sơ đồ: Timeline</option><option value="mindmap">Sơ đồ: Mind map</option><option value="venn">Sơ đồ: Venn</option><option value="flow">Sơ đồ: Flowchart (lưu đồ)</option><option value="org">Sơ đồ: Tổ chức</option><option value="pie">Sơ đồ: Biểu đồ tròn</option><option value="compare">Sơ đồ: Bảng so sánh</option><option value="latex">Công thức LaTeX</option></select>
+              <button class="btn btn-ghost" onclick="insertViz('smart')">🧩 Chèn sơ đồ / SmartArt</button>
             </div>
             <div class="sl-row" style="margin-top:8px">
               <label style="font-size:12.5px;font-weight:700">Hiệu ứng chuyển slide:
@@ -739,20 +1044,64 @@ body.focus .content{max-width:none;padding-top:60px}
               <button class="btn btn-ghost" onclick="openSlideVersions()">🕘 Phiên bản slide</button>
               <span style="width:6px"></span>
               <button class="btn btn-red" onclick="exportPptx()">⬇ Xuất .pptx thật</button>
+              <button class="btn btn-ghost" onclick="exportGoogleSlides()">⬇ Xuất Google Slides</button>
               <button class="btn btn-ghost" onclick="exportSlidesPdf()">⬇ Xuất PDF</button>
               <button class="btn btn-ghost" onclick="exportSlidesPng()">⬇ Xuất PNG</button>
             </div>
-            <p class="sl-note">Bấm vào một slide để chọn slide đó (viền xanh) — các nút Chèn biểu đồ / bảng / SmartArt sẽ áp vào slide đang chọn. Mỗi slide có nút ↑ ↓ đổi thứ tự, ⧉ nhân bản, ✕ xoá. Sửa chữ trực tiếp trên slide như trước. <b>Chưa có trên bản chạy trình duyệt:</b> tìm kiếm tài liệu &amp; trích dẫn nguồn trên mạng và cộng tác thời gian thực nhiều người cùng sửa — hai tính năng này của Kimi cần máy chủ, app không giả lập.</p>
+            <p class="sl-note">Bấm vào một slide để chọn slide đó (viền xanh) — các nút Chèn biểu đồ / bảng / sơ đồ / ảnh sẽ áp vào slide đang chọn. Mỗi slide có nút ↑ ↓ đổi thứ tự, ⧉ nhân bản, ✕ xoá. Sửa chữ trực tiếp trên slide như trước. <b>Chưa có trên bản chạy trình duyệt</b> (các mục này của SlidesAI cần máy chủ / tài khoản trả phí, app không giả lập): gói Pro &amp; Premium, mô hình AI Advanced / Ultra, tải font riêng lên, cộng tác thời gian thực nhiều người cùng sửa, tìm kiếm tài liệu &amp; trích dẫn nguồn trên mạng.</p>
+          </div>
+          <div class="sl-sec">
+            <div class="sl-box">
+              <h4>🎨 Brand Kit — bộ nhận diện riêng của sếp (miễn phí 1 bộ như gói free của SlidesAI)</h4>
+              <p>Chọn màu nền, màu chữ, màu nhấn và font chữ của riêng mình — áp vào toàn bộ bộ slide ngay, hoặc lưu thành mẫu riêng trong kho mẫu để dùng lại. Font dùng các font có sẵn trên máy / trong app; tính năng <b>tải font riêng lên</b> là mục trả phí của SlidesAI nên chưa có ở bản chạy trình duyệt.</p>
+              <div class="bk-row">
+                <label>Tên bộ / thương hiệu<input type="text" id="bkName" placeholder="Ví dụ: Công ty ABC" style="min-width:170px"></label>
+                <label>Màu nền<input type="color" id="bkBg" value="#eef7f1"></label>
+                <label>Màu chữ<input type="color" id="bkInk" value="#173b2a"></label>
+                <label>Màu nhấn<input type="color" id="bkAccent" value="#217346"></label>
+                <label>Font chữ<select id="bkFont"><option value="'Be Vietnam Pro',Arial,sans-serif">Be Vietnam Pro (mặc định)</option><option value="Arial,sans-serif">Arial</option><option value="Georgia,serif">Georgia</option><option value="'Times New Roman',serif">Times New Roman</option><option value="Verdana,sans-serif">Verdana</option><option value="'Trebuchet MS',sans-serif">Trebuchet MS</option></select></label>
+                <button class="btn btn-red" onclick="applyBrandKit()">Áp dụng Brand Kit</button>
+                <button class="btn btn-ghost" onclick="saveBrandKitAsTemplate()">Lưu thành mẫu riêng</button>
+              </div>
+            </div>
           </div>
           <div class="slides-wrap" id="slidesWrap"></div>
-          <div class="sl-sec" style="padding-bottom:18px">
+          <div class="sl-sec">
             <div class="sl-chat">
-              <h4 style="margin:0 0 8px;font-size:13.5px;color:var(--excel-dark)">✦ Sửa slide bằng AI — khung chat</h4>
-              <div class="sl-chatlog" id="slChatLog"><div class="m bot">Sếp gõ yêu cầu, ví dụ: “viết lại slide 2 trang trọng hơn”, “rút ngắn slide đang chọn”, “đổi phong cách sang mẫu Black Gold Ledger”, “thêm slide kết luận”. AI sửa ngay trên bộ slide, có lưu phiên bản trước khi sửa để khôi phục được.</div></div>
+              <h4 style="margin:0 0 8px;font-size:13.5px;color:var(--excel-dark)">✦ Ask AI — chat với AI để viết lại / tạo slide</h4>
+              <div class="sl-chatlog" id="slChatLog"><div class="m bot">Sếp gõ yêu cầu, ví dụ: “viết lại slide 2 trang trọng hơn”, “rút ngắn slide đang chọn”, “đổi phong cách sang mẫu Business Pitch Deck”, “thêm slide kết luận”. Với lệnh viết lại / rút ngắn, AI sẽ đưa gợi ý kèm nút <b>Chấp nhận</b> / <b>Từ chối</b> — sếp duyệt rồi mới áp vào slide, không sửa thẳng.</div></div>
               <div class="sl-row">
-                <input type="text" id="slChatInput" placeholder="Ví dụ: viết lại slide 2 hay hơn · đổi phong cách tối sang trọng · rút ngắn tất cả" onkeydown="if(event.key==='Enter')slideChatSend()">
+                <input type="text" id="slChatInput" placeholder="Ví dụ: viết lại slide 2 hay hơn · đổi phong cách Luxury · rút ngắn tất cả" onkeydown="if(event.key==='Enter')slideChatSend()">
                 <button class="btn btn-red" onclick="slideChatSend()">Gửi ✦</button>
               </div>
+            </div>
+          </div>
+          <div class="sl-sec" style="padding-bottom:18px">
+            <h4 style="margin:0 0 2px;font-size:13.5px;color:var(--excel-dark)">🧰 Công cụ PowerPoint miễn phí — kiểu SlidesAI (chạy ngay trên trình duyệt)</h4>
+            <p style="font-size:12px;color:var(--muted);margin:0 0 4px;line-height:1.55">Các công cụ tạo bài trình bày và xử lý file .pptx / PDF / Word / HTML — bấm vào một công cụ để mở bàn làm việc riêng.</p>
+            <div class="pdf-group">Tạo bài trình bày bằng AI</div>
+            <div class="pdf-grid">
+              <button class="pdf-card" onclick="pptGenShortcut('topic')"><span class="p-ico">💡</span><b>Chủ đề → PPT</b><small>Gõ một chủ đề — AI dựng dàn ý rồi sinh bộ slide (Bước 1 ở trên).</small></button>
+              <button class="pdf-card" onclick="pptGenShortcut('notes')"><span class="p-ico">📝</span><b>Ghi chú → PPT</b><small>Dán ghi chú / văn bản — AI tách thành dàn ý và slide.</small></button>
+              <button class="pdf-card" onclick="pptGenShortcut('script')"><span class="p-ico">🎬</span><b>Kịch bản → PPT</b><small>Dán kịch bản thuyết trình / video — mỗi phân đoạn thành một slide.</small></button>
+              <button class="pdf-card" onclick="pptGenShortcut('file')"><span class="p-ico">📄</span><b>Tài liệu → PPT</b><small>Tải PDF, Word, PowerPoint, Excel... — nội dung trích thành dàn ý &amp; slide.</small></button>
+            </div>
+            <div class="pdf-group">Xử lý file PowerPoint</div>
+            <div class="pdf-grid">
+              <button class="pdf-card" onclick="openPptTool('pptsum')"><span class="p-ico">✦</span><b>Tóm tắt PowerPoint bằng AI</b><small>AI đọc toàn bộ chữ trong .pptx và trích bản tóm tắt ý chính.</small></button>
+              <button class="pdf-card" onclick="openPptTool('pptcompress')"><span class="p-ico">🗜</span><b>Nén PowerPoint</b><small>Nén lại gói .pptx (DEFLATE mức cao nhất) để file nhẹ hơn khi gửi.</small></button>
+              <button class="pdf-card" onclick="openPptTool('pptmerge')"><span class="p-ico">🗂</span><b>Gộp PowerPoint</b><small>Nối nhiều file .pptx thành một bài trình bày duy nhất.</small></button>
+              <button class="pdf-card" onclick="openPptTool('pptsplit')"><span class="p-ico">✂️</span><b>Tách PowerPoint</b><small>Tách mỗi slide thành một file .pptx riêng, đóng gói ZIP.</small></button>
+              <button class="pdf-card" onclick="openPptTool('pptimg')"><span class="p-ico">🖼</span><b>Tách ảnh khỏi PowerPoint</b><small>Lấy toàn bộ ảnh nhúng trong .pptx ra gói ZIP riêng.</small></button>
+              <button class="pdf-card" onclick="openPptTool('ppt2txt')"><span class="p-ico">🔤</span><b>PowerPoint → Text</b><small>Trích toàn bộ chữ trong .pptx ra file .txt, xem trước trên màn hình.</small></button>
+            </div>
+            <div class="pdf-group">Chuyển đổi qua lại</div>
+            <div class="pdf-grid">
+              <button class="pdf-card" onclick="openPptTool('ppt2pdf')"><span class="p-ico">📙</span><b>PowerPoint → PDF</b><small>Mỗi slide thành một trang PDF, giữ nội dung chữ của slide.</small></button>
+              <button class="pdf-card" onclick="openPptTool('pdf2ppt')"><span class="p-ico">📽</span><b>PDF → PPT</b><small>Mỗi trang PDF thành một slide .pptx chứa nội dung chữ.</small></button>
+              <button class="pdf-card" onclick="openPptTool('pdf2gs')"><span class="p-ico">🟢</span><b>PDF → Google Slides</b><small>Tạo .pptx từ PDF rồi hướng dẫn tải lên Google Drive mở bằng Google Slides.</small></button>
+              <button class="pdf-card" onclick="openPptTool('word2ppt')"><span class="p-ico">📘</span><b>Word → PPT</b><small>Chuyển tài liệu .docx thành bộ slide .pptx theo từng đoạn nội dung.</small></button>
+              <button class="pdf-card" onclick="openPptTool('html2ppt')"><span class="p-ico">🌐</span><b>HTML → PPT</b><small>Dán mã HTML hoặc tải file .html — nội dung thành bộ slide .pptx.</small></button>
             </div>
           </div>
         </div>
@@ -874,7 +1223,109 @@ body.focus .content{max-width:none;padding-top:60px}
       </div>
     </div>
 
-    <!-- ===== DESIGN STUDIO ===== -->
+    <!-- ===== PPT TOOL WORKSPACE: công cụ PowerPoint miễn phí kiểu SlidesAI ===== -->
+    <div class="content" id="viewPpt" hidden>
+      <div class="editor-shell">
+        <div class="ed-top">
+          <button class="back-btn" onclick="closePptTool()">← Về Bản trình bày</button>
+          <b id="pptToolTitle" style="font-size:16px">Công cụ PowerPoint</b>
+          <span style="font-size:11.5px;color:var(--muted);font-weight:600">Xử lý ngay trên trình duyệt — tệp không gửi lên máy chủ</span>
+        </div>
+        <div style="padding:18px clamp(16px,4vw,30px) 26px">
+          <p id="pptToolDesc" style="font-size:13.5px;line-height:1.65;color:inherit;margin:0 0 14px"></p>
+          <div class="dropzone" id="pptDrop" onclick="document.getElementById('pptFileInput').click()">
+            <b>📥 Kéo &amp; thả tệp vào đây, hoặc bấm để chọn tệp</b>
+            <small id="pptAcceptLabel">Chọn tệp</small>
+          </div>
+          <input type="file" id="pptFileInput" onchange="pptFilesChanged(event)">
+          <div class="pdf-chips" id="pptFileList"></div>
+          <div class="pdf-opts" id="pptOptions"></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px">
+            <button class="btn btn-red" id="pptRunBtn" onclick="runPptTool()" style="padding:11px 22px;font-size:13.5px">▶ Thực hiện</button>
+            <button class="btn btn-ghost" onclick="pptResetFiles()">Xoá tệp đã chọn</button>
+          </div>
+          <div class="pdf-status" id="pptStatus"></div>
+          <div class="pdf-result" id="pptResult"></div>
+        </div>
+      </div>
+    </div>
+
+        <!-- ===== CV STUDIO: Trình tạo CV — kho mẫu CV Hay kiểu CareerViet ===== -->
+    <div class="content" id="viewCv" hidden>
+      <div class="editor-shell">
+        <div class="ed-top">
+          <button class="back-btn" onclick="closeCvStudio()">← Trang chủ</button>
+          <b style="font-size:16px">🪪 Trình tạo CV — kho mẫu CV Hay miễn phí</b>
+          <span style="font-size:11.5px;color:var(--muted);font-weight:600">28 mẫu có tên thật kiểu CareerViet · tạo CV 3 bước · xuất PDF &amp; Word</span>
+        </div>
+        <div style="padding:18px clamp(16px,4vw,30px) 28px">
+          <div class="sl-steps"><span class="sl-step">Bước 1 · Chọn mẫu CV</span><span class="sl-step">Bước 2 · Nhập thông tin — AI gợi ý theo tiêu đề công việc</span><span class="sl-step">Bước 3 · Xem trước &amp; xuất PDF / Word</span></div>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin:10px 0 0">Toàn bộ mẫu dưới đây đều <b>miễn phí</b> như trang CV Hay của CareerViet. Đổi mẫu chỉ bằng 1 cú nhấp — thông tin sếp đã nhập tự điền sang mẫu mới, không phải gõ lại. Riêng tính năng <b>cho nhà tuyển dụng tìm kiếm hồ sơ</b> cần máy chủ và tài khoản nhà tuyển dụng nên <b>chưa có trên bản chạy trình duyệt</b> — app không giả lập tính năng này.</p>
+
+          <h4 style="margin:20px 0 2px;font-size:14px;color:var(--excel-dark)">Bước 1 · Kho mẫu CV Hay — chọn một mẫu để bắt đầu</h4>
+          <div class="sl-row" style="margin-top:10px">
+            <button class="sl-chip active" data-cvtab="hot" onclick="setCvTab('hot',this)">⭐ Mẫu nổi bật</button>
+            <button class="sl-chip" data-cvtab="all" onclick="setCvTab('all',this)">Xem tất cả</button>
+            <button class="sl-chip" data-cvtab="used" onclick="setCvTab('used',this)">🔥 Mẫu dùng nhiều</button>
+            <select id="cvIndSel" aria-label="Lọc theo ngành nghề" onchange="cvInd=this.value;renderCvGrid()" style="border:1.5px solid var(--line);border-radius:12px;padding:9px 10px;font-size:12.5px;font-weight:600;background:var(--card);color:var(--ink)"></select>
+            <input type="text" class="sl-search" id="cvSearch" placeholder="🔍 Tìm mẫu: sale, kế toán, IT, logistics..." oninput="cvQuery=this.value;renderCvGrid()">
+            <span style="font-size:11.5px;color:var(--muted)" id="cvTplCount"></span>
+          </div>
+          <div class="cv-grid" id="cvTplGrid"></div>
+
+          <div class="cv-cols" style="margin-top:26px">
+            <div class="cv-form">
+              <h4 style="margin:0 0 4px;font-size:14px;color:var(--excel-dark)">Bước 2 · Thông tin của sếp</h4>
+              <label class="fl" for="cvJob">Tiêu đề công việc ứng tuyển — nhập xong bấm AI gợi ý nội dung</label>
+              <div class="sl-row">
+                <input type="text" id="cvJob" placeholder="Ví dụ: Nhân viên kinh doanh · Kế toán tổng hợp · Lập trình viên..." style="flex:1;min-width:170px" oninput="renderCvPreview()">
+                <button class="btn btn-red" onclick="cvAiSuggest()">✦ AI gợi ý nội dung</button>
+              </div>
+              <label class="fl" for="cvName">Họ và tên</label>
+              <input type="text" id="cvName" placeholder="Ví dụ: Nguyễn Thị Hương" oninput="renderCvPreview()">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                <div><label class="fl" for="cvPhone">Số điện thoại</label><input type="tel" id="cvPhone" placeholder="0xxx xxx xxx" oninput="renderCvPreview()"></div>
+                <div><label class="fl" for="cvBirth">Ngày sinh</label><input type="text" id="cvBirth" placeholder="01/01/2000" oninput="renderCvPreview()"></div>
+              </div>
+              <label class="fl" for="cvEmail">Email</label>
+              <input type="email" id="cvEmail" placeholder="email@example.com" oninput="renderCvPreview()">
+              <label class="fl" for="cvAddr">Địa chỉ</label>
+              <input type="text" id="cvAddr" placeholder="Quận / Thành phố" oninput="renderCvPreview()">
+              <label class="fl" for="cvObjective">Mục tiêu nghề nghiệp</label>
+              <textarea id="cvObjective" placeholder="Mục tiêu ngắn gọn, gắn với vị trí ứng tuyển..." oninput="renderCvPreview()"></textarea>
+              <label class="fl" for="cvExp">Kinh nghiệm làm việc (mỗi ý một dòng)</label>
+              <textarea id="cvExp" placeholder="2023 – Nay · Công ty ABC · Nhân viên kinh doanh — đạt 120% chỉ tiêu quý" oninput="renderCvPreview()"></textarea>
+              <label class="fl" for="cvEdu">Học vấn (mỗi ý một dòng)</label>
+              <textarea id="cvEdu" placeholder="Đại học Kinh tế · Ngành Quản trị kinh doanh · 2019 – 2023" oninput="renderCvPreview()"></textarea>
+              <label class="fl" for="cvSkills">Kỹ năng (cách nhau bằng dấu ·)</label>
+              <input type="text" id="cvSkills" placeholder="Tin học văn phòng · Giao tiếp · Đàm phán" oninput="renderCvPreview()">
+              <label class="fl" for="cvCert">Chứng chỉ / Ngoại ngữ</label>
+              <input type="text" id="cvCert" placeholder="Tiếng Anh IELTS 6.5 · Chứng chỉ tin học MOS..." oninput="renderCvPreview()">
+              <h4 style="margin:18px 0 4px;font-size:13.5px;color:var(--excel-dark)">Tuỳ chỉnh định dạng (linh hoạt như CareerViet)</h4>
+              <div class="bk-row">
+                <label>Màu chủ đạo<input type="color" id="cvColor" value="#217346" onchange="cvColorCustom=this.value;renderCvPreview()"></label>
+                <label>Font chữ<select id="cvFontSel" onchange="renderCvPreview()"><option value="'Be Vietnam Pro',Arial,sans-serif">Be Vietnam Pro</option><option value="Arial,sans-serif">Arial</option><option value="Georgia,serif">Georgia</option><option value="'Times New Roman',serif">Times New Roman</option><option value="Verdana,sans-serif">Verdana</option></select></label>
+                <label>Cỡ chữ<select id="cvSizeSel" onchange="renderCvPreview()"><option value="12.5">Nhỏ</option><option value="13.5" selected>Vừa</option><option value="14.5">Lớn</option></select></label>
+                <button class="btn btn-ghost" onclick="cvResetStyle()">↺ Về màu của mẫu</button>
+              </div>
+              <p class="sl-note">Định dạng (cột, màu, thứ tự mục) tự động theo mẫu đã chọn ở Bước 1 — sếp chỉ cần nhập nội dung, app tự dàn trang chuẩn A4.</p>
+            </div>
+            <div>
+              <h4 style="margin:0 0 10px;font-size:14px;color:var(--excel-dark)">Bước 3 · Xem trước trực tiếp &amp; xuất file</h4>
+              <div id="cvPreview"></div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;justify-content:center">
+                <button class="btn btn-red" onclick="cvExportPdf()" style="padding:11px 20px">⬇ Xuất PDF</button>
+                <button class="btn btn-green" onclick="cvExportDocx()" style="padding:11px 20px">⬇ Xuất Word (.docx)</button>
+                <button class="btn btn-ghost" onclick="cvOpenInEditor()" style="padding:11px 20px">Mở trong trình soạn thảo</button>
+              </div>
+              <p class="sl-note" style="text-align:center">Mẫu đang dùng: <b id="cvCurTpl"></b> — bấm mẫu khác ở Bước 1 là toàn bộ thông tin tự chuyển sang mẫu mới ngay.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- ===== DESIGN STUDIO ===== -->
     <div class="content" id="viewDesign" hidden>
       <div class="design-shell">
         <div class="design-top">
@@ -1110,6 +1561,15 @@ body.focus .content{max-width:none;padding-top:60px}
   </div>
 </div>
 
+<!-- SLIDE UTILITY MODAL (biểu đồ từ văn bản / chèn video / xuất Google Slides) -->
+<div class="modal" id="slUtilModal">
+  <div class="modal-box">
+    <h3 id="slUtilTitle">Công cụ slide</h3>
+    <div id="slUtilBody"></div>
+    <div class="row"><button class="btn btn-ghost" onclick="document.getElementById('slUtilModal').classList.remove('open')">Đóng</button><button class="btn btn-red" id="slUtilRun" onclick="slUtilConfirm()">Thực hiện</button></div>
+  </div>
+</div>
+
 <!-- PRESENTATION OVERLAY -->
 <div class="present" id="presentOverlay">
   <div class="stage" id="presentStage"></div>
@@ -1198,8 +1658,8 @@ function setType(t,btn){typeFilter=t;var bs=document.querySelectorAll("#typeTabs
 function filterFolder(name){typeFilter="all";document.getElementById("searchInput").value=name==="Họp"?"họp":name.toLowerCase();renderFiles();toast("Đang lọc theo: "+name);document.getElementById("searchInput").value="";var q=name==="Họp"?"Biên bản":name;var list=files.filter(function(f){return f.folder===q||f.name.toLowerCase().indexOf(q.toLowerCase())>-1});var box=document.getElementById("fileList");if(list.length){box.innerHTML=list.map(function(f){var ti=typeInfo[f.type];return '<div class="file-row" onclick="openFile('+f.id+')"><span class="ficon '+ti.cls+'">'+ti.mark+'</span><span class="file-meta"><b>'+esc(f.name)+'</b><small>'+ti.label+' · '+esc(f.folder)+'</small></span><span class="file-time">'+f.time+'</span></div>'}).join("");document.getElementById("fileCountLabel").textContent=list.length+" tệp";}}
 
 /* ================= CREATE / OPEN ================= */
-function showEditor(){document.getElementById("viewHome").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewEditor").hidden=false;window.scrollTo(0,0);}
-function goHome(){if(current)saveCurrent();document.getElementById("viewEditor").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;renderFiles();window.scrollTo(0,0);}
+function showEditor(){document.getElementById("viewHome").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewEditor").hidden=false;window.scrollTo(0,0);syncFocusMode();}
+function goHome(){if(current)saveCurrent();document.getElementById("viewEditor").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;renderFiles();window.scrollTo(0,0);syncFocusMode();}
 function saveCurrent(){if(!current)return;current.name=document.getElementById("edTitle").value;if(current.type!=="xlsx"&&current.type!=="pptx")current.html=document.getElementById("docArea").innerHTML;}
 function createDoc(type){
   var names={docx:"Tài liệu không tên.docx",xlsx:"Bảng tính không tên.xlsx",pptx:"Bản trình bày không tên.pptx",md:"Ghi chú Markdown.md",html:"Trang HTML mới.html",pdf:"Tài liệu PDF.pdf"};
@@ -1324,53 +1784,483 @@ function addCol(){sheetData.forEach(function(r,i){r.push(i===0?"Cột mới":"")
 function aiSheet(){sheetData=[["STT","Hạng mục","Đơn vị","Số lượng","Đơn giá (đ)","Thành tiền (đ)"],["1","Thiết kế bộ nhận diện","Gói","1","8000000",""],["2","Xây dựng website giới thiệu","Trang","1","15000000",""],["3","Bảo trì & hỗ trợ 6 tháng","Tháng","6","1000000",""],["4","Đào tạo sử dụng","Buổi","2","1500000",""]];renderSheet();toast("AI đã điền mẫu báo giá — sếp sửa số liệu trực tiếp trên bảng ✓");}
 
 /* ---- Slides ---- */
-/* ---- SLIDES STUDIO (kiểu Kimi Slides) ---- */
-var SL_GROUP={work:"Công việc",finance:"Tài chính",ads:"Quảng cáo",academic:"Học thuật",consult:"Tư vấn"};
-var SLIDE_TEMPLATES=[
- {name:"Moss Green",g:"work",desc:"Xanh rêu dịu — họp nội bộ, báo cáo tuần/tháng.",th:{bg:"#eef5ec",ink:"#22402c",sub:"#56755f",accent:"#5b8c5a"}},
- {name:"Emerald Briefing",g:"work",desc:"Ngọc lục bảo — báo cáo tiến độ, kế hoạch hành động.",th:{bg:"#e7f6ef",ink:"#0f3d2c",sub:"#4c7263",accent:"#0e9f6e"}},
- {name:"Sage Boardroom",g:"work",desc:"Xanh xám thanh lịch — họp hội đồng, tổng kết năm.",th:{bg:"#f0f3ee",ink:"#2c3a2e",sub:"#64766a",accent:"#7d9b76"}},
- {name:"Warm Jade Annual Report",g:"finance",desc:"Ngọc ấm — báo cáo thường niên, kết quả kinh doanh.",th:{bg:"#f7f3e8",ink:"#3d3423",sub:"#7a6c4e",accent:"#b98a2f"}},
- {name:"Black Gold Ledger",g:"finance",desc:"Đen – vàng sang trọng — tài chính, đầu tư, ngân hàng.",th:{bg:"#17181c",ink:"#f3e9cf",sub:"#b9ac8d",accent:"#d4af37"}},
- {name:"Forest KPI",g:"finance",desc:"Xanh rừng — dashboard KPI, chỉ số hiệu quả.",th:{bg:"#eaf4ee",ink:"#123524",sub:"#4e6d5b",accent:"#217346"}},
- {name:"Mint Marketing",g:"ads",desc:"Bạc hà tươi — giới thiệu sản phẩm, chiến dịch mới.",th:{bg:"#e9fbf3",ink:"#0e3d2b",sub:"#4d7a68",accent:"#12b76a"}},
- {name:"Jade Launch",g:"ads",desc:"Ngọc bích nổi bật — ra mắt sản phẩm, sự kiện.",th:{bg:"#e6f7f4",ink:"#083f38",sub:"#487a72",accent:"#0d9488"}},
- {name:"Coral Sale Day",g:"ads",desc:"San hô rực rỡ — khuyến mãi, bán hàng, livestream.",th:{bg:"#fff3ee",ink:"#4a2417",sub:"#8a6053",accent:"#e85d3d"}},
- {name:"Teal Green Academic",g:"academic",desc:"Xanh teal học thuật — bài giảng, báo cáo nghiên cứu.",th:{bg:"#eaf6f5",ink:"#0d3b3a",sub:"#4f7371",accent:"#0f766e"}},
- {name:"Scholar Jade",g:"academic",desc:"Ngọc học giả — luận văn, seminar, hội thảo khoa học.",th:{bg:"#f2f6ec",ink:"#2f4020",sub:"#65755a",accent:"#6a994e"}},
- {name:"Ivory Lecture",g:"academic",desc:"Ngà sáng — bài giảng nhiều chữ, dễ đọc trên máy chiếu.",th:{bg:"#fbf9f3",ink:"#33302a",sub:"#6f6a5c",accent:"#217346"}},
- {name:"Deep Blue Atlas",g:"consult",desc:"Xanh atlas sâu — tư vấn chiến lược, phân tích thị trường.",th:{bg:"#e9eff9",ink:"#12294d",sub:"#54698a",accent:"#2563eb"}},
- {name:"Strategy Evergreen",g:"consult",desc:"Xanh thường xanh — đề xuất giải pháp, roadmap tư vấn.",th:{bg:"#ecf5f0",ink:"#173b2a",sub:"#55705f",accent:"#1d7a4f"}},
- {name:"Slate Proposal",g:"consult",desc:"Xám đá chuyên nghiệp — hồ sơ đề xuất, đấu thầu.",th:{bg:"#f1f3f5",ink:"#26313a",sub:"#5f7180",accent:"#217346"}}
+/* ---- SLIDES STUDIO (kiểu SlidesAI) ---- */
+var SL_STYLE={professional:"Professional",fun:"Fun",modern:"Modern",luxury:"Luxury",diverse:"Diverse",creative:"Creative",dark:"Dark",classic:"Classic",simple:"Simple"};
+var SL_GROUP={business:"Kinh doanh",education:"Giáo dục",health:"Y tế",infographic:"Infographic",marketing:"Marketing",pitch:"Pitch Deck",portfolio:"Portfolio",workshop:"Workshop"};
+var SL_PAL=[
+ {bg:"#eef4fb",ink:"#16283f",sub:"#51637c",accent:"#2563eb"},
+ {bg:"#e7f6ef",ink:"#0f3d2c",sub:"#4c7263",accent:"#0e9f6e"},
+ {bg:"#fff3ee",ink:"#4a2417",sub:"#8a6053",accent:"#e85d3d"},
+ {bg:"#fdf6e0",ink:"#4a3a12",sub:"#857448",accent:"#d9930d"},
+ {bg:"#e9fbf3",ink:"#0e3d2b",sub:"#4d7a68",accent:"#12b76a"},
+ {bg:"#e6f7f4",ink:"#083f38",sub:"#487a72",accent:"#0d9488"},
+ {bg:"#17181c",ink:"#f3e9cf",sub:"#b9ac8d",accent:"#d4af37"},
+ {bg:"#10302a",ink:"#eaf3d9",sub:"#a9bfa4",accent:"#c9a227"},
+ {bg:"#eaf6ff",ink:"#173a52",sub:"#56748c",accent:"#0284c7"},
+ {bg:"#fdf0f3",ink:"#4d2230",sub:"#8a5f6d",accent:"#db2777"},
+ {bg:"#fff7e8",ink:"#452a08",sub:"#84683f",accent:"#ea8600"},
+ {bg:"#f0f9e8",ink:"#2c4416",sub:"#687c4e",accent:"#65a30d"},
+ {bg:"#1e242b",ink:"#eef2f5",sub:"#a7b3bd",accent:"#38bdf8"},
+ {bg:"#12211a",ink:"#e6f4ea",sub:"#9db8a8",accent:"#34d399"},
+ {bg:"#f2f4f8",ink:"#1d2a44",sub:"#5c6a84",accent:"#1e40af"},
+ {bg:"#faf3f0",ink:"#43222a",sub:"#7d5a60",accent:"#9f2d3f"},
+ {bg:"#f7f7f5",ink:"#2b2b28",sub:"#6d6d66",accent:"#217346"},
+ {bg:"#ffffff",ink:"#1c2b21",sub:"#5f7265",accent:"#217346"}
 ];
-var slideTheme=JSON.parse(JSON.stringify(SLIDE_TEMPLATES[5].th)), slideThemeName="Forest KPI";
-var selSlide=0, slideTrans="fade", slideSnaps=[], slTplGroup="all", presentIdx=0;
+var SLIDE_TEMPLATES=[
+["Medical Presentation","professional","health",1],["Educator Portfolio","classic","portfolio",14],["Portfolio Presentation","modern","portfolio",5],["Thesis Defense","classic","education",14],["Post Event Recap","fun","business",2],
+["Social Media Strategy","creative","marketing",10],["Research Proposal","professional","education",0],["Monthly Lesson Plan","simple","education",17],["Quiz","fun","education",3],["Mind Maps","creative","infographic",11],
+["Icons Pack","modern","infographic",4],["Organizational Chart","professional","infographic",0],["Venn Diagram","modern","infographic",5],["Table of Contents","simple","business",16],["Flow Chart","professional","infographic",1],
+["Harvey Balls","professional","infographic",0],["Border","simple","education",16],["Calendar","simple","business",17],["Jeopardy","fun","education",2],["Pie Chart","modern","infographic",4],
+["Video","dark","marketing",12],["Timeline","classic","infographic",15],["Table","simple","infographic",16],["Agenda","professional","business",1],["Tech Startup","modern","pitch",5],
+["Stem Activity","fun","education",3],["Coding and Computational Thinking","dark","education",12],["AI App Pitch Deck","modern","pitch",5],["Real Estate Proposal","luxury","business",6],["Health Tech Startup Pitch Deck","modern","pitch",4],
+["Project Grant Proposal","professional","business",0],["Case Study","classic","business",14],["Investment Proposal","luxury","pitch",6],["Business Proposal Pitch Deck","professional","pitch",1],["Startup Launch Strategy","creative","pitch",10],
+["Scaling Startup","modern","pitch",5],["Startup Funding Pitch Deck","dark","pitch",13],["Construction Project Proposal","professional","business",0],["Service Proposal","classic","business",14],["Event Sponsorship Pitch Deck","fun","pitch",2],
+["Educational Lesson","simple","education",17],["Advancing Healthcare","professional","health",1],["Film Studies – Film Pitch Deck","dark","pitch",12],["Creative Brief","creative","marketing",10],["Workshop","diverse","workshop",8],
+["Research Presentation","classic","education",14],["Portfolio Showcase","diverse","portfolio",9],["Free Design Proposal","creative","business",11],["Product Launch","modern","marketing",4],["Company Report","professional","business",0],
+["Business Pitch Deck","professional","pitch",1],["Travel And Tourism Pitch Deck","fun","pitch",3],["Saas Investor Pitch Deck","modern","pitch",5],["Influencer Marketing","diverse","marketing",9],["Fintech Pitch Deck","dark","pitch",13],
+["Next-Gen Cloud Service","modern","business",5],["Back To School","fun","education",2],["Fundraising Event Pitch Deck","luxury","pitch",7],["Writing Workshop","classic","workshop",15],["Figurative Language","creative","education",11],
+["Grammar","simple","education",16],["E-Learning","modern","education",4],["Math Lesson Plan","professional","education",0],["Yearbook","fun","education",3],["Literature","classic","education",15],
+["Resume","simple","portfolio",17],["Newton's Laws of Motion","professional","education",1],["Webinar Recap","modern","business",5],["Internship Report","classic","business",14],["Parents – Teachers Conference","diverse","education",8],
+["Classroom Planner","simple","education",17],["Tech Startup Pitch Deck","dark","pitch",12],["Homeschooling","diverse","education",9],["Class Orientation","fun","education",2],["Healthcare Education","professional","health",1],
+["Classroom Quiz","fun","education",3],["Sports","diverse","marketing",8],["Vocabulary Flashcards","fun","education",2],["English Grammar","simple","education",16],["Comparison Chart","modern","infographic",5],
+["Countdown Timer","dark","infographic",13]
+].map(function(r){return {name:r[0],st:r[1],g:r[2],th:JSON.parse(JSON.stringify(SL_PAL[r[3]]))};});
+var slideTheme=JSON.parse(JSON.stringify((SLIDE_TEMPLATES.filter(function(t){return t.name==="Business Pitch Deck";})[0]||SLIDE_TEMPLATES[0]).th)), slideThemeName="Business Pitch Deck";
+var selSlide=0, slideTrans="fade", slideSnaps=[], slTplGroup="all", slTplStyle="all", slTplQuery="", presentIdx=0;
+var slOutline=[], slSrcTab="topic", slPending=null, slQAnim=false, slDragIdx=-1;
+var brandFont="'Be Vietnam Pro',Arial,sans-serif", brandFontPptx="Arial";
 function slNd(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d");}
 function renderTplGrid(){
   var box=document.getElementById("slTplGrid");if(!box)return;
+  var q=slNd(slTplQuery||"").trim(),shown=0;
   box.innerHTML=SLIDE_TEMPLATES.map(function(t,i){
     if(slTplGroup!=="all"&&t.g!==slTplGroup)return "";
-    return '<div class="sl-tpl"><span class="prev" style="background:'+t.th.bg+'"><i style="background:'+t.th.accent+'"></i><u style="background:'+t.th.sub+'"></u></span><b>'+esc(t.name)+'</b><small>'+SL_GROUP[t.g]+' · '+esc(t.desc)+'</small><button class="mk" onclick="applyTemplate('+i+')">✦ Tạo tương tự</button></div>';
+    if(slTplStyle!=="all"&&t.st!==slTplStyle)return "";
+    if(q&&slNd(t.name+" "+SL_STYLE[t.st]+" "+SL_GROUP[t.g]).indexOf(q)===-1)return "";
+    shown++;
+    return '<div class="sl-tpl"><span class="prev" style="background:'+t.th.bg+'"><i style="background:'+t.th.accent+'"></i><u style="background:'+t.th.sub+'"></u></span><b>'+esc(t.name)+'</b><small>'+SL_STYLE[t.st]+' · '+SL_GROUP[t.g]+' — bấm để tạo ngay bộ slide theo mẫu này.</small><button class="mk" onclick="applyTemplate('+i+')">✦ Dùng mẫu này</button></div>';
   }).join("");
+  var cnt=document.getElementById("slTplCount");if(cnt)cnt.textContent="Đang hiện "+shown+" / "+SLIDE_TEMPLATES.length+" mẫu";
+  if(!shown)box.innerHTML='<div class="empty-box">Không thấy mẫu nào khớp bộ lọc — sếp thử từ khoá hoặc phong cách / nhóm khác nhé.</div>';
 }
 function setSlTplGroup(g,btn){slTplGroup=g;var bs=document.querySelectorAll("#slTplChips .sl-chip");for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i]===btn);renderTplGrid();}
+function setSlStyle(g,btn){slTplStyle=g;var bs=document.querySelectorAll("#slStyleChips .sl-chip");for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i]===btn);renderTplGrid();}
+function tplKind(name){
+  var n=slNd(name);
+  if(/quiz|jeopardy|flashcards/.test(n))return "quiz";
+  if(/venn/.test(n))return "venn";
+  if(/flow chart/.test(n))return "flow";
+  if(/organizational chart/.test(n))return "org";
+  if(/pie chart/.test(n))return "pie";
+  if(/comparison chart/.test(n))return "compare";
+  if(/mind maps/.test(n))return "mindmap";
+  if(/timeline/.test(n))return "timeline";
+  if(/table of contents/.test(n))return "toc";
+  if(n==="agenda")return "agenda";
+  if(/calendar|planner/.test(n))return "calendar";
+  if(/harvey/.test(n))return "harvey";
+  if(n==="table")return "table";
+  if(/countdown/.test(n))return "countdown";
+  if(n==="video")return "video";
+  if(/pitch/.test(n))return "pitch";
+  if(/proposal/.test(n))return "proposal";
+  if(/workshop/.test(n))return "workshop";
+  if(/portfolio|resume/.test(n))return "portfolio";
+  if(/medical|healthcare|health/.test(n))return "health";
+  if(/lesson|grammar|language|literature|newton|stem|educational|e-learning|homeschooling|orientation|back to school|yearbook|coding/.test(n))return "lesson";
+  if(/report|recap/.test(n))return "report";
+  return "general";
+}
 function tplSlides(t,topic){
-  var T=topic||"Chủ đề thuyết trình";
-  var base=[{t:T,d:"Bài trình bày theo mẫu "+t.name+" · Người trình bày · Đơn vị · 2026"},{t:"Tổng quan",d:"Bối cảnh, mục tiêu và những nội dung chính sẽ trình bày về: "+T+"."},{t:"Nội dung trọng tâm",d:"Ba ý chính kèm số liệu / ví dụ minh hoạ. Sếp bấm vào từng dòng chữ để sửa thành nội dung thật."},{t:"Phân tích & bằng chứng",d:"Số liệu, so sánh và nhận định rút ra — chèn biểu đồ hoặc bảng ở slide này để thuyết phục hơn."},{t:"Kế hoạch / Đề xuất",d:"Các bước thực hiện, người phụ trách và mốc thời gian cụ thể."},{t:"Kết luận",d:"Thông điệp chốt về "+T+" và bước tiếp theo cần thống nhất."}];
-  if(t.g==="finance")base[3].viz={type:"kpi",items:[["Doanh thu","1,25 tỷ"],["Tăng trưởng","+18%"],["Chi phí","−6%"]]};
-  if(t.g==="ads")base[3].viz={type:"funnel",items:["Tiếp cận · 12.400","Quan tâm · 4.860","Mua hàng · 1.120"]};
-  if(t.g==="academic")base[3].viz={type:"latex",tex:"\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i"};
-  if(t.g==="consult")base[4].viz={type:"swot",items:["S — Điểm mạnh nội tại","W — Điểm yếu cần khắc phục","O — Cơ hội thị trường","T — Thách thức bên ngoài"]};
-  if(t.g==="work")base[4].viz={type:"roadmap",items:["Tuần 1 · Khảo sát","Tuần 2 · Thiết kế","Tuần 3 · Triển khai","Tuần 4 · Nghiệm thu"]};
-  return base;
+  var T=(topic||"").trim()||t.name, kind=tplKind(t.name);
+  var title={t:T,d:"Bài trình bày theo mẫu "+t.name+" · Phong cách "+SL_STYLE[t.st]+" · Nhóm "+SL_GROUP[t.g]+" · Người trình bày · 2026"};
+  var end={t:"Kết luận & bước tiếp theo",d:"Thông điệp chốt của bài trình bày và việc cần thống nhất ngay sau buổi này."};
+  if(kind==="quiz")return [title,
+    {t:"Câu hỏi 1",d:"Đọc câu hỏi, chọn một đáp án đúng trong 4 lựa chọn A · B · C · D. Sếp sửa câu hỏi và đáp án trực tiếp trên slide này."},
+    {t:"Câu hỏi 2",d:"Câu hỏi tiếp theo — tăng dần độ khó. Có thể chèn thêm ảnh minh hoạ bằng nút Chèn ảnh / GIF."},
+    {t:"Câu hỏi 3",d:"Câu hỏi cuối của vòng này. Dùng hiệu ứng Quick Animate để phần hỏi đáp sinh động hơn."},
+    {t:"Đáp án & giải thích",d:"Công bố đáp án đúng kèm giải thích ngắn cho từng câu — phần này giúp người học nhớ lâu nhất."},
+    {t:"Tổng kết điểm",d:"Bảng điểm / xếp hạng sau buổi quiz.",viz:{type:"kpi",items:[["Đội A","120 điểm"],["Đội B","105 điểm"],["Đội C","98 điểm"]]}},end];
+  if(kind==="venn")return [title,{t:"Sơ đồ Venn — điểm giống & khác",d:"Hai vòng tròn giao nhau: phần riêng của mỗi khái niệm và phần giao nhau ở giữa.",viz:{type:"venn",items:["Khái niệm A","Khái niệm B"],center:"Điểm chung"}},{t:"Phân tích phần giao nhau",d:"Những điểm chung quan trọng nhất và ý nghĩa của chúng."},{t:"Phân tích điểm khác biệt",d:"Khác biệt cốt lõi giữa hai khái niệm — dùng bảng so sánh nếu cần chi tiết."},end];
+  if(kind==="flow")return [title,{t:"Lưu đồ quy trình (Flow Chart)",d:"Các bước của quy trình theo thứ tự — sửa tên từng bước trực tiếp trên sơ đồ.",viz:{type:"flow",items:["Bắt đầu","Xử lý","Kiểm tra","Hoàn tất"]}},{t:"Giải thích từng bước",d:"Mô tả chi tiết, người phụ trách và thời gian cho mỗi bước trong lưu đồ."},{t:"Điểm cần lưu ý",d:"Ngoại lệ, điểm nghẽn thường gặp và cách xử lý."},end];
+  if(kind==="org")return [title,{t:"Sơ đồ tổ chức",d:"Cơ cấu tổ chức / đội ngũ — sửa tên đơn vị và vị trí trực tiếp trên sơ đồ.",viz:{type:"org",center:"Ban lãnh đạo",items:["Phòng A","Phòng B","Phòng C","Phòng D"]}},{t:"Chức năng từng đơn vị",d:"Nhiệm vụ chính và đầu mối liên hệ của từng phòng ban / nhóm."},end];
+  if(kind==="pie")return [title,{t:"Biểu đồ tròn — cơ cấu tỉ lệ",d:"Tỉ lệ phần trăm của từng phần trong tổng thể.",viz:{type:"pie",labels:["Phần A","Phần B","Phần C","Phần D"],values:[40,27,20,13]}},{t:"Nhận xét cơ cấu",d:"Phần nào chiếm tỉ trọng lớn nhất, thay đổi ra sao so với kỳ trước và nguyên nhân."},end];
+  if(kind==="compare")return [title,{t:"Bảng so sánh",d:"Đặt hai phương án cạnh nhau để thấy rõ điểm mạnh — điểm yếu của từng bên.",viz:{type:"compare",heads:["Phương án A","Phương án B"],items:["Ưu điểm nổi bật của A · chi phí · thời gian","Ưu điểm nổi bật của B · chi phí · thời gian"]}},{t:"Kết luận so sánh",d:"Phương án được chọn và lý do — chốt tiêu chí quyết định."},end];
+  if(kind==="mindmap")return [title,{t:"Sơ đồ tư duy (Mind Map)",d:"Ý trung tâm và các nhánh ý chính xung quanh.",viz:{type:"mindmap",center:T,items:["Nhánh 1","Nhánh 2","Nhánh 3","Nhánh 4"]}},{t:"Triển khai từng nhánh",d:"Đi sâu vào nhánh quan trọng nhất — ví dụ và bằng chứng cụ thể."},end];
+  if(kind==="timeline")return [title,{t:"Dòng thời gian (Timeline)",d:"Các mốc quan trọng theo trình tự thời gian.",viz:{type:"timeline",items:["Mốc 1 · Khởi đầu","Mốc 2 · Phát triển","Mốc 3 · Mở rộng","Mốc 4 · Hiện tại"]}},{t:"Mốc quan trọng nhất",d:"Vì sao mốc này là bước ngoặt — số liệu và câu chuyện đằng sau."},end];
+  if(kind==="toc"||kind==="agenda")return [title,{t:kind==="toc"?"Mục lục":"Chương trình (Agenda)",d:"Các phần chính của bài trình bày / buổi làm việc.",viz:{type:"roadmap",items:["Phần 1 · Mở đầu","Phần 2 · Nội dung chính","Phần 3 · Thảo luận","Phần 4 · Tổng kết"]}},{t:"Phần 1 · Mở đầu",d:"Bối cảnh, mục tiêu và cách buổi làm việc sẽ diễn ra."},{t:"Phần 2 · Nội dung chính",d:"Nội dung trọng tâm — chèn biểu đồ / bảng / sơ đồ ở slide này."},{t:"Phần 3 · Thảo luận",d:"Câu hỏi, ý kiến và các điểm cần chốt."},{t:"Phần 4 · Tổng kết",d:"Kết luận, phân công và mốc thời gian tiếp theo."}];
+  if(kind==="calendar")return [title,{t:"Lịch / Kế hoạch theo tuần",d:"Bảng lịch trình — sửa nội dung từng ô trực tiếp trên bảng.",viz:{type:"table",rows:[["Tuần","Việc chính","Phụ trách","Hạn"],["Tuần 1","…","…",""],["Tuần 2","…","…",""],["Tuần 3","…","…",""],["Tuần 4","…","…",""]]}},{t:"Ghi chú & điều chỉnh",d:"Các thay đổi so với kế hoạch gốc và lý do điều chỉnh."},end];
+  if(kind==="harvey")return [title,{t:"Harvey Balls — mức độ hoàn thành",d:"Ký hiệu ● thể hiện mức độ: ●●●● đầy đủ nhất, ○ chưa có. Sửa ký hiệu trực tiếp trong ô số liệu.",viz:{type:"kpi",items:[["Tiêu chí A","●●●○"],["Tiêu chí B","●●○○"],["Tiêu chí C","●●●●"]]}},{t:"Giải thích đánh giá",d:"Căn cứ chấm từng tiêu chí và kế hoạch nâng mức ở kỳ sau."},end];
+  if(kind==="table")return [title,{t:"Bảng dữ liệu",d:"Bảng số liệu chính — sửa từng ô trực tiếp trên bảng.",viz:{type:"table",rows:[["Hạng mục","Giá trị","Thay đổi","Ghi chú"],["Mục 1","…","…",""],["Mục 2","…","…",""],["Tổng","…","…",""]]}},{t:"Nhận xét bảng số liệu",d:"Điểm đáng chú ý nhất rút ra từ bảng và hệ quả của nó."},end];
+  if(kind==="countdown")return [title,{t:"Đếm ngược bắt đầu",d:"Bộ đếm ngược dùng khi trình chiếu / chờ bắt đầu sự kiện — chỉnh con số ngay trên slide.",viz:{type:"kpi",items:[["Thời gian còn lại","10:00"]]}},{t:"Trong lúc chờ",d:"Thông tin cần biết trước khi bắt đầu: chương trình, lưu ý, mã QR / liên hệ hỗ trợ."}];
+  if(kind==="video")return [title,{t:"Slide video",d:"Nhúng video minh hoạ bằng nút “🎬 Chèn video” (dán link YouTube hoặc link file video).",viz:{type:"video",url:""}},{t:"Điểm chính của video",d:"Ba ý người xem cần nhớ sau khi xem xong đoạn video."},end];
+  if(kind==="pitch")return [title,
+    {t:"Vấn đề",d:"Khách hàng đang gặp vấn đề gì — nỗi đau đủ lớn để họ sẵn sàng trả tiền giải quyết."},
+    {t:"Giải pháp",d:"Sản phẩm / dịch vụ giải quyết vấn đề đó như thế nào, khác gì đối thủ."},
+    {t:"Thị trường & cơ hội",d:"Quy mô thị trường và tốc độ tăng trưởng.",viz:{type:"kpi",items:[["Thị trường","…"],["Tăng trưởng","+…%/năm"],["Khách hàng mục tiêu","…"]]}},
+    {t:"Sản phẩm",d:"Tính năng chính, ảnh / video demo và phản hồi của khách hàng đầu tiên."},
+    {t:"Mô hình kinh doanh",d:"Cách tạo doanh thu, giá bán và biên lợi nhuận.",viz:{type:"chart",labels:["Quý 1","Quý 2","Quý 3","Quý 4"],values:[20,35,52,80]}},
+    {t:"Đội ngũ",d:"Người sáng lập và thành viên chủ chốt — kinh nghiệm liên quan trực tiếp tới bài toán."},
+    {t:"Kêu gọi đầu tư / hành động",d:"Số vốn cần gọi (hoặc hành động mong muốn), dùng vào việc gì và mốc kết quả cam kết."}];
+  if(kind==="proposal")return [title,
+    {t:"Tổng quan đề xuất",d:"Bối cảnh, nhu cầu của đối tác và tóm tắt giải pháp đề xuất trong một đoạn."},
+    {t:"Phạm vi công việc",d:"Các hạng mục sẽ thực hiện — và những hạng mục không bao gồm, ghi rõ để tránh hiểu nhầm."},
+    {t:"Kế hoạch & tiến độ",d:"Lộ trình triển khai theo giai đoạn.",viz:{type:"gantt",items:[["Khảo sát",0,25],["Thiết kế",20,35],["Triển khai",50,40],["Bàn giao",88,12]]}},
+    {t:"Ngân sách dự kiến",d:"Bảng chi phí theo hạng mục.",viz:{type:"table",rows:[["Hạng mục","Chi phí","Ghi chú"],["Hạng mục 1","…",""],["Hạng mục 2","…",""],["Tổng cộng","…",""]]}},
+    {t:"Điều khoản & cam kết",d:"Bảo hành, hỗ trợ sau bàn giao và điều kiện thanh toán."},end];
+  if(kind==="lesson")return [title,
+    {t:"Mục tiêu bài học",d:"Sau bài này, người học sẽ biết / làm được những gì — viết dạng gạch đầu dòng đo được."},
+    {t:"Kiến thức mới",d:"Khái niệm cốt lõi, định nghĩa và công thức / quy tắc quan trọng nhất.",viz:(/newton|math/.test(slNd(t.name))?{type:"latex",tex:"F = m · a"}:undefined)},
+    {t:"Ví dụ minh hoạ",d:"Một ví dụ gần gũi, giải từng bước để người học tự làm được bài tương tự."},
+    {t:"Luyện tập",d:"Bài tập tại lớp — từ dễ tới khó, kèm gợi ý cách làm."},
+    {t:"Kiểm tra nhanh",d:"2–3 câu hỏi ngắn kiểm tra mức độ hiểu bài trước khi kết thúc."},
+    {t:"Tổng kết & bài về nhà",d:"Chốt lại ý chính của bài và nhiệm vụ về nhà cụ thể."}];
+  if(kind==="portfolio")return [title,
+    {t:"Giới thiệu bản thân",d:"Họ tên, vai trò / chuyên môn, số năm kinh nghiệm và điểm mạnh khác biệt."},
+    {t:"Kỹ năng nổi bật",d:"Các kỹ năng chính kèm mức độ thành thạo.",viz:{type:"kpi",items:[["Kỹ năng 1","Thành thạo"],["Kỹ năng 2","Tốt"],["Kỹ năng 3","Tốt"]]}},
+    {t:"Dự án / tác phẩm tiêu biểu 1",d:"Bối cảnh dự án, vai trò của mình, kết quả đo được — chèn ảnh bằng nút Chèn ảnh."},
+    {t:"Dự án / tác phẩm tiêu biểu 2",d:"Dự án thứ hai thể hiện một thế mạnh khác."},
+    {t:"Kinh nghiệm & học vấn",d:"Quá trình làm việc / học tập theo dòng thời gian.",viz:{type:"timeline",items:["Bắt đầu","Phát triển","Hiện tại"]}},
+    {t:"Liên hệ",d:"Email, số điện thoại, mạng xã hội / trang cá nhân và lời mời hợp tác."}];
+  if(kind==="health")return [title,
+    {t:"Tổng quan chủ đề sức khoẻ",d:"Chủ đề y tế / sức khoẻ sẽ trình bày, vì sao quan trọng và ai cần quan tâm."},
+    {t:"Nội dung chính",d:"Kiến thức cốt lõi: nguyên nhân, dấu hiệu nhận biết và diễn tiến thường gặp."},
+    {t:"Hướng dẫn thực hành",d:"Các bước chăm sóc / phòng ngừa cụ thể, làm được ngay tại nhà hoặc nơi làm việc."},
+    {t:"Lưu ý an toàn",d:"Khi nào cần đi khám / gặp bác sĩ; nội dung chỉ mang tính giáo dục, không thay thế chẩn đoán y khoa."},
+    {t:"Hỏi & đáp",d:"Giải đáp thắc mắc thường gặp về chủ đề này."}];
+  if(kind==="workshop")return [title,
+    {t:"Mục tiêu buổi workshop",d:"Người tham dự sẽ học / làm được gì sau buổi này — và sản phẩm đầu ra cụ thể."},
+    {t:"Chương trình buổi",d:"Các chặng của buổi workshop theo thời gian.",viz:{type:"roadmap",items:["Khởi động","Chia sẻ kiến thức","Thực hành nhóm","Trình bày & phản hồi"]}},
+    {t:"Hoạt động nhóm",d:"Đề bài thực hành, cách chia nhóm và tiêu chí đánh giá sản phẩm nhóm."},
+    {t:"Trình bày & phản hồi",d:"Từng nhóm trình bày — cả lớp góp ý theo tiêu chí đã thống nhất."},
+    {t:"Tổng kết",d:"Bài học rút ra, tài liệu gửi lại sau buổi và bước tiếp theo."}];
+  if(kind==="report")return [title,
+    {t:"Tổng quan kỳ báo cáo",d:"Kỳ này làm gì, kết quả headline trong một câu và bối cảnh cần biết."},
+    {t:"Số liệu chính",d:"Các chỉ số quan trọng nhất của kỳ.",viz:{type:"chart",labels:["Kỳ 1","Kỳ 2","Kỳ 3","Kỳ 4"],values:[42,58,51,73]}},
+    {t:"Điểm nổi bật",d:"Việc làm tốt nhất kỳ này và bằng chứng cụ thể."},
+    {t:"Vấn đề & nguyên nhân",d:"Điểm chưa đạt, nguyên nhân gốc và mức độ ảnh hưởng."},
+    {t:"Kế hoạch kỳ tới",d:"Ưu tiên kỳ sau, người phụ trách và mốc thời gian.",viz:{type:"roadmap",items:["Việc 1","Việc 2","Việc 3","Việc 4"]}},end];
+  return [title,
+    {t:"Tổng quan",d:"Bối cảnh, mục tiêu và những nội dung chính sẽ trình bày về: "+T+"."},
+    {t:"Nội dung trọng tâm",d:"Ba ý chính kèm số liệu / ví dụ minh hoạ. Sếp bấm vào từng dòng chữ để sửa thành nội dung thật."},
+    {t:"Phân tích & bằng chứng",d:"Số liệu, so sánh và nhận định rút ra — chèn biểu đồ hoặc bảng ở slide này để thuyết phục hơn.",viz:{type:"chart",labels:["Mục A","Mục B","Mục C","Mục D"],values:[45,62,38,74]}},
+    {t:"Kế hoạch / Đề xuất",d:"Các bước thực hiện, người phụ trách và mốc thời gian cụ thể.",viz:{type:"roadmap",items:["Bước 1","Bước 2","Bước 3","Bước 4"]}},end];
 }
 function applyTemplate(i){
   var t=SLIDE_TEMPLATES[i];if(!t)return;pushSlideSnap("trước khi áp mẫu "+t.name);
   slideTheme=JSON.parse(JSON.stringify(t.th));slideThemeName=t.name;
   var topic=(document.getElementById("slTopic").value||"").trim();
   slidesData=tplSlides(t,topic);selSlide=0;renderSlides();
-  toast("Đã tạo bộ slide tương tự mẫu "+t.name+" ✓ — sửa chữ trực tiếp trên slide nhé sếp");
+  toast("Đã tạo bộ slide theo mẫu "+t.name+" ✓ — sửa chữ trực tiếp trên slide nhé sếp");
 }
+
+/* ---- Bước 1 → 2: nguồn nội dung → dàn ý (kiểu SlidesAI) ---- */
+function escA(s){return esc(s||"").replace(/"/g,"&quot;");}
+function setSlSrc(tab,btn){
+  slSrcTab=tab;
+  var tabs=document.querySelectorAll("#slSrcTabs .sl-tab");
+  for(var i=0;i<tabs.length;i++)tabs[i].classList.toggle("active",tabs[i]===btn);
+  ["Topic","Notes","Script","File","Link"].forEach(function(k){
+    var el=document.getElementById("slSrc"+k);if(el)el.hidden=(k.toLowerCase()!==tab);
+  });
+}
+function setOutline(items,label){
+  slOutline=(items||[]).filter(function(x){return x&&((x.t||"").trim()||(x.d||"").trim());}).slice(0,20);
+  if(!slOutline.length){toast("Chưa dựng được dàn ý — sếp kiểm tra lại nội dung nhập nhé");return;}
+  document.getElementById("slOutlineBox").hidden=false;
+  renderOutline();
+  toast("Đã dựng dàn ý "+slOutline.length+" mục từ "+label+" ✓ — sửa từng dòng rồi bấm Tạo slide");
+  document.getElementById("slOutlineBox").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function outlineFromTopic(){
+  var topic=(document.getElementById("slTopic").value||"").trim();
+  if(!topic){toast("Sếp gõ chủ đề trước nhé — ví dụ: Báo cáo kinh doanh quý 3");return;}
+  var n=parseInt(document.getElementById("slCount").value,10)||8;
+  var nd=slNd(topic), T=topic.charAt(0).toUpperCase()+topic.slice(1);
+  var isFin=/tai chinh|doanh thu|ngan sach|dau tu|ke toan|loi nhuan/.test(nd), isAds=/quang cao|marketing|ban hang|san pham|khuyen mai|thuong hieu/.test(nd), isAca=/bai giang|hoc|nghien cuu|toan|khoa hoc|giao duc|luan van/.test(nd), isCon=/tu van|chien luoc|de xuat|phan tich thi truong/.test(nd);
+  var hint=isFin?" (mục này sẽ tự chèn bảng KPI)":isAds?" (mục này sẽ tự chèn phễu chuyển đổi)":isAca?" (mục này sẽ tự chèn sơ đồ / công thức)":isCon?" (mục này sẽ tự chèn SWOT)":" (mục này sẽ tự chèn biểu đồ)";
+  var all=[
+   {t:T,d:"Bài trình bày được AI dựng từ chủ đề của sếp · Người trình bày · 2026"},
+   {t:"Nội dung trình bày",d:"1. Bối cảnh & mục tiêu · 2. Hiện trạng · 3. Phân tích · 4. Giải pháp · 5. Kế hoạch · 6. Kết luận"},
+   {t:"Bối cảnh & mục tiêu",d:"Vì sao “"+T+"” quan trọng ở thời điểm này? Mục tiêu đo được bằng con số cụ thể và mốc thời gian rõ ràng."},
+   {t:"Hiện trạng",d:"Bức tranh hiện tại: những gì đang vận hành tốt, điểm nghẽn chính và chi phí cơ hội nếu không thay đổi."},
+   {t:"Phân tích trọng tâm",d:"Ba phát hiện quan trọng nhất rút ra từ số liệu và quan sát thực tế."+hint},
+   {t:"Giải pháp đề xuất",d:"Ba hành động ưu tiên theo tác động lớn — chi phí thấp trước, mỗi hành động gắn người phụ trách."},
+   {t:"Kế hoạch triển khai",d:"Lộ trình theo giai đoạn, mốc kiểm tra và tiêu chí nghiệm thu từng bước. (mục này sẽ tự chèn lộ trình)"},
+   {t:"Rủi ro & cách xử lý",d:"Rủi ro lớn nhất, khả năng xảy ra và phương án dự phòng cho từng rủi ro."},
+   {t:"Nguồn lực & ngân sách",d:"Con người, công cụ và ngân sách cần thiết. (mục này sẽ tự chèn bảng)"},
+   {t:"Kết luận & kêu gọi hành động",d:"Chốt thông điệp chính của “"+T+"” và việc cần thống nhất ngay hôm nay."}
+  ];
+  var items;
+  if(n<=6)items=[all[0],all[2],all[3],all[4],all[6],all[9]];
+  else if(n>=10)items=all;
+  else items=[all[0],all[1],all[2],all[3],all[4],all[5],all[6],all[9]];
+  setOutline(items,"chủ đề “"+T+"”");
+}
+function outlineStd(){
+  setOutline([
+   {t:"Tiêu đề bài thuyết trình",d:"Tên người trình bày · Ngày tháng · Đơn vị"},
+   {t:"Bối cảnh & mục tiêu",d:"Vì sao cần thực hiện? Mục tiêu đo được là gì?"},
+   {t:"Hiện trạng",d:"Số liệu, quy trình hiện tại và điểm nghẽn chính."},
+   {t:"Giải pháp đề xuất",d:"3 ý chính kèm lợi ích cụ thể cho từng nhóm người dùng."},
+   {t:"Kế hoạch triển khai",d:"Mốc thời gian, người phụ trách và nguồn lực cần thiết."},
+   {t:"Kết luận & kêu gọi hành động",d:"Thông điệp chốt và bước tiếp theo cần thống nhất hôm nay."}
+  ],"dàn ý chuẩn");
+}
+function mkOutlineItem(chunk){
+  var sents=chunk.split(/(?<=[.!?])\s+/).filter(Boolean);
+  var title=sents[0]||chunk;
+  if(title.length>72)title=title.slice(0,72).replace(/\s+\S*$/,"")+"…";
+  return {t:title,d:chunk.slice(0,320)};
+}
+function textToOutline(text,isScript){
+  var lines=text.split(/\n+/).map(function(x){return x.replace(/^[-•*#>]+/,"").replace(/^\d+[.)]\s*/,"").trim();}).filter(function(x){return x.length>1;});
+  var items=[],cur=null;
+  function pushLong(txt){
+    var sents=txt.split(/(?<=[.!?])\s+/).filter(Boolean),buf="";
+    sents.forEach(function(s){
+      if(buf&&(buf+" "+s).length>300){items.push(mkOutlineItem(buf));buf=s;}
+      else buf=buf?buf+" "+s:s;
+    });
+    if(buf)items.push(mkOutlineItem(buf));
+  }
+  lines.forEach(function(ln){
+    var isHead=ln.length<=80&&!/[.!?,;:]$/.test(ln);
+    if(isHead){
+      if(cur)items.push(cur);
+      cur={t:ln,d:""};
+    }else if(cur&&(cur.d+" "+ln).length<=340){
+      cur.d=cur.d?cur.d+" "+ln:ln;
+    }else{
+      if(cur){items.push(cur);cur=null;}
+      if(ln.length<=340)items.push(mkOutlineItem(ln));else pushLong(ln);
+    }
+  });
+  if(cur)items.push(cur);
+  items.forEach(function(it){if(!it.d)it.d="Nội dung chính của mục này — sếp bổ sung ý / số liệu cụ thể khi sửa dàn ý.";});
+  if(!items.length)items=[{t:"Nội dung trích từ văn bản",d:text.slice(0,300)}];
+  return items.slice(0,20);
+}
+function outlineFromText(which){
+  var ta=document.getElementById(which==="script"?"slScript":"slNotes");
+  var text=(ta.value||"").trim();
+  if(text.length<10){toast("Sếp dán nội dung dài hơn một chút nhé (ít nhất vài dòng)");return;}
+  setOutline(textToOutline(text,which==="script"),which==="script"?"kịch bản":"ghi chú / văn bản");
+}
+async function outlineFromLink(){
+  var url=(document.getElementById("slLink").value||"").trim();
+  if(!/^https?:\/\//i.test(url)){toast("Sếp dán link bắt đầu bằng http:// hoặc https:// nhé");return;}
+  toast("Đang đọc nội dung từ link...");
+  try{
+    var res=await fetch(url);
+    if(!res.ok)throw new Error("HTTP "+res.status);
+    var html=await res.text();
+    var parsed=new DOMParser().parseFromString(html,"text/html");
+    parsed.querySelectorAll("script,style,nav,footer,header,aside,iframe,object,embed,form,link,meta").forEach(function(el){el.remove();});
+    var text=((parsed.body&&(parsed.body.innerText||parsed.body.textContent))||"").trim();
+    if(text.length<80)throw new Error("trang không có đủ nội dung chữ đọc được");
+    var items=textToOutline(text,false);
+    var h1=parsed.querySelector("h1");
+    if(h1&&h1.textContent.trim())items.unshift({t:h1.textContent.trim().slice(0,90),d:"Bài trình bày dựng từ trang web sếp đã dán link."});
+    setOutline(items.slice(0,20),"link web");
+  }catch(e){
+    toast("Chưa đọc được link này ("+(e.message||"bị chặn CORS")+"). Sếp copy nội dung trang rồi dán vào tab Ghi chú / văn bản nhé");
+    var btn=document.querySelector('#slSrcTabs .sl-tab[data-src="notes"]');if(btn)setSlSrc("notes",btn);
+  }
+}
+function renderOutline(){
+  var box=document.getElementById("olList");if(!box)return;
+  box.innerHTML=slOutline.map(function(it,i){
+    return '<div class="ol-item" ondragover="olDragOver(event)" ondrop="olDrop(event,'+i+')">'+
+    '<span class="ol-handle" draggable="true" ondragstart="olDragStart(event,'+i+')" title="Kéo để đổi thứ tự">⠿</span>'+
+    '<span class="ol-num">'+(i+1)+'</span>'+
+    '<div class="ol-fields"><input type="text" value="'+escA(it.t)+'" placeholder="Tiêu đề slide" oninput="slOutline['+i+'].t=this.value">'+
+    '<textarea placeholder="Ý chính / nội dung slide" oninput="slOutline['+i+'].d=this.value">'+esc(it.d||"")+'</textarea></div>'+
+    '<div class="ol-btns"><button title="Lên" onclick="olMove('+i+',-1)">↑</button><button title="Xuống" onclick="olMove('+i+',1)">↓</button><button title="Thêm mục bên dưới" onclick="olAdd('+i+')">＋</button><button title="Xoá mục" onclick="olDel('+i+')">✕</button></div></div>';
+  }).join("");
+  var c=document.getElementById("olCount");if(c)c.textContent=slOutline.length+" mục = "+slOutline.length+" slide";
+}
+function olDragStart(ev,i){slDragIdx=i;try{ev.dataTransfer.effectAllowed="move";ev.dataTransfer.setData("text/plain",String(i));}catch(e){}}
+function olDragOver(ev){ev.preventDefault();var items=document.querySelectorAll(".ol-item");items.forEach(function(x){x.classList.remove("over")});ev.currentTarget.classList.add("over");}
+function olDrop(ev,i){ev.preventDefault();document.querySelectorAll(".ol-item").forEach(function(x){x.classList.remove("over")});var from=slDragIdx;if(from<0||from===i)return;var it=slOutline.splice(from,1)[0];slOutline.splice(i,0,it);slDragIdx=-1;renderOutline();}
+function olMove(i,dir){var j=i+dir;if(j<0||j>=slOutline.length)return;var t=slOutline[i];slOutline[i]=slOutline[j];slOutline[j]=t;renderOutline();}
+function olAdd(i){slOutline.splice(i+1,0,{t:"Mục mới",d:""});renderOutline();}
+function olDel(i){if(slOutline.length<=1){toast("Dàn ý cần giữ ít nhất 1 mục");return;}slOutline.splice(i,1);renderOutline();}
+function outlineViz(it){
+  if(it.viz)return it.viz;
+  var nd=slNd((it.t||"")+" "+(it.d||""));
+  if(/swot|diem manh|diem yeu|co hoi|thach thuc/.test(nd))return {type:"swot",items:["S — Điểm mạnh","W — Điểm yếu","O — Cơ hội","T — Thách thức"]};
+  if(/so sanh|khac nhau|venn/.test(nd))return {type:"compare",heads:["Phương án / Nhóm A","Phương án / Nhóm B"],items:["Đặc điểm chính của A","Đặc điểm chính của B"]};
+  if(/quy trinh|cac buoc|luu do/.test(nd))return {type:"flow",items:["Bước 1","Bước 2","Bước 3","Bước 4"]};
+  if(/lo trinh|giai doan|trien khai/.test(nd))return {type:"roadmap",items:["Giai đoạn 1","Giai đoạn 2","Giai đoạn 3","Giai đoạn 4"]};
+  if(/moc thoi gian|timeline|lich su|phat trien/.test(nd))return {type:"timeline",items:["Mốc 1","Mốc 2","Mốc 3","Mốc 4"]};
+  if(/ngan sach|chi phi|bang gia|bao gia|nguon luc/.test(nd))return {type:"table",rows:[["Hạng mục","Số tiền","Ghi chú"],["Hạng mục 1","…",""],["Hạng mục 2","…",""],["Tổng","…",""]]};
+  if(/so do tu duy|mind ?map|y tuong/.test(nd))return {type:"mindmap",center:it.t,items:["Ý 1","Ý 2","Ý 3","Ý 4"]};
+  if(/doanh thu|so lieu|tang truong|thi phan|kpi|chi so|phuong trinh|cong thuc/.test(nd)){
+    var nums=(it.d||"").match(/\d+(?:[.,]\d+)?/g);
+    if(nums&&nums.length>=3){var vals=nums.slice(0,4).map(function(x){return parseFloat(String(x).replace(",","."))||0;});return {type:"chart",labels:vals.map(function(_,j){return "Mục "+(j+1);}),values:vals};}
+    if(/phuong trinh|cong thuc/.test(nd))return {type:"latex",tex:"\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i"};
+    return {type:"kpi",items:[["Chỉ số chính","…"],["Tăng trưởng","…"],["Mục tiêu","…"]]};
+  }
+  return null;
+}
+function buildSlidesFromOutline(){
+  if(!slOutline.length){toast("Chưa có dàn ý — sếp dựng dàn ý ở Bước 1 trước nhé");return;}
+  pushSlideSnap("trước khi tạo slide từ dàn ý");
+  slidesData=slOutline.map(function(it,i){
+    var s={t:it.t||("Slide "+(i+1)),d:it.d||""};
+    var v=outlineViz(it);if(v)s.viz=v;
+    return s;
+  });
+  selSlide=0;renderSlides();pushSlideSnap("tạo slide từ dàn ý");
+  toast("Đã tạo "+slidesData.length+" slide từ dàn ý theo mẫu "+slideThemeName+" ✓");
+  document.getElementById("slidesWrap").scrollIntoView({behavior:"smooth",block:"start"});
+}
+/* ---- AI Design + Quick Animate (kiểu SlidesAI) ---- */
+function aiDesign(){
+  if(!slidesData.length){toast("Chưa có slide nào để AI thiết kế");return;}
+  pushSlideSnap("trước khi AI Design");
+  var topic=((document.getElementById("slTopic").value||"")+" "+(slidesData[0]?slidesData[0].t:"")).trim();
+  var nd=slNd(topic), pick=null;
+  if(/tai chinh|doanh thu|dau tu|fintech|ngan hang/.test(nd))pick="Fintech Pitch Deck";
+  else if(/giao duc|bai giang|hoc sinh|lop hoc|truong/.test(nd))pick="E-Learning";
+  else if(/y te|suc khoe|y hoc|benh vien/.test(nd))pick="Medical Presentation";
+  else if(/ban hang|marketing|quang cao|san pham|thuong hieu/.test(nd))pick="Product Launch";
+  else if(/khoi nghiep|startup|goi von|pitch/.test(nd))pick="Startup Funding Pitch Deck";
+  else if(/portfolio|ca nhan|xin viec|nang luc/.test(nd))pick="Portfolio Showcase";
+  else if(/sang tao|thiet ke|creative/.test(nd))pick="Creative Brief";
+  else if(/bao cao|tong ket|ke hoach/.test(nd))pick="Company Report";
+  if(pick){var t=SLIDE_TEMPLATES.filter(function(x){return x.name===pick;})[0];if(t){slideTheme=JSON.parse(JSON.stringify(t.th));slideThemeName=t.name;}}
+  var added=0;
+  slidesData.forEach(function(s,i){
+    if(i===0||s.viz)return;
+    var v=outlineViz({t:s.t,d:s.d});if(v){s.viz=v;added++;}
+  });
+  renderSlides();pushSlideSnap("AI Design");
+  toast("✦ AI Design xong — mẫu "+slideThemeName+(added?(", tự chèn "+added+" biểu đồ / sơ đồ vào các slide còn trống"):", các slide đã có sẵn biểu đồ / sơ đồ nên giữ nguyên")+" ✓");
+}
+function quickAnimate(){
+  var order=["fade","slide","zoom"];var cur=order.indexOf(slideTrans);
+  slideTrans=order[(cur+1)%order.length];
+  var sel=document.getElementById("slTrans");if(sel)sel.value=slideTrans;
+  var cards=document.querySelectorAll("#slidesWrap .slide-card");
+  cards.forEach(function(c,i){c.style.animation="none";void c.offsetWidth;c.style.animation="cardIn .5s ease "+(i*0.09)+"s both";});
+  var names={fade:"Mờ dần (Fade)",slide:"Trượt (Slide)",zoom:"Phóng (Zoom)"};
+  toast("⚡ Quick Animate: hiệu ứng xuất hiện lần lượt đã áp cho mọi slide; khi trình chiếu sẽ dùng hiệu ứng chuyển "+names[slideTrans]+" (bấm lại để đổi hiệu ứng)");
+}
+/* ---- Chèn ảnh / GIF / video / biểu đồ từ văn bản ---- */
+var slUtilMode="";
+function insertMediaFile(ev){
+  var f=ev.target.files[0];ev.target.value="";if(!f)return;
+  var s=slidesData[selSlide];if(!s){toast("Chưa có slide nào để chèn");return;}
+  if(f.size>12*1024*1024){toast("Ảnh hơi lớn (trên 12 MB) — sếp chọn ảnh nhẹ hơn để app mượt nhé");return;}
+  var rd=new FileReader();
+  rd.onload=function(){pushSlideSnap("trước khi chèn ảnh");s.viz={type:"image",src:rd.result};renderSlides();toast("Đã chèn "+(f.type==="image/gif"?"GIF":"ảnh")+" vào slide "+(selSlide+1)+" ✓");};
+  rd.readAsDataURL(f);
+}
+function openVideoBox(){
+  if(!slidesData.length){toast("Chưa có slide nào để chèn video");return;}
+  slUtilMode="video";
+  document.getElementById("slUtilTitle").textContent="🎬 Chèn video vào slide "+(selSlide+1);
+  document.getElementById("slUtilBody").innerHTML='<p style="font-size:13px;line-height:1.6">Dán link video YouTube hoặc link file video (.mp4) — video hiện ngay trong slide khi trình chiếu trong app. Khi xuất .pptx, app chèn link video dạng chữ (PowerPoint không nhúng được video web từ trình duyệt).</p><input type="text" id="slUtilInput" placeholder="https://www.youtube.com/watch?v=... hoặc https://.../video.mp4" style="width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;background:transparent;color:inherit">';
+  document.getElementById("slUtilRun").textContent="Chèn video";
+  document.getElementById("slUtilModal").classList.add("open");
+}
+function openChartText(){
+  if(!slidesData.length){toast("Chưa có slide nào để chèn biểu đồ");return;}
+  slUtilMode="charttext";
+  document.getElementById("slUtilTitle").textContent="📈 Tự tạo biểu đồ trực quan từ văn bản — slide "+(selSlide+1);
+  document.getElementById("slUtilBody").innerHTML='<p style="font-size:13px;line-height:1.6">Mỗi dòng một mục theo dạng <b>Nhãn: số</b> (hoặc “Nhãn, số”). App sẽ dựng biểu đồ cột trực quan ngay trên slide đang chọn.</p><textarea id="slUtilInput" placeholder="Quý 1: 42&#10;Quý 2: 58&#10;Quý 3: 51&#10;Quý 4: 73" style="min-height:110px"></textarea>';
+  document.getElementById("slUtilRun").textContent="Tạo biểu đồ";
+  document.getElementById("slUtilModal").classList.add("open");
+}
+function exportGoogleSlides(){
+  slUtilMode="gslides";
+  document.getElementById("slUtilTitle").textContent="⬇ Xuất sang Google Slides";
+  document.getElementById("slUtilBody").innerHTML='<p style="font-size:13.5px;line-height:1.7">Bản chạy trên trình duyệt chưa kết nối trực tiếp được tài khoản Google của sếp (việc đó cần máy chủ + đăng nhập Google), nên app xuất file .pptx thật rồi sếp đưa lên Google Slides trong 4 bước:<br>1. Bấm nút <b>Tải .pptx</b> bên dưới để tải file về máy.<br>2. Mở <b>drive.google.com</b> và đăng nhập tài khoản Google.<br>3. Bấm <b>Mới → Tải tệp lên</b>, chọn file .pptx vừa tải.<br>4. Mở file vừa tải lên và chọn <b>Mở bằng Google Slides</b> — xong, bản trình bày đã thành Google Slides để sửa &amp; chia sẻ.</p>';
+  document.getElementById("slUtilRun").textContent="Tải .pptx";
+  document.getElementById("slUtilModal").classList.add("open");
+}
+function parseChartNum(x){
+  x=String(x).trim().replace(/\s/g,"");
+  if(/^\d{1,3}(\.\d{3})+$/.test(x))return parseFloat(x.replace(/\./g,""));
+  return parseFloat(x.replace(",","."))||0;
+}
+function slUtilConfirm(){
+  var inp=document.getElementById("slUtilInput");
+  var val=inp?(inp.value||"").trim():"";
+  if(slUtilMode==="gslides"){exportPptx();document.getElementById("slUtilModal").classList.remove("open");return;}
+  var s=slidesData[selSlide];
+  if(!s){toast("Chưa có slide nào");return;}
+  if(slUtilMode==="video"){
+    if(!val){toast("Sếp dán link video trước nhé");return;}
+    pushSlideSnap("trước khi chèn video");s.viz={type:"video",url:val};renderSlides();
+    toast("Đã chèn video vào slide "+(selSlide+1)+" ✓");
+  }else if(slUtilMode==="charttext"){
+    var labels=[],values=[];
+    val.split(/\n+/).forEach(function(ln){
+      var m=ln.match(/^(.+?)[:;,]\s*(-?[\d.,]+)\s*%?$/);
+      if(m){labels.push(m[1].trim());values.push(parseChartNum(m[2]));return;}
+      var m2=ln.match(/^(.+?)\s+(-?[\d.,]+)$/);
+      if(m2){labels.push(m2[1].trim());values.push(parseChartNum(m2[2]));}
+    });
+    if(values.length<2){toast("Chưa đọc được số liệu — sếp nhập mỗi dòng dạng “Nhãn: số” nhé");return;}
+    pushSlideSnap("trước khi tạo biểu đồ từ văn bản");
+    s.viz={type:"chart",labels:labels.slice(0,8),values:values.slice(0,8)};renderSlides();
+    toast("Đã tạo biểu đồ "+Math.min(8,values.length)+" cột từ văn bản ✓");
+  }
+  document.getElementById("slUtilModal").classList.remove("open");
+}
+/* ---- Brand Kit ---- */
+function bkBlend(h1,h2,r){
+  function p(h){return [parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];}
+  var a=p(h1),b=p(h2);
+  return "#"+a.map(function(v,i){return Math.round(v+(b[i]-v)*r).toString(16).padStart(2,"0");}).join("");
+}
+function brandThemeFromKit(){
+  var bg=document.getElementById("bkBg").value,ink=document.getElementById("bkInk").value,acc=document.getElementById("bkAccent").value;
+  return {bg:bg,ink:ink,sub:bkBlend(ink,bg,0.45),accent:acc};
+}
+function applyBrandKit(){
+  pushSlideSnap("trước khi áp Brand Kit");
+  slideTheme=brandThemeFromKit();
+  var nm=(document.getElementById("bkName").value||"").trim();
+  slideThemeName="Brand Kit"+(nm?" · "+nm:"");
+  brandFont=document.getElementById("bkFont").value;
+  brandFontPptx=brandFont.split(",")[0].replace(/['"]/g,"");
+  renderSlides();
+  toast("Đã áp Brand Kit"+(nm?" “"+nm+"”":"")+" vào toàn bộ slide ✓ — màu riêng + font "+brandFontPptx);
+}
+function saveBrandKitAsTemplate(){
+  var nm=(document.getElementById("bkName").value||"").trim()||"Thương hiệu của tôi";
+  SLIDE_TEMPLATES.unshift({name:"Brand Kit — "+nm,st:"professional",g:"business",th:brandThemeFromKit()});
+  slTplGroup="all";slTplStyle="all";slTplQuery="";
+  var q=document.getElementById("slTplSearch");if(q)q.value="";
+  document.querySelectorAll("#slTplChips .sl-chip").forEach(function(b,i){b.classList.toggle("active",i===0);});
+  document.querySelectorAll("#slStyleChips .sl-chip").forEach(function(b,i){b.classList.toggle("active",i===0);});
+  renderTplGrid();
+  toast("Đã lưu mẫu “Brand Kit — "+nm+"” vào đầu kho mẫu ✓");
+}
+/* ---- Lối tắt 4 công cụ tạo PPT (trong lưới công cụ miễn phí) ---- */
+function pptGenShortcut(kind){
+  var ed=document.getElementById("viewEditor");
+  if(!current||current.type!=="pptx"||ed.hidden){
+    var f=null;for(var i=0;i<files.length;i++)if(files[i].type==="pptx"){f=files[i];break;}
+    if(f)openFile(f.id);else createDoc("pptx");
+  }
+  setTimeout(function(){
+    var btn=document.querySelector('#slSrcTabs .sl-tab[data-src="'+kind+'"]');
+    if(btn)setSlSrc(kind,btn);
+    var box=document.querySelector("#slidesArea .sl-box");
+    if(box)box.scrollIntoView({behavior:"smooth",block:"start"});
+    if(kind==="topic"){var a=document.getElementById("slTopic");if(a)a.focus();}
+    if(kind==="notes"){var b=document.getElementById("slNotes");if(b)b.focus();}
+    if(kind==="script"){var c=document.getElementById("slScript");if(c)c.focus();}
+    if(kind==="file"){var d=document.getElementById("slDocInput");if(d)d.click();}
+  },80);
+}
+
 /* ---- phiên bản slide ---- */
 function pushSlideSnap(label){
   try{
@@ -1420,6 +2310,18 @@ function vizHTML(s,i){
   if(v.type==="funnel"){return '<div class="viz"><div class="funnel">'+v.items.map(function(x,j){var w=100-j*22;return '<div style="width:'+w+'%;background:'+A+';opacity:'+(1-j*0.2)+'">'+esc(x)+"</div>";}).join("")+"</div></div>";}
   if(v.type==="mindmap"){return '<div class="viz"><div style="text-align:center"><span style="display:inline-block;background:'+A+';color:#fff;font-weight:800;border-radius:99px;padding:5px 14px;font-size:11px">'+esc(v.center)+'</span></div><div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:5px">'+v.items.map(function(x){return '<span style="background:rgba(255,255,255,.7);border:1px solid '+A+';color:#243528;border-radius:99px;padding:3px 9px;font-weight:700">'+esc(x)+"</span>";}).join("")+"</div></div>";}
   if(v.type==="latex"){return '<div class="viz"><div class="latex">'+latexRender(v.tex)+'</div><div style="text-align:center;color:#5f6f63;font-size:10px;margin-top:3px">LaTeX: '+esc(v.tex)+"</div></div>";}
+  if(v.type==="venn"){return '<div class="viz"><div class="venn"><i style="left:6px;background:'+A+'"></i><i style="left:44px;background:#e85d3d"></i><span style="left:6px">'+esc(v.items[0]||"A")+'</span><span style="left:44px">'+esc(v.items[1]||"B")+'</span></div><div style="text-align:center;color:#5f6f63;font-size:10px">∩ '+esc(v.center||"Điểm chung")+"</div></div>";}
+  if(v.type==="flow"){return '<div class="viz"><div class="flow">'+v.items.map(function(x,j){return (j?'<em style="color:'+A+'">→</em>':"")+'<div style="background:'+A+';opacity:'+(1-j*0.15)+'">'+esc(x)+"</div>";}).join("")+"</div></div>";}
+  if(v.type==="org"){return '<div class="viz"><div class="org"><span class="top" style="background:'+A+'">'+esc(v.center||"Lãnh đạo")+'</span><div class="kids">'+v.items.map(function(x){return '<span style="border-color:'+A+'">'+esc(x)+"</span>";}).join("")+"</div></div></div>";}
+  if(v.type==="pie"){var tot=v.values.reduce(function(a,b){return a+b;},0)||1;var cols=[A,"#e85d3d","#d9930d","#2563eb","#65a30d","#db2777"];var acc2=0;var segs=v.values.map(function(val,j){var p0=acc2/tot*360;acc2+=val;var p1=acc2/tot*360;return cols[j%cols.length]+" "+p0+"deg "+p1+"deg";}).join(",");return '<div class="viz"><div class="pie"><span class="disc" style="background:conic-gradient('+segs+')"></span><span class="leg">'+v.labels.map(function(l,j){return '<i style="background:'+cols[j%cols.length]+'"></i>'+esc(l)+" · "+Math.round(v.values[j]/tot*100)+"%<br>";}).join("")+"</span></div></div>";}
+  if(v.type==="compare"){return '<div class="viz"><div class="cmp">'+v.items.map(function(x,j){return "<div><b style='color:"+A+"'>"+esc(v.heads[j]||("Bên "+(j+1)))+"</b>"+esc(x)+"</div>";}).join("")+"</div></div>";}
+  if(v.type==="image"){return '<div class="viz"><img class="media" src="'+v.src+'" alt="Ảnh / GIF chèn trong slide"></div>';}
+  if(v.type==="video"){
+    if(!v.url)return '<div class="viz"><div style="border:1.5px dashed rgba(0,0,0,.3);border-radius:8px;padding:12px;text-align:center;color:#5f6f63;font-weight:700">🎬 Chưa gắn link video — dùng nút “🎬 Chèn video”</div></div>';
+    var yt=String(v.url).match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{6,})/);
+    if(yt)return '<div class="viz"><iframe class="media" src="https://www.youtube.com/embed/'+yt[1]+'" allowfullscreen title="Video trong slide"></iframe></div>';
+    return '<div class="viz"><video class="media" src="'+esc(v.url)+'" controls preload="metadata"></video></div>';
+  }
   if(v.type==="shape"){var st=v.shape==="circle"?"border-radius:50%;width:52px;margin:0 auto":v.shape==="diamond"?"transform:rotate(45deg);width:40px;height:40px;margin:6px auto":"border-radius:9px";return '<div class="viz"><div class="shapebox" style="background:'+A+';'+st+'"><span '+(v.shape==="diamond"?'style="transform:rotate(-45deg)"':"")+">"+esc(v.label||"Ý chính")+"</span></div></div>";}
   return "";
 }
@@ -1438,6 +2340,11 @@ function insertViz(kind){
     else if(k==="funnel")s.viz={type:"funnel",items:["Tiếp cận","Quan tâm","Chốt đơn"]};
     else if(k==="timeline")s.viz={type:"timeline",items:["2023 · Khởi đầu","2024 · Tăng trưởng","2025 · Mở rộng","2026 · Dẫn đầu"]};
     else if(k==="mindmap")s.viz={type:"mindmap",center:s.t||"Chủ đề",items:["Ý 1","Ý 2","Ý 3","Ý 4"]};
+    else if(k==="venn")s.viz={type:"venn",items:["Khái niệm A","Khái niệm B"],center:"Điểm chung"};
+    else if(k==="flow")s.viz={type:"flow",items:["Bước 1 · Nhập liệu","Bước 2 · Xử lý","Bước 3 · Kiểm tra","Bước 4 · Hoàn tất"]};
+    else if(k==="org")s.viz={type:"org",center:"Ban lãnh đạo",items:["Phòng A","Phòng B","Phòng C","Phòng D"]};
+    else if(k==="pie")s.viz={type:"pie",labels:["Phần A","Phần B","Phần C","Phần D"],values:[40,27,20,13]};
+    else if(k==="compare")s.viz={type:"compare",heads:["Phương án A","Phương án B"],items:["Ưu điểm / chi phí / thời gian của A","Ưu điểm / chi phí / thời gian của B"]};
     else if(k==="latex")s.viz={type:"latex",tex:"E = mc^{2}"};
   }
   renderSlides();toast("Đã chèn vào slide "+(selSlide+1)+" ✓ — bấm vào số liệu/chữ trong phần tử để sửa");
@@ -1447,7 +2354,7 @@ function renderSlides(){
   renderTplGrid();
   var th=slideTheme;
   document.getElementById("slidesWrap").innerHTML=slidesData.map(function(s,i){
-    return '<div class="slide-card'+(i===selSlide?" sel":"")+'" style="background:'+th.bg+';color:'+th.ink+'" onclick="selectSlide('+i+')">'+
+    return '<div class="slide-card'+(i===selSlide?" sel":"")+'" style="background:'+th.bg+';color:'+th.ink+';font-family:'+brandFont+'" onclick="selectSlide('+i+')">'+
     '<span class="bar" style="background:'+th.accent+'"></span>'+
     '<span class="slide-num" style="color:'+th.accent+'">SLIDE '+(i+1)+(i===selSlide?" · ĐANG CHỌN":"")+' · '+esc(slideThemeName)+'</span>'+
     '<b contenteditable="true" style="color:'+th.ink+'" oninput="slidesData['+i+'].t=this.innerText">'+esc(s.t)+'</b>'+
@@ -1502,8 +2409,8 @@ function aiSlidesFromTopic(){
 async function slidesFromDoc(ev){
   var file=ev.target.files[0];ev.target.value="";if(!file)return;
   try{
-    toast("Đang đọc tài liệu và trích thành slide...");
-    var ext=(file.name.split(".").pop()||"").toLowerCase(), text="", tableRows=null;
+    toast("Đang đọc tài liệu và dựng dàn ý...");
+    var ext=(file.name.split(".").pop()||"").toLowerCase(), text="", tableRows=null, pptItems=null;
     if(ext==="docx"){
       if(!window.mammoth)throw new Error("Chưa tải được thư viện đọc Word (Mammoth) — cần kết nối mạng.");
       var r=await mammoth.extractRawText({arrayBuffer:await file.arrayBuffer()});text=r.value||"";
@@ -1513,32 +2420,52 @@ async function slidesFromDoc(ev){
       var ws=wb.Sheets[wb.SheetNames[0]];
       var aoa=XLSX.utils.sheet_to_json(ws,{header:1});tableRows=aoa.slice(0,7).map(function(r){return r.slice(0,4).map(function(c){return String(c==null?"":c)})});
       text=aoa.map(function(r){return r.join(" · ")}).join("\n");
+    }else if(ext==="pdf"){
+      if(!window.pdfjsLib)throw new Error("Chưa tải được thư viện đọc PDF (PDF.js) — cần kết nối mạng.");
+      var pages=await extractPdfPagesText(file);
+      text=pages.map(function(p,i){return "Trang "+(i+1)+"\n"+p;}).join("\n");
+    }else if(ext==="pptx"||ext==="ppt"){
+      if(ext==="ppt")throw new Error("Định dạng .ppt cũ (binary) trình duyệt không đọc trực tiếp được — sếp mở bằng PowerPoint rồi lưu lại thành .pptx nhé.");
+      var pslides=await extractPptxSlides(file);
+      if(!pslides.length)throw new Error("Không đọc được slide nào trong file .pptx này.");
+      pptItems=pslides.map(function(ps){return {t:ps.title||"Slide không tiêu đề",d:(ps.body||"").slice(0,320)};});
+      text=pptItems.map(function(x){return x.t+" "+x.d;}).join("\n");
     }else{
       text=await file.text();
-      if(ext==="html"||ext==="htm"){var div=document.createElement("div");div.innerHTML=text;text=div.innerText;}
+      if(ext==="html"||ext==="htm"){var pd=new DOMParser().parseFromString(text,"text/html");pd.querySelectorAll("script,style,iframe,object,embed,form").forEach(function(el){el.remove();});text=(pd.body&&(pd.body.innerText||pd.body.textContent))||"";}
     }
     text=(text||"").trim();if(!text)throw new Error("Không trích được nội dung chữ từ tệp này.");
-    pushSlideSnap("trước khi tạo slide từ tài liệu");
-    var base=file.name.replace(/\.[^.]+$/,"");
-    var lines=text.split(/\n+/).map(function(x){return x.replace(/^#+\s*/,"").trim()}).filter(function(x){return x.length>2});
-    var slides=[{t:base,d:"Bộ slide trích từ tài liệu “"+file.name+"” · "+lines.length+" dòng nội dung"}];
-    var buf="",title="";
-    function flush(){if(buf){slides.push({t:title||("Nội dung "+(slides.length)),d:buf.slice(0,420)});buf="";title="";}}
-    lines.forEach(function(ln){
-      var isHead=ln.length<=70&&!/[.!?]$/.test(ln)&&buf.length>60;
-      if(isHead){flush();title=ln;}
-      else buf+=(buf?" ":"")+ln;
-      if(buf.length>=380)flush();
-    });
-    flush();
-    if(tableRows&&tableRows.length>1)slides.splice(2,0,{t:"Bảng số liệu từ tài liệu",d:"Trích trực tiếp từ sheet đầu tiên của tệp "+file.name,viz:{type:"table",rows:tableRows}});
-    slidesData=slides.slice(0,16);selSlide=0;renderSlides();pushSlideSnap("tạo từ tài liệu");
-    toast("Đã trích "+slidesData.length+" slide từ tài liệu ✓ — sếp sửa lại chữ cho gọn nhé");
-  }catch(e){toast("Chưa tạo được slide từ tài liệu: "+(e.message||e));}
+    if(pptItems){setOutline(pptItems,"file PowerPoint "+file.name);return;}
+    var items=textToOutline(text,false);
+    if(!items.length)throw new Error("Không tách được dàn ý từ nội dung tệp này.");
+    items[0].d=(items[0].d?items[0].d+" · ":"")+"(Dựng từ tài liệu “"+file.name+"”)";
+    if(tableRows&&tableRows.length>1)items.splice(Math.min(2,items.length),0,{t:"Bảng số liệu từ tài liệu",d:"Trích trực tiếp từ sheet đầu tiên của tệp "+file.name,viz:{type:"table",rows:tableRows}});
+    setOutline(items,"tài liệu "+file.name);
+  }catch(e){toast("Chưa dựng được dàn ý từ tài liệu: "+(e.message||e));}
 }
 /* ---- (5) sửa slide bằng AI qua chat ---- */
 function slChatLog(role,text){
   var log=document.getElementById("slChatLog");var d=document.createElement("div");d.className="m "+role;d.textContent=text;log.appendChild(d);log.scrollTop=log.scrollHeight;
+}
+/* ---- Ask AI: gợi ý kèm Chấp nhận / Từ chối (kiểu SlidesAI) ---- */
+function slSuggest(newData,desc){
+  slPending={data:newData,desc:desc};
+  var log=document.getElementById("slChatLog");var d=document.createElement("div");d.className="m bot";
+  d.innerHTML="<b>✦ Gợi ý của AI:</b> "+esc(desc)+'<div class="sl-sug-btns"><button class="ok" onclick="slAcceptSuggest()">✓ Chấp nhận</button><button class="no" onclick="slRejectSuggest()">✕ Từ chối</button></div>';
+  log.appendChild(d);log.scrollTop=log.scrollHeight;
+}
+function slAcceptSuggest(){
+  if(!slPending){toast("Gợi ý này đã được xử lý rồi");return;}
+  pushSlideSnap("trước khi chấp nhận gợi ý Ask AI");
+  slidesData=slPending.data;slPending=null;
+  if(selSlide>=slidesData.length)selSlide=0;
+  renderSlides();pushSlideSnap("chấp nhận gợi ý Ask AI");
+  slChatLog("bot","Đã áp gợi ý vào bộ slide ✓ Bản trước khi sửa vẫn khôi phục được trong mục Phiên bản slide.");
+}
+function slRejectSuggest(){
+  if(!slPending){toast("Gợi ý này đã được xử lý rồi");return;}
+  slPending=null;
+  slChatLog("bot","Đã bỏ qua gợi ý — bộ slide giữ nguyên như cũ ✓");
 }
 function slideChatSend(){
   var inp=document.getElementById("slChatInput");var q=(inp.value||"").trim();if(!q)return;inp.value="";
@@ -1550,18 +2477,22 @@ function slideChatSend(){
     slChatLog("bot","Đã đổi toàn bộ bộ slide sang phong cách mẫu "+tplHit.name+" — màu nền, màu nhấn và màu chữ đã đồng bộ mọi slide ✓");return;
   }
   if(/viet lai|hay hon|trang trong/.test(nd)){
-    pushSlideSnap("trước khi AI viết lại");var s=slidesData[idx];if(!s){slChatLog("bot","Chưa có slide nào để viết lại sếp ơi.");return;}
+    var s=slidesData[idx];if(!s){slChatLog("bot","Chưa có slide nào để viết lại sếp ơi.");return;}
     var swaps={"toi":"chúng tôi","minh":"chúng tôi","rat ":"đặc biệt ","tot":"hiệu quả","lam":"thực hiện","dung":"sử dụng"};
     var out=s.d;Object.keys(swaps).forEach(function(k){out=out.replace(new RegExp(k,"gi"),swaps[k])});
     out=out.replace(/\s+([,.!?;:])/g,"$1");if(out.charAt(0)===out.charAt(0).toLowerCase())out=out.charAt(0).toUpperCase()+out.slice(1);
     if(!/[.!?]$/.test(out))out+=" Nội dung đã được rà soát câu chữ, giữ nguyên số liệu và ý chính.";
-    s.d=out;renderSlides();slChatLog("bot","Đã viết lại nội dung slide "+(idx+1)+" (“"+s.t+"”) trang trọng và mạch lạc hơn ✓ Bản cũ đã lưu trong Phiên bản slide.");return;
+    var prop=JSON.parse(JSON.stringify(slidesData));prop[idx].d=out;
+    slSuggest(prop,"Viết lại nội dung slide "+(idx+1)+" (“"+s.t+"”) trang trọng và mạch lạc hơn. Nội dung gợi ý: “"+out.slice(0,240)+(out.length>240?"…":"")+"”");
+    return;
   }
   if(/rut ngan|ngan gon|gon lai/.test(nd)){
-    pushSlideSnap("trước khi rút ngắn");
-    var targets=/tat ca|toan bo/.test(nd)?slidesData:[slidesData[idx]];
+    var allSl=/tat ca|toan bo/.test(nd);
+    var prop2=JSON.parse(JSON.stringify(slidesData));
+    var targets=allSl?prop2:[prop2[idx]];
     targets.forEach(function(s){if(!s)return;var first=s.d.split(/(?<=[.!?])\s+/)[0];s.d=first.length>=30?first:s.d.slice(0,130);});
-    renderSlides();slChatLog("bot","Đã rút ngắn "+(targets.length>1?"toàn bộ bộ slide":"slide "+(idx+1))+" — giữ lại ý đầu quan trọng nhất mỗi slide ✓");return;
+    slSuggest(prop2,"Rút ngắn "+(allSl?"toàn bộ bộ slide":"slide "+(idx+1))+" — giữ lại ý đầu quan trọng nhất mỗi slide, bỏ phần diễn giải dài.");
+    return;
   }
   if(/them slide/.test(nd)){
     pushSlideSnap("trước khi thêm slide");
@@ -1572,7 +2503,7 @@ function slideChatSend(){
   if(/doi phong cach|phong cach/.test(nd)){
     var nxt=SLIDE_TEMPLATES[(SLIDE_TEMPLATES.findIndex(function(t){return t.name===slideThemeName})+1)%SLIDE_TEMPLATES.length];
     pushSlideSnap("trước khi đổi phong cách");slideTheme=JSON.parse(JSON.stringify(nxt.th));slideThemeName=nxt.name;renderSlides();
-    slChatLog("bot","Đã chuyển phong cách sang mẫu "+nxt.name+" ✓ Muốn mẫu cụ thể, sếp gõ tên mẫu, ví dụ: “đổi phong cách Black Gold Ledger”.");return;
+    slChatLog("bot","Đã chuyển phong cách sang mẫu "+nxt.name+" ✓ Muốn mẫu cụ thể, sếp gõ tên mẫu, ví dụ: “đổi phong cách Business Pitch Deck”.");return;
   }
   document.getElementById("slTopic").value=q;aiSlidesFromTopic();
   slChatLog("bot","Em hiểu đây là chủ đề mới — đã dựng bộ slide từ mô tả này theo mẫu "+slideThemeName+" ✓");
@@ -1580,7 +2511,7 @@ function slideChatSend(){
 /* ---- (7) trình chiếu ---- */
 function renderPresent(){
   var s=slidesData[presentIdx];var st=document.getElementById("presentStage");var th=slideTheme;
-  st.style.background=th.bg;st.style.color=th.ink;
+  st.style.background=th.bg;st.style.color=th.ink;st.style.fontFamily=brandFont;
   st.innerHTML='<span style="position:absolute;left:0;top:0;bottom:0;width:10px;background:'+th.accent+'"></span><h1>'+esc(s.t)+'</h1><div class="bd" style="color:'+th.sub+'">'+esc(s.d)+"</div>"+vizHTML(s,presentIdx);
   st.classList.remove("anim-fade","anim-slide","anim-zoom");void st.offsetWidth;
   if(slideTrans!=="none")st.classList.add("anim-"+slideTrans);
@@ -1609,8 +2540,8 @@ async function exportPptx(){
     slidesData.forEach(function(s){
       var sl=pptx.addSlide();sl.background={color:bg};
       sl.addShape("rect",{x:0,y:0,w:0.14,h:7.5,fill:{color:acc},line:{color:acc,width:0}});
-      sl.addText(s.t,{x:0.55,y:0.4,w:12.2,h:1.1,fontSize:30,bold:true,color:ink});
-      sl.addText(s.d,{x:0.55,y:1.6,w:12.2,h:1.9,fontSize:16,color:sub,valign:"top"});
+      sl.addText(s.t,{x:0.55,y:0.4,w:12.2,h:1.1,fontSize:30,bold:true,color:ink,fontFace:brandFontPptx});
+      sl.addText(s.d,{x:0.55,y:1.6,w:12.2,h:1.9,fontSize:16,color:sub,valign:"top",fontFace:brandFontPptx});
       var v=s.viz;
       if(v&&v.type==="chart")sl.addChart(pptx.ChartType.bar,[{name:"Số liệu",labels:v.labels,values:v.values}],{x:0.55,y:3.6,w:8.5,h:3.3,barDir:"col",chartColors:[acc],showValue:true});
       else if(v&&v.type==="table")sl.addTable(v.rows,{x:0.55,y:3.6,w:9.5,fontSize:13,border:{pt:0.75,color:"B9CDBD"},fill:{color:"FFFFFF"}});
@@ -1619,6 +2550,13 @@ async function exportPptx(){
       else if(v&&v.type==="gantt")sl.addText(v.items.map(function(x){return x[0]}).join("  ·  "),{x:0.55,y:3.7,w:12,h:0.8,fontSize:15,color:ink});
       else if(v&&v.type==="mindmap")sl.addText(v.center+" — "+v.items.join(" · "),{x:0.55,y:3.7,w:12,h:0.8,fontSize:15,color:ink});
       else if(v&&v.type==="latex")sl.addText(v.tex,{x:0.55,y:3.7,w:12,h:0.8,fontSize:18,italic:true,color:ink});
+      else if(v&&v.type==="image"&&v.src)sl.addImage({data:v.src,x:0.55,y:3.55,w:6.4,h:3.2,sizing:{type:"contain",w:6.4,h:3.2}});
+      else if(v&&v.type==="venn")sl.addText(v.items.join("  ∩  ")+" — Điểm chung: "+(v.center||""),{x:0.55,y:3.7,w:12,h:0.8,fontSize:16,bold:true,color:acc});
+      else if(v&&v.type==="flow")sl.addText(v.items.join("  →  "),{x:0.55,y:3.7,w:12,h:0.8,fontSize:15,color:ink});
+      else if(v&&v.type==="org")sl.addText((v.center||"")+" — "+v.items.join(" · "),{x:0.55,y:3.7,w:12,h:0.8,fontSize:15,color:ink});
+      else if(v&&v.type==="pie")sl.addText(v.labels.map(function(l,j){return l+": "+v.values[j];}).join("   ·   "),{x:0.55,y:3.7,w:12,h:0.8,fontSize:15,color:ink});
+      else if(v&&v.type==="compare")sl.addText(v.items.map(function(x,j){return (v.heads[j]||"")+": "+x;}).join("\n"),{x:0.55,y:3.6,w:12,h:1.4,fontSize:14,color:ink});
+      else if(v&&v.type==="video")sl.addText("🎬 Video: "+(v.url||"(chưa gắn link)"),{x:0.55,y:3.7,w:12,h:0.8,fontSize:14,color:acc});
       else if(v&&v.type==="shape")sl.addText("◆ "+(v.label||""),{x:0.55,y:3.7,w:6,h:0.8,fontSize:16,bold:true,color:acc});
     });
     await pptx.writeFile({fileName:slFileBase()+".pptx"});
@@ -1703,7 +2641,7 @@ function readMoney(n){
   out=out.trim().replace(/\s+/g," ");return out.charAt(0).toUpperCase()+out.slice(1)+" đồng";
 }
 var TOOL_PAGE={money:1,count:1,case:1,vat:1,days:1,code:1,dedup:1,cv:1};
-function hideAllViews(){["viewHome","viewEditor","viewPdf","viewPdfLib","viewDesign","viewLib","viewLibItem","viewTool"].forEach(function(id){var el=document.getElementById(id);if(el)el.hidden=true;});}
+function hideAllViews(){["viewHome","viewEditor","viewPdf","viewPdfLib","viewPpt","viewCv","viewDesign","viewLib","viewLibItem","viewTool"].forEach(function(id){var el=document.getElementById(id);if(el)el.hidden=true;});syncFocusMode();}
 /* ===== FULL TRANG: đang mở view con (công cụ/soạn thảo/PDF/thiết kế/thư viện) thì tự ẩn thanh công cụ ===== */
 function syncFocusMode(){
   var home=document.getElementById("viewHome");
@@ -1721,12 +2659,13 @@ function toggleNavShown(){
   updateFocusBtn();
 }
 (function(){
-  var ids=["viewHome","viewEditor","viewPdf","viewPdfLib","viewDesign","viewLib","viewLibItem","viewTool"];
+  var ids=["viewHome","viewEditor","viewPdf","viewPdfLib","viewPpt","viewCv","viewDesign","viewLib","viewLibItem","viewTool"];
   var obs=new MutationObserver(function(){syncFocusMode();});
   ids.forEach(function(id){var el=document.getElementById(id);if(el)obs.observe(el,{attributes:true,attributeFilter:["hidden"]});});
   syncFocusMode();
 })();
 function openTool(tool){
+  if(tool==="cv"){openCvStudio();return;}
   currentTool=tool;var onPage=!!TOOL_PAGE[tool];
   document.getElementById("toolBody").innerHTML="";document.getElementById("toolPageBody").innerHTML="";
   var title=document.getElementById(onPage?"toolPageTitle":"toolTitle"),body=document.getElementById(onPage?"toolPageBody":"toolBody"),run=document.getElementById(onPage?"toolPageRun":"toolRun");
@@ -1774,7 +2713,7 @@ function runToolAction(){
 document.getElementById("toolRun").addEventListener("click",runToolAction);
 document.getElementById("toolPageRun").addEventListener("click",runToolAction);
 function closeTool(){document.getElementById("toolModal").classList.remove("open");if(!document.getElementById("viewTool").hidden)closeToolPage();}
-function closeToolPage(){document.getElementById("viewTool").hidden=true;document.getElementById("viewHome").hidden=false;window.scrollTo(0,0);setTimeout(function(){var u=document.getElementById("blkUtils");if(u)u.scrollIntoView({behavior:"smooth"})},60);}
+function closeToolPage(){document.getElementById("viewTool").hidden=true;document.getElementById("viewHome").hidden=false;window.scrollTo(0,0);syncFocusMode();setTimeout(function(){var u=document.getElementById("blkUtils");if(u)u.scrollIntoView({behavior:"smooth"})},60);}
 
 /* ================= AI CHAT ================= */
 function openAI(){document.getElementById("aiPanel").classList.add("open");document.getElementById("scrim").classList.add("on");var m=document.getElementById("aiMsgs");if(!m.children.length)addMsg("bot","Chào sếp 👋 Em là trợ lý AI của Trợ Thủ Văn Phòng — chạy miễn phí ngay trên trình duyệt.\n\nSếp cứ nhờ em: soạn hợp đồng, công văn, quyết định, thông báo nội bộ, kế hoạch tuần, email báo giá, CV, đơn nghỉ phép, biên bản họp, tóm tắt ý tưởng hoặc dịch Anh ↔ Việt. Bấm nút “Mở trong trình soạn thảo” dưới mỗi bản soạn để sửa tiếp và tải xuống nhé.");setTimeout(function(){document.getElementById("aiInput").focus()},250);}
@@ -2007,7 +2946,7 @@ function viFold(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u030
 function openPdfLib(){
   hideAllViews();document.getElementById("viewPdfLib").hidden=false;markModBtns("pdf");window.scrollTo(0,0);filterPdfLib();
 }
-function closePdfLib(){document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewHome").hidden=false;markModBtns(moduleCur);window.scrollTo(0,0);}
+function closePdfLib(){document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewHome").hidden=false;markModBtns(moduleCur);window.scrollTo(0,0);syncFocusMode();}
 function goPdfSection(){openPdfLib();}
 function setPdfCat(cat,btn){pdfCat=cat;var bs=document.querySelectorAll("[data-pdfcat]");for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i]===btn);filterPdfLib();}
 function filterPdfLib(){
@@ -2039,7 +2978,7 @@ function openPdfTool(key){
   document.getElementById("pdfStatus").textContent="";
   document.getElementById("pdfResult").innerHTML="";
   renderPdfFileList();
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewPdfLib").hidden=true;var vl2=document.getElementById("viewLib");if(vl2)vl2.hidden=true;document.getElementById("viewPdf").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewPdfLib").hidden=true;var vppt=document.getElementById("viewPpt");if(vppt)vppt.hidden=true;var vl2=document.getElementById("viewLib");if(vl2)vl2.hidden=true;document.getElementById("viewPdf").hidden=false;syncFocusMode();
   window.scrollTo(0,0);
   if(key==="sign")initSigPad();
   if(key==="protect"||key==="pdfa")runPdfTool();
@@ -2560,6 +3499,445 @@ async function runPdfTranslate(){
   out="ENGLISH QUICK TRANSLATION — "+PDFT.files[0].name+"\n(Bản dịch nhanh bằng từ điển tích hợp: các cụm từ phổ biến đã được dịch, phần còn lại giữ nguyên tiếng Việt để sếp đối chiếu.)\n\n"+out;
   pdfResultText(out,baseName(PDFT.files[0],"-en.txt"));
 }
+
+/* ================= CÔNG CỤ POWERPOINT MIỄN PHÍ (kiểu SlidesAI) ================= */
+var PPTF={tool:null,files:[]};
+var pptTools={
+pptsum:{t:"Tóm tắt PowerPoint bằng AI",d:"AI chạy trên trình duyệt đọc toàn bộ chữ trong file .pptx, liệt kê cấu trúc bài và trích các câu ý chính thành bản tóm tắt — mở tiếp được trong trình soạn thảo.",accept:".pptx",multi:false,min:1,run:runPptSummary},
+pptcompress:{t:"Nén PowerPoint",d:"Nén lại toàn bộ gói .pptx bằng thuật toán DEFLATE mức cao nhất. Ảnh / video đã nén sẵn trong file gốc (jpg, mp4) sẽ không nhỏ thêm được nhiều — app báo rõ số liệu trước / sau khi nén.",accept:".pptx",multi:false,min:1,run:runPptCompress},
+ppt2pdf:{t:"PowerPoint → PDF",d:"Chuyển file .pptx sang PDF: mỗi slide thành một trang, giữ toàn bộ nội dung chữ của slide. Hình nền và hiệu ứng phức tạp của slide gốc không dựng lại được trên trình duyệt.",accept:".pptx",multi:false,min:1,run:runPpt2Pdf2},
+pdf2ppt:{t:"PDF → PowerPoint",d:"Mỗi trang PDF trở thành một slide .pptx chứa nội dung chữ của trang đó, tiện thuyết trình và sửa tiếp.",accept:".pdf",multi:false,min:1,run:runPdf2Ppt2},
+pdf2gs:{t:"PDF → Google Slides",d:"App tạo file .pptx từ PDF ngay trên trình duyệt rồi hướng dẫn sếp tải lên Google Drive và mở bằng Google Slides. Bản trình duyệt chưa kết nối trực tiếp được tài khoản Google (việc đó cần máy chủ + đăng nhập Google), nên bước tải lên sếp làm tay trong khoảng 1 phút.",accept:".pdf",multi:false,min:1,run:runPdf2GS},
+word2ppt:{t:"Word → PPT",d:"Đọc tài liệu .docx, tách nội dung thành từng slide theo dàn ý và xuất file .pptx thật với mẫu màu Excel.",accept:".docx",multi:false,min:1,run:runWord2Ppt},
+html2ppt:{t:"HTML → PPT",d:"Tải file .html lên hoặc dán mã HTML vào ô bên dưới — nội dung chữ được tách thành bộ slide .pptx.",accept:".html,.htm",multi:false,min:0,opts:"html2ppt",run:runHtml2Ppt},
+ppt2txt:{t:"PowerPoint → Text",d:"Trích toàn bộ chữ trong .pptx ra văn bản thuần, phân tách theo từng slide. Xem trước trên màn hình và tải file .txt.",accept:".pptx",multi:false,min:1,run:runPpt2Txt},
+pptimg:{t:"Tách ảnh khỏi PowerPoint",d:"Quét thư mục media trong file .pptx và lấy toàn bộ ảnh nhúng (jpg, png, gif...) ra một gói ZIP riêng.",accept:".pptx",multi:false,min:1,run:runPptImg},
+pptsplit:{t:"Tách PowerPoint",d:"Tách mỗi slide thành một file .pptx riêng rồi đóng gói ZIP. File tách được dựng lại từ nội dung chữ của từng slide — hình nền / hiệu ứng gốc không giữ nguyên.",accept:".pptx",multi:false,min:1,run:runPptSplit},
+pptmerge:{t:"Gộp PowerPoint",d:"Nối nhiều file .pptx thành một bài trình bày duy nhất theo đúng thứ tự tệp sếp chọn. Bản gộp dựng lại từ nội dung chữ của từng slide với một mẫu thống nhất màu Excel — định dạng trang trí gốc của từng file không giữ nguyên.",accept:".pptx",multi:true,min:2,run:runPptMerge}
+};
+function openPptTool(key){
+  if(!window.JSZip){toast("Chưa tải được thư viện xử lý file (JSZip) — sếp kiểm tra mạng rồi thử lại nhé");return;}
+  PPTF.tool=key;PPTF.files=[];
+  var cfg=pptTools[key];
+  document.getElementById("pptToolTitle").textContent=cfg.t;
+  document.getElementById("pptToolDesc").textContent=cfg.d;
+  document.getElementById("pptAcceptLabel").textContent=cfg.multi?"Có thể chọn nhiều tệp · "+cfg.accept:"Chọn 1 tệp · "+(cfg.accept||"không bắt buộc tệp");
+  var inp=document.getElementById("pptFileInput");inp.accept=cfg.accept||"";inp.multiple=!!cfg.multi;inp.value="";
+  document.getElementById("pptOptions").innerHTML=pptOptionsHtml(key);
+  document.getElementById("pptStatus").textContent="";
+  document.getElementById("pptResult").innerHTML="";
+  renderPptFileList();
+  hideAllViews();document.getElementById("viewPpt").hidden=false;window.scrollTo(0,0);
+}
+function closePptTool(){document.getElementById("viewPpt").hidden=true;document.getElementById("viewEditor").hidden=false;syncFocusMode();window.scrollTo(0,0);}
+function pptOptionsHtml(key){
+  if(key==="html2ppt")return '<div style="grid-column:1/-1"><label class="fl" for="pptOpt1">Hoặc dán mã HTML vào đây</label><textarea id="pptOpt1" placeholder="<h1>Tiêu đề</h1><p>Nội dung...</p>"></textarea></div>';
+  return "";
+}
+function pptFilesChanged(ev){PPTF.files=Array.prototype.slice.call(ev.target.files||[]);renderPptFileList();}
+function pptResetFiles(){PPTF.files=[];document.getElementById("pptFileInput").value="";renderPptFileList();document.getElementById("pptResult").innerHTML="";setPptStatus("");}
+function pptRemoveFile(i){PPTF.files.splice(i,1);renderPptFileList();}
+function renderPptFileList(){
+  var box=document.getElementById("pptFileList");
+  box.innerHTML=PPTF.files.map(function(f,i){return '<span class="pdf-chip">📽 '+esc(f.name)+' · '+(f.size/1024).toFixed(0)+' KB <button onclick="pptRemoveFile('+i+')" title="Bỏ tệp này">✕</button></span>';}).join("");
+}
+(function(){var dz=document.getElementById("pptDrop");if(!dz)return;dz.addEventListener("dragover",function(e){e.preventDefault();dz.classList.add("over")});dz.addEventListener("dragleave",function(){dz.classList.remove("over")});dz.addEventListener("drop",function(e){e.preventDefault();dz.classList.remove("over");PPTF.files=Array.prototype.slice.call(e.dataTransfer.files||[]);renderPptFileList();});})();
+function setPptStatus(t){document.getElementById("pptStatus").textContent=t||"";}
+function pptFail(msg){document.getElementById("pptResult").innerHTML='<p style="font-size:13.5px;line-height:1.65;color:#b3261e">⚠ '+esc(msg)+'</p>';setPptStatus("");}
+function pptResultDownload(blob,name,note){
+  var url=URL.createObjectURL(blob);
+  document.getElementById("pptResult").innerHTML=(note?'<p style="font-size:13px;line-height:1.65">'+note+'</p>':"")+'<a class="btn btn-red" style="display:inline-block;text-decoration:none;padding:11px 20px" href="'+url+'" download="'+esc(name)+'">⬇ Tải xuống: '+esc(name)+' ('+fmtKB(blob.size)+')</a>';
+  setPptStatus("Xong ✓");
+}
+function pptResultText(text,dlName){
+  window._pptText=text;window._pptDlName=dlName||"van-ban.txt";
+  document.getElementById("pptResult").innerHTML='<pre>'+esc(text.slice(0,6000))+(text.length>6000?"\n… (còn tiếp, tải file để xem đủ)":"")+'</pre><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn btn-red" onclick="pptDownloadText()">⬇ Tải xuống .txt</button><button class="btn btn-ghost" onclick="pptOpenTextAsDoc()">Mở trong trình soạn thảo</button></div>';
+  setPptStatus("Xong ✓ — "+text.split(/\s+/).filter(Boolean).length+" từ");
+}
+function pptDownloadText(){var blob=new Blob([window._pptText||""],{type:"text/plain;charset=utf-8"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=window._pptDlName||"van-ban.txt";a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},2000);}
+function pptOpenTextAsDoc(){
+  var text=window._pptText||"";if(!text){toast("Chưa có nội dung");return;}
+  var html=text.split(/\n{2,}/).map(function(p){return "<p>"+esc(p).replace(/\n/g,"<br>")+"</p>";}).join("");
+  var f={id:nextId++,name:"Nội dung trích từ PowerPoint.docx",type:"docx",folder:"Trợ Thủ Văn Phòng",time:"Vừa xong",star:false,html:html};
+  files.unshift(f);openFile(f.id);toast("Đã mở nội dung trong trình soạn thảo ✓");
+}
+async function runPptTool(){
+  var cfg=pptTools[PPTF.tool];if(!cfg)return;
+  if(PPTF.files.length<(cfg.min||0)){toast("Công cụ này cần chọn tối thiểu "+cfg.min+" tệp nhé sếp");return;}
+  var btn=document.getElementById("pptRunBtn");btn.disabled=true;btn.textContent="⏳ Đang xử lý...";
+  document.getElementById("pptResult").innerHTML="";setPptStatus("Đang xử lý, sếp chờ một chút...");
+  try{await cfg.run();}catch(e){console.error(e);pptFail("Không xử lý được tệp này: "+(e&&e.message?e.message:e)+" — sếp kiểm tra lại định dạng tệp nhé.");}
+  btn.disabled=false;btn.textContent="▶ Thực hiện";
+}
+/* ---- helpers dùng chung cho công cụ PPT ---- */
+function xmlUnescape(s){return s.replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/&apos;/g,"'");}
+async function extractPptxSlides(file){
+  if(!window.JSZip)throw new Error("Chưa tải được thư viện JSZip.");
+  var zip=await JSZip.loadAsync(await file.arrayBuffer());
+  var names=Object.keys(zip.files).filter(function(n){return /^ppt\/slides\/slide\d+\.xml$/.test(n);}).sort(function(a,b){return parseInt(a.match(/(\d+)\.xml/)[1],10)-parseInt(b.match(/(\d+)\.xml/)[1],10);});
+  var out=[];
+  for(var i=0;i<names.length;i++){
+    var xml=await zip.files[names[i]].async("text");
+    var paras=xml.split(/<a:p[ >]/).slice(1).map(function(chunk){
+      var ts=[];var re=/<a:t>([^<]*)<\/a:t>/g,m;
+      while((m=re.exec(chunk))!==null)ts.push(xmlUnescape(m[1]));
+      return ts.join(" ").trim();
+    }).filter(Boolean);
+    out.push({title:paras[0]||"",body:paras.slice(1).join("\n"),texts:paras});
+  }
+  return out;
+}
+async function makePptxBlob(slides){
+  if(typeof PptxGenJS==="undefined")throw new Error("Chưa tải được thư viện PptxGenJS.");
+  var pptx=new PptxGenJS();pptx.layout="LAYOUT_WIDE";
+  slides.forEach(function(s){
+    var sl=pptx.addSlide();sl.background={color:"FFFFFF"};
+    sl.addShape("rect",{x:0,y:0,w:0.14,h:7.5,fill:{color:"217346"},line:{color:"217346",width:0}});
+    sl.addText(s.t||"Slide",{x:0.55,y:0.4,w:12.2,h:1.1,fontSize:28,bold:true,color:"173B2A"});
+    sl.addText(s.d||"",{x:0.55,y:1.6,w:12.2,h:4.6,fontSize:15,color:"4C7263",valign:"top"});
+  });
+  try{return await pptx.write({outputType:"blob"});}
+  catch(e){var u8=await pptx.write({outputType:"uint8array"});return new Blob([u8],{type:"application/vnd.openxmlformats-officedocument.presentationml.presentation"});}
+}
+async function runPptSummary(){
+  var slides=await extractPptxSlides(PPTF.files[0]);
+  if(!slides.length)throw new Error("Không đọc được slide nào trong file .pptx này.");
+  var full=slides.map(function(s){return s.texts.join(" ");}).join(" ").replace(/\s+/g," ").trim();
+  if(full.length<60){pptFail("File gần như không có nội dung chữ (slide toàn ảnh) — chưa tóm tắt được sếp nhé.");return;}
+  var sents=full.split(/(?<=[.!?])\s+/).filter(function(s){return s.length>25;});
+  var pick=sents.slice(0,Math.min(8,Math.max(2,Math.ceil(sents.length/4)))).join(" ");
+  var out="TÓM TẮT POWERPOINT — "+PPTF.files[0].name+"\n("+slides.length+" slide, khoảng "+full.split(/\s+/).length+" từ)\n\nCẤU TRÚC BÀI:\n"+slides.map(function(s,i){return (i+1)+". "+(s.title||"(slide không tiêu đề)");}).join("\n")+"\n\nÝ CHÍNH:\n"+pick+"\n\n(Bản tóm tắt do AI trên trình duyệt trích xuất — sếp đọc lại slide gốc ở các điểm quan trọng trước khi dùng chính thức.)";
+  pptResultText(out,baseName(PPTF.files[0],"-tom-tat.txt"));
+}
+async function runPptCompress(){
+  if(!window.JSZip)throw new Error("Chưa tải được JSZip.");
+  var file=PPTF.files[0];
+  var zip=await JSZip.loadAsync(await file.arrayBuffer());
+  var blob=await zip.generateAsync({type:"blob",compression:"DEFLATE",compressionOptions:{level:9}});
+  var pct=file.size?Math.round((1-blob.size/file.size)*100):0;
+  pptResultDownload(blob,baseName(file,"-da-nen.pptx"),"Kích thước gốc: "+fmtKB(file.size)+" → sau nén: "+fmtKB(blob.size)+(pct>0?" (giảm "+pct+"%).":" — gần như không giảm thêm vì ảnh/video trong file đã được nén sẵn từ trước."));
+}
+async function runPpt2Pdf2(){
+  if(!window.JSZip||!window.html2canvas||!window.jspdf)throw new Error("Chưa tải đủ thư viện (JSZip/html2canvas/jsPDF).");
+  var slides=await extractPptxSlides(PPTF.files[0]);
+  if(!slides.length)throw new Error("Không đọc được slide nào trong file .pptx này.");
+  var pdf=new jspdf.jsPDF({unit:"mm",format:"a4",orientation:"landscape"});
+  for(var i=0;i<slides.length;i++){
+    var div=document.createElement("div");
+    div.style.cssText="position:fixed;left:-10000px;top:0;width:960px;height:540px;background:#ffffff;color:#14342a;font-family:Arial,sans-serif;padding:44px;box-sizing:border-box";
+    div.innerHTML=slides[i].texts.map(function(t,j){return j===0?"<div style='font-size:34px;font-weight:800;line-height:1.25;margin-bottom:16px'>"+esc(t)+"</div>":"<div style='font-size:19px;line-height:1.5;margin-bottom:8px'>"+esc(t)+"</div>";}).join("");
+    document.body.appendChild(div);
+    var canvas=await html2canvas(div,{scale:1.5,backgroundColor:"#ffffff"});
+    document.body.removeChild(div);
+    if(i>0)pdf.addPage();
+    pdf.addImage(canvas.toDataURL("image/jpeg",0.92),"JPEG",0,18,297,167);
+    setPptStatus("Đã chuyển slide "+(i+1)+"/"+slides.length+"...");
+  }
+  pptResultDownload(pdf.output("blob"),baseName(PPTF.files[0],".pdf"),"Đã chuyển PowerPoint → PDF ("+slides.length+" slide). Bản này giữ nội dung chữ; hình nền/hiệu ứng slide gốc không dựng lại được.");
+}
+async function pptxFromPdf(file){
+  if(typeof PptxGenJS==="undefined")throw new Error("Chưa tải được thư viện PptxGenJS.");
+  var pages=await extractPdfPagesText(file);
+  var pptx=new PptxGenJS();
+  pages.forEach(function(t,i){
+    var lines=t.split("\n").filter(Boolean);
+    var slide=pptx.addSlide();
+    slide.addText(lines[0]||("Trang "+(i+1)),{x:0.5,y:0.35,w:9,h:0.7,fontSize:22,bold:true,color:"185C37"});
+    slide.addText(lines.slice(1).join("\n")||t,{x:0.5,y:1.2,w:9,h:4.6,fontSize:13,color:"222222",valign:"top"});
+  });
+  return {pptx:pptx,count:pages.length};
+}
+async function runPdf2Ppt2(){
+  var r=await pptxFromPdf(PPTF.files[0]);
+  await r.pptx.writeFile({fileName:baseName(PPTF.files[0],".pptx")});
+  setPptStatus("Xong ✓");
+  document.getElementById("pptResult").innerHTML='<p style="font-size:13px">Đã tạo và tải xuống file PowerPoint với '+r.count+' slide từ PDF ✓</p>';
+}
+async function runPdf2GS(){
+  var r=await pptxFromPdf(PPTF.files[0]);
+  var blob=null;
+  try{blob=await r.pptx.write({outputType:"blob"});}
+  catch(e){try{var u8=await r.pptx.write({outputType:"uint8array"});blob=new Blob([u8],{type:"application/vnd.openxmlformats-officedocument.presentationml.presentation"});}catch(e2){}}
+  if(!blob){
+    await r.pptx.writeFile({fileName:baseName(PPTF.files[0],".pptx")});
+    document.getElementById("pptResult").innerHTML='<p style="font-size:13px;line-height:1.65">Đã tải file .pptx xuống máy. Tiếp theo: mở <b>drive.google.com</b> → <b>Mới → Tải tệp lên</b> → chọn file vừa tải → mở file và chọn <b>Mở bằng Google Slides</b> là xong.</p>';
+    setPptStatus("Xong ✓");return;
+  }
+  pptResultDownload(blob,baseName(PPTF.files[0],".pptx"),"Đã tạo .pptx từ "+r.count+" trang PDF. Để thành Google Slides: mở <b>drive.google.com</b> → <b>Mới → Tải tệp lên</b> → chọn file này → mở file và chọn <b>Mở bằng Google Slides</b>.");
+}
+async function runWord2Ppt(){
+  if(!window.mammoth)throw new Error("Chưa tải được thư viện Mammoth.");
+  var r=await mammoth.extractRawText({arrayBuffer:await PPTF.files[0].arrayBuffer()});
+  var text=(r.value||"").trim();if(text.length<20)throw new Error("Không trích được nội dung chữ từ file Word này.");
+  var items=textToOutline(text,false);
+  var base=PPTF.files[0].name.replace(/\.docx$/i,"");
+  var slides=[{t:base,d:"Bài trình bày chuyển từ tài liệu Word · "+items.length+" mục nội dung"}].concat(items.map(function(it){return {t:it.t,d:it.d};}));
+  var blob=await makePptxBlob(slides);
+  pptResultDownload(blob,baseName(PPTF.files[0],".pptx"),"Đã chuyển Word → PPT ("+slides.length+" slide). Sếp mở file rồi vào kho mẫu của app nếu muốn đổi phong cách.");
+}
+async function runHtml2Ppt(){
+  var ta=document.getElementById("pptOpt1");
+  var html=ta?(ta.value||"").trim():"";
+  if(!html&&PPTF.files.length)html=await PPTF.files[0].text();
+  if(!html){pptFail("Sếp tải file .html lên hoặc dán mã HTML vào ô nhé.");return;}
+  var pd2=new DOMParser().parseFromString(html,"text/html");
+  pd2.querySelectorAll("script,style,iframe,object,embed,form").forEach(function(el){el.remove();});
+  var text=((pd2.body&&(pd2.body.innerText||pd2.body.textContent))||"").trim();if(text.length<20)throw new Error("Trang HTML không có đủ nội dung chữ.");
+  var items=textToOutline(text,false);
+  var slides=[{t:"Bài trình bày từ HTML",d:"Chuyển từ nội dung trang HTML · "+items.length+" mục"}].concat(items.map(function(it){return {t:it.t,d:it.d};}));
+  var blob=await makePptxBlob(slides);
+  pptResultDownload(blob,"html-thanh-ppt.pptx","Đã chuyển HTML → PPT ("+slides.length+" slide).");
+}
+async function runPpt2Txt(){
+  var slides=await extractPptxSlides(PPTF.files[0]);
+  if(!slides.length)throw new Error("Không đọc được slide nào trong file .pptx này.");
+  var text=slides.map(function(s,i){return "===== Slide "+(i+1)+" =====\n"+s.texts.join("\n");}).join("\n\n");
+  if(!text.trim()){pptFail("File không có nội dung chữ nào để trích.");return;}
+  pptResultText(text,baseName(PPTF.files[0],".txt"));
+}
+async function runPptImg(){
+  if(!window.JSZip)throw new Error("Chưa tải được JSZip.");
+  var zip=await JSZip.loadAsync(await PPTF.files[0].arrayBuffer());
+  var names=Object.keys(zip.files).filter(function(n){return /^ppt\/media\//.test(n)&&!zip.files[n].dir;});
+  if(!names.length){pptFail("Không tìm thấy ảnh nhúng nào trong file này (thư mục ppt/media trống).");return;}
+  var out=new JSZip();
+  for(var i=0;i<names.length;i++){
+    var b=await zip.files[names[i]].async("blob");
+    out.file(names[i].split("/").pop(),b);
+    setPptStatus("Đã lấy ảnh "+(i+1)+"/"+names.length+"...");
+  }
+  var blob=await out.generateAsync({type:"blob"});
+  pptResultDownload(blob,baseName(PPTF.files[0],"-anh.zip"),"Đã tách "+names.length+" ảnh khỏi PowerPoint vào gói ZIP.");
+}
+async function runPptSplit(){
+  var slides=await extractPptxSlides(PPTF.files[0]);
+  if(!slides.length)throw new Error("Không đọc được slide nào trong file .pptx này.");
+  if(!window.JSZip)throw new Error("Chưa tải được JSZip.");
+  var out=new JSZip();
+  for(var i=0;i<slides.length;i++){
+    var blob=await makePptxBlob([{t:slides[i].title||("Slide "+(i+1)),d:slides[i].body}]);
+    out.file(baseName(PPTF.files[0],"-slide-"+(i+1)+".pptx"),blob);
+    setPptStatus("Đang tách slide "+(i+1)+"/"+slides.length+"...");
+  }
+  var zb=await out.generateAsync({type:"blob"});
+  pptResultDownload(zb,baseName(PPTF.files[0],"-tach-slide.zip"),"Đã tách "+slides.length+" slide thành "+slides.length+" file .pptx trong gói ZIP. Các file được dựng lại từ nội dung chữ của từng slide.");
+}
+async function runPptMerge(){
+  var all=[];
+  for(var i=0;i<PPTF.files.length;i++){
+    var ss=await extractPptxSlides(PPTF.files[i]);
+    ss.forEach(function(s){all.push({t:s.title||"(slide không tiêu đề)",d:s.body});});
+    setPptStatus("Đã đọc "+(i+1)+"/"+PPTF.files.length+" tệp...");
+  }
+  if(!all.length)throw new Error("Không đọc được slide nào từ các file đã chọn.");
+  var blob=await makePptxBlob(all);
+  pptResultDownload(blob,"PowerPoint-da-gop.pptx","Đã gộp "+PPTF.files.length+" file thành một bài "+all.length+" slide (dựng lại từ nội dung chữ, mẫu thống nhất màu Excel).");
+}
+
+/* ================= TRÌNH TẠO CV — kho mẫu CV Hay kiểu CareerViet ================= */
+var CV_INDS=["CNTT - Phần mềm","Kế toán / Kiểm toán","Hành chính / Thư ký","Tiếp thị / Marketing","Xây dựng","Hàng gia dụng / Chăm sóc cá nhân","Mỹ thuật / Nghệ thuật / Thiết kế","Dịch vụ khách hàng","Giáo dục / Đào tạo","Cơ khí / Ô tô / Tự động hóa","Quản lý điều hành","Nhân sự","Bảo hiểm","Ngành khác","Bất động sản","Bán hàng / Kinh doanh","Bưu chính viễn thông","Vận chuyển / Giao nhận / Kho vận","Mới tốt nghiệp / Thực tập","Điện / Điện tử / Điện lạnh / Điện công nghiệp","Y tế / Chăm sóc sức khỏe / Thẩm mỹ / Làm đẹp","An toàn lao động","Hàng hải","CNTT - Phần cứng / Mạng","Quảng cáo / Đối ngoại / Truyền Thông","Công nghệ sinh học"];
+var CV_PAL=["#217346","#2563eb","#0d9488","#d24726","#7c5cd6","#b98a2f","#0284c7","#db2777","#65a30d","#9f2d3f","#185c37","#c77400"];
+var CV_LAYS=["side","top","duo","mini"];
+var CV_TEMPLATES=[
+["Mẫu CVHay Số 21",["An toàn lao động","Ngành khác"],"Mới",21],
+["Mẫu CVHay Số 32",["CNTT - Phần mềm"],"Mới",9],
+["Mẫu CVHay Số 26",["CNTT - Phần mềm"],"Mới",20],
+["CV Hay Ngành Sale / Kinh Doanh",["Bán hàng / Kinh doanh"],"Nổi Bật",1],
+["CV Hay Ngành Kế Toán/ Kiểm Toán",["Kế toán / Kiểm toán"],"Nổi Bật",3],
+["CV Hay Ngành Sản Xuất",["An toàn lao động","Ngành khác"],"Nổi Bật",18],
+["CV Hay Marketing",["Tiếp thị / Marketing"],"Nổi Bật",5],
+["CV Hay Cho Sinh Viên",["Mới tốt nghiệp / Thực tập"],"Nổi Bật",4],
+["CV Hay Cho Quản Lý",["Quản lý điều hành"],"Nổi Bật",8],
+["CV Hay Thiết Kế Bằng AI",["Quảng cáo / Đối ngoại / Truyền Thông","Mỹ thuật / Nghệ thuật / Thiết kế"],"Nổi Bật",15],
+["CV Hay Mới Tốt Nghiệp",["Mới tốt nghiệp / Thực tập"],"Nổi Bật",11],
+["CV Hay Logistics",["Cơ khí / Ô tô / Tự động hóa","Vận chuyển / Giao nhận / Kho vận"],"Nổi Bật",13],
+["CV Hay Nhân Sự",["Nhân sự"],"Nổi Bật",6],
+["CV Hay Công Nghệ Thông Tin",["CNTT - Phần cứng / Mạng"],"Nổi Bật",14],
+["CV Hay Chăm Sóc Khách Hàng",["Dịch vụ khách hàng"],"Nổi Bật",7],
+["CV Hay Chuyên Viên",["Ngành khác"],"Nổi Bật",12],
+["CV Hay Bảo Hiểm",["Bảo hiểm"],"Nổi Bật",17],
+["CV Hay Thực Tập Sinh",["Mới tốt nghiệp / Thực tập"],"Nổi Bật",16],
+["CV Hay Hành Chính/ Thư Ký",["Hành chính / Thư ký"],"Mới",10],
+["Mẫu CVHay Số 31",["Giáo dục / Đào tạo"],"Mới",22],
+["Mẫu CVHay Số 30",["Bảo hiểm"],"Mới",24],
+["Mẫu CVHay Số 27",["Hàng hải"],"Mới",27],
+["Mẫu CVHay Số 23",["Cơ khí / Ô tô / Tự động hóa"],"Mới",25],
+["Mẫu CVHay Số 22",["Hàng gia dụng / Chăm sóc cá nhân"],"Mới",28],
+["Mẫu CVHay Số 20",["CNTT - Phần cứng / Mạng"],"Mới",26],
+["CV Hay IT Phần Mềm",["CNTT - Phần mềm"],"Nổi Bật",2],
+["CV Hay Bất Động Sản",["Bất động sản"],"Nổi Bật",19],
+["Mẫu CVHay Số 19",["Vận chuyển / Giao nhận / Kho vận"],"Mới",23]
+].map(function(r,i){return {n:r[0],ind:r[1],b:r[2],u:r[3],pal:i%CV_PAL.length,lay:CV_LAYS[i%CV_LAYS.length]};});
+var cvTab="hot", cvInd="all", cvQuery="", cvSel=3, cvColorCustom="";
+function openCvStudio(){
+  var sel=document.getElementById("cvIndSel");
+  if(sel&&!sel.options.length){
+    sel.innerHTML='<option value="all">Tất cả ngành nghề</option>'+CV_INDS.map(function(x){return '<option value="'+esc(x)+'">'+esc(x)+'</option>';}).join("");
+  }
+  var tpl=CV_TEMPLATES[cvSel];var ci=document.getElementById("cvColor");if(ci&&!cvColorCustom)ci.value=CV_PAL[tpl.pal];
+  hideAllViews();document.getElementById("viewCv").hidden=false;window.scrollTo(0,0);
+  renderCvGrid();renderCvPreview();
+}
+function closeCvStudio(){document.getElementById("viewCv").hidden=true;document.getElementById("viewHome").hidden=false;syncFocusMode();window.scrollTo(0,0);}
+function setCvTab(tab,btn){cvTab=tab;var bs=document.querySelectorAll("[data-cvtab]");for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i]===btn);renderCvGrid();}
+function renderCvGrid(){
+  var box=document.getElementById("cvTplGrid");if(!box)return;
+  var q=viFold(cvQuery||"").trim(),shown=0;
+  var list=CV_TEMPLATES.map(function(t,i){return {t:t,i:i};});
+  if(cvTab==="hot")list=list.filter(function(x){return x.t.b==="Nổi Bật";});
+  if(cvTab==="used")list=list.slice().sort(function(a,b){return a.t.u-b.t.u;});
+  box.innerHTML=list.map(function(x){
+    var t=x.t;
+    if(cvInd!=="all"&&t.ind.indexOf(cvInd)===-1)return "";
+    if(q&&viFold(t.n+" "+t.ind.join(" ")).indexOf(q)===-1)return "";
+    shown++;
+    var A=CV_PAL[t.pal];
+    var pv='<div class="pv" style="background:#fff"><div class="hd" style="background:'+A+'"></div>'+(t.lay==="side"?'<span class="sd" style="background:'+A+'"></span>':"")+'<div class="ln"></div><div class="ln s"></div><div class="ln"></div></div>';
+    var badge=t.b?'<span class="cv-badge '+(t.b==="Mới"?"new":"hot")+'">'+(t.b==="Mới"?"🆕 Mới":"⭐ Nổi Bật")+'</span>':"";
+    return '<div class="cv-tpl'+(x.i===cvSel?" sel":"")+'">'+pv+'<b>'+esc(t.n)+'</b><small>'+esc(t.ind.join(" · "))+'</small><div>'+badge+'</div><button class="mk" onclick="selectCv('+x.i+')">'+(x.i===cvSel?"✓ Đang dùng mẫu này":"Dùng mẫu này")+'</button></div>';
+  }).join("");
+  var cnt=document.getElementById("cvTplCount");if(cnt)cnt.textContent="Đang hiện "+shown+" / "+CV_TEMPLATES.length+" mẫu";
+  if(!shown)box.innerHTML='<div class="empty-box">Không thấy mẫu nào khớp bộ lọc — sếp thử ngành hoặc từ khoá khác nhé.</div>';
+}
+function selectCv(i){
+  cvSel=i;cvColorCustom="";
+  var tpl=CV_TEMPLATES[i];var ci=document.getElementById("cvColor");if(ci)ci.value=CV_PAL[tpl.pal];
+  renderCvGrid();renderCvPreview();
+  toast("Đã chuyển sang mẫu “"+tpl.n+"” ✓ — toàn bộ thông tin đã nhập tự điền sang mẫu mới");
+  document.getElementById("cvPreview").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function cvResetStyle(){
+  cvColorCustom="";var tpl=CV_TEMPLATES[cvSel];var ci=document.getElementById("cvColor");if(ci)ci.value=CV_PAL[tpl.pal];
+  renderCvPreview();toast("Đã trả về màu gốc của mẫu "+tpl.n);
+}
+function cvVal(id){var el=document.getElementById(id);return el?(el.value||"").trim():"";}
+function cvData(){
+  return {job:cvVal("cvJob"),name:cvVal("cvName"),phone:cvVal("cvPhone"),birth:cvVal("cvBirth"),email:cvVal("cvEmail"),addr:cvVal("cvAddr"),obj:cvVal("cvObjective"),exp:cvVal("cvExp"),edu:cvVal("cvEdu"),skills:cvVal("cvSkills"),cert:cvVal("cvCert")};
+}
+function cvPh(val,ph){return val?esc(val):'<span class="ph">'+ph+'</span>';}
+function cvLines(text,ph){
+  var ls=(text||"").split(/\n+/).map(function(x){return x.trim();}).filter(Boolean);
+  if(!ls.length)return '<p class="ph">'+ph+'</p>';
+  return "<ul>"+ls.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+"</ul>";
+}
+function cvChips(text,A,light){
+  var ss=(text||"").split(/[·,;]/).map(function(x){return x.trim();}).filter(Boolean);
+  if(!ss.length)return '<p class="ph">Kỹ năng chính của sếp...</p>';
+  return ss.map(function(x){return '<span class="cv-chip-s" style="background:'+(light?"rgba(255,255,255,.22)":A+"1f")+';color:'+(light?"#fff":A)+'">'+esc(x)+'</span>';}).join("");
+}
+function cvHtml(d){
+  var tpl=CV_TEMPLATES[cvSel];
+  var A=cvColorCustom||CV_PAL[tpl.pal];
+  var F=(document.getElementById("cvFontSel")||{}).value||"'Be Vietnam Pro',Arial,sans-serif";
+  var S=(document.getElementById("cvSizeSel")||{}).value||"13.5";
+  var contact=[d.phone,d.email,d.addr,d.birth?"Sinh: "+d.birth:""].filter(Boolean).map(esc).join(" · ");
+  if(!contact)contact='<span class="ph">Số điện thoại · Email · Địa chỉ</span>';
+  var nameHtml=cvPh(d.name.toUpperCase(),"HỌ VÀ TÊN"), jobHtml=cvPh(d.job,"Vị trí ứng tuyển");
+  var secObj='<div class="cv-sec-t" style="color:'+A+'">Mục tiêu nghề nghiệp</div><p>'+cvPh(d.obj,"Mục tiêu ngắn gọn, gắn với vị trí ứng tuyển và giá trị mang lại cho nhà tuyển dụng...")+'</p>';
+  var secExp='<div class="cv-sec-t" style="color:'+A+'">Kinh nghiệm làm việc</div>'+cvLines(d.exp,"Kinh nghiệm làm việc nổi bật — công ty, vị trí, thành tích đo được...");
+  var secEdu='<div class="cv-sec-t" style="color:'+A+'">Học vấn</div>'+cvLines(d.edu,"Trường · Ngành · Năm tốt nghiệp...");
+  var secSkill='<div class="cv-sec-t" style="color:'+A+'">Kỹ năng</div><div>'+cvChips(d.skills,A,false)+'</div>';
+  var secCert='<div class="cv-sec-t" style="color:'+A+'">Chứng chỉ / Ngoại ngữ</div><p>'+cvPh(d.cert,"Chứng chỉ, ngoại ngữ (nếu có)...")+'</p>';
+  var root='font-family:'+F+';font-size:'+S+'px;color:#22302a;background:#fff;';
+  if(tpl.lay==="side"){
+    return '<div style="'+root+'display:flex;min-height:560px"><div style="width:31%;background:'+A+';color:#fff;padding:24px 18px;flex-shrink:0"><div style="font-size:1.5em;font-weight:900;line-height:1.2">'+nameHtml+'</div><div style="opacity:.92;margin:5px 0 18px;font-weight:600">'+jobHtml+'</div><div class="cv-sec-t" style="color:#fff">Liên hệ</div><p style="color:#fff;line-height:1.7">'+contact+'</p><div class="cv-sec-t" style="color:#fff;margin-top:16px">Kỹ năng</div><div>'+cvChips(d.skills,A,true)+'</div><div class="cv-sec-t" style="color:#fff;margin-top:16px">Chứng chỉ</div><p style="color:#fff">'+cvPh(d.cert,"—")+'</p></div><div style="flex:1;padding:24px 22px">'+secObj+'<div style="height:12px"></div>'+secExp+'<div style="height:12px"></div>'+secEdu+'</div></div>';
+  }
+  if(tpl.lay==="top"){
+    return '<div style="'+root+'"><div style="background:'+A+';color:#fff;padding:22px 26px"><div style="font-size:1.7em;font-weight:900;line-height:1.15">'+nameHtml+'</div><div style="font-weight:700;margin-top:3px">'+jobHtml+'</div><div style="opacity:.92;font-size:.92em;margin-top:6px">'+contact+'</div></div><div style="padding:20px 26px">'+secObj+'<div style="height:10px"></div>'+secExp+'<div style="height:10px"></div>'+secEdu+'<div style="height:10px"></div>'+secSkill+secCert+'</div></div>';
+  }
+  if(tpl.lay==="duo"){
+    return '<div style="'+root+'display:flex;min-height:560px"><div style="flex:1;padding:24px 22px"><div style="font-size:1.6em;font-weight:900;color:'+A+';line-height:1.15">'+nameHtml+'</div><div style="font-weight:700;margin:3px 0 14px">'+jobHtml+'</div>'+secObj+'<div style="height:12px"></div>'+secExp+'<div style="height:12px"></div>'+secEdu+'</div><div style="width:30%;background:#eef6f1;padding:24px 16px;flex-shrink:0"><div class="cv-sec-t" style="color:'+A+'">Liên hệ</div><p style="line-height:1.7">'+contact+'</p><div class="cv-sec-t" style="color:'+A+';margin-top:14px">Kỹ năng</div><div>'+cvChips(d.skills,A,false)+'</div><div class="cv-sec-t" style="color:'+A+';margin-top:14px">Chứng chỉ</div><p>'+cvPh(d.cert,"—")+'</p></div></div>';
+  }
+  return '<div style="'+root+'padding:26px 30px"><div style="text-align:center;border-bottom:2.5px solid '+A+';padding-bottom:14px"><div style="font-size:1.7em;font-weight:900;line-height:1.15">'+nameHtml+'</div><div style="font-weight:700;color:'+A+';margin-top:3px">'+jobHtml+'</div><div style="color:#5f6f63;font-size:.92em;margin-top:5px">'+contact+'</div></div><div style="padding-top:16px">'+secObj+'<div style="height:10px"></div>'+secExp+'<div style="height:10px"></div>'+secEdu+'<div style="height:10px"></div>'+secSkill+secCert+'</div></div>';
+}
+function renderCvPreview(){
+  var box=document.getElementById("cvPreview");if(!box)return;
+  box.innerHTML='<div class="cv-paper">'+cvHtml(cvData())+'</div>';
+  var lbl=document.getElementById("cvCurTpl");if(lbl)lbl.textContent=CV_TEMPLATES[cvSel].n;
+}
+/* ---- AI gợi ý nội dung theo tiêu đề công việc (kiểu CareerViet) ---- */
+var CV_AI=[
+[/kinh doanh|sale|ban hang/,{obj:"Ứng tuyển vị trí {job} với thế mạnh phát triển khách hàng và chăm sóc quan hệ lâu dài. Mục tiêu: vượt chỉ tiêu doanh số được giao và xây dựng tệp khách hàng trung thành cho công ty.",skills:"Tìm kiếm khách hàng · Đàm phán · Chốt sale · Chăm sóc sau bán · Tin học văn phòng",exp:["2023 – Nay · Công ty … · {job} — đạt 115% chỉ tiêu doanh số quý, phát triển 40+ khách hàng mới","2021 – 2023 · Công ty … · Nhân viên bán hàng — duy trì tỉ lệ khách quay lại 70%"]}],
+[/ke toan|kiem toan/,{obj:"Ứng tuyển vị trí {job} với kinh nghiệm hạch toán, kê khai thuế và lập báo cáo tài chính đúng hạn, chính xác. Ưu tiên môi trường chuyên nghiệp, quy trình rõ ràng.",skills:"Hạch toán · Kê khai thuế · Báo cáo tài chính · Phần mềm MISA/FAST · Excel nâng cao",exp:["2022 – Nay · Công ty … · {job} — phụ trách kê khai thuế tháng/quý, đối chiếu công nợ, không phát sinh sai sót trọng yếu","2020 – 2022 · Công ty … · Kế toán viên — theo dõi thu chi, hoá đơn chứng từ"]}],
+[/lap trinh|phan mem|developer|software|it phan mem/,{obj:"Ứng tuyển vị trí {job} với nền tảng lập trình vững, tư duy giải quyết vấn đề và tinh thần học công nghệ mới nhanh. Mong muốn đóng góp vào sản phẩm có người dùng thật.",skills:"JavaScript/TypeScript · HTML/CSS · Git · SQL · Làm việc nhóm Agile",exp:["2023 – Nay · Công ty … · {job} — phát triển và bảo trì tính năng web, tối ưu tốc độ tải trang 30%","2022 – 2023 · Công ty … · Lập trình viên — xây dựng API và giao diện theo thiết kế"]}],
+[/phan cung|mang|network|helpdesk|it support|ky thuat vien it/,{obj:"Ứng tuyển vị trí {job} với kinh nghiệm lắp đặt, bảo trì hệ thống máy tính và mạng nội bộ, hỗ trợ người dùng nhanh và tận tâm.",skills:"Lắp đặt & sửa máy tính · Mạng LAN/WAN · Windows Server · Hỗ trợ người dùng · Sao lưu dữ liệu",exp:["2022 – Nay · Công ty … · {job} — quản trị 80+ máy trạm, xử lý sự cố trong ngày","2020 – 2022 · Công ty … · Kỹ thuật viên — lắp đặt, bảo trì hệ thống mạng và thiết bị văn phòng"]}],
+[/marketing|truyen thong|quang cao/,{obj:"Ứng tuyển vị trí {job} với khả năng lên kế hoạch nội dung đa kênh, đo lường hiệu quả bằng số liệu và tối ưu chi phí quảng cáo.",skills:"Content Marketing · Facebook/Google Ads · SEO cơ bản · Phân tích số liệu · Canva/CapCut",exp:["2023 – Nay · Công ty … · {job} — quản lý fanpage 50K theo dõi, tăng trưởng tự nhiên 25%/quý","2021 – 2023 · Công ty … · Nhân viên Marketing — chạy chiến dịch ra mắt sản phẩm, ROAS đạt 4.2"]}],
+[/nhan su|hr|tuyen dung/,{obj:"Ứng tuyển vị trí {job} với kinh nghiệm tuyển dụng, đào tạo hội nhập và quản lý hồ sơ nhân sự, hướng tới xây dựng đội ngũ gắn bó lâu dài.",skills:"Tuyển dụng · Đào tạo hội nhập · Chấm công – lương · Luật lao động · Giao tiếp",exp:["2022 – Nay · Công ty … · {job} — tuyển đủ 95% nhu cầu nhân sự năm, tổ chức đào tạo nội bộ hàng quý","2020 – 2022 · Công ty … · Nhân viên nhân sự — quản lý hồ sơ, hợp đồng lao động cho 150+ nhân viên"]}],
+[/logistics|van chuyen|kho van|giao nhan|xuat nhap khau/,{obj:"Ứng tuyển vị trí {job} với kinh nghiệm điều phối vận chuyển, quản lý kho và chứng từ giao nhận, ưu tiên đúng tiến độ và tối ưu chi phí.",skills:"Điều phối vận chuyển · Quản lý kho · Chứng từ XNK · Excel · Theo dõi đơn hàng",exp:["2022 – Nay · Công ty … · {job} — điều phối 30+ chuyến/ngày, tỉ lệ giao đúng hẹn 98%","2020 – 2022 · Công ty … · Nhân viên kho — kiểm kê định kỳ, sai lệch tồn kho dưới 0.5%"]}],
+[/thiet ke|design|do hoa/,{obj:"Ứng tuyển vị trí {job} với mắt thẩm mỹ tốt, thành thạo công cụ thiết kế và khả năng biến yêu cầu brief thành sản phẩm trực quan đúng deadline.",skills:"Photoshop · Illustrator · Figma · Canva · Tư duy bố cục & màu sắc",exp:["2023 – Nay · Công ty … · {job} — thiết kế ấn phẩm truyền thông và bộ nhận diện cho 10+ chiến dịch","2021 – 2023 · Freelancer · Thiết kế đồ hoạ — 50+ dự án logo, banner, catalogue"]}],
+[/cham soc khach hang|cskh|tong dai|ho tro khach hang/,{obj:"Ứng tuyển vị trí {job} với kỹ năng lắng nghe, xử lý tình huống bình tĩnh và mục tiêu nâng cao trải nghiệm – mức độ hài lòng của khách hàng.",skills:"Lắng nghe · Xử lý khiếu nại · Giao tiếp điện thoại · Nhập liệu CRM · Kiên nhẫn",exp:["2022 – Nay · Công ty … · {job} — điểm hài lòng khách hàng (CSAT) trung bình 4.8/5","2020 – 2022 · Công ty … · Nhân viên hỗ trợ — tiếp nhận và xử lý 60+ yêu cầu/ngày"]}],
+[/hanh chinh|thu ky|van thu/,{obj:"Ứng tuyển vị trí {job} với tác phong cẩn thận, quản lý hồ sơ – công văn khoa học và hỗ trợ vận hành văn phòng hiệu quả.",skills:"Soạn thảo văn bản · Quản lý hồ sơ · Lịch họp & công tác · Tin học văn phòng · Lễ tân",exp:["2022 – Nay · Công ty … · {job} — quản lý toàn bộ công văn đi/đến, đặt lịch và hỗ trợ Ban Giám đốc","2020 – 2022 · Công ty … · Nhân viên văn phòng — nhập liệu, lưu trữ hồ sơ nhân sự và hành chính"]}],
+[/san xuat|an toan lao dong|ky su san xuat|qc|qa/,{obj:"Ứng tuyển vị trí {job} với kinh nghiệm vận hành sản xuất, tuân thủ quy trình an toàn lao động và cải tiến chất lượng tại hiện trường.",skills:"An toàn lao động · Quản lý hiện trường · Kiểm tra chất lượng · 5S · Báo cáo sản xuất",exp:["2022 – Nay · Nhà máy … · {job} — giám sát ca sản xuất 25 công nhân, không xảy ra tai nạn lao động","2020 – 2022 · Nhà máy … · Nhân viên sản xuất — vận hành dây chuyền đạt 102% kế hoạch"]}],
+[/bao hiem/,{obj:"Ứng tuyển vị trí {job} với hiểu biết sản phẩm bảo hiểm, kỹ năng tư vấn trung thực và chăm sóc khách hàng dài hạn.",skills:"Tư vấn bảo hiểm · Thẩm định hồ sơ · Chăm sóc khách hàng · Kỹ năng thuyết phục · Tin học văn phòng",exp:["2022 – Nay · Công ty bảo hiểm … · {job} — duy trì danh mục 200+ khách hàng, tỉ lệ tái tục 85%","2020 – 2022 · Công ty … · Tư vấn viên — hoàn thành 110% chỉ tiêu phí năm"]}],
+[/bat dong san|moi gioi/,{obj:"Ứng tuyển vị trí {job} với hiểu biết thị trường khu vực phụ trách, kỹ năng tư vấn và đồng hành cùng khách từ xem nhà tới ký hợp đồng.",skills:"Tư vấn BĐS · Đàm phán · Pháp lý cơ bản · Chăm sóc khách hàng · Marketing online",exp:["2022 – Nay · Sàn giao dịch … · {job} — chốt 15+ giao dịch/năm, doanh số thuộc nhóm dẫn đầu sàn","2020 – 2022 · Công ty … · Nhân viên kinh doanh BĐS — phát triển nguồn hàng và khách mua"]}],
+[/giao duc|giao vien|dao tao|tro giang/,{obj:"Ứng tuyển vị trí {job} với chuyên môn vững, kỹ năng truyền đạt dễ hiểu và tâm huyết với người học.",skills:"Soạn giáo án · Giảng dạy · Quản lý lớp · Đánh giá học viên · Công nghệ dạy học",exp:["2022 – Nay · Trường/Trung tâm … · {job} — phụ trách lớp 30+ học viên, tỉ lệ đạt mục tiêu học tập 92%","2020 – 2022 · Trung tâm … · Giáo viên — xây dựng bộ bài tập và đề kiểm tra theo chương trình"]}],
+[/co khi|o to|ky thuat vien|bao tri/,{obj:"Ứng tuyển vị trí {job} với tay nghề vững, đọc hiểu bản vẽ kỹ thuật và kinh nghiệm bảo trì – sửa chữa thiết bị tại hiện trường.",skills:"Đọc bản vẽ · Bảo trì máy móc · Hàn/cơ khí · An toàn lao động · Làm việc nhóm",exp:["2022 – Nay · Công ty … · {job} — bảo trì định kỳ dây chuyền, giảm thời gian dừng máy 20%","2020 – 2022 · Xưởng … · Thợ cơ khí — gia công và lắp ráp theo bản vẽ"]}],
+[/y te|dieu duong|bac si|duoc|cham soc suc khoe/,{obj:"Ứng tuyển vị trí {job} với chuyên môn y tế vững, tác phong tận tâm và tuân thủ nghiêm quy trình chuyên môn, an toàn người bệnh.",skills:"Chăm sóc người bệnh · Quy trình chuyên môn · Hồ sơ bệnh án · Giao tiếp · Làm việc ca",exp:["2022 – Nay · Bệnh viện/Phòng khám … · {job} — chăm sóc trung bình 20+ người bệnh/ngày","2020 – 2022 · Cơ sở y tế … · Nhân viên y tế — hỗ trợ khám và theo dõi điều trị"]}],
+[/xay dung|ky su xay dung|giam sat/,{obj:"Ứng tuyển vị trí {job} với kinh nghiệm giám sát thi công, đọc bản vẽ và quản lý tiến độ – chất lượng – an toàn công trình.",skills:"Đọc bản vẽ · Giám sát thi công · Dự toán cơ bản · An toàn lao động · AutoCAD",exp:["2022 – Nay · Công ty xây dựng … · {job} — giám sát công trình dân dụng, nghiệm thu đúng tiến độ","2020 – 2022 · Công ty … · Kỹ thuật hiện trường — theo dõi khối lượng và nhật ký thi công"]}],
+[/quan ly|truong phong|giam doc|team lead/,{obj:"Ứng tuyển vị trí {job} với kinh nghiệm quản lý đội ngũ, lập kế hoạch và chịu trách nhiệm kết quả kinh doanh/vận hành của bộ phận.",skills:"Lập kế hoạch · Quản lý đội ngũ · Phân tích số liệu · Ra quyết định · Đào tạo nhân viên",exp:["2021 – Nay · Công ty … · {job} — quản lý đội 12 người, tăng trưởng doanh thu bộ phận 20%/năm","2018 – 2021 · Công ty … · Trưởng nhóm — xây dựng quy trình vận hành chuẩn cho bộ phận"]}],
+[/sinh vien|thuc tap|moi tot nghiep|fresher/,{obj:"Ứng tuyển vị trí {job} với tinh thần học hỏi nhanh, nền tảng kiến thức được đào tạo bài bản và mong muốn gắn bó, phát triển lâu dài cùng công ty.",skills:"Tin học văn phòng · Học nhanh · Làm việc nhóm · Ngoại ngữ · Tinh thần trách nhiệm",exp:["2025 · Công ty … · Thực tập sinh — hỗ trợ nhập liệu và chuẩn hoá hồ sơ, được đánh giá tốt cuối kỳ","2024 · Dự án học tập — làm việc nhóm 4 người, hoàn thành đúng hạn với kết quả xuất sắc"]}]
+];
+function cvAiSuggest(){
+  var job=cvVal("cvJob");
+  if(!job){toast("Sếp nhập tiêu đề công việc trước nhé — ví dụ: Nhân viên kinh doanh");document.getElementById("cvJob").focus();return;}
+  var nd=slNd(job), hit=null;
+  for(var i=0;i<CV_AI.length;i++){if(CV_AI[i][0].test(nd)){hit=CV_AI[i][1];break;}}
+  if(!hit)hit={obj:"Ứng tuyển vị trí "+job+" với kinh nghiệm và kỹ năng phù hợp yêu cầu tuyển dụng, tác phong chuyên nghiệp và mong muốn đóng góp lâu dài cho đơn vị.",skills:"Tin học văn phòng · Giao tiếp · Làm việc nhóm · Quản lý thời gian",exp:["2023 – Nay · Công ty … · "+job+" — hoàn thành tốt các chỉ tiêu được giao","2021 – 2023 · Công ty … · Vị trí liên quan — tích luỹ kinh nghiệm thực tế"]};
+  var fill=function(id,v){var el=document.getElementById(id);if(el)el.value=v;};
+  fill("cvObjective",hit.obj.replace(/\{job\}/g,job));
+  fill("cvSkills",hit.skills);
+  fill("cvExp",hit.exp.map(function(x){return x.replace(/\{job\}/g,job);}).join("\n"));
+  renderCvPreview();
+  toast("✦ AI đã gợi ý mục tiêu, kỹ năng và kinh nghiệm mẫu cho vị trí “"+job+"” — sếp sửa lại số liệu / tên công ty theo đúng thực tế của mình nhé");
+}
+/* ---- Xuất file ---- */
+function cvFileName(d){return "CV-"+(slNd(d.name||"ung-vien").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")||"ung-vien");}
+function cvDownloadBlob(blob,name){
+  var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href)},3000);
+}
+async function cvExportPdf(){
+  try{
+    toast("Đang dựng PDF từ CV...");
+    var blob=await htmlToPdfBlob(cvHtml(cvData()),false);
+    cvDownloadBlob(blob,cvFileName(cvData())+".pdf");
+    toast("Đã xuất CV sang PDF ✓");
+  }catch(e){toast("Xuất PDF chưa được: "+(e.message||e));}
+}
+async function cvExportDocx(){
+  var d=cvData();
+  try{
+    if(!window.docx||!docx.Packer)throw new Error("chưa tải được thư viện Word");
+    var tpl=CV_TEMPLATES[cvSel];var A=(cvColorCustom||CV_PAL[tpl.pal]).replace("#","").toUpperCase();
+    var P=function(text,opt){return new docx.Paragraph({children:[new docx.TextRun(Object.assign({text:text},opt||{}))],spacing:{after:120}});};
+    var H=function(text){return new docx.Paragraph({children:[new docx.TextRun({text:text.toUpperCase(),bold:true,color:A,size:24})],spacing:{before:240,after:100}});};
+    var lines=function(t){return (t||"").split(/\n+/).map(function(x){return x.trim();}).filter(Boolean);};
+    var kids=[];
+    kids.push(new docx.Paragraph({children:[new docx.TextRun({text:(d.name||"HỌ VÀ TÊN").toUpperCase(),bold:true,size:36,color:A})],spacing:{after:60}}));
+    kids.push(P(d.job||"Vị trí ứng tuyển",{bold:true,size:26}));
+    kids.push(P([d.phone,d.email,d.addr,d.birth?"Sinh: "+d.birth:""].filter(Boolean).join(" · ")||"Số điện thoại · Email · Địa chỉ",{size:22,color:"5F6F63"}));
+    kids.push(H("Mục tiêu nghề nghiệp"));kids.push(P(d.obj||"—"));
+    kids.push(H("Kinh nghiệm làm việc"));(lines(d.exp).length?lines(d.exp):["—"]).forEach(function(x){kids.push(P("• "+x));});
+    kids.push(H("Học vấn"));(lines(d.edu).length?lines(d.edu):["—"]).forEach(function(x){kids.push(P("• "+x));});
+    kids.push(H("Kỹ năng"));kids.push(P(d.skills||"—"));
+    kids.push(H("Chứng chỉ / Ngoại ngữ"));kids.push(P(d.cert||"—"));
+    var doc=new docx.Document({sections:[{children:kids}]});
+    var blob=await docx.Packer.toBlob(doc);
+    cvDownloadBlob(blob,cvFileName(d)+".docx");
+    toast("Đã xuất CV sang Word (.docx) ✓");
+  }catch(e){
+    toast("Thư viện Word chưa sẵn sàng ("+(e.message||e)+") — app mở CV trong trình soạn thảo để sếp tải .docx từ đó");
+    cvOpenInEditor();
+  }
+}
+function cvOpenInEditor(){
+  var d=cvData();
+  var br=function(t){return (t||"").split(/\n+/).map(function(x){return x.trim();}).filter(Boolean).map(function(x){return "– "+esc(x);}).join("<br>")||"……………………………………";};
+  var html="<h1>"+esc((d.name||"HỌ VÀ TÊN").toUpperCase())+" — "+esc(d.job||"Vị trí ứng tuyển")+"</h1><p>"+esc([d.phone,d.email,d.addr].filter(Boolean).join(" · ")||"Số điện thoại · Email · Địa chỉ")+"</p><h2>Mục tiêu nghề nghiệp</h2><p>"+esc(d.obj||"……………………………………")+"</p><h2>Kinh nghiệm làm việc</h2><p>"+br(d.exp)+"</p><h2>Học vấn</h2><p>"+br(d.edu)+"</p><h2>Kỹ năng</h2><p>"+esc(d.skills||"……………………………………")+"</p><h2>Chứng chỉ / Ngoại ngữ</h2><p>"+esc(d.cert||"……………………………………")+"</p><p><i>Mẫu: "+esc(CV_TEMPLATES[cvSel].n)+" (kho mẫu CV Hay) — tạo bằng Trình tạo CV của Trợ Thủ Văn Phòng.</i></p>";
+  var f={id:nextId++,name:"CV – "+(d.name||"ứng viên")+".docx",type:"docx",folder:"Nhân sự",time:"Vừa xong",star:false,html:html};
+  files.unshift(f);openFile(f.id);
+  toast("Đã mở CV trong trình soạn thảo — sếp sửa tiếp rồi bấm Tải xuống để lấy file .docx ✓");
+}
 </script>
 <script>
 /* ================= DESIGN STUDIO (Canva-style) ================= */
@@ -2585,7 +3963,7 @@ var palettes=[
 var D={sizeKey:"post",dw:1080,dh:1080,els:[],selId:null,nextId:1,scale:0.6,drawOn:false,brand:{c1:"#217346",c2:"#ffc000",font:"'Be Vietnam Pro',sans-serif"}};
 function dStage(){return document.getElementById("stage");}
 function openDesign(preset){
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;var vl3=document.getElementById("viewLib");if(vl3)vl3.hidden=true;document.getElementById("viewDesign").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;var vl3=document.getElementById("viewLib");if(vl3)vl3.hidden=true;document.getElementById("viewDesign").hidden=false;syncFocusMode();
   var sel=document.getElementById("dSizeSel");
   if(!sel.options.length){sel.innerHTML=Object.keys(designSizes).map(function(k){return '<option value="'+k+'">'+designSizes[k].label+'</option>';}).join("");}
   if(!document.getElementById("dBgSwatches").children.length){
@@ -2599,7 +3977,7 @@ function openDesign(preset){
   if(preset==="board"){designSetBg("#f7f4e8");toast("Bảng trắng: thêm giấy note và bật chế độ vẽ ở panel trái nhé sếp");}
   renderDesign();
 }
-function closeDesign(){document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;markModBtns(moduleCur);window.scrollTo(0,0);}
+function closeDesign(){document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;markModBtns(moduleCur);window.scrollTo(0,0);syncFocusMode();}
 function setDesignSize(key,skipScale){
   var s=designSizes[key];if(!s)return;
   if(!skipScale&&D.dw){var sx=s.w/D.dw,sy=s.h/D.dh;D.els.forEach(function(el){el.x*=sx;el.y*=sy;if(el.w)el.w*=sx;if(el.h)el.h*=sy;if(el.size)el.size*=sx;});}
@@ -2866,7 +4244,7 @@ function markModBtns(m){
   var bs=document.querySelectorAll("[data-modbtn]");
   for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i].dataset.modbtn===m);
 }
-function closeLibHome(){document.getElementById("viewLib").hidden=true;document.getElementById("viewHome").hidden=false;markModBtns(moduleCur);window.scrollTo(0,0);}
+function closeLibHome(){document.getElementById("viewLib").hidden=true;document.getElementById("viewHome").hidden=false;markModBtns(moduleCur);window.scrollTo(0,0);syncFocusMode();}
 
 /* ================= THƯ VIỆN HÀM EXCEL (chuẩn 2019) & CẨM NANG WORD ================= */
 var DS_SALES=[["STT","Sản phẩm","Số lượng","Đơn giá (đ)","Thành tiền (đ)"],["1","Áo thun","10","150000","1500000"],["2","Quần jean","5","320000","1600000"],["3","Áo khoác","3","450000","1350000"],["4","Áo thun","7","150000","1050000"]];
@@ -2949,7 +4327,7 @@ function setLibTab(t){
   if(t==="excel")renderLib();else renderWord();
 }
 function openLib(tab){
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewLib").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewPdfLib").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewLib").hidden=false;syncFocusMode();
   window.scrollTo(0,0);setLibTab(tab||"excel");
 }
 function closeLib(){closeLibHome();}
@@ -3028,10 +4406,10 @@ function openLibItem(kind,i){
   if(!o)return;
   document.getElementById("libItemTitle").textContent=o.n;
   document.getElementById("libItemBody").innerHTML=html;
-  document.getElementById("viewLib").hidden=true;document.getElementById("viewLibItem").hidden=false;
+  document.getElementById("viewLib").hidden=true;document.getElementById("viewLibItem").hidden=false;syncFocusMode();
   window.scrollTo(0,0);applyIcons();
 }
-function closeLibItem(){document.getElementById("viewLibItem").hidden=true;document.getElementById("viewLib").hidden=false;window.scrollTo(0,0);}
+function closeLibItem(){document.getElementById("viewLibItem").hidden=true;document.getElementById("viewLib").hidden=false;window.scrollTo(0,0);syncFocusMode();}
 function openWordExample(i){
   var o=WORD_LIB[i];if(!o.ex)return;
   var f={id:nextId++,name:o.ex.t+".docx",type:"docx",folder:"Trợ Thủ Văn Phòng",time:"Vừa xong",star:false,html:o.ex.h};
