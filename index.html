@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="color-scheme" content="light dark"/>
 <link rel="icon" href="data:,"/>
-<title>Office Việt AI — Bộ ứng dụng văn phòng + AI</title>
+<title>Trợ Thủ Văn Phòng — Bộ ứng dụng văn phòng + AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -319,14 +319,72 @@ input[type=file]{display:none}
 .mod-tab.active{background:var(--excel);color:#fff;border-color:var(--excel)}
 @media(prefers-color-scheme:dark){.mod-tab{background:#2a3a2f;color:#dcefe1}.mod-tab.active{background:var(--excel);color:#fff}}
 
+/* ===== TOOL SHEET (trang riêng cho từng công cụ nhanh) ===== */
+.tool-body input[type=text],.tool-body input[type=number],.tool-body input[type=date],.tool-body select{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:10px;font-size:13.5px;background:transparent;color:inherit;margin-bottom:10px}
+.tool-body textarea{width:100%;min-height:110px;border:1.5px solid var(--line);border-radius:11px;padding:10px;font-size:13.5px;background:transparent;color:inherit}
+.tool-body label.fl{font-size:12px;font-weight:700;color:var(--muted);display:block;margin:8px 0 4px}
+.tool-body p{font-size:13.5px;line-height:1.65}
+
+/* ===== LIBRARY MENU ITEMS (danh sách chỉ là menu chọn) ===== */
+.lib-item{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:#f7fbf8;border:1px solid var(--line);border-radius:14px;padding:13px 15px;margin-bottom:9px;cursor:pointer;color:inherit;transition:transform .13s,box-shadow .13s}
+@media(prefers-color-scheme:dark){.lib-item{background:#243128}}
+.lib-item:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(24,92,55,.14)}
+.lib-item:active{transform:scale(.985)}
+.lib-item .li-main{flex:1;min-width:0}
+.lib-item b{font-size:14px;color:var(--strong);display:block}
+.lib-item small{color:var(--muted);font-size:12px;line-height:1.45;display:block;margin-top:2px}
+.lib-item .li-arrow{font-size:17px;color:var(--excel);font-weight:800;flex-shrink:0}
+
+/* ===== ICON 2026 — bộ icon thống nhất: ô bo tròn mềm, gradient theo nhóm, bóng mềm ===== */
+.ico-tile.g-green{background:linear-gradient(135deg,#3ecf7f 0%,#217346 100%);box-shadow:0 5px 12px rgba(33,115,70,.38),inset 0 1px 0 rgba(255,255,255,.4)}
+.ico-tile.g-blue{background:linear-gradient(135deg,#63a5f8 0%,#2b579a 100%);box-shadow:0 5px 12px rgba(43,87,154,.38),inset 0 1px 0 rgba(255,255,255,.4)}
+.ico-tile.g-orange{background:linear-gradient(135deg,#ffb03a 0%,#e85d1f 100%);box-shadow:0 5px 12px rgba(232,93,31,.38),inset 0 1px 0 rgba(255,255,255,.4)}
+.ico-tile.g-purple{background:linear-gradient(135deg,#c09bf7 0%,#7c3aed 100%);box-shadow:0 5px 12px rgba(124,58,237,.38),inset 0 1px 0 rgba(255,255,255,.4)}
+.ico-tile.g-red{background:linear-gradient(135deg,#ff8a7a 0%,#d61f26 100%);box-shadow:0 5px 12px rgba(214,31,38,.36),inset 0 1px 0 rgba(255,255,255,.4)}
+.ico-tile.g-pink{background:linear-gradient(135deg,#f78fb8 0%,#db2777 100%);box-shadow:0 5px 12px rgba(219,39,119,.36),inset 0 1px 0 rgba(255,255,255,.4)}
+.ico-tile.g-teal{background:linear-gradient(135deg,#45d6c6 0%,#0f8a7d 100%);box-shadow:0 5px 12px rgba(15,138,125,.36),inset 0 1px 0 rgba(255,255,255,.4)}
+.ico-tile.g-amber{background:linear-gradient(135deg,#ffd94d 0%,#f59e0b 100%);box-shadow:0 5px 12px rgba(245,158,11,.38),inset 0 1px 0 rgba(255,255,255,.4)}
+.ico-tile{display:inline-grid!important;place-items:center;color:#fff;flex-shrink:0;transition:transform .15s ease,filter .15s ease}
+.ico-tile svg{width:58%;height:58%;display:block}
+.pdf-card .p-ico{width:42px;height:42px;border-radius:14px;font-size:0;margin-bottom:9px}
+.util-card .u-ico{width:42px;height:42px;border-radius:14px;font-size:0;margin-bottom:9px}
+.util-card .u-ico .ico-glyph{font-size:16px;font-weight:800;letter-spacing:-.02em}
+.stat-card .s-ico{width:38px;height:38px;border-radius:12px;font-size:0}
+.brand-icon{border:0}
+.brand-icon.ico-tile{width:38px;height:38px;border-radius:12px}
+.mt-ico{width:38px;height:38px;border-radius:12px;font-size:0!important}
+.ai-ico{width:38px;height:38px;border-radius:12px;font-size:0!important}
+.n-ico{width:27px;height:27px;border-radius:9px;vertical-align:middle}
+.n-ico svg{width:60%;height:60%}
+.b-ico{width:32px;height:32px;border-radius:11px;margin:0 auto 2px}
+.m-ico{width:23px;height:23px;border-radius:8px;vertical-align:-6px}
+.ico-inline{display:inline-flex;align-items:center;justify-content:center;vertical-align:-3px;margin-right:2px}
+.ico-inline svg{width:15px;height:15px;display:block}
+.chip-ico{width:22px;height:22px;border-radius:7px;vertical-align:-6px}
+/* hiệu ứng bấm & trạng thái đang chọn */
+.pdf-card:active .p-ico,.util-card:active .u-ico,.create-card:active .ficon{transform:scale(.86)}
+.pdf-card:hover .p-ico,.util-card:hover .u-ico{transform:translateY(-2px) scale(1.06)}
+.nav button:active .n-ico,.mod-tab:active .m-ico,.bottom-nav button:active .b-ico{transform:scale(.85)}
+.nav button.active .n-ico{filter:brightness(1.12);box-shadow:0 0 0 2px rgba(255,255,255,.65),0 6px 14px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.4)}
+.bottom-nav button.active .b-ico{filter:brightness(1.1);outline:2px solid var(--excel);outline-offset:1px}
+.mod-tab.active .m-ico{filter:brightness(1.15)}
+.create-card .ficon{box-shadow:0 5px 12px rgba(15,50,30,.28),inset 0 1px 0 rgba(255,255,255,.35);border-radius:11px;transition:transform .15s ease}
+.ficon.w{background:linear-gradient(135deg,#63a5f8,#2b579a)}
+.ficon.x{background:linear-gradient(135deg,#3ecf7f,#217346)}
+.ficon.p{background:linear-gradient(135deg,#ff9a4d,#d24726)}
+.ficon.md{background:linear-gradient(135deg,#b79af5,#7c5cd6)}
+.ficon.html{background:linear-gradient(135deg,#45d6c6,#159a8c)}
+.ficon.pdf{background:linear-gradient(135deg,#ff8a7a,#d61f26)}
+.file-row .ficon{box-shadow:0 3px 8px rgba(15,50,30,.22),inset 0 1px 0 rgba(255,255,255,.35);border-radius:10px}
+
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
 <div class="mobile-top">
-  <div style="font-size:22px">🧩</div>
-  <div><b>Office Việt AI</b><span>Bộ ứng dụng văn phòng + AI</span></div>
+  <div class="mt-ico" style="font-size:22px">🧩</div>
+  <div><b>Trợ Thủ Văn Phòng</b><span>Bộ ứng dụng văn phòng + AI</span></div>
   <button onclick="openAI()">✦ Hỏi AI</button>
 </div>
 
@@ -335,15 +393,15 @@ input[type=file]{display:none}
   <aside class="sidebar">
     <div class="brand">
       <div class="brand-icon">🧩</div>
-      <div><b>Office Việt AI</b><span>Bộ ứng dụng văn phòng + AI</span></div>
+      <div><b>Trợ Thủ Văn Phòng</b><span>Bộ ứng dụng văn phòng + AI</span></div>
     </div>
     <nav class="nav">
       <button class="active" id="navRecent" onclick="setView('recent')">🕐 Gần đây <span class="count" id="countAll">0</span></button>
       <button id="navStar" onclick="setView('starred')">☆ Đã gắn sao <span class="count" id="countStar">0</span></button>
       <button onclick="openAI()">💬 Hỏi AI</button>
-      <button onclick="goPdfSection()">📕 Công cụ PDF <span class="count">28 chạy được</span></button>
-      <button onclick="openDesign()">🎨 Thiết kế <span class="count">13 cỡ</span></button>
-      <button onclick="openLib('excel')">📗 Hàm Excel <span class="count">2019</span></button>
+      <button onclick="goPdfSection()">📕 Công cụ PDF</button>
+      <button onclick="openDesign()">🎨 Thiết kế</button>
+      <button onclick="openLib('excel')">📗 Hàm Excel</button>
       <button onclick="openLib('word')">📘 Cẩm nang Word</button>
       <div class="nav-label"><span>MỤC OFFICE</span></div>
       <button data-modbtn="all" onclick="setModule('all')">🧩 Tất cả</button>
@@ -353,7 +411,7 @@ input[type=file]{display:none}
       <button data-modbtn="pdf" onclick="setModule('pdf')">📕 PDF</button>
       <button data-modbtn="design" onclick="setModule('design')">🎨 Thiết kế</button>
       <div class="nav-label"><span>THƯ MỤC</span><span>＋</span></div>
-      <button class="active">📁 OfficeVietAI</button>
+      <button class="active">📁 Trợ Thủ Văn Phòng</button>
       <button class="folder-item" onclick="filterFolder('Hợp đồng')">Hợp đồng</button>
       <button class="folder-item" onclick="filterFolder('Báo giá')">Báo giá</button>
       <button class="folder-item" onclick="filterFolder('Công văn')">Công văn</button>
@@ -403,7 +461,7 @@ input[type=file]{display:none}
         <button class="mod-tab" data-modbtn="slides" onclick="setModule('slides')">📙 Bản trình bày</button>
         <button class="mod-tab" data-modbtn="pdf" onclick="setModule('pdf')">📕 PDF</button>
         <button class="mod-tab" data-modbtn="design" onclick="setModule('design')">🎨 Thiết kế</button>
-        <button class="mod-tab" data-modbtn="excel" onclick="setModule('excel')">ƒx Hàm Excel</button>
+        <button class="mod-tab" data-modbtn="excel" onclick="setModule('excel')">∑ Hàm Excel</button>
         <button class="mod-tab" data-modbtn="word" onclick="setModule('word')">📖 Hàm Word</button>
         <button class="mod-tab" data-modbtn="ai" onclick="setModule('ai')">✦ Hỏi AI</button>
       </div>
@@ -640,7 +698,7 @@ input[type=file]{display:none}
     <div class="content" id="viewPdf" hidden>
       <div class="editor-shell">
         <div class="ed-top">
-          <button class="back-btn" onclick="closePdfTool()">← Trang chủ</button>
+          <button class="back-btn" onclick="closePdfTool()">← Danh sách công cụ PDF</button>
           <b id="pdfToolTitle" style="font-size:16px">Công cụ PDF</b>
           <span id="pdfLibState" style="font-size:11.5px;color:var(--muted);font-weight:600"></span>
         </div>
@@ -668,8 +726,8 @@ input[type=file]{display:none}
     <div class="content" id="viewDesign" hidden>
       <div class="design-shell">
         <div class="design-top">
-          <button class="back-btn" onclick="closeDesign()">← Trang chủ</button>
-          <b style="font-size:15px">🎨 Studio Thiết kế</b>
+          <button class="back-btn" onclick="closeDesign()">← Danh sách thiết kế</button>
+          <b style="font-size:15px">🎨 Studio Thiết kế<span id="designPresetName"></span></b>
           <select id="dSizeSel" onchange="designResize(this.value)" aria-label="Cỡ thiết kế" style="border:1.5px solid var(--line);border-radius:9px;padding:7px 9px;font-size:12.5px;font-weight:600;background:transparent;color:inherit"></select>
           <span style="flex:1"></span>
           <button class="btn btn-ghost" onclick="designExport('png')">⬇ PNG</button>
@@ -790,6 +848,33 @@ input[type=file]{display:none}
         </div>
       </div>
     </div>
+    <!-- ===== TOOL SHEET: mỗi công cụ nhanh một trang riêng ===== -->
+    <div class="content" id="viewTool" hidden>
+      <div class="editor-shell">
+        <div class="ed-top">
+          <button class="back-btn" onclick="closeToolPage()">← Danh sách công cụ</button>
+          <b id="toolPageTitle" style="font-size:16px">Công cụ</b>
+        </div>
+        <div style="padding:18px clamp(16px,4vw,30px) 26px">
+          <div class="tool-body" id="toolPageBody"></div>
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px;flex-wrap:wrap">
+            <button class="btn btn-ghost" onclick="closeToolPage()">Quay lại</button>
+            <button class="btn btn-red" id="toolPageRun" style="padding:10px 20px">Thực hiện</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== LIBRARY ITEM SHEET: mỗi hàm / mục một trang riêng ===== -->
+    <div class="content" id="viewLibItem" hidden>
+      <div class="editor-shell">
+        <div class="ed-top">
+          <button class="back-btn" onclick="closeLibItem()">← Danh sách thư viện</button>
+          <b id="libItemTitle" style="font-size:16px">Chi tiết</b>
+        </div>
+        <div style="padding:18px clamp(16px,4vw,30px) 28px" id="libItemBody"></div>
+      </div>
+    </div>
   </main>
 </div>
 
@@ -805,7 +890,7 @@ input[type=file]{display:none}
 <div class="scrim" id="scrim" onclick="closeAI();closeComments()"></div>
 <aside class="ai-panel" id="aiPanel" aria-label="Trợ lý AI">
   <div class="ai-head">
-    <div style="font-size:22px">✦</div>
+    <div class="ai-ico" style="font-size:22px">✦</div>
     <b>Trợ lý AI Việt<small>Miễn phí · chạy ngay trên trình duyệt · không cần tài khoản</small></b>
     <button class="ai-close" onclick="closeAI()">✕</button>
   </div>
@@ -878,18 +963,18 @@ var templates = {
   thumoi:{title:"Thư mời họp.docx",type:"docx",folder:"Họp",html:"<h1 style='text-align:center'>THƯ MỜI HỌP</h1><p><b>Kính gửi:</b> Anh/Chị ……………………………………</p><p>Công ty trân trọng kính mời Anh/Chị tham dự cuộc họp với nội dung sau:</p><p><b>Chủ đề:</b> ………………………………………………………<br><b>Thời gian:</b> …… giờ …… phút, ngày ……/……/2026<br><b>Địa điểm:</b> ………………………………………………………<br><b>Chủ trì:</b> ……………………………………</p><h2>Chương trình dự kiến</h2><p>1. Báo cáo tiến độ và kết quả kỳ trước<br>2. Thảo luận các vấn đề tồn đọng<br>3. Thống nhất kế hoạch và phân công việc kỳ tới</p><p>Đề nghị Anh/Chị xác nhận tham dự và chuẩn bị tài liệu liên quan trước cuộc họp. Trân trọng.</p><p style='text-align:right'><b>Người mời</b></p>"},
   chamcong:{title:"Bảng chấm công.xlsx",type:"xlsx",folder:"Nhân sự",sheet:[["STT","Họ tên","Chức vụ","Ngày công chuẩn","Ngày công thực tế","Nghỉ phép (ngày)","Lương cơ bản (đ)"],["1","Nguyễn Văn A","Nhân viên","26","26","0","12000000"],["2","Trần Thị B","Nhân viên","26","25","1","11000000"],["3","Lê Văn C","Trưởng nhóm","26","26","0","18000000"]]},
   baogia:{title:"Báo giá tháng 11.xlsx",type:"xlsx",folder:"Báo giá"},
-  baocaotuan:{title:"Báo cáo công việc tuần.docx",type:"docx",folder:"OfficeVietAI",html:"<h1>BÁO CÁO CÔNG VIỆC TUẦN ……</h1><p><b>Người báo cáo:</b> ……………………… &nbsp;·&nbsp; <b>Bộ phận:</b> ………………………<br><b>Thời gian:</b> từ ……/……/2026 đến ……/……/2026</p><h2>1. Việc đã hoàn thành</h2><p>– …………………………………………………………………………</p><h2>2. Việc đang làm / tồn đọng</h2><p>– ………………… — Tiến độ: ……% — Khó khăn: ………………………</p><h2>3. Kế hoạch tuần tới</h2><p>– ………………… — Hạn hoàn thành: ……/……/2026</p><h2>4. Đề xuất, kiến nghị</h2><p>– …………………………………………………………………………</p>"},
-  thucamon:{title:"Thư cảm ơn khách hàng.docx",type:"docx",folder:"OfficeVietAI",html:"<h1 style='text-align:center'>THƯ CẢM ƠN</h1><p><b>Kính gửi:</b> Quý khách hàng / Đối tác ……………………………………</p><p>Chúng tôi xin chân thành cảm ơn Quý vị đã tin tưởng lựa chọn và đồng hành cùng chúng tôi trong thời gian vừa qua. Sự ủng hộ của Quý vị là động lực lớn để chúng tôi không ngừng hoàn thiện chất lượng sản phẩm và dịch vụ.</p><p>Chúng tôi cam kết tiếp tục phục vụ Quý vị tận tâm, đúng hẹn và luôn lắng nghe mọi góp ý để ngày càng tốt hơn. Rất mong tiếp tục nhận được sự đồng hành của Quý vị trong thời gian tới.</p><p>Kính chúc Quý vị sức khoẻ, hạnh phúc và thành công.</p><p style='text-align:right'>Trân trọng cảm ơn,<br><b>Đại diện đơn vị</b></p>"}
+  baocaotuan:{title:"Báo cáo công việc tuần.docx",type:"docx",folder:"Trợ Thủ Văn Phòng",html:"<h1>BÁO CÁO CÔNG VIỆC TUẦN ……</h1><p><b>Người báo cáo:</b> ……………………… &nbsp;·&nbsp; <b>Bộ phận:</b> ………………………<br><b>Thời gian:</b> từ ……/……/2026 đến ……/……/2026</p><h2>1. Việc đã hoàn thành</h2><p>– …………………………………………………………………………</p><h2>2. Việc đang làm / tồn đọng</h2><p>– ………………… — Tiến độ: ……% — Khó khăn: ………………………</p><h2>3. Kế hoạch tuần tới</h2><p>– ………………… — Hạn hoàn thành: ……/……/2026</p><h2>4. Đề xuất, kiến nghị</h2><p>– …………………………………………………………………………</p>"},
+  thucamon:{title:"Thư cảm ơn khách hàng.docx",type:"docx",folder:"Trợ Thủ Văn Phòng",html:"<h1 style='text-align:center'>THƯ CẢM ƠN</h1><p><b>Kính gửi:</b> Quý khách hàng / Đối tác ……………………………………</p><p>Chúng tôi xin chân thành cảm ơn Quý vị đã tin tưởng lựa chọn và đồng hành cùng chúng tôi trong thời gian vừa qua. Sự ủng hộ của Quý vị là động lực lớn để chúng tôi không ngừng hoàn thiện chất lượng sản phẩm và dịch vụ.</p><p>Chúng tôi cam kết tiếp tục phục vụ Quý vị tận tâm, đúng hẹn và luôn lắng nghe mọi góp ý để ngày càng tốt hơn. Rất mong tiếp tục nhận được sự đồng hành của Quý vị trong thời gian tới.</p><p>Kính chúc Quý vị sức khoẻ, hạnh phúc và thành công.</p><p style='text-align:right'>Trân trọng cảm ơn,<br><b>Đại diện đơn vị</b></p>"}
 };
 var files = [
-  {id:1,name:"Báo giá tháng 11 – Khách sạn.xlsx",type:"xlsx",folder:"OfficeVietAI",time:"10:24 hôm nay",star:false,html:""},
-  {id:2,name:"Hợp đồng dịch vụ 2026.docx",type:"docx",folder:"OfficeVietAI",time:"Hôm qua, 16:03",star:false,html:templates.hopdong.html},
-  {id:3,name:"Biên bản họp tuần 44.docx",type:"docx",folder:"OfficeVietAI",time:"Thứ 2, 09:41",star:true,html:templates.bienban.html},
-  {id:4,name:"Giới thiệu sản phẩm mới.pptx",type:"pptx",folder:"OfficeVietAI",time:"28/10/2026",star:false,html:""},
-  {id:5,name:"CV xin việc – bản mới.docx",type:"docx",folder:"OfficeVietAI",time:"27/10/2026",star:true,html:templates.cv.html},
-  {id:6,name:"Ghi chú ý tưởng.md",type:"md",folder:"OfficeVietAI",time:"26/10/2026",star:false,html:"<h1>Ý tưởng nội dung</h1><p>– Bài giới thiệu sản phẩm<br>– Video hướng dẫn sử dụng<br>– Chương trình khuyến mãi tháng 11</p>"},
-  {id:7,name:"Landing page khuyến mãi.html",type:"html",folder:"OfficeVietAI",time:"25/10/2026",star:false,html:"<h1>Khuyến mãi tháng 11</h1><p>Giảm giá đặc biệt cho khách hàng mới. Liên hệ ngay để nhận báo giá chi tiết.</p>"},
-  {id:8,name:"Hồ sơ năng lực.pdf",type:"pdf",folder:"OfficeVietAI",time:"24/10/2026",star:true,html:"<h1>Hồ sơ năng lực</h1><p>Giới thiệu công ty, lĩnh vực hoạt động, đội ngũ và các dự án tiêu biểu đã thực hiện.</p>"},
+  {id:1,name:"Báo giá tháng 11 – Khách sạn.xlsx",type:"xlsx",folder:"Trợ Thủ Văn Phòng",time:"10:24 hôm nay",star:false,html:""},
+  {id:2,name:"Hợp đồng dịch vụ 2026.docx",type:"docx",folder:"Trợ Thủ Văn Phòng",time:"Hôm qua, 16:03",star:false,html:templates.hopdong.html},
+  {id:3,name:"Biên bản họp tuần 44.docx",type:"docx",folder:"Trợ Thủ Văn Phòng",time:"Thứ 2, 09:41",star:true,html:templates.bienban.html},
+  {id:4,name:"Giới thiệu sản phẩm mới.pptx",type:"pptx",folder:"Trợ Thủ Văn Phòng",time:"28/10/2026",star:false,html:""},
+  {id:5,name:"CV xin việc – bản mới.docx",type:"docx",folder:"Trợ Thủ Văn Phòng",time:"27/10/2026",star:true,html:templates.cv.html},
+  {id:6,name:"Ghi chú ý tưởng.md",type:"md",folder:"Trợ Thủ Văn Phòng",time:"26/10/2026",star:false,html:"<h1>Ý tưởng nội dung</h1><p>– Bài giới thiệu sản phẩm<br>– Video hướng dẫn sử dụng<br>– Chương trình khuyến mãi tháng 11</p>"},
+  {id:7,name:"Landing page khuyến mãi.html",type:"html",folder:"Trợ Thủ Văn Phòng",time:"25/10/2026",star:false,html:"<h1>Khuyến mãi tháng 11</h1><p>Giảm giá đặc biệt cho khách hàng mới. Liên hệ ngay để nhận báo giá chi tiết.</p>"},
+  {id:8,name:"Hồ sơ năng lực.pdf",type:"pdf",folder:"Trợ Thủ Văn Phòng",time:"24/10/2026",star:true,html:"<h1>Hồ sơ năng lực</h1><p>Giới thiệu công ty, lĩnh vực hoạt động, đội ngũ và các dự án tiêu biểu đã thực hiện.</p>"},
   {id:9,name:"Công văn thông báo lịch làm việc.docx",type:"docx",folder:"Công văn",time:"23/10/2026",star:false,html:templates.congvan.html},
   {id:10,name:"Thư mời họp giao ban tháng 11.docx",type:"docx",folder:"Họp",time:"22/10/2026",star:false,html:templates.thumoi.html}
 ];
@@ -935,19 +1020,19 @@ function renderFiles(){
 function toggleStar(id){var f=files.find(function(x){return x.id===id});f.star=!f.star;renderFiles();}
 function setSort(v){sortMode=v;renderFiles();}
 function duplicateFile(id){var f=files.find(function(x){return x.id===id});if(!f)return;var c={id:nextId++,name:f.name.replace(/(\.[^.]+)$/," – bản sao$1"),type:f.type,folder:f.folder,time:"Vừa xong",star:f.star,html:f.html};files.unshift(c);renderFiles();toast("Đã nhân bản: "+c.name+" ✓");}
-function renameFile(id){var f=files.find(function(x){return x.id===id});if(!f)return;renamingId=id;currentTool="rename";document.getElementById("toolRun").textContent="Thực hiện";document.getElementById("toolTitle").textContent="Đổi tên tệp";document.getElementById("toolBody").innerHTML='<p>Nhập tên mới cho tệp (giữ nguyên đuôi .'+f.type+' nếu sếp muốn giữ định dạng).</p><input type="text" id="toolInput" value="'+esc(f.name).replace(/"/g,"&quot;")+'">';document.getElementById("toolRun").style.display="";document.getElementById("toolModal").classList.add("open");setTimeout(function(){document.getElementById("toolInput").select()},80);}
+function renameFile(id){var f=files.find(function(x){return x.id===id});if(!f)return;renamingId=id;currentTool="rename";document.getElementById("toolPageBody").innerHTML="";document.getElementById("toolRun").textContent="Thực hiện";document.getElementById("toolTitle").textContent="Đổi tên tệp";document.getElementById("toolBody").innerHTML='<p>Nhập tên mới cho tệp (giữ nguyên đuôi .'+f.type+' nếu sếp muốn giữ định dạng).</p><input type="text" id="toolInput" value="'+esc(f.name).replace(/"/g,"&quot;")+'">';document.getElementById("toolRun").style.display="";document.getElementById("toolModal").classList.add("open");setTimeout(function(){document.getElementById("toolInput").select()},80);}
 function deleteFile(id){files=files.filter(function(x){return x.id!==id});renderFiles();toast("Đã xoá tệp khỏi danh sách phiên này");}
 function setView(v){viewMode=v;document.getElementById("navRecent").classList.toggle("active",v==="recent");document.getElementById("navStar").classList.toggle("active",v==="starred");renderFiles();}
 function setType(t,btn){typeFilter=t;var bs=document.querySelectorAll("#typeTabs button");for(var i=0;i<bs.length;i++)bs[i].classList.remove("active");btn.classList.add("active");renderFiles();}
 function filterFolder(name){typeFilter="all";document.getElementById("searchInput").value=name==="Họp"?"họp":name.toLowerCase();renderFiles();toast("Đang lọc theo: "+name);document.getElementById("searchInput").value="";var q=name==="Họp"?"Biên bản":name;var list=files.filter(function(f){return f.folder===q||f.name.toLowerCase().indexOf(q.toLowerCase())>-1});var box=document.getElementById("fileList");if(list.length){box.innerHTML=list.map(function(f){var ti=typeInfo[f.type];return '<div class="file-row" onclick="openFile('+f.id+')"><span class="ficon '+ti.cls+'">'+ti.mark+'</span><span class="file-meta"><b>'+esc(f.name)+'</b><small>'+ti.label+' · '+esc(f.folder)+'</small></span><span class="file-time">'+f.time+'</span></div>'}).join("");document.getElementById("fileCountLabel").textContent=list.length+" tệp";}}
 
 /* ================= CREATE / OPEN ================= */
-function showEditor(){document.getElementById("viewHome").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewEditor").hidden=false;window.scrollTo(0,0);}
-function goHome(){if(current)saveCurrent();document.getElementById("viewEditor").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewHome").hidden=false;renderFiles();window.scrollTo(0,0);}
+function showEditor(){document.getElementById("viewHome").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewEditor").hidden=false;window.scrollTo(0,0);}
+function goHome(){if(current)saveCurrent();document.getElementById("viewEditor").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;renderFiles();window.scrollTo(0,0);}
 function saveCurrent(){if(!current)return;current.name=document.getElementById("edTitle").value;if(current.type!=="xlsx"&&current.type!=="pptx")current.html=document.getElementById("docArea").innerHTML;}
 function createDoc(type){
   var names={docx:"Tài liệu không tên.docx",xlsx:"Bảng tính không tên.xlsx",pptx:"Bản trình bày không tên.pptx",md:"Ghi chú Markdown.md",html:"Trang HTML mới.html",pdf:"Tài liệu PDF.pdf"};
-  var f={id:nextId++,name:names[type],type:type,folder:"OfficeVietAI",time:"Vừa xong",star:false,html:type==="md"?"<h1>Tiêu đề Markdown</h1><p>Ghi nội dung tại đây. Dùng các nút AI ở trên để viết tiếp, tóm tắt hoặc tạo dàn ý.</p>":type==="html"?"<h1>Tiêu đề trang</h1><p>Nội dung trang HTML. Khi tải xuống, tệp .html mở được trực tiếp trên trình duyệt.</p>":"<h1>Tiêu đề</h1><p>Bắt đầu soạn nội dung tại đây… Mẹo: bôi đen một đoạn rồi bấm các nút AI phía trên để viết tiếp, tóm tắt hoặc dịch.</p>"};
+  var f={id:nextId++,name:names[type],type:type,folder:"Trợ Thủ Văn Phòng",time:"Vừa xong",star:false,html:type==="md"?"<h1>Tiêu đề Markdown</h1><p>Ghi nội dung tại đây. Dùng các nút AI ở trên để viết tiếp, tóm tắt hoặc tạo dàn ý.</p>":type==="html"?"<h1>Tiêu đề trang</h1><p>Nội dung trang HTML. Khi tải xuống, tệp .html mở được trực tiếp trên trình duyệt.</p>":"<h1>Tiêu đề</h1><p>Bắt đầu soạn nội dung tại đây… Mẹo: bôi đen một đoạn rồi bấm các nút AI phía trên để viết tiếp, tóm tắt hoặc dịch.</p>"};
   files.unshift(f);openFile(f.id);
   if(type==="pdf")toast("Đang soạn ở chế độ PDF — bấm Tải xuống để xuất bản in/PDF");
 }
@@ -977,7 +1062,7 @@ function openLocalFile(ev){
     var ext=(file.name.split(".").pop()||"txt").toLowerCase();
     var type=ext==="md"?"md":ext==="html"?"html":"docx";
     var html=ext==="html"?text:"<h1>"+esc(file.name)+"</h1>"+text.split(/\n{2,}/).map(function(p){return "<p>"+esc(p).replace(/\n/g,"<br>")+"</p>"}).join("");
-    var f={id:nextId++,name:file.name,type:type,folder:"OfficeVietAI",time:"Vừa xong",star:false,html:html};
+    var f={id:nextId++,name:file.name,type:type,folder:"Trợ Thủ Văn Phòng",time:"Vừa xong",star:false,html:html};
     files.unshift(f);openFile(f.id);toast("Đã mở tệp cục bộ: "+file.name);
   };
   reader.readAsText(file);ev.target.value="";
@@ -997,7 +1082,7 @@ function openFindReplace(){
   currentTool="findreplace";
   document.getElementById("toolRun").textContent="Thực hiện";
   document.getElementById("toolTitle").textContent="Tìm & thay thế trong tài liệu";
-  document.getElementById("toolBody").innerHTML='<label class="fl">Tìm cụm từ</label><input type="text" id="toolInput" placeholder="Ví dụ: công ty A"><label class="fl">Thay bằng</label><input type="text" id="toolInput2" placeholder="Ví dụ: công ty B"><div class="big-result" id="toolResult" style="font-size:14px"></div>';
+  document.getElementById("toolPageBody").innerHTML="";document.getElementById("toolBody").innerHTML='<label class="fl">Tìm cụm từ</label><input type="text" id="toolInput" placeholder="Ví dụ: công ty A"><label class="fl">Thay bằng</label><input type="text" id="toolInput2" placeholder="Ví dụ: công ty B"><div class="big-result" id="toolResult" style="font-size:14px"></div>';
   document.getElementById("toolRun").style.display="";
   document.getElementById("toolModal").classList.add("open");
 }
@@ -1120,8 +1205,12 @@ function readMoney(n){
   for(var j=parts.length-1;j>=0;j--){if(parts[j]===0)continue;out+=read3(parts[j],j<parts.length-1)+units[j]+" ";}
   out=out.trim().replace(/\s+/g," ");return out.charAt(0).toUpperCase()+out.slice(1)+" đồng";
 }
+var TOOL_PAGE={money:1,count:1,case:1,vat:1,days:1,code:1,dedup:1,cv:1};
+function hideAllViews(){["viewHome","viewEditor","viewPdf","viewDesign","viewLib","viewLibItem","viewTool"].forEach(function(id){var el=document.getElementById(id);if(el)el.hidden=true;});}
 function openTool(tool){
-  currentTool=tool;var title=document.getElementById("toolTitle"),body=document.getElementById("toolBody"),run=document.getElementById("toolRun");
+  currentTool=tool;var onPage=!!TOOL_PAGE[tool];
+  document.getElementById("toolBody").innerHTML="";document.getElementById("toolPageBody").innerHTML="";
+  var title=document.getElementById(onPage?"toolPageTitle":"toolTitle"),body=document.getElementById(onPage?"toolPageBody":"toolBody"),run=document.getElementById(onPage?"toolPageRun":"toolRun");
   run.style.display="";
   if(tool==="money"){title.textContent="Đọc số tiền thành chữ";body.innerHTML='<p>Nhập số tiền (đồng) — kết quả đúng chuẩn ghi trên hoá đơn, hợp đồng Việt Nam.</p><textarea id="toolInput" placeholder="Ví dụ: 6570000">6570000</textarea><div class="big-result" id="toolResult"></div>';}
   if(tool==="count"){title.textContent="Đếm từ & ký tự";body.innerHTML='<p>Dán văn bản cần đếm vào ô dưới đây.</p><textarea id="toolInput" placeholder="Dán văn bản vào đây..."></textarea><div class="big-result" id="toolResult" style="font-size:15px"></div>';}
@@ -1132,10 +1221,11 @@ function openTool(tool){
   if(tool==="dedup"){title.textContent="Xoá dòng trùng lặp";body.innerHTML='<p>Dán danh sách, mỗi mục một dòng. Công cụ loại bỏ dòng trùng và dòng trống, giữ nguyên thứ tự xuất hiện đầu tiên.</p><textarea id="toolInput" placeholder="Dán danh sách vào đây, mỗi dòng một mục..."></textarea><div class="big-result" id="toolResult" style="font-size:14px"></div>';}
   if(tool==="cv"){title.textContent="Trình tạo CV — điền thông tin, app tự dàn trang";body.innerHTML='<label class="fl">Họ và tên</label><input type="text" id="toolInput" placeholder="Ví dụ: Nguyễn Thị Hương"><label class="fl">Vị trí ứng tuyển</label><input type="text" id="toolInput2" placeholder="Ví dụ: Nhân viên kinh doanh"><label class="fl">Số điện thoại</label><input type="text" id="cvPhone" placeholder="0xxx xxx xxx"><label class="fl">Email</label><input type="text" id="cvEmail" placeholder="email@example.com"><label class="fl">Kinh nghiệm làm việc (mỗi ý một dòng)</label><textarea id="cvExp" placeholder="2023 – Nay · Công ty ABC · Nhân viên kinh doanh – đạt 120% chỉ tiêu quý"></textarea><label class="fl">Kỹ năng (cách nhau bằng dấu ·)</label><input type="text" id="cvSkills" placeholder="Tin học văn phòng · Giao tiếp · Đàm phán">';run.textContent="Tạo CV & mở trình soạn thảo";}else{run.textContent="Thực hiện";}
   if(tool==="edcheck"){title.textContent="Kiểm tra văn bản";run.textContent="Sửa tự động các lỗi tìm được";}
-  document.getElementById("toolModal").classList.add("open");
+  if(onPage){hideAllViews();document.getElementById("viewTool").hidden=false;window.scrollTo(0,0);}
+  else document.getElementById("toolModal").classList.add("open");
 }
 var caseMode="sentence";
-document.getElementById("toolRun").addEventListener("click",function(){
+function runToolAction(){
   var v=document.getElementById("toolInput").value||"";
   if(currentTool==="cv"){
     var nm=v.trim();if(!nm){toast("Sếp nhập họ tên trước nhé");return;}
@@ -1161,15 +1251,18 @@ document.getElementById("toolRun").addEventListener("click",function(){
   if(currentTool==="days"){var d1=new Date(document.getElementById("toolInput").value);var d2=new Date(document.getElementById("toolInput2").value);var add=parseInt(document.getElementById("toolInput3").value)||0;if(isNaN(d1.getTime())||isNaN(d2.getTime())){document.getElementById("toolResult").textContent="Sếp chọn đủ 2 mốc ngày nhé.";return;}var diff=Math.round(Math.abs(d2-d1)/864e5);var biz=0;var cur=new Date(Math.min(d1,d2));var end=new Date(Math.max(d1,d2));while(cur<end){cur.setDate(cur.getDate()+1);var wd=cur.getDay();if(wd!==0&&wd!==6)biz++;}var due=new Date(d1.getTime()+add*864e5);var f2=function(d){return d.toLocaleDateString("vi-VN")};document.getElementById("toolResult").innerHTML="Số ngày giữa 2 mốc: "+diff+" ngày<br>Ngày làm việc (trừ T7–CN): "+biz+" ngày<br>Ngày đến hạn ("+f2(d1)+" + "+add+" ngày): "+f2(due);}
   if(currentTool==="code"){var prefix=(v.trim()||"HĐ").toUpperCase();var now=new Date();var ymd=now.getFullYear()+String(now.getMonth()+1).padStart(2,"0")+String(now.getDate()).padStart(2,"0");var rnd=String(Math.floor(1000+Math.random()*9000));document.getElementById("toolResult").textContent=prefix+"-"+ymd+"-"+rnd;}
   if(currentTool==="dedup"){var seen={},out=[],removed=0;v.split(/\n/).forEach(function(line){var t=line.trim();if(!t||seen[t]){removed++;return;}seen[t]=1;out.push(t);});document.getElementById("toolInput").value=out.join("\n");document.getElementById("toolResult").textContent="Còn "+out.length+" dòng duy nhất · đã loại "+removed+" dòng trùng/trống ✓";}
-});
-function closeTool(){document.getElementById("toolModal").classList.remove("open");}
+}
+document.getElementById("toolRun").addEventListener("click",runToolAction);
+document.getElementById("toolPageRun").addEventListener("click",runToolAction);
+function closeTool(){document.getElementById("toolModal").classList.remove("open");if(!document.getElementById("viewTool").hidden)closeToolPage();}
+function closeToolPage(){document.getElementById("viewTool").hidden=true;document.getElementById("viewHome").hidden=false;window.scrollTo(0,0);setTimeout(function(){var u=document.getElementById("blkUtils");if(u)u.scrollIntoView({behavior:"smooth"})},60);}
 
 /* ================= AI CHAT ================= */
-function openAI(){document.getElementById("aiPanel").classList.add("open");document.getElementById("scrim").classList.add("on");var m=document.getElementById("aiMsgs");if(!m.children.length)addMsg("bot","Chào sếp 👋 Em là trợ lý AI của Office Việt AI — chạy miễn phí ngay trên trình duyệt.\n\nSếp cứ nhờ em: soạn hợp đồng, công văn, quyết định, thông báo nội bộ, kế hoạch tuần, email báo giá, CV, đơn nghỉ phép, biên bản họp, tóm tắt ý tưởng hoặc dịch Anh ↔ Việt. Bấm nút “Mở trong trình soạn thảo” dưới mỗi bản soạn để sửa tiếp và tải xuống nhé.");setTimeout(function(){document.getElementById("aiInput").focus()},250);}
+function openAI(){document.getElementById("aiPanel").classList.add("open");document.getElementById("scrim").classList.add("on");var m=document.getElementById("aiMsgs");if(!m.children.length)addMsg("bot","Chào sếp 👋 Em là trợ lý AI của Trợ Thủ Văn Phòng — chạy miễn phí ngay trên trình duyệt.\n\nSếp cứ nhờ em: soạn hợp đồng, công văn, quyết định, thông báo nội bộ, kế hoạch tuần, email báo giá, CV, đơn nghỉ phép, biên bản họp, tóm tắt ý tưởng hoặc dịch Anh ↔ Việt. Bấm nút “Mở trong trình soạn thảo” dưới mỗi bản soạn để sửa tiếp và tải xuống nhé.");setTimeout(function(){document.getElementById("aiInput").focus()},250);}
 function closeAI(){document.getElementById("aiPanel").classList.remove("open");document.getElementById("scrim").classList.remove("on");}
 function addMsg(who,text,docHtml,docTitle){
   var box=document.getElementById("aiMsgs");var d=document.createElement("div");d.className="msg "+who;d.textContent=text;
-  if(docHtml){var b=document.createElement("button");b.textContent="📄 Mở trong trình soạn thảo";b.onclick=function(){var f={id:nextId++,name:docTitle||"Văn bản AI soạn.docx",type:"docx",folder:"OfficeVietAI",time:"Vừa xong",star:false,html:docHtml};files.unshift(f);closeAI();openFile(f.id);};d.appendChild(b);}
+  if(docHtml){var b=document.createElement("button");b.textContent="📄 Mở trong trình soạn thảo";b.onclick=function(){var f={id:nextId++,name:docTitle||"Văn bản AI soạn.docx",type:"docx",folder:"Trợ Thủ Văn Phòng",time:"Vừa xong",star:false,html:docHtml};files.unshift(f);closeAI();openFile(f.id);};d.appendChild(b);}
   box.appendChild(d);box.scrollTop=box.scrollHeight;
 }
 function quickAsk(t){document.getElementById("aiInput").value=t;sendAI();}
@@ -1331,7 +1424,7 @@ function editorCheck(){
   var total=dbl+sp+cap+rep;
   currentTool="edcheck";
   document.getElementById("toolTitle").textContent="Kiểm tra văn bản (Editor)";
-  document.getElementById("toolBody").innerHTML='<p>Quét toàn bộ tài liệu hiện tại, kiểu tính năng Editor của Word:</p><p>• Khoảng trắng thừa giữa câu: <b>'+dbl+'</b> chỗ<br>• Khoảng trắng trước dấu câu: <b>'+sp+'</b> chỗ<br>• Chưa viết hoa sau dấu chấm: <b>'+cap+'</b> chỗ<br>• Từ bị lặp liên tiếp: <b>'+rep+'</b> chỗ</p>'+(total?'<div class="big-result" style="font-size:15px">Tìm thấy '+total+' điểm nên sửa — bấm nút dưới để sửa tự động.</div>':'<div class="big-result" style="font-size:15px">Văn bản sạch, không thấy lỗi cơ bản nào ✓</div>')+'<input type="hidden" id="toolInput">';
+  document.getElementById("toolPageBody").innerHTML="";document.getElementById("toolBody").innerHTML='<p>Quét toàn bộ tài liệu hiện tại, kiểu tính năng Editor của Word:</p><p>• Khoảng trắng thừa giữa câu: <b>'+dbl+'</b> chỗ<br>• Khoảng trắng trước dấu câu: <b>'+sp+'</b> chỗ<br>• Chưa viết hoa sau dấu chấm: <b>'+cap+'</b> chỗ<br>• Từ bị lặp liên tiếp: <b>'+rep+'</b> chỗ</p>'+(total?'<div class="big-result" style="font-size:15px">Tìm thấy '+total+' điểm nên sửa — bấm nút dưới để sửa tự động.</div>':'<div class="big-result" style="font-size:15px">Văn bản sạch, không thấy lỗi cơ bản nào ✓</div>')+'<input type="hidden" id="toolInput">';
   var run=document.getElementById("toolRun");run.style.display=total?"":"none";run.textContent="Sửa tự động";
   document.getElementById("toolModal").classList.add("open");
 }
@@ -1389,7 +1482,7 @@ pdfsummary:{t:"Tóm tắt PDF bằng AI",d:"AI chạy trên trình duyệt đọ
 pdftranslate:{t:"Dịch PDF sang tiếng Anh",d:"Dịch nhanh nội dung PDF bằng từ điển tích hợp sẵn trong app (giống tính năng dịch của trình soạn thảo) và xuất bản dịch .txt. Thuật ngữ chuyên ngành sếp kiểm tra lại trước khi gửi đối tác nhé.",accept:".pdf",multi:false,min:1,run:runPdfTranslate}
 };
 
-function goPdfSection(){document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewHome").hidden=false;setModule("pdf");setTimeout(function(){document.getElementById("pdfSection").scrollIntoView({behavior:"smooth"})},60);}
+function goPdfSection(){document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;var vl=document.getElementById("viewLib");if(vl)vl.hidden=true;document.getElementById("viewHome").hidden=false;setModule("pdf");setTimeout(function(){document.getElementById("pdfSection").scrollIntoView({behavior:"smooth"})},60);}
 function openPdfTool(key){
   if(!window.PDFLib){toast("Chưa tải được thư viện PDF (cần mạng) — sếp thử tải lại trang nhé");return;}
   PDFT.tool=key;PDFT.files=[];
@@ -1403,12 +1496,12 @@ function openPdfTool(key){
   document.getElementById("pdfStatus").textContent="";
   document.getElementById("pdfResult").innerHTML="";
   renderPdfFileList();
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewDesign").hidden=true;var vl2=document.getElementById("viewLib");if(vl2)vl2.hidden=true;document.getElementById("viewPdf").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;var vl2=document.getElementById("viewLib");if(vl2)vl2.hidden=true;document.getElementById("viewPdf").hidden=false;
   window.scrollTo(0,0);
   if(key==="sign")initSigPad();
   if(key==="protect"||key==="pdfa")runPdfTool();
 }
-function closePdfTool(){document.getElementById("viewPdf").hidden=true;document.getElementById("viewHome").hidden=false;window.scrollTo(0,0);}
+function closePdfTool(){document.getElementById("viewPdf").hidden=true;document.getElementById("viewHome").hidden=false;setModule("pdf");setTimeout(function(){document.getElementById("pdfSection").scrollIntoView({behavior:"smooth"})},60);}
 function pdfOptionsHtml(key){
   var L=function(id,label,inner){return '<div><label class="fl" for="'+id+'">'+label+'</label>'+inner+'</div>';};
   var T=function(id,val,ph){return '<input type="text" id="'+id+'" value="'+(val||"")+'" placeholder="'+(ph||"")+'">';};
@@ -1440,6 +1533,7 @@ function pdfRemoveFile(i){PDFT.files.splice(i,1);renderPdfFileList();}
 function renderPdfFileList(){
   var box=document.getElementById("pdfFileList");
   box.innerHTML=PDFT.files.map(function(f,i){return '<span class="pdf-chip">📄 '+esc(f.name)+' · '+(f.size/1024).toFixed(0)+' KB <button onclick="pdfRemoveFile('+i+')" title="Bỏ tệp này">✕</button></span>';}).join("");
+  applyIcons();
 }
 (function(){var dz=document.getElementById("pdfDrop");if(!dz)return;dz.addEventListener("dragover",function(e){e.preventDefault();dz.classList.add("over")});dz.addEventListener("dragleave",function(){dz.classList.remove("over")});dz.addEventListener("drop",function(e){e.preventDefault();dz.classList.remove("over");PDFT.files=Array.prototype.slice.call(e.dataTransfer.files||[]);renderPdfFileList();});})();
 function setPdfStatus(t){document.getElementById("pdfStatus").textContent=t||"";}
@@ -1458,7 +1552,7 @@ function pdfDownloadText(){var blob=new Blob([window._pdfText||""],{type:"text/p
 function pdfOpenTextAsDoc(){
   var text=window._pdfText||"";if(!text){toast("Chưa có nội dung");return;}
   var html=text.split(/\n{2,}/).map(function(p){return "<p>"+esc(p).replace(/\n/g,"<br>")+"</p>";}).join("");
-  var f={id:nextId++,name:"Nội dung trích từ PDF.docx",type:"docx",folder:"OfficeVietAI",time:"Vừa xong",star:false,html:html};
+  var f={id:nextId++,name:"Nội dung trích từ PDF.docx",type:"docx",folder:"Trợ Thủ Văn Phòng",time:"Vừa xong",star:false,html:html};
   files.unshift(f);openFile(f.id);toast("Đã mở nội dung trong trình soạn thảo ✓");
 }
 function pdfFail(msg){document.getElementById("pdfResult").innerHTML='<p style="font-size:13.5px;line-height:1.65;color:#b3261e">⚠ '+esc(msg)+'</p>';setPdfStatus("");}
@@ -1618,7 +1712,7 @@ async function runUnlock(){
   pdfResultDownload(new Blob([await doc.save()],{type:"application/pdf"}),baseName(PDFT.files[0],"-mo-khoa.pdf"),"Đã lưu lại bản PDF không còn khoá chủ sở hữu ("+doc.getPageCount()+" trang).");
 }
 function runProtect(){
-  document.getElementById("pdfResult").innerHTML='<p style="font-size:13.5px;line-height:1.7">🔐 <b>Đặt mật khẩu mã hoá cho PDF cần thuật toán mã hoá AES/RC4 và phần mềm chuyên dụng</b> (Adobe Acrobat, hoặc máy chủ xử lý PDF). Thư viện PDF chạy trên trình duyệt hiện tại (pdf-lib) không hỗ trợ mã hoá nên bản web này <b>không giả lập</b> tính năng này — tránh tạo ra file tưởng là đã khoá mà thực ra không.<br><br>Sếp có thể dùng tạm: công cụ <b>Mở khoá PDF</b> ở đây hoạt động chiều ngược lại; khi nào Office Việt AI có máy chủ riêng, tính năng đặt mật khẩu sẽ được bật thật.</p>';
+  document.getElementById("pdfResult").innerHTML='<p style="font-size:13.5px;line-height:1.7">🔐 <b>Đặt mật khẩu mã hoá cho PDF cần thuật toán mã hoá AES/RC4 và phần mềm chuyên dụng</b> (Adobe Acrobat, hoặc máy chủ xử lý PDF). Thư viện PDF chạy trên trình duyệt hiện tại (pdf-lib) không hỗ trợ mã hoá nên bản web này <b>không giả lập</b> tính năng này — tránh tạo ra file tưởng là đã khoá mà thực ra không.<br><br>Sếp có thể dùng tạm: công cụ <b>Mở khoá PDF</b> ở đây hoạt động chiều ngược lại; khi nào Trợ Thủ Văn Phòng có máy chủ riêng, tính năng đặt mật khẩu sẽ được bật thật.</p>';
   setPdfStatus("Đã rõ giới hạn — không có file nào được tạo.");
   return Promise.resolve();
 }
@@ -1948,7 +2042,7 @@ var palettes=[
 var D={sizeKey:"post",dw:1080,dh:1080,els:[],selId:null,nextId:1,scale:0.6,drawOn:false,brand:{c1:"#217346",c2:"#ffc000",font:"'Be Vietnam Pro',sans-serif"}};
 function dStage(){return document.getElementById("stage");}
 function openDesign(preset){
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;var vl3=document.getElementById("viewLib");if(vl3)vl3.hidden=true;document.getElementById("viewDesign").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;var vl3=document.getElementById("viewLib");if(vl3)vl3.hidden=true;document.getElementById("viewDesign").hidden=false;
   var sel=document.getElementById("dSizeSel");
   if(!sel.options.length){sel.innerHTML=Object.keys(designSizes).map(function(k){return '<option value="'+k+'">'+designSizes[k].label+'</option>';}).join("");}
   if(!document.getElementById("dBgSwatches").children.length){
@@ -1956,12 +2050,13 @@ function openDesign(preset){
     document.getElementById("dTplList").innerHTML=designTemplates.map(function(t,i){return '<button class="tpl-mini" onclick="applyDesignTemplate('+i+')">'+t.name+'<small>'+t.desc+'</small></button>';}).join("");
   }
   window.scrollTo(0,0);
+  document.getElementById("designPresetName").textContent=(preset&&designSizes[preset])?" — "+designSizes[preset].label:"";
   if(preset&&designSizes[preset]){document.getElementById("dSizeSel").value=preset;setDesignSize(preset,true);}
   if(!D.els.length){applyDesignTemplate(preset==="cert"?7:(preset==="meme"?8:0));}
   if(preset==="board"){designSetBg("#f7f4e8");toast("Bảng trắng: thêm giấy note và bật chế độ vẽ ở panel trái nhé sếp");}
   renderDesign();
 }
-function closeDesign(){document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;window.scrollTo(0,0);}
+function closeDesign(){document.getElementById("viewDesign").hidden=true;document.getElementById("viewHome").hidden=false;setModule("design");setTimeout(function(){var b=document.getElementById("blkDesign");if(b)b.scrollIntoView({behavior:"smooth"})},60);}
 function setDesignSize(key,skipScale){
   var s=designSizes[key];if(!s)return;
   if(!skipScale&&D.dw){var sx=s.w/D.dw,sy=s.h/D.dh;D.els.forEach(function(el){el.x*=sx;el.y*=sy;if(el.w)el.w*=sx;if(el.h)el.h*=sy;if(el.size)el.size*=sx;});}
@@ -2193,8 +2288,8 @@ async function designExport(kind){
 function designSaveToFiles(){
   designExportBlob().then(function(canvas){
     var url=canvas.toDataURL("image/png");
-    var html="<h1>Thiết kế — "+esc(designSizes[D.sizeKey].label)+"</h1><p><img src='"+url+"' style='max-width:100%'></p><p><i>Xuất từ Studio Thiết kế của Office Việt AI. Tải bản PNG/JPG/PDF bằng các nút xuất trong Studio nhé.</i></p>";
-    var f={id:nextId++,name:"Thiết kế – "+designSizes[D.sizeKey].label.split(" — ")[0]+".html",type:"html",folder:"OfficeVietAI",time:"Vừa xong",star:false,html:html};
+    var html="<h1>Thiết kế — "+esc(designSizes[D.sizeKey].label)+"</h1><p><img src='"+url+"' style='max-width:100%'></p><p><i>Xuất từ Studio Thiết kế của Trợ Thủ Văn Phòng. Tải bản PNG/JPG/PDF bằng các nút xuất trong Studio nhé.</i></p>";
+    var f={id:nextId++,name:"Thiết kế – "+designSizes[D.sizeKey].label.split(" — ")[0]+".html",type:"html",folder:"Trợ Thủ Văn Phòng",time:"Vừa xong",star:false,html:html};
     files.unshift(f);renderFiles();toast("Đã lưu thiết kế vào danh sách tệp ✓ (mở ra để xem ảnh thiết kế)");
   }).catch(function(e){toast("Lưu lỗi: "+(e.message||e));});
 }
@@ -2204,7 +2299,7 @@ var moduleCur="doc";
 var MOD_LABEL={all:"Tất cả",doc:"Tài liệu",sheet:"Bảng tính",slides:"Bản trình bày",pdf:"PDF",design:"Thiết kế",excel:"Hàm Excel",word:"Hàm Word"};
 var UTIL_MOD=["sheet","doc","doc","ai","sheet","all","all","doc","doc"];
 function modShowHome(){
-  document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewLib").hidden=true;document.getElementById("viewHome").hidden=false;
+  document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewLib").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewHome").hidden=false;
 }
 function setModule(m){
   if(m==="ai"){openAI();return;}
@@ -2311,12 +2406,15 @@ function setLibTab(t){
   if(t==="excel")renderLib();else renderWord();
 }
 function openLib(tab){
-  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewLib").hidden=false;
+  document.getElementById("viewHome").hidden=true;document.getElementById("viewEditor").hidden=true;document.getElementById("viewPdf").hidden=true;document.getElementById("viewDesign").hidden=true;document.getElementById("viewTool").hidden=true;document.getElementById("viewLibItem").hidden=true;document.getElementById("viewLib").hidden=false;
   window.scrollTo(0,0);setLibTab(tab||"excel");
 }
 function closeLib(){closeLibHome();}
 function setLibCat(cat,btn){libCat=cat;var bs=document.querySelectorAll("[data-fxcat]");for(var i=0;i<bs.length;i++)bs[i].classList.toggle("active",bs[i]===btn);renderLib();}
 function fxLvlBadge(c){return c==="coban"?'<span class="fx-lvl">CƠ BẢN</span>':c==="nangcao"?'<span class="fx-lvl adv">NÂNG CAO</span>':c==="meo"?'<span class="fx-lvl tip">MẸO HAY</span>':'<span class="fx-lvl ex">BÀI TẬP</span>';}
+function libItemHTML(kind,i,o,sub){
+  return '<button class="lib-item" onclick="openLibItem(\''+kind+'\','+i+')"><span class="li-main"><b>'+esc(o.n)+'</b><small>'+esc(sub)+'</small></span><span class="li-arrow">›</span></button>';
+}
 function renderLib(){
   var q=(document.getElementById("libSearch").value||"").toLowerCase();
   var html="";
@@ -2324,19 +2422,19 @@ function renderLib(){
   if(libCat==="all"||libCat==="coban"||libCat==="nangcao"){
     EXCEL_LIB.forEach(function(o,i){
       if(libCat!=="all"&&o.c!==libCat)return; if(!match(o))return;
-      html+='<div class="fx-card"><h4>'+esc(o.n)+fxLvlBadge(o.c)+'</h4><p>'+esc(o.d)+'</p><div class="fx-formula">'+esc(o.s)+'</div><p><b>Ví dụ:</b> '+esc(o.e)+'</p><div class="fx-formula">'+esc(o.f)+'</div><p class="fx-result">➜ Kết quả: '+esc(o.r)+'</p><div class="fx-tip">⚠ <b>Mẹo / hay sai:</b> '+esc(o.t)+'</div><div class="fx-actions"><button class="primary" onclick="copyFx('+i+')">⧉ Chép công thức</button><button onclick="openFxExample('+i+')">📗 Mở ví dụ trong bảng tính</button></div></div>';
+      html+=libItemHTML("fx",i,o,o.d);
     });
   }
   if(libCat==="all"||libCat==="meo"){
     EXCEL_TIPS.forEach(function(o,i){
       if(!match(o))return;
-      html+='<div class="fx-card"><h4>'+esc(o.n)+fxLvlBadge("meo")+'</h4><p>'+esc(o.d)+'</p>'+(o.e?'<p><b>Ví dụ:</b> '+esc(o.e)+'</p>':"")+'<div class="fx-tip">💡 '+esc(o.t)+'</div></div>';
+      html+=libItemHTML("tip",i,o,o.d);
     });
   }
   if(libCat==="all"||libCat==="baitap"){
     EXCEL_BT.forEach(function(o,i){
       if(!match(o))return;
-      html+='<div class="fx-card"><h4>'+esc(o.n)+fxLvlBadge("baitap")+'</h4><p>'+esc(o.q)+'</p><div class="fx-actions"><button class="primary" onclick="openBtExample('+i+')">📗 Mở dữ liệu bài tập</button><button onclick="toggleAns(\'bt'+i+'\')">👁 Xem đáp án</button></div><div class="ans-box" id="ans-bt'+i+'"><b>Đáp án:</b> '+esc(o.a)+'</div></div>';
+      html+=libItemHTML("bt",i,o,o.q);
     });
   }
   document.getElementById("libList").innerHTML=html||'<div class="empty-box">Không thấy hàm nào khớp — sếp thử từ khoá khác nhé.</div>';
@@ -2345,7 +2443,7 @@ function copyFx(i){copyTextLib(EXCEL_LIB[i].f,"Đã chép công thức "+EXCEL_L
 function openSheetWith(data,title,extraRows){
   sheetData=data.map(function(r){return r.slice();});
   if(extraRows)extraRows.forEach(function(r){sheetData.push(r);});
-  var f={id:nextId++,name:title,type:"xlsx",folder:"OfficeVietAI",time:"Vừa xong",star:false,html:""};
+  var f={id:nextId++,name:title,type:"xlsx",folder:"Trợ Thủ Văn Phòng",time:"Vừa xong",star:false,html:""};
   files.unshift(f);openFile(f.id);
 }
 function openFxExample(i){
@@ -2362,17 +2460,169 @@ function toggleAns(id){var el=document.getElementById("ans-"+id);if(el)el.classL
 function renderWord(){
   var html="";
   WORD_LIB.forEach(function(o,i){
-    html+='<div class="fx-card"><h4>'+esc(o.n)+'</h4><p>'+esc(o.d)+'</p><ol>'+o.steps.map(function(s){return "<li>"+esc(s)+"</li>";}).join("")+'</ol><div class="fx-actions">'+(o.ex?'<button class="primary" onclick="openWordExample('+i+')">📘 Mở ví dụ mẫu</button>':"")+'<button onclick="toggleAns(\'w'+i+'\')">👁 Xem đáp án bài tập</button></div><p style="margin-top:10px"><b>Bài tập:</b> '+esc(o.q)+'</p><div class="ans-box" id="ans-w'+i+'"><b>Đáp án:</b> '+esc(o.a)+'</div></div>';
+    html+=libItemHTML("word",i,o,o.d);
   });
   document.getElementById("wordList").innerHTML=html;
 }
+function fxDetailHTML(o,i){
+  return '<div class="fx-card" style="margin-bottom:0"><h4>'+esc(o.n)+fxLvlBadge(o.c)+'</h4><p>'+esc(o.d)+'</p><div class="fx-formula">'+esc(o.s)+'</div><p><b>Ví dụ:</b> '+esc(o.e)+'</p><div class="fx-formula">'+esc(o.f)+'</div><p class="fx-result">➜ Kết quả: '+esc(o.r)+'</p><div class="fx-tip">⚠ <b>Mẹo / hay sai:</b> '+esc(o.t)+'</div><div class="fx-actions"><button class="primary" onclick="copyFx('+i+')">⧉ Chép công thức</button><button onclick="openFxExample('+i+')">📗 Mở ví dụ trong bảng tính</button></div></div>';
+}
+function tipDetailHTML(o,i){
+  return '<div class="fx-card" style="margin-bottom:0"><h4>'+esc(o.n)+fxLvlBadge("meo")+'</h4><p>'+esc(o.d)+'</p>'+(o.e?'<p><b>Ví dụ:</b> '+esc(o.e)+'</p>':"")+'<div class="fx-tip">💡 '+esc(o.t)+'</div></div>';
+}
+function btDetailHTML(o,i){
+  return '<div class="fx-card" style="margin-bottom:0"><h4>'+esc(o.n)+fxLvlBadge("baitap")+'</h4><p>'+esc(o.q)+'</p><div class="fx-actions"><button class="primary" onclick="openBtExample('+i+')">📗 Mở dữ liệu bài tập</button><button onclick="toggleAns(\'bt'+i+'\')">👁 Xem đáp án</button></div><div class="ans-box" id="ans-bt'+i+'"><b>Đáp án:</b> '+esc(o.a)+'</div></div>';
+}
+function wordDetailHTML(o,i){
+  return '<div class="fx-card" style="margin-bottom:0"><h4>'+esc(o.n)+'</h4><p>'+esc(o.d)+'</p><ol>'+o.steps.map(function(s){return "<li>"+esc(s)+"</li>";}).join("")+'</ol><div class="fx-actions">'+(o.ex?'<button class="primary" onclick="openWordExample('+i+')">📘 Mở ví dụ mẫu</button>':"")+'<button onclick="toggleAns(\'w'+i+'\')">👁 Xem đáp án bài tập</button></div><p style="margin-top:10px"><b>Bài tập:</b> '+esc(o.q)+'</p><div class="ans-box" id="ans-w'+i+'"><b>Đáp án:</b> '+esc(o.a)+'</div></div>';
+}
+function openLibItem(kind,i){
+  var o=null,html="";
+  if(kind==="fx"){o=EXCEL_LIB[i];if(o)html=fxDetailHTML(o,i);}
+  else if(kind==="tip"){o=EXCEL_TIPS[i];if(o)html=tipDetailHTML(o,i);}
+  else if(kind==="bt"){o=EXCEL_BT[i];if(o)html=btDetailHTML(o,i);}
+  else{o=WORD_LIB[i];if(o)html=wordDetailHTML(o,i);}
+  if(!o)return;
+  document.getElementById("libItemTitle").textContent=o.n;
+  document.getElementById("libItemBody").innerHTML=html;
+  document.getElementById("viewLib").hidden=true;document.getElementById("viewLibItem").hidden=false;
+  window.scrollTo(0,0);applyIcons();
+}
+function closeLibItem(){document.getElementById("viewLibItem").hidden=true;document.getElementById("viewLib").hidden=false;window.scrollTo(0,0);}
 function openWordExample(i){
   var o=WORD_LIB[i];if(!o.ex)return;
-  var f={id:nextId++,name:o.ex.t+".docx",type:"docx",folder:"OfficeVietAI",time:"Vừa xong",star:false,html:o.ex.h};
+  var f={id:nextId++,name:o.ex.t+".docx",type:"docx",folder:"Trợ Thủ Văn Phòng",time:"Vừa xong",star:false,html:o.ex.h};
   files.unshift(f);openFile(f.id);
   toast("Đã mở ví dụ mẫu: "+o.n+" ✓");
 }
 setModule("doc");
+</script>
+<script>
+/* ================= ICON 2026 — bộ icon SVG thống nhất, thay emoji cũ ================= */
+var ICON_PATHS={
+clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+star:'<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/>',
+message:'<path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/>',
+sparkles:'<path d="M12 3.5l1.9 5.6 5.6 1.9-5.6 1.9L12 18.5l-1.9-5.6L4.5 11l5.6-1.9z"/><path d="M19 3.5v3M17.5 5h3M5 17.5v3M3.5 19h3"/>',
+file:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>',
+filetext:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/>',
+table:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9.5 4v16M15 4v16"/>',
+presentation:'<rect x="3" y="3.5" width="18" height="12" rx="2"/><path d="M12 15.5V19M8.5 21l3.5-2 3.5 2"/><path d="M8 11.5l2.5-2.5 2 2L15 8.5"/>',
+shapes:'<rect x="3" y="3" width="7.5" height="7.5" rx="2"/><circle cx="16.8" cy="16.8" r="4.3"/><path d="M16.8 3.2l3.1 5.3H13.7z"/>',
+book:'<path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3"/>',
+bookopen:'<path d="M12 6.5C10.5 4.8 8.2 4 4.5 4c-.6 0-1 .4-1 1v13c0 .6.4 1 1 1 3.7 0 6 .8 7.5 2.5 1.5-1.7 3.8-2.5 7.5-2.5.6 0 1-.4 1-1V5c0-.6-.4-1-1-1-3.7 0-6 .8-7.5 2.5z"/><path d="M12 6.5V21"/>',
+sigma:'<path d="M18 6.5V4H7l5.5 8L7 20h11v-2.5"/>',
+grid:'<rect x="3.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.8"/>',
+folder:'<path d="M3 7a2 2 0 0 1 2-2h4l2 2.2h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+calculator:'<rect x="5" y="2.5" width="14" height="19" rx="2.2"/><path d="M8.5 6.8h7"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h.01M15.5 18h.01"/>',
+type:'<path d="M4 7.5V4h16v3.5"/><path d="M12 4v16"/><path d="M9 20h6"/>',
+receipt:'<path d="M5.5 3h13V21l-2.2-1.4L14.1 21l-2.1-1.4L9.9 21l-2.2-1.4L5.5 21z"/><path d="M9 8h6M9 12h6"/>',
+calendar:'<rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 14.5h3M13.5 14.5h3"/>',
+tag:'<path d="M12.6 3.1a1.8 1.8 0 0 1 1.3.5l7 7a1.8 1.8 0 0 1 0 2.5l-7.4 7.4a1.8 1.8 0 0 1-2.5 0l-7-7A1.8 1.8 0 0 1 3.5 12.3V4.9c0-1 .8-1.8 1.8-1.8z"/><circle cx="8.2" cy="8.2" r="1.3"/>',
+copy:'<rect x="9" y="9" width="11.5" height="11.5" rx="2"/><path d="M5.5 15h-1A1.5 1.5 0 0 1 3 13.5v-9A1.5 1.5 0 0 1 4.5 3h9A1.5 1.5 0 0 1 15 4.5v1"/><path d="M12.5 14.8h4.5"/>',
+idcard:'<rect x="2.5" y="5" width="19" height="14" rx="2"/><circle cx="8.2" cy="10.8" r="2"/><path d="M5.4 16.6c.6-1.5 1.5-2.2 2.8-2.2s2.2.7 2.8 2.2"/><path d="M14.5 9.5H19M14.5 13h4.5"/>',
+layers:'<path d="M12 3l9 4.8-9 4.8-9-4.8z"/><path d="M3.6 12.7L12 17l8.4-4.3"/><path d="M3.6 16.7L12 21l8.4-4.3"/>',
+scissors:'<circle cx="6" cy="6.5" r="2.5"/><circle cx="6" cy="17.5" r="2.5"/><path d="M8.1 8.1L20 20"/><path d="M8.1 15.9L20 4"/>',
+shuffle:'<path d="M3 7h4.2L17 17h4"/><path d="M18 14l3 3-3 3"/><path d="M3 17h4.2l2.3-2.3"/><path d="M14.7 9.3L17 7h4"/><path d="M18 4l3 3-3 3"/>',
+minimize:'<path d="M15 3.5h5.5V9"/><path d="M9 20.5H3.5V15"/><path d="M20.5 3.5L14 10"/><path d="M3.5 20.5L10 14"/>',
+rotate:'<path d="M20.5 12a8.5 8.5 0 1 1-2.5-6.1"/><path d="M21 3.5V9h-5.5"/>',
+crop:'<path d="M6.5 2.5v13a2 2 0 0 0 2 2h13"/><path d="M2.5 6.5h13a2 2 0 0 1 2 2v13"/>',
+wrench:'<path d="M14.8 6.2a4.6 4.6 0 0 0-6.1 5.6L3 17.5V21h3.5l5.7-5.7a4.6 4.6 0 0 0 5.6-6.1l-2.9 2.9-2.4-.6-.6-2.4z"/>',
+image:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16.5l-4.8-4.8a1.5 1.5 0 0 0-2.1 0L6 20"/>',
+code:'<path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/>',
+pencil:'<path d="M17 3.5a2.7 2.7 0 1 1 4 4L8 20.5 2.5 22 4 16.5z"/>',
+hash:'<path d="M9.5 3.5L7.5 20.5M16.5 3.5l-2 17M4.5 8.5h16.5M3.5 15.5h16.5"/>',
+droplet:'<path d="M12 3.2s6.2 6.6 6.2 10.3a6.2 6.2 0 0 1-12.4 0C5.8 9.8 12 3.2 12 3.2z"/>',
+penline:'<path d="M12 20h9"/><path d="M16.8 3.9a2.6 2.6 0 1 1 3.7 3.7L8 20.1l-4.2 1.1 1.1-4.2z"/>',
+eyeoff:'<path d="M4 4l16 16"/><path d="M10.6 6.1A9.6 9.6 0 0 1 12 6c6.6 0 10 6 10 6a17.4 17.4 0 0 1-3 3.8M6.6 7A16.6 16.6 0 0 0 2 12c0 0 3.4 6 10 6 1.5 0 2.9-.3 4.1-.8"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>',
+lock:'<rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.4"/>',
+unlock:'<rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 7.8-1.2"/><circle cx="12" cy="15.5" r="1.4"/>',
+archive:'<rect x="3" y="3.5" width="18" height="4.5" rx="1"/><path d="M5 8v11a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 19V8"/><path d="M10 12.5h4"/>',
+columns:'<rect x="3.5" y="4" width="7.2" height="16" rx="1.6"/><rect x="13.3" y="4" width="7.2" height="16" rx="1.6"/>',
+scan:'<path d="M3.5 7.5v-2A2 2 0 0 1 5.5 3.5h2M16.5 3.5h2a2 2 0 0 1 2 2v2M20.5 16.5v2a2 2 0 0 1-2 2h-2M7.5 20.5h-2a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/>',
+globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a13.5 13.5 0 0 1 0 18 13.5 13.5 0 0 1 0-18"/>',
+smartphone:'<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.8h2"/>',
+poster:'<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9.2" cy="8.2" r="1.6"/><path d="M4 16.5l5-4 3.5 2.8 3-2.3 4.5 3.5"/>',
+hexagon:'<path d="M12 2.8l8.2 4.7v9L12 21.2 3.8 16.5v-9z"/><circle cx="12" cy="12" r="2.6"/>',
+monitor:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M9 20h6M12 16v4"/>',
+mail:'<rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/>',
+award:'<circle cx="12" cy="9.5" r="5.5"/><path d="M8.8 14.2L7 21l5-2.6L17 21l-1.8-6.8"/>',
+play:'<rect x="3" y="5" width="18" height="14" rx="3.5"/><path d="M10.3 9.4l5 2.6-5 2.6z"/>',
+smile:'<circle cx="12" cy="12" r="9"/><path d="M8.5 14.5s1.2 2 3.5 2 3.5-2 3.5-2"/><path d="M9 9.5h.01M15 9.5h.01"/>',
+note:'<path d="M15.5 3.5H6A1.5 1.5 0 0 0 4.5 5v14A1.5 1.5 0 0 0 6 20.5h14a1.5 1.5 0 0 0 1.5-1.5V9.5z"/><path d="M15.5 3.5v6h6"/>',
+chart:'<path d="M3.5 3.5v17h17"/><path d="M8 17v-5.5M12.8 17V7.5M17.5 17v-8"/>',
+download:'<path d="M12 3.5v11M7 10.5l5 5 5-5"/><path d="M4 19.5h16"/>',
+mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/>',
+volume:'<path d="M4 9.5v5h3.5L12 19V5L7.5 9.5z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18.2 6.5a8 8 0 0 1 0 11"/>',
+check:'<path d="M4.5 12.5l5 5L19.5 7"/>',
+search:'<circle cx="11" cy="11" r="7"/><path d="M20.5 20.5L16.6 16.6"/>',
+eye:'<path d="M2.5 12S5.8 5.5 12 5.5 21.5 12 21.5 12 18.2 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/>',
+cloud:'<path d="M7 18.5h10.5a4 4 0 0 0 .8-7.9 6 6 0 0 0-11.5 1.2A3.8 3.8 0 0 0 7 18.5z"/>',
+plus:'<path d="M12 5v14M5 12h14"/>'
+};
+var EMOJI_MAP={
+"∑":["sigma","green"],"🕐":["clock","green"],"☆":["star","amber"],"⭐":["star","amber"],"💬":["message","purple"],"✦":["sparkles","purple"],
+"📕":["file","red"],"🎨":["shapes","pink"],"📗":["book","green"],"📘":["book","blue"],"📙":["presentation","orange"],
+"🧩":["shapes","green"],"📁":["folder","amber"],"📂":["folder","amber"],"🔢":["calculator","green"],"🔤":["type","blue"],
+"🧾":["receipt","amber"],"📅":["calendar","teal"],"🏷":["tag","teal"],"🧹":["copy","teal"],"🪪":["idcard","blue"],
+"🗂":["layers","red"],"✂️":["scissors","red"],"✂":["scissors","pink"],"🔀":["shuffle","red"],"🗜":["minimize","red"],
+"🔄":["rotate","red"],"🔲":["crop","red"],"🩹":["wrench","red"],"🖼":["image","red"],"🌐":["code","red"],
+"📝":["pencil","red"],"🏞":["image","red"],"📄":["filetext","red"],"📊":["chart","red"],"📽":["presentation","red"],
+"✏️":["pencil","red"],"💧":["droplet","red"],"✍️":["penline","red"],"⬛":["eyeoff","red"],"🔓":["unlock","red"],
+"🔐":["lock","red"],"🗄":["archive","red"],"🔍":["search","red"],"👁":["eye","red"],"🌍":["globe","red"],
+"📱":["smartphone","pink"],"🪧":["poster","pink"],"📃":["filetext","pink"],"⬢":["hexagon","pink"],"🖥":["monitor","pink"],
+"💌":["mail","pink"],"🏅":["award","pink"],"▶️":["play","pink"],"📖":["bookopen","blue"],"😄":["smile","pink"],
+"🧠":["note","pink"],"🛠":["wrench","purple"],"🎙":["mic","green"],"🔊":["volume","green"],"✔":["check","green"],
+"⬇":["download","green"],"⧉":["copy","green"],"☁":["cloud","teal"],"＋":["plus","green"],"🖊":["penline","pink"],"🔎":["search","green"]
+};
+var EMOJI_KEYS=Object.keys(EMOJI_MAP).sort(function(a,b){return b.length-a.length;});
+function svgIcon(name){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICON_PATHS[name]||"")+'</svg>';}
+function tileify(el,forceGroup){
+  if(!el||el.dataset.ico)return;
+  var key=(el.textContent||"").trim();
+  var info=EMOJI_MAP[key];
+  el.dataset.ico="1";
+  el.classList.add("ico-tile");
+  el.classList.add("g-"+(forceGroup||(info?info[1]:"green")));
+  if(info){el.innerHTML=svgIcon(info[0]);}
+  else if(key){el.innerHTML='<span class="ico-glyph">'+key.replace(/</g,"&lt;")+'</span>';}
+}
+function processIconEl(el,mode){
+  if(!el)return;
+  var walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null);
+  var nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+  nodes.forEach(function(node){
+    var rest=node.nodeValue||"";if(!rest)return;
+    var frag=null;
+    while(rest.length){
+      var idx=-1,found=null;
+      for(var i=0;i<EMOJI_KEYS.length;i++){var p=rest.indexOf(EMOJI_KEYS[i]);if(p>-1&&(idx===-1||p<idx)){idx=p;found=EMOJI_KEYS[i];}}
+      if(idx===-1)break;
+      if(!frag)frag=document.createDocumentFragment();
+      if(idx>0)frag.appendChild(document.createTextNode(rest.slice(0,idx)));
+      var info=EMOJI_MAP[found];var span=document.createElement("span");
+      if(mode==="ntile")span.className="ico-tile n-ico g-"+info[1];
+      else if(mode==="mtile")span.className="ico-tile m-ico g-"+info[1];
+      else if(mode==="ctile")span.className="ico-tile chip-ico g-"+info[1];
+      else span.className="ico-inline";
+      span.innerHTML=svgIcon(info[0]);
+      frag.appendChild(span);
+      rest=rest.slice(idx+found.length);
+    }
+    if(frag){if(rest)frag.appendChild(document.createTextNode(rest));node.parentNode.replaceChild(frag,node);}
+  });
+}
+function applyIcons(){
+  var i,els;
+  els=document.querySelectorAll(".pdf-card .p-ico");for(i=0;i<els.length;i++)tileify(els[i],els[i].closest&&els[i].closest("#blkDesign")?"pink":"red");
+  els=document.querySelectorAll(".util-card .u-ico, .stat-card .s-ico, .brand-icon, .mt-ico, .ai-ico");for(i=0;i<els.length;i++)tileify(els[i]);
+  els=document.querySelectorAll(".bottom-nav button > span");for(i=0;i<els.length;i++){tileify(els[i]);els[i].classList.add("b-ico");}
+  els=document.querySelectorAll(".nav button");for(i=0;i<els.length;i++)processIconEl(els[i],"ntile");
+  els=document.querySelectorAll(".mod-tab");for(i=0;i<els.length;i++)processIconEl(els[i],"mtile");
+  els=document.querySelectorAll(".lib-tab");for(i=0;i<els.length;i++)processIconEl(els[i],"ctile");
+  els=document.querySelectorAll(".toolbar button, .ed-actions .btn, .ai-label, .section-title, .design-panel button.act, .fx-actions button, #libTitle, .pdf-chip, #autosaveLabel, .nav-label span, .searchbox");for(i=0;i<els.length;i++)processIconEl(els[i],"inline");
+}
+applyIcons();
 </script>
 </body>
 </html>
